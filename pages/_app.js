@@ -1,10 +1,10 @@
-import Header from '../src/components/commons/layout/header/header.container'
-
+import Layout from '../src/components/commons/layout/index.tsx'
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Header/>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
     )
 }
