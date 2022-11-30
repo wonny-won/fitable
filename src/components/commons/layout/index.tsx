@@ -7,7 +7,8 @@ export default function Layout(props:LayoutProps){
     return(
         <>
             <Header />
-            <div style={{ width : "70%" }}>{props.children}</div>
+            {/* <div></div> */}
+            <div>{props.children}</div>
         </>
     )
 }

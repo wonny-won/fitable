@@ -6,9 +6,10 @@ export const HeaderWrapper = styled.div`
     justify-content: space-between;
     background-color:#424245 ;
     align-items: center;
+    padding: 0 15%;
 `
 export const MenuWrapper = styled.ul`
-    width: 600px;
+    width: 400px;
     display: flex;
     margin : 0 auto;
     justify-content: space-between;
@@ -17,4 +18,13 @@ export const MenuWrapper = styled.ul`
 `
 export const MenuLi = styled.li`
     list-style: none;
+`
+export const MiniMenuWrap = styled.div`
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+`
+export const Img = styled.img`
+    width : 19px;
+    height: 21px;;
 `
