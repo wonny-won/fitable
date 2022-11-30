@@ -3,6 +3,7 @@ import * as S from './userHome.style'
 import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
 
 export default function UserMainUI(){
+    const ImgArr = ['/dietprogram.svg','/healingprogram.svg']
     return(
         <>
              <Head>
@@ -18,8 +19,11 @@ export default function UserMainUI(){
             </div>
             <h1 style={{display: "none"}}> 프로그램 선택 </h1>
             <S.CardsWrapper>
-                <MainCard image='/dietprogram.svg'/>
-                <MainCard image='/healingprogram.svg'/>
+                {
+                    ImgArr.map((item,index)=>(
+                        <MainCard Image={ImgArr[index]}/>
+                    ))
+                }
             </S.CardsWrapper>
         </>
     )
