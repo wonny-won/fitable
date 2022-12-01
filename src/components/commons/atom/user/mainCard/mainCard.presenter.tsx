@@ -12,6 +12,7 @@ export default function MainCardUI(props){
                             props.image === '/dietprogram.svg' ? "Diet program" : "Healing program"
                         }
                     </S.CardTitle>
+                    <S.ExplainBT>설명</S.ExplainBT>
                     </S.ProgramCard>
                 </S.CardWrap>
         </>

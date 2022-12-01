@@ -6,7 +6,7 @@ export default function HeaderUI(){
             <S.HeaderWrapper>
                 <S.MenuWrapper>
                     <S.MenuLi>프로그램 상담</S.MenuLi>
-                    <S.MenuLi>맞춤 프로그램 진단</S.MenuLi>
+                    <S.MenuLi>맞춤 프로그램 자가진단</S.MenuLi>
                     <S.MenuLi>스토어</S.MenuLi>
                 </S.MenuWrapper>
                 <S.MiniMenuWrap>
