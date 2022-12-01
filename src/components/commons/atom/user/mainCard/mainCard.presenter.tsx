@@ -1,7 +1,7 @@
 import * as S from './mainCard.styled'
+import { MainCardProps } from './mainCard.types'
 
-export default function MainCardUI(props){
-    console.log("안녕",props)
+export default function MainCardUI(props:MainCardProps){
     return(
         <>
             <h1 style={{display: "none"}}> 다이어트 프로그램</h1>
@@ -12,7 +12,7 @@ export default function MainCardUI(props){
                             props.image === '/dietprogram.svg' ? "Diet program" : "Healing program"
                         }
                     </S.CardTitle>
-                    <S.ExplainBT>설명</S.ExplainBT>
+                    <S.Line />
                     </S.ProgramCard>
                 </S.CardWrap>
         </>

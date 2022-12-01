@@ -1,5 +1,9 @@
 import styled from "@emotion/styled"
 
+interface ImageProps{
+    image : string ;
+}
+
 export const CardWrap = styled.div`
     align-items: center;
     width: 400px;
@@ -12,22 +16,22 @@ export const ProgramCard = styled.div`
     align-items: center;
     width: 400px;
     height: 450px;
-    background-image: url(${props=>props.image});
+    background-image: url(${(props:ImageProps) => props.image});
     background-size: cover;
     border-radius: 30px;
+    &:hover{
+        width: 410px;
+        height:460px;
+        cursor: pointer;
+    }
+    box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
 export const CardTitle = styled.div`
     font-size: 36px;
     font-weight: 400;
     color: #fff;
 `
-export const ExplainBT = styled.button`
-    width : 63px;
-    height: 40px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    margin-top: 20px;
-    color : #fff;
-    font-size: 16px;
+export const Line = styled.hr`
+    width: 70px;
+    margin: 10px;
 `

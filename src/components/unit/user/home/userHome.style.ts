@@ -26,11 +26,12 @@ export const TextSpan = styled.span`
 `
 export const TitleText = styled.h2`
     display: flex;
-    font-size: 30px;
+    font-size: 35px;
     color : #8D60F5;
     font-weight: 700;
+    margin: 10px 0;
 `
-export const Span = styled.h3`
+export const Span = styled.span`
     margin : 30px 20px;
 `
 export const SelfTestWrapper = styled.section`
@@ -51,4 +52,7 @@ export const SelfTestBT = styled.button`
     font-weight: 600;
     border-radius: 5px;
     border: 1px solid #fff;
+    &:hover{
+        cursor: pointer;
+    }
 `

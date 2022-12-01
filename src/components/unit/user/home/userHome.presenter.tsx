@@ -22,7 +22,7 @@ export default function UserMainUI(){
             <S.CardsWrapper>
                 {
                     ImgArr.map((item,index)=>(
-                        <MainCard Image={ImgArr[index]}/>
+                        <MainCard image={ImgArr[index]} key={index}/>
                     ))
                 }
             </S.CardsWrapper>
