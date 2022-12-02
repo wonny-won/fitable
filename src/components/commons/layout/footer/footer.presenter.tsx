@@ -13,7 +13,7 @@ export default function FooterUI(){
             </S.RelateSite>
             <h2 style={{display : "none"}}>회사 대표</h2>
             <S.H3> 개발하는 너굴맨 </S.H3>
-            <div> 본 회사는 개발하는 너굴맨이 운영하는 회사로 따로 운영시간을 정해두지 않은 점 참고 부탁드립니다.</div>
+            <div> 본 사이트는 개발하는 너굴맨이 운영하는 회사로 따로 운영시간을 정해두지 않은 점 참고 부탁드립니다.</div>
           </S.FooterWrapper>
         </>
     )

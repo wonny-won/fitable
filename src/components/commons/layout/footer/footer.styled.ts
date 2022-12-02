@@ -20,5 +20,7 @@ export const H3 = styled.h3`
     padding : 10px 0 10px 2px;
     &:hover{
         cursor: pointer;
+        color : #8D60F5;
+        font-weight: 400;
     }
 `

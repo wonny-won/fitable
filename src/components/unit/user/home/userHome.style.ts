@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import exp from "constants";
 
 export const CardsWrapper = styled.section`
     display: flex;
@@ -54,6 +53,8 @@ export const SelfTestBT = styled.button`
     border: 1px solid #fff;
     &:hover{
         cursor: pointer;
+        color : #8D60F5;
+        border-color: #8D60F5;
     }
 `
 export const Hr = styled.hr ` 
