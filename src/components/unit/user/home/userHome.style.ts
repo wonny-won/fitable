@@ -56,3 +56,10 @@ export const SelfTestBT = styled.button`
         cursor: pointer;
     }
 `
+export const Hr = styled.hr ` 
+    width: 50px;
+    background: rgba(255,255,255,0.3);
+    height: 1px;
+    border: 0;
+    margin: 20px auto;
+`

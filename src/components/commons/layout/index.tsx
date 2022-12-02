@@ -1,3 +1,4 @@
+import Footer from "./footer/footer.container";
 import Header from "./header/header.container"
 
 interface LayoutProps{
@@ -7,8 +8,8 @@ export default function Layout(props:LayoutProps){
     return(
         <>
             <Header />
-            {/* <div></div> */}
             <div>{props.children}</div>
+            <Footer />
         </>
     )
 }

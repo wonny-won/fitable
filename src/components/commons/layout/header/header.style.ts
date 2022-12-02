@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.nav`
+    width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-between;
-    background-color:#424245 ;
+    background-color:black ;
     align-items: center;
     padding: 0 9%;
+    position: fixed;
+    top:0
 `
 export const MenuWrapper = styled.ul`
     width: 400px;

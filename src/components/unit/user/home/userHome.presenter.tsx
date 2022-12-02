@@ -31,7 +31,7 @@ export default function UserMainUI(){
                 <div>뭐가 필요한지 모르겠다면?</div>
                 <S.SelfTestBT>프로그램 자가진단</S.SelfTestBT>
             </S.SelfTestWrapper>
-
+            <S.Hr />
         </>
     )
 }

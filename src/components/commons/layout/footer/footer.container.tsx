@@ -1,3 +1,5 @@
-export default function Banner(){
-    return "배너" 
+import FooterUI from "./footer.presenter"
+
+export default function Footer(){
+    return <FooterUI /> 
 }
