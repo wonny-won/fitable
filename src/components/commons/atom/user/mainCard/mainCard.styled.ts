@@ -34,4 +34,8 @@ export const CardTitle = styled.div`
 export const Line = styled.hr`
     width: 70px;
     margin: 10px;
+    background: rgba(255,255,255,0.5);
+    height: 1px;
+    border: 0;
+
 `
