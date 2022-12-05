@@ -3,10 +3,10 @@ import { MainCardProps } from './mainCard.types'
 
 export default function MainCardUI(props:MainCardProps){
     return(
-        <>
+        <S.Container>
             <h1 style={{display: "none"}}>프로그램 카드</h1>
                 <S.CardWrap>
-                    <S.FrontProgramCard image={props.image} className="front">
+                    <S.FrontProgramCard image={props.image}>
                     <S.CardTitle>
                         {
                             props.image === '/dietprogram.svg' ? "Diet program" : "Healing program"
@@ -14,10 +14,10 @@ export default function MainCardUI(props:MainCardProps){
                     </S.CardTitle>
                     <S.Line />
                     </S.FrontProgramCard>
-                    <S.BackProgramCard className="back">
-                        <button>뒷면!</button>
+                    <S.BackProgramCard>
+                        카드 뒷면
                     </S.BackProgramCard>
                 </S.CardWrap>
-        </>
+        </S.Container>
     )
 }
