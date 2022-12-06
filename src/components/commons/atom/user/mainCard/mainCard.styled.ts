@@ -7,13 +7,11 @@ interface ImageProps{
 export const Container = styled.div`
     width: 400px;
     height: 450px;
-    perspective: 1100px;
-    transition: .5s;
     transform-style: preserve-3d;
-
 `
 export const CardWrap = styled.section`
     align-items: center;
+    perspective: 1800px;
     width: 400px;
     height: 450px;
 `
@@ -27,8 +25,10 @@ export const FrontProgramCard = styled.div`
     background-image: url(${(props:ImageProps) => props.image});
     background-size: cover;
     border-radius: 30px;
-    backface-visibility: hidden;
     position: absolute;
+    transition: 1s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
     &:hover{
         cursor: pointer;
         transform: rotateY(180deg);
@@ -44,10 +44,10 @@ export const BackProgramCard = styled.div`
     height: 450px;
     border-radius: 30px;
     backface-visibility: hidden;
-    /* transform: rotateY(-180deg); */
+    transition: 1s;
     &:hover{
         cursor: pointer;
-        /* transform: rotateY(-180deg); */
+        transform: rotateY(180deg);
     }
     box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
