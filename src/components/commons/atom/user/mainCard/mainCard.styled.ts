@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 interface ImageProps{
     image? : string ;
 }
-
 export const Container = styled.div`
     width: 400px;
     height: 450px;
@@ -11,7 +10,7 @@ export const Container = styled.div`
 `
 export const CardWrap = styled.section`
     align-items: center;
-    perspective: 1800px;
+    perspective: 1500px;
     width: 400px;
     height: 450px;
 `
@@ -26,7 +25,7 @@ export const FrontProgramCard = styled.div`
     background-size: cover;
     border-radius: 30px;
     position: absolute;
-    transition: 1s;
+    transition: .8s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
     &:hover{
@@ -36,20 +35,19 @@ export const FrontProgramCard = styled.div`
     box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
 export const BackProgramCard = styled.div`
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
     height: 450px;
     border-radius: 30px;
+    transition: .8s;
     backface-visibility: hidden;
-    transition: 1s;
+    transform: rotateY(0deg);
     &:hover{
         cursor: pointer;
-        transform: rotateY(180deg);
+        transform: rotateY(-180deg);
     }
-    box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
 
 export const CardTitle = styled.div`
@@ -57,11 +55,10 @@ export const CardTitle = styled.div`
     font-weight: 400;
     color: #fff;
 `
-export const Line = styled.hr`
+export const ExpreienceBT = styled.button`
     width: 70px;
-    margin: 10px;
-    background: rgba(255,255,255,0.5);
-    height: 1px;
-    border: 0;
-
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
 `
