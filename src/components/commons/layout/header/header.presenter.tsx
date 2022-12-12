@@ -1,7 +1,7 @@
 import * as S from './header.style'
 
 export default function HeaderUI(){
-    const menuArr = ["프로그램 상담", "맞춤 프로그램 자가진단", "스토어"]
+    const menuArr = ["프로그램 상담", "맞춤 프로그램 자가진단", "프로그램 리뷰"]
     return(
         <>
             <h1 style={{display : "none"}}> header menu bar </h1>

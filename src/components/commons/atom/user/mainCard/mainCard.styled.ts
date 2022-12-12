@@ -4,13 +4,11 @@ interface ImageProps{
     image? : string ;
 }
 export const CardWrap = styled.section`
-    align-items: center;
     perspective: 1500px;
-    width: 400px;
-    height: 450px;
     transform-style: preserve-3d;
 `
 export const FrontProgramCard = styled.div`
+    perspective: 1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,6 +16,7 @@ export const FrontProgramCard = styled.div`
     width: 400px;
     height: 450px;
     background-image: url(${(props:ImageProps) => props.image});
+    background-color: #424245;
     background-size: cover;
     border-radius: 30px;
     transition: .8s;
@@ -38,15 +37,20 @@ export const BackProgramCardWrap = styled.div`
     align-items: center;
     width: 400px;
     height: 450px;
-    border-radius: 30px;
     transition: .8s;
     backface-visibility: hidden;
-    border: 1px solid black;
     transform: translate(-50% -50%);
     /* &:focus-within{
         cursor: pointer;
         transform: rotateY(180deg);
     } */
+`
+export const BackCardInner = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
 
 `
 export const TextArea = styled.div`
@@ -57,10 +61,10 @@ export const TextArea = styled.div`
     font-weight: 300;
 `
 export const Text = styled.div`
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 `
 export const TextSpan = styled.span`
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: #8D60F5;
 `
@@ -68,15 +72,15 @@ export const CardTitle = styled.div`
     font-size: 36px;
     font-weight: 400;
     color: #fff;
+    margin-top: 25px;
 `
 export const ExpreienceBT = styled.button`
-    width: 70px;
-    height: 35px;
+    padding: 7px 9px;
     color : #fff;
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 4px;
-    margin : 12px auto;
+    margin : 20px auto;
     font-weight: 300;
     &:hover{
         cursor: pointer;

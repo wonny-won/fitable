@@ -7,13 +7,13 @@ export const HeaderWrapper = styled.nav`
     justify-content: space-between;
     background-color:black ;
     align-items: center;
-    padding: 0 9%;
+    padding: 0 8% 0 13%;
     position: fixed;
     top:0;
     z-index: 10000;
 `
 export const MenuWrapper = styled.ul`
-    width: 400px;
+    width: 450px;
     display: flex;
     margin : 0 auto;
     justify-content: space-between;
