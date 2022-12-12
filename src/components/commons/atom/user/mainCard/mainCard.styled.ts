@@ -24,14 +24,16 @@ export const FrontProgramCard = styled.div`
     position: absolute;
     transform: rotateY(0deg);
     backface-visibility: hidden;
+    z-index: 10;
     &:focus-within{
         cursor: pointer;
         transform: rotateY(180deg);
     }
     box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
-export const BackProgramCard = styled.div`
+export const BackProgramCardWrap = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
@@ -40,11 +42,27 @@ export const BackProgramCard = styled.div`
     transition: .8s;
     backface-visibility: hidden;
     border: 1px solid black;
-    transform: rotateY(0deg);
-    &:focus-within{
+    transform: translate(-50% -50%);
+    /* &:focus-within{
         cursor: pointer;
         transform: rotateY(180deg);
-    }
+    } */
+
+`
+export const TextArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+`
+export const Text = styled.div`
+    padding-bottom: 5px;
+`
+export const TextSpan = styled.span`
+    font-size: 18px;
+    font-weight: 400;
+    color: #8D60F5;
 `
 export const CardTitle = styled.div`
     font-size: 36px;
@@ -60,4 +78,7 @@ export const ExpreienceBT = styled.button`
     border-radius: 4px;
     margin : 12px auto;
     font-weight: 300;
+    &:hover{
+        cursor: pointer;
+    }
 `

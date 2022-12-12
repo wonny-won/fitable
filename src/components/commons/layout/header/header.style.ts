@@ -9,7 +9,8 @@ export const HeaderWrapper = styled.nav`
     align-items: center;
     padding: 0 9%;
     position: fixed;
-    top:0
+    top:0;
+    z-index: 10000;
 `
 export const MenuWrapper = styled.ul`
     width: 400px;
