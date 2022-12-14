@@ -1,7 +1,16 @@
-export default function ProgramDetailModalUI(){
+import { ModalDetailPresenter } from "./modalDetail.types"
+
+export default function ProgramDetailModalUI(props:ModalDetailPresenter){
+    console.log(props.program)
     return(
         <>
-        아아아ㅏ아앙ㅇ녕
+        {
+            props.program === "/dietprogram.svg" ? (
+                <div>다이어트 프로그램</div>
+            ) : (
+                <div>힐링 프로그램</div>
+            )
+        }
         </>
     )
 }

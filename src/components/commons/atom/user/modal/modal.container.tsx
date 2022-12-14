@@ -2,7 +2,6 @@ import UseModalUI from './modal.presenter';
 import { Modalcontainer } from './modal.types';
 
 export default function UseModal(props: Modalcontainer){
-
   const handleOk = () => {
     props.setIsModalOpen(false);
   };
@@ -13,6 +12,7 @@ export default function UseModal(props: Modalcontainer){
 
   return <UseModalUI isModalOpen={props.isModalOpen}
                      handleOk={handleOk}
-                     handleCancel={handleCancel}/>
+                     handleCancel={handleCancel}
+                     program={props.program} />
 };
 

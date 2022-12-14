@@ -10,7 +10,7 @@ export default function UseModalUI(props:ModalPresenter){
              onOk={props.handleOk} 
              onCancel={props.handleCancel}
              width={1000}>
-        <ProgramDetailModal />
+        <ProgramDetailModal program={props.program}/>
       </S.ModalBody>
     </>
   );

@@ -37,7 +37,7 @@ export default function MainCardUI(props:MainCardProps){
                                 <S.Text>주단위로 <S.TextSpan>맞춤형 운동루틴 </S.TextSpan>과 <S.TextSpan>식단 </S.TextSpan>을 병행합니다.</S.Text>
                             </S.TextArea>
                             <S.ExpreienceBT onClick={props.showModal}>자세히 보기</S.ExpreienceBT>
-                            <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
+                            <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} program={props.image}/>
                         </S.BackCardInner>
                     </S.BackProgramCardWrap>
                 </S.CardWrap>
