@@ -1,6 +1,8 @@
 import * as S from './mainCard.styled'
 import { MainCardProps } from './mainCard.types'
 import Head from 'next/head'
+import UseModal from "../modal/modal.container"
+
 
 declare const window: typeof globalThis & {
     IMP: any;
@@ -34,7 +36,8 @@ export default function MainCardUI(props:MainCardProps){
                                 <S.Text>현재 몸상태를 진단후</S.Text>
                                 <S.Text>주단위로 <S.TextSpan>맞춤형 운동루틴 </S.TextSpan>과 <S.TextSpan>식단 </S.TextSpan>을 병행합니다.</S.Text>
                             </S.TextArea>
-                            <S.ExpreienceBT onClick={props.onClickPayment}>체험하기</S.ExpreienceBT>
+                            <S.ExpreienceBT onClick={props.showModal}>자세히 보기</S.ExpreienceBT>
+                            <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
                         </S.BackCardInner>
                     </S.BackProgramCardWrap>
                 </S.CardWrap>

@@ -3,6 +3,8 @@ import { globalStyles } from '../src/commons/styles/global.style'
 import { Global } from '@emotion/react'
 import { AppProps } from "next/app";
 import React from 'react';
+import 'antd/dist/reset.css';
+
 
 
 export default function App({ Component, pageProps }:AppProps) {
