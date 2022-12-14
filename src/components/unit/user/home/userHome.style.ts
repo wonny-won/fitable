@@ -11,7 +11,7 @@ export const TextWrap = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin : 80px 0; 
+    margin : 130px 0; 
     font-size: 19px;
     font-weight: 300;
 `
