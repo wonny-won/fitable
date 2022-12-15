@@ -9,4 +9,7 @@ export const ModalBody = styled(Modal)`
     .ant-modal-title{
         display: none;
     }
+    .ant-modal-footer{
+        display: none;
+    }
 `

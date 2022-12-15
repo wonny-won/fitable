@@ -7,7 +7,6 @@ export default function UseModalUI(props:ModalPresenter){
     <>
       <S.ModalBody title="Basic Modal" 
              open={props.isModalOpen}  
-             onOk={props.handleOk} 
              onCancel={props.handleCancel}
              width={1000}>
         <ProgramDetailModal program={props.program}/>
