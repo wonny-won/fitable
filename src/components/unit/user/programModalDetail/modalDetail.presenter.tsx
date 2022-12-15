@@ -19,6 +19,7 @@ export default function ProgramDetailModalUI(props:ModalDetailPresenter){
                             <div> <S.Span>다섯째</S.Span>, 한주의 끝은 항상 <S.Span>프로그램의 효과 분석 및 개선 방향상담</S.Span> </div>
                         </S.PromiseContainer>
                     </S.Container>
+                    <button>지금 신청하러 가기</button>
                 </div>
             ) : (
                 <div>
@@ -34,6 +35,7 @@ export default function ProgramDetailModalUI(props:ModalDetailPresenter){
                             <div> <S.Span>다섯째</S.Span>, 한주의 끝은 항상 <S.Span>프로그램의 효과 분석 및 개선 방향상담</S.Span> </div>
                         </S.PromiseContainer>
                     </S.Container>
+                    <button>지금 신청하러 가기</button>
                 </div>
             )
         }
