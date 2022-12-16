@@ -6,6 +6,7 @@ import 'antd/dist/reset.css';
 // 파이어베이스
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -18,6 +19,7 @@ const firebaseConfig = {
 };
 
 export const FirebaseApp = initializeApp(firebaseConfig);
+export const DB = getFirestore(FirebaseApp)
 // export const analytics = getAnalytics(app);
 
 
