@@ -50,3 +50,9 @@ export const Span = styled.span`
     font-size: 17px;
     font-weight: 400;
 `
+export const Button = styled.button`
+    padding: 5px 7px;
+    background-color: rgba(141,96,245,0.8);
+    border: 1px solid #8D60F5;
+    border-radius: 4px;
+`
