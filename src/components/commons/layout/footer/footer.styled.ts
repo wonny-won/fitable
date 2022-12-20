@@ -14,10 +14,12 @@ export const RelateSite = styled.div`
     display: flex;
     justify-content: space-between;
 `
-export const H3 = styled.h3`
+export const H3 = styled.a`
     font-weight: 200;
     font-size: 15px;
     padding : 10px 0 10px 2px;
+    text-decoration: none;
+    color: #fff;
     &:hover{
         cursor: pointer;
         color : #8D60F5;
