@@ -17,13 +17,3 @@ export const MainText = styled.h2`
 export const TextSpan = styled.span`
     font-weight: 600;
 `
-export const TitleText = styled.h2`
-    display: flex;
-    font-size: 35px;
-    color : #8D60F5;
-    font-weight: 700;
-    margin: 10px 0;
-`
-export const Span = styled.span`
-    margin : 30px 20px;
-`
