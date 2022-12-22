@@ -2,6 +2,7 @@ import Head from "next/head";
 import FitableLogo from "../../../../commons/atom/user/logo/logo.presenter";
 import * as S from './new.style'
 import { NewReview } from "./new.types";
+import StarRate from "../../../../commons/atom/user/starRate/starRate";
 
 export default function NewReviewUI(props:NewReview){
     return(
@@ -19,15 +20,31 @@ export default function NewReviewUI(props:NewReview){
         <S.Line/>
         <S.ContentsWrap>
             <form onSubmit={props.handleSubmit(props.onClickBtSubmit)}>
+                    <S.ExplainWrap>
+                        <S.H1>프로그램 선택</S.H1>
+                        <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
+                    </S.ExplainWrap>
+                    <S.WrapSection>
+                        <S.Div> <input type="radio" id="Diet program" /> Diet program </S.Div>
+                        <S.Div> <input type="radio" id="Healing program" /> Healing program </S.Div>
+                        <div> <input type="radio" id="Diet program & Healing program" /> Diet program & Healing program </div>
+                    </S.WrapSection>
                 <S.ExplainWrap>
-                    <S.H1>프로그램 선택</S.H1>
-                    <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
+                    <S.H1>프로그램 만족도</S.H1>
+                    <S.H2>진행 하신 프로그램 , 얼마나 만족하셨나요?</S.H2> 
                 </S.ExplainWrap>
-                <S.PickYourProgram>
-                    <div> <input type="radio" id="Diet program"  {...props.register("program")}/> Diet program </div>
-                    <div> <input type="radio" id="Healing program"  {...props.register("program")}/> Healing program </div>
-                    <div> <input type="radio" id="Diet program & Healing program" {...props.register("program")}/> Diet program & Healing program </div>
-                </S.PickYourProgram>
+                <S.WrapSection>
+                    <StarRate />
+                </S.WrapSection>
+                <S.ExplainWrap>
+                    <S.H1>프로그램 생생후기</S.H1>
+                    <S.H2>들려주세요. 당신의 생생한 후기를.</S.H2> 
+                </S.ExplainWrap>
+                <S.WrapSection>
+                    
+                </S.WrapSection>
+
+
                 <button>등록하기</button>
             </form>
         </S.ContentsWrap>

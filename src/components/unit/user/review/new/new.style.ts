@@ -28,11 +28,12 @@ export const Line = styled.hr`
     color: #fff;
     border: none;
     background-color: #fff;
-    margin: 0 auto 70px auto;
+    margin: 0 auto 0 auto;
 `
 export const ExplainWrap = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 70px;
 `
 export const H1 = styled.h1`
     font-size: 18px;
@@ -45,11 +46,14 @@ export const H2 = styled.h2`
     font-weight: 300;
     color: #fff;
 `
-export const PickYourProgram = styled.section`
+export const WrapSection = styled.section`
     display: flex;
     flex-direction: column;
     color : #fff;
     font-weight: 300;
-    height: 85px;
     justify-content: space-between;
+    padding-left: 18px;
 ` 
+export const Div = styled.div`
+    padding-bottom: 10px;
+`
