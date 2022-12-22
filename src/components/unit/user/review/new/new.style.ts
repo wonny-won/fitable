@@ -7,7 +7,7 @@ export const TitleWrap = styled.div`
     color: #fff;
     font-size: 20px;
     font-weight: 300;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 `
 export const TextSpan = styled.span`
     font-weight: 400;
@@ -17,3 +17,39 @@ export const Span = styled.span`
     padding-top: 5px ;
     font-size: 13px;
 `
+export const ContentsWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+export const Line = styled.hr`
+    width: 23%;
+    height: 0.5px;
+    color: #fff;
+    border: none;
+    background-color: #fff;
+    margin: 0 auto 70px auto;
+`
+export const ExplainWrap = styled.div`
+    display: flex;
+    align-items: center;
+`
+export const H1 = styled.h1`
+    font-size: 18px;
+    font-weight: 400;
+    color: #8D60F5;
+    margin-right: 13px;
+`
+export const H2 = styled.h2`
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+`
+export const PickYourProgram = styled.section`
+    display: flex;
+    flex-direction: column;
+    color : #fff;
+    font-weight: 300;
+    height: 85px;
+    justify-content: space-between;
+` 

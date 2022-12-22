@@ -13,15 +13,24 @@ export default function NewReviewUI(props:NewReview){
         </Head>
         <S.TitleWrap>
             <FitableLogo />
-            <div>온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</div>
+            <div>여러분들의 온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</div>
             <S.Span>리뷰 추첨을 통해 3분께 2만원 적립금을 드립니다.</S.Span>
         </S.TitleWrap>
-        <form onSubmit={props.handleSubmit(props.onClickBtSubmit)}>
-            작성자 : <input type="text" {...props.register("writer")}/>
-            비밀번호 : <input type="password" {...props.register("password")}/>
-            내용 : <input type="text" {...props.register("contents")}/>
-            <button>등록하기</button>
-        </form>
+        <S.Line/>
+        <S.ContentsWrap>
+            <form onSubmit={props.handleSubmit(props.onClickBtSubmit)}>
+                <S.ExplainWrap>
+                    <S.H1>프로그램 선택</S.H1>
+                    <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
+                </S.ExplainWrap>
+                <S.PickYourProgram>
+                    <div> <input type="radio" id="Diet program"  {...props.register("program")}/> Diet program </div>
+                    <div> <input type="radio" id="Healing program"  {...props.register("program")}/> Healing program </div>
+                    <div> <input type="radio" id="Diet program & Healing program" {...props.register("program")}/> Diet program & Healing program </div>
+                </S.PickYourProgram>
+                <button>등록하기</button>
+            </form>
+        </S.ContentsWrap>
         </>
     )
 }
