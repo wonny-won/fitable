@@ -14,7 +14,7 @@ export const TextSpan = styled.span`
     font-size: 23px;
 `
 export const Span = styled.span`
-    padding-top: 5px ;
+    padding-top: 8 px ;
     font-size: 13px;
 `
 export const ContentsWrap = styled.div`
@@ -56,4 +56,7 @@ export const WrapSection = styled.section`
 ` 
 export const Div = styled.div`
     padding-bottom: 10px;
+`
+export const MiniSpan = styled.span`
+    font-weight: 400;
 `

@@ -14,8 +14,8 @@ export default function NewReviewUI(props:NewReview){
         </Head>
         <S.TitleWrap>
             <FitableLogo />
-            <div>여러분들의 온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</div>
-            <S.Span>리뷰 추첨을 통해 3분께 2만원 적립금을 드립니다.</S.Span>
+            <div>온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</div>
+            <S.Span>리뷰 추첨을 통해 3분께 <S.MiniSpan>2만원 적립금</S.MiniSpan> 을 드립니다.</S.Span>
         </S.TitleWrap>
         <S.Line/>
         <S.ContentsWrap>
