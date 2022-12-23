@@ -41,7 +41,8 @@ export default function NewReviewUI(props:NewReview){
                     <S.H2>들려주세요. 당신의 생생한 후기를.</S.H2> 
                 </S.ExplainWrap>
                 <S.WrapSection>
-                    
+                    <h3>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</h3>
+                    <div>+</div>
                 </S.WrapSection>
 
 
