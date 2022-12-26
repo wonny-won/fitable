@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 export default function NewReview(){
     const { register,handleSubmit } = useForm()
     const [program,setProgram] = useState("")
+    const [imageUrl, setImageUrl] =useState("")
     // const router = useRouter()
     const onClickBtSubmit = async (data:any)=>{
         try{
@@ -23,5 +24,6 @@ export default function NewReview(){
     return <NewReviewUI register={register}
                         handleSubmit={handleSubmit}
                         onClickBtSubmit={onClickBtSubmit}
-                        onClickGetProgramValue={onClickGetProgramValue}/>
+                        onClickGetProgramValue={onClickGetProgramValue}
+                        setImageUrl={setImageUrl}/>
 }
