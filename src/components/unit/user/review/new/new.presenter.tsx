@@ -43,6 +43,8 @@ export default function NewReviewUI(props:NewReview){
                 <S.WrapSection>
                     <h3>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</h3>
                     <div>+</div>
+                    <S.FileTag htmlFor="fileTag" >+</S.FileTag>
+                    <input type="file" id="fileTag" hidden={true}/>
                 </S.WrapSection>
 
 

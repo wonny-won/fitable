@@ -60,3 +60,12 @@ export const Div = styled.div`
 export const MiniSpan = styled.span`
     font-weight: 400;
 `
+export const FileTag = styled.label`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 70px;
+    height: 70px;
+    border: 1px dotted #E9D7C1;
+    border-radius: 4px;
+`
