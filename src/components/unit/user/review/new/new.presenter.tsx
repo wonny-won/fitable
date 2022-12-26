@@ -3,6 +3,7 @@ import FitableLogo from "../../../../commons/atom/user/logo/logo.presenter";
 import * as S from './new.style'
 import { NewReview } from "./new.types";
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
+import Button from "../../../../commons/atom/user/button/button";
 
 export default function NewReviewUI(props:NewReview){
     return(
@@ -25,9 +26,9 @@ export default function NewReviewUI(props:NewReview){
                         <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
                     </S.ExplainWrap>
                     <S.WrapSection>
-                        <S.Div> <input type="radio" id="Diet program" /> Diet program </S.Div>
-                        <S.Div> <input type="radio" id="Healing program" /> Healing program </S.Div>
-                        <div> <input type="radio" id="Diet program & Healing program" /> Diet program & Healing program </div>
+                        <S.Div> <input type="radio" id="Diet program" onChange={props.onClickGetProgramValue} name="program"/> Diet program </S.Div>
+                        <S.Div> <input type="radio" id="Healing program" onChange={props.onClickGetProgramValue} name="program"/> Healing program </S.Div>
+                        <div> <input type="radio" id="Diet program & Healing program" onChange={props.onClickGetProgramValue} name="program"/> Diet program & Healing program </div>
                     </S.WrapSection>
                 <S.ExplainWrap>
                     <S.H1>프로그램 만족도</S.H1>
@@ -37,18 +38,31 @@ export default function NewReviewUI(props:NewReview){
                     <StarRate />
                 </S.WrapSection>
                 <S.ExplainWrap>
+                    <S.H1>프로그램 한줄평</S.H1>
+                    <S.H2>프로그램을 한 문장으로 설명한다면?</S.H2> 
+                </S.ExplainWrap>
+                <S.WrapSection>
+                    <S.OneSentanceExplainInput type="text" {...props.register("OneSentenceExplain")}/>
+                </S.WrapSection>
+                <S.ExplainWrap>
                     <S.H1>프로그램 생생후기</S.H1>
                     <S.H2>들려주세요. 당신의 생생한 후기를.</S.H2> 
                 </S.ExplainWrap>
                 <S.WrapSection>
-                    <h3>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</h3>
-                    <div>+</div>
-                    <S.FileTag htmlFor="fileTag" >+</S.FileTag>
-                    <input type="file" id="fileTag" hidden={true}/>
+                    <h3 style={{display:"none"}}>사진 업로드</h3>
+                        <S.ImageText>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</S.ImageText>
+                        <S.ImageUploadWrap>
+                            <S.FileTag htmlFor="fileTag" >+</S.FileTag>
+                            <input type="file" id="fileTag" hidden={true}/>
+                        </S.ImageUploadWrap>
+                    <h3 style={{display:"none"}}>텍스트 후기 작성</h3>
+                        <S.TextArea rows={20} cols={70} {...props.register("realReview")}/>
                 </S.WrapSection>
-
-
-                <button>등록하기</button>
+                <h1 style={{display:"none"}}>후기 등록하기</h1>
+                <S.WrapSection>
+                    <Button contents={"등록하기"}
+                            color={"#8D60F5"}/>
+                </S.WrapSection>
             </form>
         </S.ContentsWrap>
         </>

@@ -7,7 +7,8 @@ export const FooterWrapper = styled.section`
     color : #fff;
     font-size: 10px;
     font-weight: 200;
-    margin: 50px auto;
+    margin: 80px auto;
+    padding: 50px;
 `
 export const RelateSite = styled.div`
     width : 240px;
