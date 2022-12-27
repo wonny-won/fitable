@@ -2,11 +2,11 @@ import Head from "next/head";
 import FitableLogo from "../../../../commons/atom/user/logo/logo.presenter";
 import * as S from './new.style'
 import { NewReview } from "./new.types";
-import StarRate from "../../../../commons/atom/user/starRate/starRate";
+import UseStarRate from "../../../../commons/atom/user/starRate/starRate";
 import Button from "../../../../commons/atom/user/button/button";
-import { useOnChangeFile } from "../../../../../commons/util/hooks/imageUpload";
 
 export default function NewReviewUI(props:NewReview){
+    const { starRateRender } = UseStarRate()
     return(
         <>
         <Head>
@@ -36,7 +36,7 @@ export default function NewReviewUI(props:NewReview){
                     <S.H2>진행 하신 프로그램 , 얼마나 만족하셨나요?</S.H2> 
                 </S.ExplainWrap>
                 <S.WrapSection>
-                    <StarRate />
+                    {starRateRender}
                 </S.WrapSection>
                 <S.ExplainWrap>
                     <S.H1>프로그램 한줄평</S.H1>
@@ -54,7 +54,7 @@ export default function NewReviewUI(props:NewReview){
                         <S.ImageText>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</S.ImageText>
                         <S.ImageUploadWrap>
                             <S.FileTag htmlFor="fileTag" >+</S.FileTag>
-                            <input type="file" id="fileTag" hidden={true}  onChange={useOnChangeFile}/>
+                            <input type="file" id="fileTag" hidden={true}  onChange={props.onChangeFile}/>
                         </S.ImageUploadWrap>
                     <h3 style={{display:"none"}}>텍스트 후기 작성</h3>
                         <S.TextArea rows={20} cols={70} {...props.register("realReview")}/>

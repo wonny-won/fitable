@@ -7,6 +7,7 @@ import 'antd/dist/reset.css';
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -20,6 +21,7 @@ const firebaseConfig = {
 
 export const FirebaseApp = initializeApp(firebaseConfig);
 export const DB = getFirestore(FirebaseApp)
+export const storage = getStorage(FirebaseApp)
 // export const analytics = getAnalytics(app);
 
 
