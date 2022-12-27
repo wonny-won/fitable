@@ -1,30 +1,27 @@
 import { ChangeEvent, useState} from "react";
-import { uploadImage } from "../functions/firebaseFunctions";
+import { getStorage,ref,uploadBytes } from 'firebase/storage'
 
-export const useUploadFlie = () => {
-        const [ImageUrl,setImageUrl] = useState("")  
-        
-        const onChangeFile = (e:ChangeEvent<HTMLInputElement>)=>{
-    // 있을수도 있고 없을수도 있어서 옵셔널체이닝 붙임
+export const useUploadImage = () => {
+    const [image,setImage] = useState("")  
+    
+    //스토리지에 이미지 업로드하는 함수
+    const uploadImage = (e:ChangeEvent<HTMLInputElement>)=>{
+        // 있을수도 있고 없을수도 있어서 옵셔널체이닝 붙임
         const imgFile = e?.target?.files?.[0]
         if(!imgFile) return 
+    
+        const storage = getStorage()
+        // 파일 참조 만들기
+        const storageRef = ref(storage,`newReview/${imgFile.name}`)
+        uploadBytes(storageRef,imgFile).then((res)=>{
+            setImage(res.metadata.fullPath)
+        })
+    }
 
-        // 이미지 URL 생성(진짜 URL이다.)
-        const fileReader = new FileReader()
-        // 선택한 파일 읽어오기
-        fileReader.readAsDataURL(imgFile)
-        // 선택한 파일 읽기에 성공하면 실행
-        fileReader.onload = (data)=>{
-            //파일리더의 결과값이 string이 아닐 수 있음. 따라서 string일때만 실행되도록
-            if(typeof data.target?.result === "string"){
-                setImageUrl(data.target?.result)
-            }
-        }
-    }
     return {
-        onChangeFile,
-        ImageUrl
+        uploadImage,
+        image
     }
-}
+}    
 
     
