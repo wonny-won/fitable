@@ -15,7 +15,7 @@ export const addDocs = async ({colletionName, data} :FirebaseParams) => {
 }
 
 // 스토리지에 이미지 업로드 함수
-export const UploadImage = (ImageUrl:string)=>{
+export const uploadImage = (ImageUrl:string)=>{
     const storage = getStorage()
     ref(storage,`newReview/${ImageUrl}`)
 }

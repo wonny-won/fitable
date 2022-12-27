@@ -1,4 +1,5 @@
 import { ChangeEvent, useState} from "react";
+import { uploadImage } from "../functions/firebaseFunctions";
 
 export const useUploadFlie = () => {
         const [ImageUrl,setImageUrl] = useState("")  
