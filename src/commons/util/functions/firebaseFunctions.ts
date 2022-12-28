@@ -1,7 +1,5 @@
 import { DB } from "../../../../pages/_app";
 import { collection,addDoc } from "firebase/firestore";
-import { getStorage,ref,uploadBytes } from 'firebase/storage'
-import { ChangeEvent } from "react";
 
 interface FirebaseParams {
     colletionName: string;

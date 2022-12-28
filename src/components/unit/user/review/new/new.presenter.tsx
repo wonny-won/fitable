@@ -15,13 +15,13 @@ export default function NewReviewUI(props:NewReview){
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <S.TitleWrap>
-            <FitableLogo fontSize={"50px"} />
+            <FitableLogo fontSize={"45px"} />
             <S.TitleDiv>온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</S.TitleDiv>
             <S.Span>리뷰 추첨을 통해 3분께 <S.MiniSpan>2만원 적립금</S.MiniSpan> 을 드립니다.</S.Span>
         </S.TitleWrap>
         <S.Line/>
         <S.ContentsWrap>
-            <form onSubmit={props.handleSubmit(props.onClickBtSubmit)}>
+            <form onSubmit={props.handleSubmit(props.onClickBtSubmit)} id="resetInput">
                     <S.ExplainWrap>
                         <S.H1>프로그램 선택</S.H1>
                         <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
@@ -55,6 +55,7 @@ export default function NewReviewUI(props:NewReview){
                         <S.ImageUploadWrap>
                             <S.FileTag htmlFor="fileTag" >+</S.FileTag>
                             <input type="file" id="fileTag" hidden={true}  onChange={props.uploadImage}/>
+                            {props.image && <S.Image src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/${props.image}?alt=media`} />}
                         </S.ImageUploadWrap>
                     <h3 style={{display:"none"}}>텍스트 후기 작성</h3>
                         <S.TextArea rows={20} cols={70} {...props.register("realReview")}/>
@@ -62,7 +63,7 @@ export default function NewReviewUI(props:NewReview){
                 <h1 style={{display:"none"}}>후기 등록하기</h1>
                 <S.WrapSection>
                     <Button contents={"등록하기"}
-                            color={"#8D60F5"}/>
+                            color={"#8D60F5"} />
                 </S.WrapSection>
             </form>
         </S.ContentsWrap>

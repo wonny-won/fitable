@@ -7,4 +7,5 @@ export interface NewReview{
     onClickBtSubmit: (data: any) => void;
     onClickGetProgramValue: (e: ChangeEvent<HTMLInputElement>) => void;
     uploadImage: (e: ChangeEvent<HTMLInputElement>) => void | undefined;
+    image: string;
 }

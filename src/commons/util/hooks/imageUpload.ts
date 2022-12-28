@@ -17,6 +17,7 @@ export const useUploadImage = () => {
             setImage(res.metadata.fullPath)
         })
     }
+    console.log(image)
 
     return {
         uploadImage,

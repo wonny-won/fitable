@@ -5,19 +5,19 @@ export const TitleWrap = styled.div`
     flex-direction: column;
     align-items: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 `
 export const TitleDiv = styled.div`
     padding-top: 30px;
 `
 export const TextSpan = styled.span`
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
 `
 export const Span = styled.span`
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
 `
 export const ContentsWrap = styled.div`
@@ -39,13 +39,13 @@ export const ExplainWrap = styled.div`
     margin-top: 100px;
 `
 export const H1 = styled.h1`
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 400;
     color: #8D60F5;
     margin-right: 13px;
 `
 export const H2 = styled.h2`
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 300;
     color: #fff;
 `
@@ -53,7 +53,7 @@ export const WrapSection = styled.section`
     display: flex;
     flex-direction: column;
     color: #E9D7C1;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 300;
     justify-content: space-between;
 ` 
@@ -83,11 +83,19 @@ export const OneSentanceExplainInput = styled.input`
     font-weight: 400;
 ` 
 export const ImageText = styled.div`
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 300;
 `
 export const ImageUploadWrap = styled.div`
+    display: flex;
     padding: 25px 0;
+`
+export const Image = styled.img`
+    width: 100px;
+    height: 100px;
+    size: cover;
+    border-radius: 5px;
+    margin: 0 15px 0 30px;
 `
 export const TextArea =  styled.textarea`
     background-color: rgba(0,0,0,0.08);

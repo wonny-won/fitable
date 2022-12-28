@@ -9,7 +9,9 @@ export default function NewReview(){
     const { register,handleSubmit } = useForm()
     const [program,setProgram] = useState("")
     const { realvalue } = UseStarRate()
+    // 이미지 업로드 훅스
     const {uploadImage ,image} = useUploadImage()
+    // 리뷰 등록함수 
     const onClickBtSubmit = async (data:any)=>{
         console.log({ program,...data,realvalue,image })
         try{
@@ -27,5 +29,6 @@ export default function NewReview(){
                         handleSubmit={handleSubmit}
                         onClickBtSubmit={onClickBtSubmit}
                         onClickGetProgramValue={onClickGetProgramValue}
-                        uploadImage={uploadImage}/>
+                        uploadImage={uploadImage}
+                        image={image}/>
 }
