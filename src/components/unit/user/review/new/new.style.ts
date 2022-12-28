@@ -5,17 +5,20 @@ export const TitleWrap = styled.div`
     flex-direction: column;
     align-items: center;
     color: #fff;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
-    padding-bottom: 70px;
+    padding-bottom: 100px;
+`
+export const TitleDiv = styled.div`
+    padding-top: 30px;
 `
 export const TextSpan = styled.span`
     font-weight: 400;
-    font-size: 23px;
+    font-size: 32px;
 `
 export const Span = styled.span`
-    padding-top: 8 px ;
-    font-size: 13px;
+    font-size: 20px;
+    padding: 10px;
 `
 export const ContentsWrap = styled.div`
     display: flex;
@@ -33,16 +36,16 @@ export const Line = styled.hr`
 export const ExplainWrap = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 100px;
 `
 export const H1 = styled.h1`
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 400;
     color: #8D60F5;
     margin-right: 13px;
 `
 export const H2 = styled.h2`
-    font-size: 14px;
+    font-size: 25px;
     font-weight: 300;
     color: #fff;
 `
@@ -50,6 +53,7 @@ export const WrapSection = styled.section`
     display: flex;
     flex-direction: column;
     color: #E9D7C1;
+    font-size: 25px;
     font-weight: 300;
     justify-content: space-between;
 ` 
@@ -63,15 +67,15 @@ export const FileTag = styled.label`
     display: flex;
     justify-content: center;
     align-items: center;
-    width : 70px;
-    height: 70px;
+    width : 100px;
+    height: 100px;
     border: 1px dotted #E9D7C1;
-    border-radius: 4px;
+    border-radius: 6px;
 `
 export const OneSentanceExplainInput = styled.input`
     background-color: rgba(0,0,0,0.08);
     border: 1px solid #E9D7C1;
-    border-radius: 5px;
+    border-radius: 8px;
     color : #fff;
     outline: none;
     padding: 7px 10px;
@@ -79,25 +83,16 @@ export const OneSentanceExplainInput = styled.input`
     font-weight: 400;
 ` 
 export const ImageText = styled.div`
-    font-size: 12px;
+    font-size: 19px;
     font-weight: 300;
 `
 export const ImageUploadWrap = styled.div`
     padding: 25px 0;
 `
-export const ImageUplod = styled.div`
-    width: 70px;
-    height: 70px;
-    border: 1px dotted #E9D7C1;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
 export const TextArea =  styled.textarea`
     background-color: rgba(0,0,0,0.08);
     border: 1px solid #E9D7C1;
-    border-radius: 5px;
+    border-radius: 8px;
     color : #fff;
     outline: none;
     padding: 10px;
