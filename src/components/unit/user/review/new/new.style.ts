@@ -4,7 +4,7 @@ export const TitleWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: black;
     font-size: 25px;
     font-weight: 300;
     padding-bottom: 80px;
@@ -28,9 +28,9 @@ export const ContentsWrap = styled.div`
 export const Line = styled.hr`
     width: 23%;
     height: 0.5px;
-    color: #fff;
+    color: black;
     border: none;
-    background-color: #fff;
+    background-color: black;
     margin: 0 auto 0 auto;
 `
 export const ExplainWrap = styled.div`
@@ -47,12 +47,12 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-size: 18px;
     font-weight: 300;
-    color: #fff;
+    color: black;
 `
 export const WrapSection = styled.section`
     display: flex;
     flex-direction: column;
-    color: #E9D7C1;
+    color: black;
     font-size: 18px;
     font-weight: 300;
     justify-content: space-between;
@@ -69,14 +69,14 @@ export const FileTag = styled.label`
     align-items: center;
     width : 100px;
     height: 100px;
-    border: 1px dotted #E9D7C1;
+    border: 3px dotted #E9D7C1;
     border-radius: 6px;
 `
 export const OneSentanceExplainInput = styled.input`
-    background-color: rgba(0,0,0,0.08);
-    border: 1px solid #E9D7C1;
+    background-color: rgba(0,0,0,0.04);
+    border: 1.5px solid #E9D7C1;
     border-radius: 8px;
-    color : #fff;
+    color : black;
     outline: none;
     padding: 7px 10px;
     margin-bottom: 25px;
@@ -98,10 +98,10 @@ export const Image = styled.img`
     margin: 0 15px 0 30px;
 `
 export const TextArea =  styled.textarea`
-    background-color: rgba(0,0,0,0.08);
-    border: 1px solid #E9D7C1;
+    background-color: rgba(0,0,0,0.04);
+    border: 1.5px solid #E9D7C1;
     border-radius: 8px;
-    color : #fff;
+    color : black;
     outline: none;
     padding: 10px;
     margin-bottom: 25px;

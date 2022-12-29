@@ -1,7 +1,9 @@
 import { DB } from "../../../../pages/_app";
 import { collection,
          addDoc,
-         getDocs} from "firebase/firestore";
+         getDocs,
+         doc,
+         getDoc} from "firebase/firestore";
 
 interface FirebaseParams {
     colletionName: string;
@@ -26,4 +28,16 @@ export const getDatas = async(dcoCollection:string)=>{
         dataArr.push({id: data.id,data: data.data()})
     })
     console.log(dataArr)
+}
+
+// DB내의 특정 문서 가지고 오기 - review 디테일 페이지
+export const getData = async(dcoCollection:string)=>{
+    const docref = doc(DB,dcoCollection)
+    const getData = await getDoc(docref)
+
+    if (getData.exists()) {
+        console.log("data:", getData.data());
+      } else {
+        console.log("문서가 없다");
+      }
 }

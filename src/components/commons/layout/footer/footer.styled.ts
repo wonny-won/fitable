@@ -4,7 +4,7 @@ export const FooterWrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color : #fff;
+    color : black;
     font-size: 10px;
     font-weight: 200;
     margin: 80px auto;
@@ -20,7 +20,7 @@ export const H3 = styled.a`
     font-size: 15px;
     padding : 10px 0 10px 2px;
     text-decoration: none;
-    color: #fff;
+    color: black;
     &:hover{
         cursor: pointer;
         color : #8D60F5;

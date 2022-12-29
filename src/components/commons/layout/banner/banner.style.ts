@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const TextWrap = styled.section`
-    color : #fff;
+    color : black;
     display: flex;
     flex-direction: column;
     align-items: center;

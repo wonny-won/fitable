@@ -11,19 +11,19 @@ export const SelfTestWrapper = styled.section`
     justify-content: center;
     align-items: center;
     padding: 50px 0;
-    color : #fff;
+    color : black;
     font-size: 20px;
     font-weight: 300;
 `
 export const SelfTestBT = styled.button`
     background-color: transparent;
-    color : #fff;
+    color : black;
     padding: 10px 22px;
     margin-left: 30px;
     font-size: 20px;
     font-weight: 600;
     border-radius: 5px;
-    border: 1px solid #fff;
+    border: 1.5px solid black;
     &:hover{
         cursor: pointer;
         color : #8D60F5;

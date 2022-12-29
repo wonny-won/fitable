@@ -16,7 +16,7 @@ export const FrontProgramCard = styled.div`
     width: 400px;
     height: 450px;
     background-image: url(${(props:ImageProps) => props.image});
-    background-color: #424245;
+    background-color: #FCF9EF;
     background-size: cover;
     border-radius: 30px;
     transition: .8s;
@@ -56,7 +56,7 @@ export const BackCardInner = styled.div`
 export const TextArea = styled.div`
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: black;
     font-size: 15px;
     font-weight: 300;
 `
@@ -71,14 +71,14 @@ export const TextSpan = styled.span`
 export const CardTitle = styled.div`
     font-size: 36px;
     font-weight: 400;
-    color: #fff;
+    color: black;
     margin-top: 25px;
 `
 export const ExpreienceBT = styled.button`
     padding: 7px 9px;
-    color : #fff;
+    color : black;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid black;
     border-radius: 4px;
     margin : 20px auto;
     font-weight: 300;

@@ -3,14 +3,14 @@ import styled from '@emotion/styled'
 export const Title = styled.h1`
     font-size: 32px;
     font-weight: 600;
-    color:#fff;
+    color:black;
     text-align: center;
     margin-bottom: 30px;
 `
 export const Line = styled.hr`
     width: 70px;
     height: 0.7px;
-    background-color: #fff;
+    background-color: black;
     border: none;
     margin: 0 auto 20px auto;
 `
@@ -22,7 +22,7 @@ export const Container = styled.section`
     align-items: center;
     justify-content: space-between;
     font-size: 17px;
-    color:#fff;
+    color: black;
     font-weight: 300;
 `
 export const PromiseContainer = styled.div`

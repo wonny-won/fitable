@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.nav`
     height: 40px;
     display: flex;
     justify-content: space-between;
-    background-color:black ;
+    background-color:#1c1c1c;
     align-items: center;
     padding: 0 8% 0 13%;
     position: fixed;
