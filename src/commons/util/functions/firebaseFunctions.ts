@@ -22,12 +22,13 @@ export const addDocs = async ({colletionName, data} :FirebaseParams) => {
 export const getDatas = async(dcoCollection:string)=>{
     const getAllDatas =  await getDocs(collection(DB,dcoCollection))
    
-    const dataArr:any = []
+    const dataArr:any[] = []
     getAllDatas.forEach((data)=>{
         //받아온 데이터 사용하기 편하게 가공하기.
         dataArr.push({id: data.id,data: data.data()})
     })
     console.log(dataArr)
+    return dataArr
 }
 
 // DB내의 특정 문서 가지고 오기 - review 디테일 페이지
