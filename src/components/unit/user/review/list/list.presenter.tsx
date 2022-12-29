@@ -1,9 +1,13 @@
 import { getDatas } from "../../../../../commons/util/functions/firebaseFunctions"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Head from "next/head"
+import * as S from './list.style'
 
 export default function ReviewListUI(){
-    const dataArr = getDatas("programReview").then((res)=> res)
+    const [data,setData] =useState<any[]>([])
+   useEffect(()=>{
+    getDatas("programReview").then((res)=>{setData(res)})
+   },[])
     return(
         <>
         <Head>
@@ -12,14 +16,20 @@ export default function ReviewListUI(){
             <title> Program Review | fitable</title>
         </Head>
         <h1 style={{display:"none"}}>프로그램 리뷰</h1>
-        {/* <h2>상위랭킹 리뷰</h2>
-        <section>
-
-        </section> */}
+        <S.Container>  
+        {/* <h2>상위랭킹 리뷰</h2> */}
         <h2 style={{display:"none"}}>모든 리뷰</h2>
-        <section>  
-            <div>{}</div>
-        </section>
+        {
+            data?.map((item)=>(
+                <S.CardWrap>
+                    <div>{item.data.OneSentenceExplain}</div>
+                    <div>{item.data.program}</div>
+                    <div>{item.data.image}</div>
+                    <div>{item.data.realvalue}</div>
+                </S.CardWrap>
+            ))
+        }
+        </S.Container>
         </>
     )
 }

@@ -18,16 +18,15 @@ export const addDocs = async ({colletionName, data} :FirebaseParams) => {
     return result.id
 }
 
-// DB내의 모든 문서 가지고 오는 함수 - review list 뽑아오기 / 댓글 list 뽑아오기
+// DB내의 모든 문서 가지고 오는 함수(리턴값 프로미스 형태) - review list 뽑아오기 / 댓글 list 뽑아오기
 export const getDatas = async(dcoCollection:string)=>{
     const getAllDatas =  await getDocs(collection(DB,dcoCollection))
-   
+    //받아온 데이터 사용하기 편하게 가공하기.
     const dataArr:any[] = []
     getAllDatas.forEach((data)=>{
-        //받아온 데이터 사용하기 편하게 가공하기.
         dataArr.push({id: data.id,data: data.data()})
     })
-    console.log(dataArr)
+    console.log("여가",dataArr)
     return dataArr
 }
 
