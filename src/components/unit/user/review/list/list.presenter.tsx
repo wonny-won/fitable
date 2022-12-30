@@ -2,10 +2,10 @@ import { getDatas } from "../../../../../commons/util/functions/firebaseFunction
 import { useEffect, useState } from "react"
 import Head from "next/head"
 import * as S from './list.style'
-import UseStarRate from "../../../../commons/atom/user/starRate/starRate"
-import StarRate from "../../../../commons/atom/user/starRate/starRate"
+import { ReviewListPresenterProps } from "./list.type"
+import UseModal from "../../../../commons/atom/user/modal/modal.container"
 
-export default function ReviewListUI(){
+export default function ReviewListUI(props:ReviewListPresenterProps){
     const [data,setData] =useState<any[]>([])
    useEffect(()=>{
     getDatas("programReview").then((res)=>{setData(res)})
@@ -23,7 +23,7 @@ export default function ReviewListUI(){
         <h2 style={{display:"none"}}>모든 리뷰</h2>
         {
             data?.map((item)=>(
-                <S.CardWrap>
+                <S.CardWrap onClick={props.onClickOpenModal}>
                     {
                         item.data.image ? (<S.Image>{item.data.image}</S.Image>):(<S.NoImg src="/fitable.png" />)
                     }
@@ -43,6 +43,7 @@ export default function ReviewListUI(){
                 </S.CardWrap>
             ))
         }
+        <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
         </S.Container>
         </>
     )

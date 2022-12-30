@@ -12,4 +12,7 @@ export const ModalBody = styled(Modal)`
     .ant-modal-footer{
         display: none;
     }
+    .ant-modal-wrap{
+        background-color:rgba(20,22,26,0.8)
+    }
 `

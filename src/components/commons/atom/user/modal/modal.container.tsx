@@ -2,10 +2,6 @@ import UseModalUI from './modal.presenter';
 import { Modalcontainer } from './modal.types';
 
 export default function UseModal(props: Modalcontainer){
-  // const handleOk = () => {
-  //   props.setIsModalOpen(false);
-  // };
-
   const handleCancel = () => {
     props.setIsModalOpen(false);
   };
