@@ -2,6 +2,8 @@ import { getDatas } from "../../../../../commons/util/functions/firebaseFunction
 import { useEffect, useState } from "react"
 import Head from "next/head"
 import * as S from './list.style'
+import UseStarRate from "../../../../commons/atom/user/starRate/starRate"
+import StarRate from "../../../../commons/atom/user/starRate/starRate"
 
 export default function ReviewListUI(){
     const [data,setData] =useState<any[]>([])
@@ -22,10 +24,22 @@ export default function ReviewListUI(){
         {
             data?.map((item)=>(
                 <S.CardWrap>
-                    <div>{item.data.OneSentenceExplain}</div>
-                    <div>{item.data.program}</div>
-                    <div>{item.data.image}</div>
-                    <div>{item.data.realvalue}</div>
+                    {
+                        item.data.image ? (<S.Image>{item.data.image}</S.Image>):(<S.NoImg src="/fitable.png" />)
+                    }
+                    <S.OneSentenceExplain>{item.data.OneSentenceExplain}</S.OneSentenceExplain>
+                    <S.ProgramInfo>
+                        {
+                           item.data.program==="Healing program" ? (<S.ProgramImage src="/healingprogram.svg"/>) : (<S.ProgramImage src="/dietprogram.svg"/>) 
+                        }
+                        <S.InfoMinWrap>
+                            <div>{item.data.program}</div>
+                            <div>
+                                <S.ReviewListStar value={item.data.realvalue} disabled/>
+                                 <S.Span/>{ item.data.realvalue}
+                            </div>
+                        </S.InfoMinWrap>
+                    </S.ProgramInfo>
                 </S.CardWrap>
             ))
         }

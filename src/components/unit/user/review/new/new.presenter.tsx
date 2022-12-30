@@ -2,11 +2,10 @@ import Head from "next/head";
 import FitableLogo from "../../../../commons/atom/user/logo/logo.presenter";
 import * as S from './new.style'
 import { NewReview } from "./new.types";
-import UseStarRate from "../../../../commons/atom/user/starRate/starRate";
+import StarRate from "../../../../commons/atom/user/starRate/starRate";
 import Button from "../../../../commons/atom/user/button/button";
 
 export default function NewReviewUI(props:NewReview){
-    const { starRateRender } = UseStarRate()
     return(
         <>
         <Head>
@@ -36,7 +35,7 @@ export default function NewReviewUI(props:NewReview){
                     <S.H2>진행 하신 프로그램 , 얼마나 만족하셨나요?</S.H2> 
                 </S.ExplainWrap>
                 <S.WrapSection>
-                    {starRateRender}
+                    <StarRate />
                 </S.WrapSection>
                 <S.ExplainWrap>
                     <S.H1>프로그램 한줄평</S.H1>
