@@ -13,6 +13,6 @@ export const ModalBody = styled(Modal)`
         display: none;
     }
     .ant-modal-wrap{
-        background-color:rgba(20,22,26,0.8)
+        background-color:rgba(20,22,26,0.7)
     }
 `
