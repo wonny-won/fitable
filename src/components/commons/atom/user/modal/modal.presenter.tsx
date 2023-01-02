@@ -2,7 +2,7 @@ import { ModalPresenter } from './modal.types';
 import ProgramDetailModal from '../../../../unit/user/programModalDetail/modalDetail.container';
 import * as S from './modal.style'
 import { useRouter } from 'next/router';
-import ReviewModalDetail from '../../../../unit/user/reviewModalDetail/reviewModal.container';
+import ReviewModalDetail from '../../../../unit/user/review/detail/reviewModal.container';
 
 export default function UseModalUI(props:ModalPresenter){
   const router = useRouter()

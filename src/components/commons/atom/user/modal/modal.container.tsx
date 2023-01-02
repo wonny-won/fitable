@@ -3,7 +3,7 @@ import { Modalcontainer } from './modal.types';
 
 export default function UseModal(props: Modalcontainer){
   const handleCancel = () => {
-    props.setIsModalOpen(false);
+    props?.setIsModalOpen(false);
   };
 
   return <UseModalUI isModalOpen={props.isModalOpen}

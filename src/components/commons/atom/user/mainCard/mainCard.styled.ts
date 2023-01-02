@@ -14,10 +14,10 @@ export const FrontProgramCard = styled.div`
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 450px;
+    height: 440px;
     background-image: url(${(props:ImageProps) => props.image});
     background-color: #FCF9EF;
-    background-size: cover;
+    background-size: 475px 440px;
     border-radius: 30px;
     transition: .8s;
     position: absolute;

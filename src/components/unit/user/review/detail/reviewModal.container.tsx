@@ -1,5 +1,5 @@
 import ReviewModalDetailUI from "./reviewModal.presenter"
-import { getData } from "../../../../commons/util/functions/firebaseFunctions"
+import { getData } from "../../../../../commons/util/functions/firebaseFunctions"
 import { useEffect, useState } from "react"
 import { ReviewModalContainer } from "./reviewModal.type"
 

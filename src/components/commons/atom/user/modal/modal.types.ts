@@ -1,14 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface ModalPresenter {
-    isModalOpen: boolean ;
+    isModalOpen: boolean | undefined;
     handleCancel: () => void ;
     program?: string;
     data? : any[];
     reviewId:string | undefined;
 }
 export interface Modalcontainer {
-    isModalOpen: boolean ;
+    isModalOpen: boolean | undefined;
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;
     program?: string;
     reviewId:string | undefined;
