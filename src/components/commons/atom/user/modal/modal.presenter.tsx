@@ -2,6 +2,7 @@ import { ModalPresenter } from './modal.types';
 import ProgramDetailModal from '../../../../unit/user/programModalDetail/modalDetail.container';
 import * as S from './modal.style'
 import { useRouter } from 'next/router';
+import ReviewModalDetail from '../../../../unit/user/reviewModalDetail/reviewModal.container';
 
 export default function UseModalUI(props:ModalPresenter){
   const router = useRouter()
@@ -10,9 +11,9 @@ export default function UseModalUI(props:ModalPresenter){
       <S.ModalBody title="Basic Modal" 
              open={props.isModalOpen}  
              onCancel={props.handleCancel}
-             width={1000}>
+             width={ router.asPath==='/' ? 1000 : '100%'}>
         {
-          router.asPath==='/' ? (<ProgramDetailModal program={props.program}/>) : (<div>빈 모달!</div>)
+          router.asPath==='/' ? (<ProgramDetailModal program={props.program}/>) : (<ReviewModalDetail reviewId={props.reviewId}/>)
         }
       </S.ModalBody>
     </>

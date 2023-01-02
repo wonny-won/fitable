@@ -8,6 +8,7 @@ export default function UseModal(props: Modalcontainer){
 
   return <UseModalUI isModalOpen={props.isModalOpen}
                      handleCancel={handleCancel}
-                     program={props.program} />
+                     program={props.program}
+                     reviewId={props.reviewId}/>
 };
 

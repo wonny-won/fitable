@@ -3,7 +3,7 @@ import { Modal } from 'antd';
 
 export const ModalBody = styled(Modal)`
     .ant-modal-content{
-        background-color: rgba(95,95,95,0.8);
+        background-color: rgba(255,255,255);
         padding : 50px;
     }
     .ant-modal-title{

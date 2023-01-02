@@ -1,15 +1,9 @@
-import { getDatas } from "../../../../../commons/util/functions/firebaseFunctions"
-import { useEffect, useState } from "react"
 import Head from "next/head"
 import * as S from './list.style'
 import { ReviewListPresenterProps } from "./list.type"
 import UseModal from "../../../../commons/atom/user/modal/modal.container"
 
 export default function ReviewListUI(props:ReviewListPresenterProps){
-    const [data,setData] =useState<any[]>([])
-   useEffect(()=>{
-    getDatas("programReview").then((res)=>{setData(res)})
-   },[])
     return(
         <>
         <Head>
@@ -22,8 +16,8 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
         {/* <h2>상위랭킹 리뷰</h2> */}
         <h2 style={{display:"none"}}>모든 리뷰</h2>
         {
-            data?.map((item)=>(
-                <S.CardWrap onClick={props.onClickOpenModal}>
+            props.data?.map((item)=>(
+                <S.CardWrap onClick={props.onClickOpenModal} key={item.id} id={item.id}>
                     {
                         item.data.image ? (<S.Image>{item.data.image}</S.Image>):(<S.NoImg src="/fitable.png" />)
                     }
@@ -35,7 +29,7 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
                         <S.InfoMinWrap>
                             <div>{item.data.program}</div>
                             <div>
-                                <S.ReviewListStar value={item.data.realvalue} disabled/>
+                                <S.ReviewListStar value={item.data.realvalue} />
                                  <S.Span/>{ item.data.realvalue}
                             </div>
                         </S.InfoMinWrap>
@@ -43,7 +37,7 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
                 </S.CardWrap>
             ))
         }
-        <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
+        <UseModal reviewId={props.reviewId} isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
         </S.Container>
         </>
     )
