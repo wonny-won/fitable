@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ReviewModalContainer } from "./reviewModal.type"
 
 export default function ReviewModalDetail(props:ReviewModalContainer){
+    console.log(props.reviewId)
     const [ data,setData ] = useState({})
     useEffect(()=>{
        getData({docCollection:"programReview",docId:props.reviewId}).then((res:any)=>{

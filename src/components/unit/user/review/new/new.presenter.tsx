@@ -20,7 +20,7 @@ export default function NewReviewUI(props:NewReview){
         </S.TitleWrap>
         <S.Line/>
         <S.ContentsWrap>
-            <form onSubmit={props.handleSubmit(props.onClickBtSubmit)} id="resetInput">
+            <form onSubmit={props.isEdit ? props.handleSubmit(props.onClickUpdateBt):props.handleSubmit(props.onClickBtSubmit)} id="resetInput">
                     <S.ExplainWrap>
                         <S.H1>프로그램 선택</S.H1>
                         <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
@@ -61,7 +61,7 @@ export default function NewReviewUI(props:NewReview){
                 </S.WrapSection>
                 <h1 style={{display:"none"}}>후기 등록하기</h1>
                 <S.WrapSection>
-                    <Button contents={"등록하기"}
+                    <Button contents={props.isEdit ? "수정하기":"등록하기"}
                             color={"#8D60F5"} />
                 </S.WrapSection>
             </form>

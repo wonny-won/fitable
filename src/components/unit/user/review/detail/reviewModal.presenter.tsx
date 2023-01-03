@@ -2,7 +2,6 @@ import { ReviewModalPresenter } from "./reviewModal.type";
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
 import * as S from './reviewModal.style'
 import Icon,{LikeOutlined,DislikeOutlined} from '@ant-design/icons';
-
 export default function ReviewModalDetailUI(props:ReviewModalPresenter){
     return(
         <S.Container>

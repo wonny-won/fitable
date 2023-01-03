@@ -8,4 +8,10 @@ export interface NewReview{
     onClickGetProgramValue: (e: ChangeEvent<HTMLInputElement>) => void;
     uploadImage: (e: ChangeEvent<HTMLInputElement>) => void | undefined;
     image: string;
+    onClickUpdateBt: () => void;
+    isEdit: boolean;
+}
+
+export interface NewReviewContainer {
+    isEdit : boolean;
 }

@@ -3,7 +3,8 @@ import { collection,
          addDoc,
          getDocs,
          doc,
-         getDoc} from "firebase/firestore";
+         getDoc,
+         updateDoc } from "firebase/firestore";
 
 interface FirebaseParams {
     colletionName: string;
