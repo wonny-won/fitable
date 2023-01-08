@@ -1,11 +1,12 @@
 import NewReviewUI from "./new.presenter"
 import { useForm } from "react-hook-form";
-import { addDocs } from "../../../../../commons/util/functions/firebaseFunctions";
+import { addDocs, updateDatas } from "../../../../../commons/util/functions/firebaseFunctions";
 import { ChangeEvent, useState } from "react";
 import { useUploadImage } from "../../../../../commons/util/hooks/imageUpload";
 import { NewReviewContainer } from "./new.types";
 
 export default function NewReview(props : NewReviewContainer){
+    console.log(props)
     const { register,handleSubmit } = useForm()
     const [program,setProgram] = useState("")
     // 이 부분다시
@@ -28,8 +29,17 @@ export default function NewReview(props : NewReviewContainer){
     }
 
     // 리뷰 수정 함수
-    const onClickUpdateBt = (data)=>{
-        console.log(data)
+    const onClickUpdateBt = async (data:any)=>{
+        const updateData:any = {}
+        if (data?.OneSentenceExplain) updateData.OneSentenceExplain = data?.OneSentenceExplain
+        if (data?.realReview) updateData.realReview = data?.realReview
+        // if (data?.program) updateData.OneSentenceExplain = data?.program
+        console.log("수정",updateData)
+        try{
+            updateDatas({docCollection:"programReview",docId:"FjVHGhGz46V34wWBEb0K"},updateData)
+        }catch(error){
+            console.log(error)
+        }
     }
 
     return <NewReviewUI register={register}
@@ -39,5 +49,6 @@ export default function NewReview(props : NewReviewContainer){
                         uploadImage={uploadImage}
                         image={image}
                         onClickUpdateBt={onClickUpdateBt}
-                        isEdit={props.isEdit}/>
+                        isEdit={props.isEdit}
+                        data={props.data}/>
 }

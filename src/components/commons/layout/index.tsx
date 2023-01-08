@@ -8,7 +8,7 @@ interface LayoutProps{
 }
 export default function Layout(props:LayoutProps){
     const router = useRouter()
-    const HIDDEN_HEADER = ['/review/new']
+    const HIDDEN_HEADER = ['/review/new',`/review/${router.query.reviewId}/edit`]
     const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath)
     return(
         <>

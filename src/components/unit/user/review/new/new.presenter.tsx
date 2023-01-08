@@ -42,7 +42,8 @@ export default function NewReviewUI(props:NewReview){
                     <S.H2>프로그램을 한 문장으로 설명한다면?</S.H2> 
                 </S.ExplainWrap>
                 <S.WrapSection>
-                    <S.OneSentanceExplainInput type="text" {...props.register("OneSentenceExplain")}/>
+                    <S.OneSentanceExplainInput type="text" {...props.register("OneSentenceExplain")} 
+                        defaultValue={props.data?.OneSentenceExplain}/>
                 </S.WrapSection>
                 <S.ExplainWrap>
                     <S.H1>프로그램 생생후기</S.H1>
@@ -57,7 +58,8 @@ export default function NewReviewUI(props:NewReview){
                             {props.image && <S.Image src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/${props.image}?alt=media`} />}
                         </S.ImageUploadWrap>
                     <h3 style={{display:"none"}}>텍스트 후기 작성</h3>
-                        <S.TextArea rows={20} cols={70} {...props.register("realReview")}/>
+                        <S.TextArea rows={20} cols={70} {...props.register("realReview")}
+                            defaultValue={props.data?.realReview}/>
                 </S.WrapSection>
                 <h1 style={{display:"none"}}>후기 등록하기</h1>
                 <S.WrapSection>

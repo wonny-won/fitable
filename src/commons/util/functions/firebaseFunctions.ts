@@ -45,3 +45,9 @@ export const getData = async({docCollection,docId}:ReviewDetailParams)=>{
         console.log("문서가 없다");
       }
 }
+
+// DB내의 문서 업데이트하기.
+export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:any)=>{
+    const updateDataRef = doc(DB,docCollection,docId)
+    await updateDoc(updateDataRef,data)
+}
