@@ -10,7 +10,7 @@ export default function NewReviewUI(props:NewReview){
         <>
         <Head>
             <title>fitable | 온라인 프로그램 리뷰</title>
-            <meta name="프리미엄 온라인 관리 fitable" content="온라인 프로그램 리뷰" />
+            <meta name="description" content="자기관리도 프리미엄의 시대! 내게 핏한 관리를 받아보세요." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <S.TitleWrap>

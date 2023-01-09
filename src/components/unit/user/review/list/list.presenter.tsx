@@ -7,7 +7,7 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
     return(
         <>
         <Head>
-            <meta name="온라인PT,프리미엄 관리" content="코로나시대 관리도 집에서! 프리미엄 온라인 PT"/>
+            <meta name="description" content="코로나시대 관리도 집에서! 프리미엄 온라인 PT"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title> Program Review | fitable</title>
         </Head>
