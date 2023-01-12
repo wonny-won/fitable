@@ -8,7 +8,7 @@ export default function JoinUsUI(){
         <Head>
             <meta name="description" content="자기관리도 프리미엄의 시대! 내게 핏한 관리를 받아보세요."/>
             <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
-            <title> 회원가입 & 로그인 | fitable </title> 
+            <title> Join us | fitable </title> 
         </Head>
         <h1 style={{display:"none"}}> 회원가입 및 로그인 </h1>
         <S.Title>  J o i n <S.Span/>  U s </S.Title>
