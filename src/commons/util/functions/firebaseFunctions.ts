@@ -5,6 +5,9 @@ import { collection,
          doc,
          getDoc,
          updateDoc } from "firebase/firestore";
+import { getAuth
+         ,createUserWithEmailAndPassword
+         ,signInWithEmailAndPassword} from 'firebase/auth'
 
 interface FirebaseParams {
     colletionName: string;
@@ -14,7 +17,10 @@ interface ReviewDetailParams {
     docCollection:string;
     docId: string;
 }
-
+interface JoinUsDataParams {
+    email: string;
+    password: string;
+}
 
 // DB에 문서 추가하는 함수 - 리뷰 / 댓글
 export const addDocs = async ({colletionName, data} :FirebaseParams) => {
@@ -50,4 +56,16 @@ export const getData = async({docCollection,docId}:ReviewDetailParams)=>{
 export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:any)=>{
     const updateDataRef = doc(DB,docCollection,docId)
     await updateDoc(updateDataRef,data)
+}
+
+// 신규회원 가입 함수
+export const joinUsEmail = ({email,password}:JoinUsDataParams)=>{
+    const auth = getAuth()
+    createUserWithEmailAndPassword(auth ,email, password)
+        .then((userCredential)=>{
+            console.log("로그인 성공!",userCredential)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
 }
