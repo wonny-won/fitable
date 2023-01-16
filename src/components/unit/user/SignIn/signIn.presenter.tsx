@@ -2,7 +2,6 @@ import Head from "next/head"
 import { SignInPresenter } from "./signIn.type"
 
 export default function SignInUI(props:SignInPresenter){
-
     return(
         <>
         <Head>
@@ -11,8 +10,8 @@ export default function SignInUI(props:SignInPresenter){
             <title>회원가입 | fitable</title>
         </Head>
             <h1>회원가입 페이지</h1>
-            <input type="text" onChange={props.onChangeEmail}/>
-            <input type="text" onChange={props.onChangePassword}/>
+            <input type="text" id="email" onChange={props.onChangeInput} />
+            <input type="text" id="password" onChange={props.onChangeInput}/>
             <button onClick={props.onSubmit}> 회원가입하기 </button>
         </>
     )

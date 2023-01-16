@@ -7,19 +7,14 @@ export default function SignIn(){
         email: "",
         password: ""
     })
-    const onChangeEmail =(event:ChangeEvent<HTMLInputElement>)=>{
-        setSignInInput({...signInInput,email:event.target.value})
-        console.log(event.target.value)
-    }
-    const onChangePassword =(event:ChangeEvent<HTMLInputElement>)=>{
-        setSignInInput({...signInInput,password:event.target.value})
-        console.log(event.target.value)
+    const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
+        const signInInputKey = event.target.id
+        setSignInInput({...signInInput, [signInInputKey] :event.target.value})
     }
     const onSubmit = ()=>{
         joinUsEmail({email:signInInput.email,password:signInInput.password})
     }
-    return <SignInUI onChangeEmail={onChangeEmail}
-                     onChangePassword={onChangePassword}
+    return <SignInUI onChangeInput={onChangeInput}
                      signInInput={signInInput}
                      onSubmit={onSubmit} />
 }
