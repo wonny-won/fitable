@@ -16,8 +16,8 @@ export default function SignInUI(props:SignInPresenter){
             <S.Line/>
             <S.InputWrap>
                 <S.Input type="text" id="email"  placeholder="이메일을 입력해주세요." onChange={props.onChangeInput} />
-                <S.Input type="text" id="password"  placeholder="비밀번호를 입력해주세요." onChange={props.onChangeInput} />
-                <S.Input type="text"  placeholder="비밀번호 확인" />
+                <S.Input type="password" id="password"  placeholder="비밀번호를 입력해주세요." onChange={props.onChangeInput} />
+                <S.Input type="password"  placeholder="비밀번호 확인" />
                 <S.SubmitBt onClick={props.onSubmit}> 회원가입하기 </S.SubmitBt>
             </S.InputWrap>
         </S.Container>
