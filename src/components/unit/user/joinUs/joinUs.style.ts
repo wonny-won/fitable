@@ -95,5 +95,8 @@ export const BTForm =  styled.button`
     outline: none;
     &:hover{
         cursor:pointer ;
+        background-color: #231f20;
+        color:#fff;
+        transition: all 0.5s ease;
     }
 `
