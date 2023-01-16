@@ -63,6 +63,14 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
 
 // 신규회원 가입 함수
 export const joinUsEmail = async ({email,password}:JoinusParams)=>{
-   const { user } = await createUserWithEmailAndPassword(auth ,email, password)
-   return user
+   await createUserWithEmailAndPassword(auth ,email, password)
+            .then((userCredential)=>{
+                const user = userCredential.user;
+                console.log(user)
+                alert("회원가입을 축하드립니다.")
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+   
 }
