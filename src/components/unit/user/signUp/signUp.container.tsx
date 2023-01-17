@@ -1,10 +1,10 @@
 import SignUpUI from "./signUp.presenter"
 import { joinUsEmail } from "../../../../commons/util/functions/firebaseFunctions";
-import { getInputValue } from "../../../../commons/util/functions/signUpIn";
+import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
 
 
 export default function SignUp(){
-    const { onChangeInput,signUpInput } = getInputValue()
+    const { onChangeInput,signUpInput } = useGetInputValue()
     const onSubmit = ()=>{
         joinUsEmail(signUpInput)
     }

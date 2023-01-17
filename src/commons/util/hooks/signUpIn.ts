@@ -1,10 +1,11 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react"
 
 // 로그인/회원가입 input 값 끌어오는 함수
-export const getInputValue = ()=>{
+export const useGetInputValue = ()=>{
     const [signUpInput, setSignUpInput] = useState({
         email: "",
-        password: ""
+        password: "",
+        username: "아무개"
     })
     const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
         const signUpInputKey = event.target.id
@@ -23,6 +24,6 @@ interface Validation {
     checkpassword : string
 }
 
-export const validation = ({email,password,checkpassword}:Validation)=>{
+export const useValidation = ({email,password,checkpassword}:Validation)=>{
     return 
 }

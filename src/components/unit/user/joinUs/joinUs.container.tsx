@@ -1,11 +1,11 @@
 import JoinUsUI from "./joinUs.presenter";
-import { RoutingPageHooks } from "../../../../commons/util/hooks/routing"
-import { getInputValue } from "../../../../commons/util/functions/signUpIn";
+import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
+import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
 import { logIn } from "../../../../commons/util/functions/firebaseFunctions";
 
 export default function JoinUs(){
-    const routing = RoutingPageHooks()
-    const { onChangeInput,signUpInput } = getInputValue()
+    const routing = useRoutingPageHooks()
+    const { onChangeInput,signUpInput } = useGetInputValue()
     const onClickLogIn = ()=>{
         logIn(signUpInput)
     }
