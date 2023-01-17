@@ -1,16 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react"
 
 // 로그인/회원가입 input 값 끌어오는 함수
-interface paramsType{
-    setState : Dispatch<SetStateAction<{
-        email: string;
-        password: string;
-    }>>
-    state: {
-        email: string;
-        password: string;
-    }
-}
 export const getInputValue = ()=>{
     const [signUpInput, setSignUpInput] = useState({
         email: "",
