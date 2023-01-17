@@ -1,11 +1,10 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react"
+import { ChangeEvent,useState } from "react"
 
 // 로그인/회원가입 input 값 끌어오는 함수
 export const useGetInputValue = ()=>{
     const [signUpInput, setSignUpInput] = useState({
         email: "",
         password: "",
-        username: "아무개"
     })
     const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
         const signUpInputKey = event.target.id
