@@ -71,6 +71,19 @@ export const joinUsEmail = async ({email,password}:JoinusParams)=>{
             })
             .catch((error)=>{
                 console.log(error)
+            })  
+}
+
+// 기존 회원 로그인
+export const logIn = async({email,password}:JoinusParams)=>{
+    await signInWithEmailAndPassword(auth ,email, password)
+            .then((userCredential)=>{
+                const user = userCredential.user;
+                console.log(user)
+                alert("환영합니다.")
             })
-   
+            .catch((error)=>{
+                console.log(error)
+            })  
+
 }

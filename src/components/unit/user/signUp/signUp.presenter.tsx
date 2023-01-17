@@ -1,9 +1,9 @@
 import Head from "next/head"
-import { SignInPresenter } from "./signIn.type"
-import * as S from './signIn.style'
+import { SignUpPresenter } from "./signUp.type"
+import * as S from './signUp.style'
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 
-export default function SignInUI(props:SignInPresenter){
+export default function SignUpUI(props:SignUpPresenter){
     return(
         <S.Container>
         <Head>

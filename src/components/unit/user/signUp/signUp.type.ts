@@ -1,11 +1,7 @@
 import { User } from "firebase/auth";
 import { ChangeEvent } from "react";
 
-export interface SignInPresenter {
+export interface SignUpPresenter {
     onChangeInput: (event: ChangeEvent<HTMLInputElement>) => void;
-    signInInput: {
-        email: string;
-        password: string;
-    };
-   onSubmit: () => void
+    onSubmit: () => void
 }
