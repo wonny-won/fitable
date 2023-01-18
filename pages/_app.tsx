@@ -10,6 +10,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
+import { loggedInUser } from '../src/commons/util/functions/firebaseFunctions';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -29,6 +30,8 @@ export const auth = getAuth(FirebaseApp)
 
 
 export default function App({ Component, pageProps }:AppProps) {
+  const loginUser = loggedInUser()
+  console.log(loginUser)
   return (
     <RecoilRoot>
       <Global styles={globalStyles} />

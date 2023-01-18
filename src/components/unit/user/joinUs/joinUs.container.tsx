@@ -12,9 +12,12 @@ export default function JoinUs(){
     const onClickLogIn = async ()=>{
         const result = await logIn(signUpInput)
         const accessToken = result?.user?.accessToken
-        setToken(accessToken)
+        if(accessToken !== null||undefined||''){
+            setToken(accessToken)
+            localStorage.setItem("accessToken",accessToken)
+        }
+        routing('/')()
     }
-
     return <JoinUsUI router={routing} 
                      onClickLogIn={onClickLogIn}
                      onChangeInput={onChangeInput}/>

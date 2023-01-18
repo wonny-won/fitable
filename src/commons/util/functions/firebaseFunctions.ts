@@ -9,7 +9,8 @@ import { createUserWithEmailAndPassword
          ,signInWithEmailAndPassword} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { useRecoilState } from "recoil";
+
+// ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
     colletionName: string;
@@ -75,11 +76,21 @@ export const joinUsEmail = ({email,password}:JoinusParams)=>{
 }
 
 // 기존 회원 로그인
-export const logIn = async ({email,password}:JoinusParams)=>{
+export const logIn = ({email,password}:JoinusParams)=>{
     try{
-       const loginData = await signInWithEmailAndPassword(auth ,email, password)
+       const loginData = signInWithEmailAndPassword(auth ,email, password)
+       alert("환영합니다!")
        return loginData
     }catch(error){
         console.log(error)
+    }
+}
+
+// 로그인 한 회원 프로필 가지고 오기
+export const loggedInUser = ()=>{
+    if(typeof window === undefined ){
+        const loginUser = window.localStorage.getItem("accessToken")
+        console.log(loginUser)
+        return loginUser ? true : false 
     }
 }
