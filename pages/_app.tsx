@@ -9,6 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
+import { RecoilRoot } from 'recoil';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -29,11 +30,11 @@ export const auth = getAuth(FirebaseApp)
 
 export default function App({ Component, pageProps }:AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <Global styles={globalStyles} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </RecoilRoot>
     )
 }

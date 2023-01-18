@@ -9,6 +9,7 @@ import { createUserWithEmailAndPassword
          ,signInWithEmailAndPassword} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
+import { useRecoilState } from "recoil";
 
 interface FirebaseParams {
     colletionName: string;
@@ -60,10 +61,9 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
     const updateDataRef = doc(DB,docCollection,docId)
     await updateDoc(updateDataRef,data)
 }
-
 // 신규회원 가입 함수
-export const joinUsEmail = async ({email,password}:JoinusParams)=>{
-   await createUserWithEmailAndPassword(auth ,email, password)
+export const joinUsEmail = ({email,password}:JoinusParams)=>{
+    createUserWithEmailAndPassword(auth ,email, password)
             .then((userCredential)=>{
                 const user = userCredential.user;
                 console.log(user)
@@ -75,15 +75,11 @@ export const joinUsEmail = async ({email,password}:JoinusParams)=>{
 }
 
 // 기존 회원 로그인
-export const logIn = async({email,password}:JoinusParams)=>{
-    await signInWithEmailAndPassword(auth ,email, password)
-            .then((userCredential)=>{
-                const user = userCredential.user;
-                console.log(user)
-                alert("환영합니다.")
-            })
-            .catch((error)=>{
-                console.log(error)
-            })  
-
+export const logIn = async ({email,password}:JoinusParams)=>{
+    try{
+       const loginData = await signInWithEmailAndPassword(auth ,email, password)
+       return loginData
+    }catch(error){
+        console.log(error)
+    }
 }
