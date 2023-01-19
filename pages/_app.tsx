@@ -30,8 +30,6 @@ export const auth = getAuth(FirebaseApp)
 
 
 export default function App({ Component, pageProps }:AppProps) {
-  const loginUser = loggedInUser()
-  console.log(loginUser)
   return (
     <RecoilRoot>
       <Global styles={globalStyles} />

@@ -1,11 +1,15 @@
 import JoinUsUI from "./joinUs.presenter";
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
 import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
-import { logIn } from "../../../../commons/util/functions/firebaseFunctions";
+import { loggedInUser, logIn } from "../../../../commons/util/functions/firebaseFunctions";
 import { useRecoilState } from "recoil";
 import { accessToken } from "../../../../commons/util/recoilAtom/atom";
+import { auth } from "../../../../../pages/_app";
 
 export default function JoinUs(){
+    const islogin = loggedInUser()
+    console.log(islogin)
+  
     const [token,setToken] = useRecoilState(accessToken)
     const routing = useRoutingPageHooks()
     const { onChangeInput,signUpInput } = useGetInputValue()

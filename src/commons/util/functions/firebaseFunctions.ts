@@ -6,9 +6,11 @@ import { collection,
          getDoc,
          updateDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword
-         ,signInWithEmailAndPassword} from 'firebase/auth'
+         ,signInWithEmailAndPassword,
+         signOut} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
+import { useEffect } from "react";
 
 // ----------------------------------- 타입존 ----------------------------- //
 
@@ -85,12 +87,16 @@ export const logIn = ({email,password}:JoinusParams)=>{
         console.log(error)
     }
 }
+// 기존 회원 로그아웃
+export const logOut = ()=>{
+    return signOut(auth)
+}
 
 // 로그인 한 회원 프로필 가지고 오기
 export const loggedInUser = ()=>{
     if(typeof window === undefined ){
-        const loginUser = window.localStorage.getItem("accessToken")
+        const loginUser = localStorage.getItem("accessToken")
         console.log(loginUser)
-        return loginUser ? true : false 
-    }
+        return loginUser 
+    }    
 }
