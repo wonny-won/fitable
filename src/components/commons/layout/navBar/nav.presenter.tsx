@@ -1,7 +1,10 @@
+import { MenuOutlined } from '@ant-design/icons'
+import * as S from './nav.style'
+
 export default function NavBarUI(){
     return(
-        <>
-        여기 내브바 만들거임~
-        </>
+        <S.Container>
+            <MenuOutlined/>
+        </S.Container>
     )
 }

@@ -13,10 +13,10 @@ export default function MainCardUI(props:MainCardProps){
     return(
         <>
             <Head>
-                {/* 결제 - jQuery */}
+                {/* 결제 - jQuery
                 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
                 {/* 결제 - iamport.payment.js */}
-                <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+                {/* <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> */} 
             </Head>
             <h1 style={{display: "none"}}>프로그램 카드</h1>
                 <S.CardWrap>
