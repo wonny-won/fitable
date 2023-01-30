@@ -3,7 +3,7 @@ import  { MenuOutlined,UserOutlined,SearchOutlined }  from '@ant-design/icons'
 
 
 
-export const Container:JSX.Element = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ export const Container:JSX.Element = styled.div`
     padding: 70px 0 70px 0;
     position: fixed;
     &:hover{
-        background-color: red;
+        background-color: #fff;
     }
 `
 export const HamburgerMenu =  styled(MenuOutlined)`
