@@ -15,5 +15,5 @@ export interface NewReview{
 
 export interface NewReviewContainer {
     isEdit : boolean;
-    data: any[];
+    data?: any[];
 }
