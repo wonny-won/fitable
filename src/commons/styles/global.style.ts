@@ -6,7 +6,7 @@ export const globalStyles = css`
     box-sizing: border-box;
   }
   html {
-    /* background-color: #424245; */
-    background-color: #FCF9EF;
+    background-color: #fff;
+    /* background-color: #FCF9EF; */
   }
   `

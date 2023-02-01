@@ -8,8 +8,7 @@ import { auth } from "../../../../../pages/_app";
 
 export default function JoinUs(){
     const islogin = loggedInUser()
-    console.log(islogin)
-  
+      
     const [token,setToken] = useRecoilState(accessToken)
     const routing = useRoutingPageHooks()
     const { onChangeInput,signUpInput } = useGetInputValue()

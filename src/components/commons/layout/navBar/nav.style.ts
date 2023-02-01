@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
 import  { MenuOutlined,UserOutlined,SearchOutlined }  from '@ant-design/icons'
 
-
-
+interface IsActiveProps{
+    isActive : boolean;
+}
+export const Wrapper = styled.div`
+    display: flex;
+    position: fixed;
+    z-index: 10002;
+`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -11,9 +17,10 @@ export const Container = styled.div`
     width: 100px;
     height: 100vh;
     padding: 70px 0 70px 0;
-    position: fixed;
+    background-color: ${(props:IsActiveProps)=>(props.isActive ? "#FCF9EF":"#fff")};
     &:hover{
-        background-color: #fff;
+        background-color: #FCF9EF;
+        cursor: pointer;
     }
 `
 export const HamburgerMenu =  styled(MenuOutlined)`
@@ -30,4 +37,49 @@ export const MyPageIcon = styled(UserOutlined)`
 `
 export const SearchIcon = styled(SearchOutlined)`
     font-size: 30px;
+`
+export const MenuDetailWrap = styled.div`
+    visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"};
+    width : 300px;
+    background-color: #FCF9EF;
+    transition: ${(props:IsActiveProps)=> props.isActive ? "0.7s" : "0.7s"};
+    opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
+    font-size: 20px;
+    color : #1c1c1c;
+` 
+export const MenuWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`
+export const MiniMenuWrap = styled.div`
+    padding-left: 80px;
+    font-size: 17px;
+` 
+export const Li = styled.li`
+    list-style: none;
+    margin-top: 13px;
+    font-weight: 300;
+    &:hover{
+        transition : 0.5s;
+        font-size: 22px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+`
+export const A  = styled.a`
+    text-decoration: none;
+    color: #1c1c1c;
+`
+export const MiniLi = styled.li`
+    list-style: none;
+    margin-top: 13px;
+    font-weight: 300;
+    &:hover{
+        transition : 0.5s;
+        font-size: 19px;
+        font-weight: 400;
+        cursor: pointer;
+    }
 `
