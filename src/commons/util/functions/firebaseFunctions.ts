@@ -7,10 +7,11 @@ import { collection,
          updateDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword
          ,signInWithEmailAndPassword,
-         signOut} from 'firebase/auth'
+         signOut,
+         onAuthStateChanged} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { useEffect } from "react";
+import { connectStorageEmulator } from "firebase/storage";
 
 // ----------------------------------- 타입존 ----------------------------- //
 
@@ -88,15 +89,26 @@ export const logIn = ({email,password}:JoinusParams)=>{
     }
 }
 // 기존 회원 로그아웃
-export const logOut = ()=>{
-    return signOut(auth)
+export const logOut = async ()=>{
+    try{
+        const result = signOut(auth)
+        console.log("로그 아웃이 완료되었습니다.", result)
+    } catch(error){
+        console.log("로그아웃에 실패했습니다.", error)
+    }
 }
 
-// 로그인 한 회원 프로필 가지고 오기
-export const loggedInUser = ()=>{
-    if(typeof window === undefined ){
-        const loginUser = localStorage.getItem("accessToken")
-        console.log(loginUser)
-        return loginUser 
-    }    
+// 현재 로그인한 사용자 가지고 오기
+export const  loggedInUser =async ()=>{
+    const result = await new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              if(user.uid) resolve(user.uid)
+            } else {
+                reject("로그인 하지 않은 유저입니다.")
+            }
+          });
+    })
+    return result
 }
+

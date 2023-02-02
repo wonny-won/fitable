@@ -1,4 +1,5 @@
-import { ChangeEvent,useState } from "react"
+import { ChangeEvent,useEffect,useState } from "react"
+import { loggedInUser } from "../functions/firebaseFunctions"
 
 // 로그인/회원가입 input 값 끌어오는 함수
 export const useGetInputValue = ()=>{
@@ -14,6 +15,25 @@ export const useGetInputValue = ()=>{
         onChangeInput,
         signUpInput
     }
+}
+
+// 로그인했는지 확인하는 함수
+export const useIsLogInUser = ()=>{
+    const [isLoggedInUser,setIsLoggedInUser] = useState(false)
+    useEffect(()=>{
+        const func = async()=>{
+            const result = await loggedInUser()
+            console.log("제발요",result)
+            if(result){
+                setIsLoggedInUser(true)
+            }else{
+                setIsLoggedInUser(false) 
+            }
+        }
+        func()
+        console.log(isLoggedInUser)
+    },[isLoggedInUser])
+    return isLoggedInUser
 }
 
 // 이메일, 비밀번호 검증 함수

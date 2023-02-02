@@ -1,5 +1,6 @@
 import * as S from './nav.style'
 import { NavProps } from './nav.type'
+import { logOut } from '../../../../commons/util/functions/firebaseFunctions'
 
 export default function NavBarUI(props:NavProps){
     return(
@@ -24,7 +25,7 @@ export default function NavBarUI(props:NavProps){
             </div>
             <S.MiniMenuWrap>
                 <ul>
-                    <S.MiniLi><S.A href="/joinus">LOGIN / JOIN US</S.A></S.MiniLi>
+                    <S.MiniLi><S.A href={props.isLogin ? "/joinus":""}>{props.isLogin ? "LOGOUT":"LOGIN / JOIN US" }</S.A></S.MiniLi>
                     <S.MiniLi>MY PAGE</S.MiniLi>
                 </ul>
             </S.MiniMenuWrap>

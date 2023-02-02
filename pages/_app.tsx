@@ -10,8 +10,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
-import { loggedInUser } from '../src/commons/util/functions/firebaseFunctions';
-import React from 'react';
+import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -31,10 +30,11 @@ export const auth = getAuth(FirebaseApp)
 
 
 export default function App({Component, pageProps}:AppProps) {
+  const isLogin = useIsLogInUser()
   return (
     <RecoilRoot>
       <Global styles={globalStyles} />
-      <Layout>
+      <Layout isLogin={isLogin}>
         <Component {...pageProps} />
       </Layout>
     </RecoilRoot>
