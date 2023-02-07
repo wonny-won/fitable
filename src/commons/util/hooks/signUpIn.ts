@@ -35,14 +35,3 @@ export const useIsLogInUser = ()=>{
     },[isLoggedInUser])
     return isLoggedInUser
 }
-
-// 이메일, 비밀번호 검증 함수
-interface Validation {
-    email : string;
-    password : string;
-    checkpassword : string
-}
-
-export const useValidation = ({email,password,checkpassword}:Validation)=>{
-    return 
-}
