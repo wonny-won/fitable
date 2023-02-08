@@ -7,7 +7,8 @@ export default function JoinUs(){
     const routing = useRoutingPageHooks()
     const { onChangeInput,signUpInput } = useGetInputValue()
     const onClickLogIn = async ()=>{
-        await logIn(signUpInput)
+        const result = await logIn(signUpInput)
+        console.log(result)
         routing('/')()
     }
     return <JoinUsUI router={routing} 

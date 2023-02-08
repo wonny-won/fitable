@@ -12,6 +12,7 @@ import { createUserWithEmailAndPassword
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
 import { useCheckEmail } from "../hooks/validation";
+import { useRoutingPageHooks } from "../hooks/routing";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -28,6 +29,8 @@ interface JoinusParams {
 }
 
 // ----------------------------------- 함수존 ----------------------------- //
+// 페이지 라우팅 함수
+const routing = useRoutingPageHooks()
 
 // DB에 문서 추가하는 함수 - 리뷰 / 댓글
 export const addDocs = async ({colletionName, data} :FirebaseParams) => {
@@ -80,10 +83,12 @@ export const joinUsEmail = ({email,password}:JoinusParams)=>{
 // 기존 회원 로그인
 export const logIn = ({email,password}:JoinusParams)=>{
     try{
-       useCheckEmail(email)
-       const loginData = signInWithEmailAndPassword(auth ,email, password)
-            .then(()=>( alert("환영합니다!") ))
-       return loginData
+        useCheckEmail(email)
+        signInWithEmailAndPassword(auth ,email, password)
+          .then(()=>(
+            alert("환영합니다!") 
+
+          ))
     }catch(error){
         console.log(error)
     }
