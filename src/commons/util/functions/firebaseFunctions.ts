@@ -11,8 +11,7 @@ import { createUserWithEmailAndPassword
          onAuthStateChanged} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { connectStorageEmulator } from "firebase/storage";
-
+import { useCheckEmail } from "../hooks/validation";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -81,8 +80,9 @@ export const joinUsEmail = ({email,password}:JoinusParams)=>{
 // 기존 회원 로그인
 export const logIn = ({email,password}:JoinusParams)=>{
     try{
+       useCheckEmail(email)
        const loginData = signInWithEmailAndPassword(auth ,email, password)
-       alert("환영합니다!")
+            .then(()=>( alert("환영합니다!") ))
        return loginData
     }catch(error){
         console.log(error)

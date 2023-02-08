@@ -4,7 +4,7 @@ import { logOut } from '../../../../commons/util/functions/firebaseFunctions'
 
 export default function NavBarUI(props:NavProps){
     return(
-        <S.Wrapper>
+        <S.Wrapper isActive={props.isActive}>
         <S.Container isActive={props.isActive}>
             <S.HamburgerMenu onClick={props.onClickMenuBt}/>
             <S.IconWrap>
