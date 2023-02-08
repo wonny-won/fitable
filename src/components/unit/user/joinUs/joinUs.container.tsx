@@ -6,9 +6,8 @@ import {  logIn } from "../../../../commons/util/functions/firebaseFunctions";
 export default function JoinUs(){ 
     const routing = useRoutingPageHooks()
     const { onChangeInput,signUpInput } = useGetInputValue()
-    const onClickLogIn = async ()=>{
-        const result = await logIn(signUpInput)
-        console.log(result)
+    const onClickLogIn = ()=>{
+        logIn(signUpInput)
         routing('/')()
     }
     return <JoinUsUI router={routing} 
