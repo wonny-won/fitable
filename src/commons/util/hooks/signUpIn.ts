@@ -23,7 +23,6 @@ export const useIsLogInUser = ()=>{
     useEffect(()=>{
         const func = async()=>{
             const result = await loggedInUser()
-            console.log("제발요",result)
             if(result){
                 setIsLoggedInUser(true)
             }else{
@@ -31,7 +30,6 @@ export const useIsLogInUser = ()=>{
             }
         }
         func()
-        console.log(isLoggedInUser)
     },[isLoggedInUser])
     return isLoggedInUser
 }

@@ -11,7 +11,7 @@ import { createUserWithEmailAndPassword
          onAuthStateChanged} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { useCheckEmail } from "../hooks/validation";
+import { checkEmail,checkPassword } from "./validation";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -28,7 +28,6 @@ interface JoinusParams {
 }
 
 // ----------------------------------- 함수존 ----------------------------- //
-
 // DB에 문서 추가하는 함수 - 리뷰 / 댓글
 export const addDocs = async ({colletionName, data} :FirebaseParams) => {
     const result = await addDoc(collection(DB,colletionName),data)
@@ -66,23 +65,26 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
 }
 // 신규회원 가입 함수
 export const joinUsEmail = ({email,password}:JoinusParams)=>{
-    useCheckEmail(email)
-    createUserWithEmailAndPassword(auth ,email, password)
-            .then((userCredential)=>{
-                const user = userCredential.user;
-                console.log(user)
-                alert("회원가입을 축하드립니다.")
-            })
-            .catch((error)=>{
-                console.log(error)
-            })  
+    const emailChek = checkEmail(email)
+    if(emailChek!==false){
+        createUserWithEmailAndPassword(auth ,email, password)
+        .then((userCredential)=>{
+            const user = userCredential.user;
+            console.log(user)
+            alert("회원가입을 축하드립니다.")
+        })
+        .catch((error)=>{
+            console.log(error)
+        })  
+
+    }
 }
 
 // 기존 회원 로그인
 export const logIn = async ({email,password}:JoinusParams)=>{
     let isLogin = false
     try{
-        useCheckEmail(email)
+        checkEmail(email)
         const result = await signInWithEmailAndPassword(auth ,email, password)
         result.operationType==="signIn" ? isLogin=true : isLogin=false
     }catch(error){
