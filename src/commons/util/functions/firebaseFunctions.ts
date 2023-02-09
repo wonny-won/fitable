@@ -12,7 +12,6 @@ import { createUserWithEmailAndPassword
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
 import { useCheckEmail } from "../hooks/validation";
-import { useRoutingPageHooks } from "../hooks/routing";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -29,8 +28,6 @@ interface JoinusParams {
 }
 
 // ----------------------------------- 함수존 ----------------------------- //
-// 페이지 라우팅 함수
-const routing = useRoutingPageHooks()
 
 // DB에 문서 추가하는 함수 - 리뷰 / 댓글
 export const addDocs = async ({colletionName, data} :FirebaseParams) => {
@@ -69,6 +66,7 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
 }
 // 신규회원 가입 함수
 export const joinUsEmail = ({email,password}:JoinusParams)=>{
+    useCheckEmail(email)
     createUserWithEmailAndPassword(auth ,email, password)
             .then((userCredential)=>{
                 const user = userCredential.user;
@@ -81,17 +79,16 @@ export const joinUsEmail = ({email,password}:JoinusParams)=>{
 }
 
 // 기존 회원 로그인
-export const logIn = ({email,password}:JoinusParams)=>{
+export const logIn = async ({email,password}:JoinusParams)=>{
+    let isLogin = false
     try{
         useCheckEmail(email)
-        signInWithEmailAndPassword(auth ,email, password)
-          .then(()=>(
-            alert("환영합니다!") 
-
-          ))
+        const result = await signInWithEmailAndPassword(auth ,email, password)
+        result.operationType==="signIn" ? isLogin=true : isLogin=false
     }catch(error){
         console.log(error)
     }
+    return isLogin
 }
 // 기존 회원 로그아웃
 export const logOut = async ()=>{
