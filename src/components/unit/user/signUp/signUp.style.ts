@@ -62,4 +62,5 @@ export const PwCondition = styled.div`
 `
 export const Length = styled.span`
     padding-right: 3px;
+    color:${()=>()}
 `

@@ -20,7 +20,7 @@ export default function SignUpUI(props:SignUpPresenter){
                 <S.ErrorMS>{props.emailError}</S.ErrorMS>
                 <S.InputTitle style={{display:"flex"}}>
                     <div>비밀번호</div> 
-                    <S.PwCondition>
+                    <S.PwCondition >
                         <span>6자이상</span><span>영문포함</span>숫자포함<span></span>
                     </S.PwCondition>
                 </S.InputTitle>
