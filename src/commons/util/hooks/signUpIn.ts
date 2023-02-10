@@ -6,6 +6,7 @@ export const useGetInputValue = ()=>{
     const [signUpInput, setSignUpInput] = useState({
         email: "",
         password: "",
+        passwordCheck:""
     })
     const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
         const signUpInputKey = event.target.id

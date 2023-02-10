@@ -25,6 +25,7 @@ interface ReviewDetailParams {
 interface JoinusParams {
     email : string;
     password : string;
+    passwordCheck:string;
 }
 
 // ----------------------------------- 함수존 ----------------------------- //
@@ -64,9 +65,10 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
     await updateDoc(updateDataRef,data)
 }
 // 신규회원 가입 함수
-export const joinUsEmail = ({email,password}:JoinusParams)=>{
+export const joinUsEmail = ({email,password,passwordCheck}:JoinusParams)=>{
     const emailChek = checkEmail(email)
-    if(emailChek!==false){
+    const passwordcheck = checkPassword(password,passwordCheck)
+    if(emailChek!==false&&passwordcheck!==false){
         createUserWithEmailAndPassword(auth ,email, password)
         .then((userCredential)=>{
             const user = userCredential.user;
@@ -77,6 +79,10 @@ export const joinUsEmail = ({email,password}:JoinusParams)=>{
             console.log(error)
         })  
 
+    }
+    return{
+        emailChek,
+        passwordcheck
     }
 }
 

@@ -15,12 +15,20 @@ export default function SignUpUI(props:SignUpPresenter){
             <S.Title>회원정보 입력</S.Title>
             <S.Line/>
             <S.InputWrap>
+                <S.InputTitle>이메일</S.InputTitle>
                 <S.Input type="text" id="email"  placeholder="이메일을 입력해주세요." onChange={props.onChangeInput} />
-                <div></div>
+                <S.ErrorMS>{props.emailError}</S.ErrorMS>
+                <S.InputTitle style={{display:"flex"}}>
+                    <div>비밀번호</div> 
+                    <S.PwCondition>
+                        <span>6자이상</span><span>영문포함</span>숫자포함<span></span>
+                    </S.PwCondition>
+                </S.InputTitle>
                 <S.Input type="password" id="password"  placeholder="비밀번호를 입력해주세요." onChange={props.onChangeInput} />
-                <div></div>
-                <S.Input type="password" id="passwordCheck" placeholder="비밀번호 확인" />
-                <div></div>
+                <S.ErrorMS/>
+                <S.InputTitle>비밀번호 확인</S.InputTitle>
+                <S.Input type="password" id="passwordCheck" placeholder="비밀번호 확인" onChange={props.onChangeInput}/>
+                <S.ErrorMS>{props.passwordError}</S.ErrorMS>
                 <S.SubmitBt onClick={props.onSubmit}> 회원가입하기 </S.SubmitBt>
             </S.InputWrap>
         </S.Container>

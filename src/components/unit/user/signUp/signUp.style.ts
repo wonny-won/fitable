@@ -25,7 +25,6 @@ export const InputWrap = styled.section`
     width: 50%;
     display: flex;
     flex-direction: column;
-
 `
 export const Input = styled.input`
     width: 100%;
@@ -33,7 +32,7 @@ export const Input = styled.input`
     border : 1.5px solid #dadada;
     padding-left: 10px;
     outline: none;
-    margin-top:10px
+    margin-top:2px;
 `
 export const SubmitBt = styled.button`
     height: 52px;
@@ -45,4 +44,22 @@ export const SubmitBt = styled.button`
     &:hover{
         cursor: pointer;
     }
+`
+export const InputTitle =styled.h2`
+    font-size: 12px;
+    font-weight: 400;
+    color : #ddd;
+    margin-bottom: 0;
+`
+export const ErrorMS =  styled.div`
+    padding: 3px 0 10px 0;
+    height: 23px;
+    font-size: 10px;
+    color: red;
+`
+export const PwCondition = styled.div`
+    padding-left:5px ;
+`
+export const Length = styled.span`
+    padding-right: 3px;
 `

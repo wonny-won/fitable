@@ -7,8 +7,8 @@ export const checkEmail = (email:string)=>{
 }
 
 // 비밀번호 검증 함수
-export const checkPassword = (password:string,checkPassword:string)=>{
-    if(password!==checkPassword){
+export const checkPassword = (password:string,passwordCheck:string)=>{
+    if(password!==passwordCheck){
         alert("비밀번호가 일치하지 않습니다.")
         return false
     } 
