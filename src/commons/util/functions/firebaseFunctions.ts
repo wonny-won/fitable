@@ -11,7 +11,7 @@ import { createUserWithEmailAndPassword
          onAuthStateChanged} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { checkEmail,checkPassword } from "./validation";
+import { checkEmail,checkPassword, passwordValidation } from "./validation";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -68,7 +68,11 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
 export const joinUsEmail = ({email,password,passwordCheck}:JoinusParams)=>{
     const emailChek = checkEmail(email)
     const passwordcheck = checkPassword(password,passwordCheck)
-    if(emailChek!==false&&passwordcheck!==false){
+    let PasswordValidation = false
+    passwordValidation(password).then((res)=>{
+        PasswordValidation = res.result
+    })
+    if(emailChek!==false&&passwordcheck!==false&&PasswordValidation!==false){
         createUserWithEmailAndPassword(auth ,email, password)
         .then((userCredential)=>{
             const user = userCredential.user;
@@ -82,7 +86,8 @@ export const joinUsEmail = ({email,password,passwordCheck}:JoinusParams)=>{
     }
     return{
         emailChek,
-        passwordcheck
+        passwordcheck,
+        PasswordValidation
     }
 }
 

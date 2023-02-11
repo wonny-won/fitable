@@ -2,11 +2,13 @@ import SignUpUI from "./signUp.presenter"
 import { joinUsEmail } from "../../../../commons/util/functions/firebaseFunctions";
 import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
 import { useState } from "react";
+import { passwordValidation } from "../../../../commons/util/functions/validation";
 
 export default function SignUp(){
     const { onChangeInput,signUpInput } = useGetInputValue()
     const [emailError,setEmailError] = useState("")
     const [passwordError,setPasswordError] = useState("")
+    const schema = passwordValidation(signUpInput.password)
     const onSubmit = ()=>{
         const result = joinUsEmail(signUpInput)
         if(result.emailChek===false)setEmailError("이메일 형식이 아닙니다.")
@@ -16,5 +18,6 @@ export default function SignUp(){
                      onSubmit={onSubmit}
                      emailError={emailError}
                      passwordError={passwordError}
-                     signUpInput={signUpInput} />
+                     signUpInput={signUpInput}
+                     schema={schema} />
 }

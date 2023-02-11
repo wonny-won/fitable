@@ -1,15 +1,27 @@
+import * as yup from 'yup'
+
 //이메일,비밀번호 검증함수
 export const checkEmail = (email:string)=>{
     if(!email.includes("@")){
-        alert("이메일 형식을 확인해주세요.")
         return false
     } 
 }
 
-// 비밀번호 검증 함수
+//비밀번호 검증함수
+export const passwordValidation = async (password:string)=>{
+    // 숫자 포함 검증
+    let schema = yup.string().matches(/(1|2|3|4|5|6|7|8|9|0)/)
+    const result = await schema.isValid(password)
+    console.log(result)
+    return {
+        result,
+        schema
+    }
+}
+
+// 비밀번호 일치검증 함수
 export const checkPassword = (password:string,passwordCheck:string)=>{
     if(password!==passwordCheck){
-        alert("비밀번호가 일치하지 않습니다.")
         return false
     } 
 }

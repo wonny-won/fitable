@@ -21,7 +21,9 @@ export default function SignUpUI(props:SignUpPresenter){
                 <S.InputTitle style={{display:"flex"}}>
                     <div>비밀번호</div> 
                     <S.PwCondition >
-                        <span>6자이상</span><span>영문포함</span>숫자포함<span></span>
+                        <S.Length signUpInput={props.signUpInput}>6자이상</S.Length>
+                        <S.IncludesNumber schema={props.schema} signUpInput={props.signUpInput}>숫자포함</S.IncludesNumber>
+                        <span>영문포함</span>
                     </S.PwCondition>
                 </S.InputTitle>
                 <S.Input type="password" id="password"  placeholder="비밀번호를 입력해주세요." onChange={props.onChangeInput} />
