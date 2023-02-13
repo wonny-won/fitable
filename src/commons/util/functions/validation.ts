@@ -7,16 +7,17 @@ export const checkEmail = (email:string)=>{
     } 
 }
 
-//비밀번호 검증함수
+//비밀번호 숫자 포함 검증함수
 export const passwordValidation = async (password:string)=>{
-    // 숫자 포함 검증
     let schema = yup.string().matches(/(1|2|3|4|5|6|7|8|9|0)/)
-    const result = await schema.isValid(password)
-    console.log(result)
-    return {
-        result,
-        schema
-    }
+    const number = await schema.isValid(password)
+    return number
+}
+//비밀번호 숫자 포함 검증함수
+export const passwordEnglishValidation = async (password:string)=>{
+    let schema = yup.string().matches(/(q|w|e|r|t|y|u|i|o|p|a|s|d|f|g|h|j|k|l|z|x|c|v|b|n|m)/)
+    const english = await schema.isValid(password)
+    return english
 }
 
 // 비밀번호 일치검증 함수

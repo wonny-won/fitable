@@ -1,19 +1,14 @@
 import styled from "@emotion/styled"
-import { AnyObject, StringSchema } from "yup";
-import * as yup from 'yup'
+
 interface SignUpInputProps{
-    signUpInput: {
+    signUpInput?: {
         email : string;
         password : string;
         passwordCheck : string;
-    };
-    schema?: Promise<{
-        result: boolean;
-        schema: StringSchema<string | undefined, AnyObject, undefined, "">;
-    }>
-
+    } |undefined;
+    numberBool?:boolean;
+    englishBool?:boolean;
 }
-const Number = "1"||"2"||"3"||"4"||"5"||"6"||"7"||"8"||"9"||"0"
 
 export const Container = styled.div`
     width: 100%;
@@ -73,25 +68,20 @@ export const ErrorMS =  styled.div`
     color: red;
 `
 export const PwCondition = styled.div`
-    padding-left:5px ;
+    padding-left:10px ;
 `
 export const Length = styled.span`
-    padding-right: 3px;
+    padding-right: 5px;
     color:${(props:SignUpInputProps)=>(props.signUpInput.password.length >= 6 ? "#8D60F5":"#ddd")};
     font-weight:${(props:SignUpInputProps)=>(props.signUpInput.password.length >= 6 ? "600":"400")};
 `
 export const IncludesNumber = styled.span`
-        padding-right: 3px;
-        color:${(props:SignUpInputProps)=>{
-            const schema = yup.string().matches(/(1|2|3|4|5|6|7|8|9|0)/)
-            const password = schema.isValid(props.signUpInput.password)
-            const result = password.then((res)=>{
-                const result = res
-                return result
-            })
-            console.log(result)
-            return  result ? "#8D60F5":"#ddd"
-        }};
-        font-weight:${(props:SignUpInputProps)=>(props.signUpInput.password.includes(Number) ? "600":"400")};
-
+    padding-right: 5px;
+    color: ${(props:SignUpInputProps)=>(props.numberBool ? "#8D60F5":"#ddd")};
+    font-weight: ${(props:SignUpInputProps)=>(props.numberBool ? "600":"400")};
+`
+export const IncludesEnglish = styled.span`
+    padding-right: 5px;
+    color: ${(props:SignUpInputProps)=>(props.englishBool ? "#8D60F5":"#ddd")};
+    font-weight: ${(props:SignUpInputProps)=>(props.englishBool ? "600":"400")}
 `

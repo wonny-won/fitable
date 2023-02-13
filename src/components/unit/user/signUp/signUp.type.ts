@@ -1,5 +1,4 @@
 import { ChangeEvent } from "react";
-import { AnyObject, StringSchema } from "yup";
 
 export interface SignUpPresenter {
     onChangeInput: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -10,10 +9,7 @@ export interface SignUpPresenter {
         email : string;
         password : string;
         passwordCheck : string;
-    };
-    schema: Promise<{
-        result: boolean;
-        schema: StringSchema<string | undefined, AnyObject, undefined, "">;
-    }>
-
+    } | undefined;
+    numberBool:boolean;
+    englishBool:boolean;
 }

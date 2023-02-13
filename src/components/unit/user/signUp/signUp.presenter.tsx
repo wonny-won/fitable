@@ -22,8 +22,8 @@ export default function SignUpUI(props:SignUpPresenter){
                     <div>비밀번호</div> 
                     <S.PwCondition >
                         <S.Length signUpInput={props.signUpInput}>6자이상</S.Length>
-                        <S.IncludesNumber schema={props.schema} signUpInput={props.signUpInput}>숫자포함</S.IncludesNumber>
-                        <span>영문포함</span>
+                        <S.IncludesNumber numberBool={props.numberBool}>숫자포함</S.IncludesNumber>
+                        <S.IncludesEnglish englishBool={props.englishBool}>영문포함</S.IncludesEnglish>
                     </S.PwCondition>
                 </S.InputTitle>
                 <S.Input type="password" id="password"  placeholder="비밀번호를 입력해주세요." onChange={props.onChangeInput} />

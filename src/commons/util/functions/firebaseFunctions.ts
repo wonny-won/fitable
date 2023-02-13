@@ -70,7 +70,7 @@ export const joinUsEmail = ({email,password,passwordCheck}:JoinusParams)=>{
     const passwordcheck = checkPassword(password,passwordCheck)
     let PasswordValidation = false
     passwordValidation(password).then((res)=>{
-        PasswordValidation = res.result
+        PasswordValidation = res
     })
     if(emailChek!==false&&passwordcheck!==false&&PasswordValidation!==false){
         createUserWithEmailAndPassword(auth ,email, password)
