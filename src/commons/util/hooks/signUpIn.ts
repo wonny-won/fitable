@@ -1,5 +1,6 @@
 import { ChangeEvent,useEffect,useState } from "react"
 import { loggedInUser } from "../functions/firebaseFunctions"
+import { passwordValidation } from "../functions/validation"
 
 // 로그인/회원가입 input 값 끌어오는 함수
 export const useGetInputValue = ()=>{
@@ -8,13 +9,19 @@ export const useGetInputValue = ()=>{
         password: "",
         passwordCheck:""
     })
+    const [passwordBool,setPasswordBool] = useState(false)
     const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
         const signUpInputKey = event.target.id
         setSignUpInput({...signUpInput, [signUpInputKey] :event.target.value})
     }
+    // const checkValidation = (event:ChangeEvent<HTMLInputElement>)=>{
+    //     const result = passwordValidation(signUpInput.password)
+    //     console.log(result)
+    // }
     return {
         onChangeInput,
-        signUpInput
+        signUpInput,
+        passwordBool
     }
 }
 

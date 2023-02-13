@@ -85,7 +85,12 @@ export const IncludesNumber = styled.span`
         color:${(props:SignUpInputProps)=>{
             const schema = yup.string().matches(/(1|2|3|4|5|6|7|8|9|0)/)
             const password = schema.isValid(props.signUpInput.password)
-            return  password.then((res)=>(res)) ? "#8D60F5":"#ddd"
+            const result = password.then((res)=>{
+                const result = res
+                return result
+            })
+            console.log(result)
+            return  result ? "#8D60F5":"#ddd"
         }};
         font-weight:${(props:SignUpInputProps)=>(props.signUpInput.password.includes(Number) ? "600":"400")};
 
