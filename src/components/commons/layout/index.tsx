@@ -9,7 +9,7 @@ import NavBar from "./navBar/nav.container";
 
 export default function Layout(props:LayoutProps){
     const router = useRouter()
-    const HIDDEN_BANNER = ['/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup']
+    const HIDDEN_BANNER = ['/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup','/about']
     const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath)
     return(
         <div style={{display:"flex"}}>
