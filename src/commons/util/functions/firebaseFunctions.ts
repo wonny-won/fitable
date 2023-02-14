@@ -11,7 +11,7 @@ import { createUserWithEmailAndPassword
          onAuthStateChanged} from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
-import { checkEmail,checkPassword, passwordValidation } from "./validation";
+import { checkEmail,checkPassword, passwordValidation,passwordEnglishValidation } from "./validation";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {
@@ -65,30 +65,24 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
     await updateDoc(updateDataRef,data)
 }
 // 신규회원 가입 함수
-export const joinUsEmail = ({email,password,passwordCheck}:JoinusParams)=>{
+export const joinUsEmail = async({email,password,passwordCheck}:JoinusParams)=>{
     const emailChek = checkEmail(email)
     const passwordcheck = checkPassword(password,passwordCheck)
-    let PasswordValidation = false
-    passwordValidation(password).then((res)=>{
-        PasswordValidation = res
-    })
-    if(emailChek!==false&&passwordcheck!==false&&PasswordValidation!==false){
-        createUserWithEmailAndPassword(auth ,email, password)
-        .then((userCredential)=>{
-            const user = userCredential.user;
-            console.log(user)
+    const includesNumber = await passwordValidation(password)
+    const IncludesEnglish = await passwordEnglishValidation(password)
+    let userUID = ""
+    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish){
+        try{
+            const createUser =  await createUserWithEmailAndPassword(auth ,email, password)
+            userUID = createUser.user.uid;
             alert("회원가입을 축하드립니다.")
-        })
-        .catch((error)=>{
+            console.log(userUID)
+            return userUID
+        } catch(error){
             console.log(error)
-        })  
-
+        }
     }
-    return{
-        emailChek,
-        passwordcheck,
-        PasswordValidation
-    }
+    return userUID
 }
 
 // 기존 회원 로그인

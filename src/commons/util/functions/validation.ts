@@ -13,10 +13,11 @@ export const passwordValidation = async (password:string)=>{
     const number = await schema.isValid(password)
     return number
 }
-//비밀번호 숫자 포함 검증함수
+//비밀번호 영문자 포함 검증함수
 export const passwordEnglishValidation = async (password:string)=>{
+    const lowercasePassword = password.toLowerCase()
     let schema = yup.string().matches(/(q|w|e|r|t|y|u|i|o|p|a|s|d|f|g|h|j|k|l|z|x|c|v|b|n|m)/)
-    const english = await schema.isValid(password)
+    const english = await schema.isValid(lowercasePassword)
     return english
 }
 
