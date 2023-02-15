@@ -21,11 +21,11 @@ export default function AboutUI(){
             <h2 style={{display:"none"}}>다이어트 프로그램</h2>
             <S.DietSection>
                <S.ProgramWrap>여기엔 설명을 넣을거고</S.ProgramWrap>
-               <S.Img src="/dietprogram.svg"/>
+               <S.Img src="/dietprogram.jpg" alt="dietprogram"/>
             </S.DietSection>
             <h2 style={{display:"none"}}>힐링 프로그램</h2>
             <S.HealingSection>
-                <S.Img src="/healingprogram.svg"/>
+                <S.Img src="/healingprogram.jpg" alt="healingprogram"/>
                 <S.ProgramWrap>여기엔 설명을 넣을거고</S.ProgramWrap>
             </S.HealingSection>
 
