@@ -15,7 +15,6 @@ export default function AboutUI(){
             <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
             {/* 결제 - iamport.payment.js */}
             <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
-
         </Head>
         <S.Container>
             <FitableLogo fontSize="40px" />
@@ -33,10 +32,25 @@ export default function AboutUI(){
             <S.DietSection>
                <S.ProgramWrap>
                     <S.Program>Diet program</S.Program>
-                    <div>
-                        고객님의 목표와 이유를 기반으로 프로그램 진행
-                    </div>
-                    <div onClick={onClickPayment}>프로그램 신청하기</div>
+                    <S.DietProgram>
+                        <div>고객님의 목표와 이유를 기반으로 프로그램을 진행합니다.</div>
+                        <S.ExplainProgramTitle>[ 프로그램 진행설명 ]</S.ExplainProgramTitle>
+                        <S.ExplainProgram>
+                        고객님의 현 몸상태를 인바디와 설문을 통해 파악 후, 목표체중에 맞는 식사와 운동루틴을 제공합니다.<br/>
+                        또한, 매일 운동/식단 인증 및 피드백 시간을 통해 프로그램의 효과를 극대화 할 수 있는 방향으로 이끌어드립니다.<br/>
+                        <S.ProgramPoint>progrm point</S.ProgramPoint>
+                        <div>
+                            1. PT 전문가 매칭<br/>
+                            2. 지루하지 않고 체계적인 루틴<br/>
+                            3. 무리한 식단 지양<br/>
+                            4. 목표달성 
+                        </div>
+                        <S.JoinProgram onClick={onClickPayment}>
+                            <span> 프로그램 신청하기</span>
+                            <S.Arrow src="/arrowLeft.png"/>
+                        </S.JoinProgram>
+                        </S.ExplainProgram>
+                    </S.DietProgram>
                </S.ProgramWrap>
                <S.Img src="/dietprogram.jpg" alt="dietprogram"/>
             </S.DietSection>
