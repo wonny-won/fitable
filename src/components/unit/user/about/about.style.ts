@@ -10,10 +10,31 @@ export const Container = styled.div`
     color: #231f20;
     font-weight: 300;
 `
+export const Logo = styled.img`
+    width : 70px;
+    height: 90px;
+    size: cover;
+    margin-bottom: 20px;
+`
 export const IntroSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 300px;
     background-color:rgba(60, 55, 55) ;
+    color : #FCF9EF;
+    padding: 45px 0;
+`
+export const IntroTitle =  styled.div`
+    font-size: 30px;
+    font-weight: 400;
+`
+export const Promise = styled.div`
+    padding-top: 10px;
+`
+export const PromiseSpan = styled.span`
+    font-weight: 500;
 `
 export const DietSection = styled.section`
     display: flex;
@@ -33,5 +54,13 @@ export const Img = styled.img`
     height: 100%;
 `
 export const ProgramWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 50%;
+`
+export const Program = styled.div`
+    font-size: 25px;
+    padding-bottom: 15px;
 `

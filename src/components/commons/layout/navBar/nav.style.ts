@@ -26,6 +26,14 @@ export const Container = styled.div`
 export const HamburgerMenu =  styled(MenuOutlined)`
     font-size: 30px;
 `
+export const LogoWrap = styled.div`
+    height: 55%;
+`
+export const LOGO = styled.img`
+    width: 40px;
+    height: 50px;
+    margin-bottom: 100%;
+`
 export const IconWrap = styled.div`
     height: 90px;
     display: flex;

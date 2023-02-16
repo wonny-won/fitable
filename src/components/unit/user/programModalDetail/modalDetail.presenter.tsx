@@ -24,7 +24,7 @@ export default function ProgramDetailModalUI(props:ModalDetailPresenter){
             ) : (
                 <div>
                     <S.Title>Healing Program</S.Title>
-                    <S.Line />
+                    <S.Line /> 
                     <S.Container>
                         <S.Text> <S.TextSpan>'fitable' </S.TextSpan>은 고객님께 <S.PromiseSpan>5가지를 약속</S.PromiseSpan>드립니다. </S.Text>
                         <S.PromiseContainer>
