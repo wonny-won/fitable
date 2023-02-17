@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width : 80%;
+    width : 85%;
     margin : 0 auto;
     padding-right: 5% ;
     color: #231f20;
@@ -39,13 +39,13 @@ export const PromiseSpan = styled.span`
 export const DietSection = styled.section`
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-color: #FCF9EF;
 `
 export const HealingSection = styled.section`
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 600px;
     background-color: #FCF9EF;
 
 `
@@ -91,7 +91,8 @@ export const JoinProgram = styled.div`
     &:hover{
         cursor: pointer;
         color : #8D60F5;
-        font-weight: 400;
+        font-weight: 600;
+        font-weight: 600;
     }
 `
 export const JoinProgramRight = styled.div`
@@ -102,7 +103,7 @@ export const JoinProgramRight = styled.div`
     &:hover{
         cursor: pointer;
         color : #8D60F5;
-        font-weight: 400;
+        font-weight: 600;
     }
 `
 export const Arrow = styled.img`
@@ -131,4 +132,7 @@ export const Closing = styled.div`
 export const Span = styled.span`
     font-size: 23px;
     font-weight: 400;
+`
+export const Span2 = styled.span`
+    color: #8D60F5;
 `

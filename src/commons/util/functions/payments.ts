@@ -3,7 +3,7 @@ declare const window: typeof globalThis & {
   };
 
 export const onClickPayment = ()=>{
-    const IMP = window.IMP; // 생략 가능
+    const IMP = window?.IMP; // 생략 가능
     console.log(window)
     IMP.init("imp49910675")
     // IMP.request_pay(param, callback) 결제창 호출
