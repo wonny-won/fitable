@@ -25,7 +25,6 @@ export const IntroSection = styled.section`
     background-color:rgba(60, 55, 55) ;
     color : #FCF9EF;
     padding: 45px 0;
-    margin-top: 30px;
 `
 export const IntroTitle =  styled.div`
     font-size: 30px;
@@ -74,7 +73,7 @@ export const DietProgram = styled.div`
     justify-content: center;
 `
 export const ExplainProgramTitle = styled.div`
-    padding:15px 0;
+    padding:25px 0;
     font-size: 18px;
 `
 export const ExplainProgram = styled.div`
@@ -87,7 +86,18 @@ export const ProgramPoint = styled.div`
 export const JoinProgram = styled.div`
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 50px;
+    transition: color 0.8s, font-weight 0.3s;
+    &:hover{
+        cursor: pointer;
+        color : #8D60F5;
+        font-weight: 400;
+    }
+`
+export const JoinProgramRight = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 0 67%;
     transition: color 0.8s, font-weight 0.3s;
     &:hover{
         cursor: pointer;
@@ -107,4 +117,18 @@ export const Arrow = styled.img`
     }
 
 `
-
+export const FooterTitle = styled.div`
+    font-size: 30px;
+    padding-bottom: 30px;
+`
+export const FooterContent = styled.div`
+    font-weight: 300;
+    padding-bottom: 10px;
+`
+export const Closing = styled.div`
+    padding-top: 30px;
+`
+export const Span = styled.span`
+    font-size: 23px;
+    font-weight: 400;
+`
