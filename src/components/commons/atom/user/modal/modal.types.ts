@@ -6,7 +6,8 @@ export interface ModalPresenter {
     program?: string;
     data? : any[];
     reviewId:string | undefined;
-    payment: () => void
+    isLoading: string;
+    onClickPayment: () => void
 }
 export interface Modalcontainer {
     isModalOpen: boolean | undefined;

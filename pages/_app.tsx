@@ -11,6 +11,7 @@ import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
 import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
+import { onClickPayment } from '../src/commons/util/functions/payments';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",

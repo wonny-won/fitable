@@ -7,6 +7,7 @@ import Head from 'next/head';
 
 export default function UseModalUI(props:ModalPresenter){
   const router = useRouter()
+  
   return (
     <>
       <Head>
@@ -23,7 +24,7 @@ export default function UseModalUI(props:ModalPresenter){
         {/* {
           router.asPath==='/' ? (<ProgramDetailModal program={props.program}/>) : (<ReviewModalDetail reviewId={props.reviewId}/>)
         } */
-        props.payment()
+        // props.isLoading==="" ? props.onClickPayment() : props.isLoading
         }
       </S.ModalBody>
     </>

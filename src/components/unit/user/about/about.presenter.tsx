@@ -2,11 +2,8 @@ import Head from "next/head"
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 import * as S from './about.style'
 import { onClickPayment } from "../../../../commons/util/functions/payments"
-import { AboutPresenter } from "./about.type"
-import UseModal from "../../../commons/atom/user/modal/modal.container"
-import usePayment from "../../../../commons/util/hooks/payment"
 
-export default function AboutUI(props:AboutPresenter){
+export default function AboutUI(){
     return(
         <>
         <Head>
@@ -14,6 +11,11 @@ export default function AboutUI(props:AboutPresenter){
             <meta charSet="UTF-8" />
             <meta name="description" content="자기관리도 프리미엄의 시대! 내게 핏한 관리를 받아보세요." />
             <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
+            {/* {/* 결제 - jQuery */}
+            <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+            {/* 결제 - iamport.payment.js */}
+            <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
+
         </Head>
         <S.Container>
             <FitableLogo fontSize="40px" />
@@ -53,7 +55,6 @@ export default function AboutUI(props:AboutPresenter){
                </S.ProgramWrap>
                <S.Img src="/dietprogram.jpg" alt="dietprogram"/>
             </S.DietSection>
-            {/* <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/> */}
 
             <h2 style={{display:"none"}}>힐링 프로그램</h2>
             <S.HealingSection>
