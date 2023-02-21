@@ -100,10 +100,11 @@ export const logIn = async ({email,password}:JoinusParams)=>{
 // 기존 회원 로그아웃
 export const logOut = async ()=>{
     try{
-        const result = signOut(auth)
-        console.log("로그 아웃이 완료되었습니다.", result)
-    } catch(error){
-        console.log("로그아웃에 실패했습니다.", error)
+        const result = await signOut(auth)
+        alert("로그아웃에 성공했습니다.")
+        console.log(result)
+    }catch(error){
+        console.log(error)
     }
 }
 

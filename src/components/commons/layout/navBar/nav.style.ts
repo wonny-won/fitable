@@ -23,6 +23,11 @@ export const Container = styled.div`
         cursor: pointer;
     }
 `
+export const HamburgerMenuWrap = styled.div`
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+`
 export const HamburgerMenu =  styled(MenuOutlined)`
     font-size: 30px;
 `

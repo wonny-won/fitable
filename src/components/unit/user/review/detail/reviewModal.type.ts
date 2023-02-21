@@ -1,7 +1,7 @@
 export interface ReviewModalContainer {
-    reviewId:string;
-    data:any;
+    reviewId:string | undefined;
+    data?:any;
 }
 export interface ReviewModalPresenter {
-    data : any;
+    data: any;
 }

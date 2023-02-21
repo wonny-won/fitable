@@ -1,12 +1,13 @@
 import * as S from './nav.style'
 import { NavProps } from './nav.type'
-import { logOut } from '../../../../commons/util/functions/firebaseFunctions'
 
 export default function NavBarUI(props:NavProps){
     return(
         <S.Wrapper isActive={props.isActive}>
-        <S.Container isActive={props.isActive}>            
-            <S.HamburgerMenu onClick={props.onClickMenuBt}/>
+        <S.Container isActive={props.isActive}>  
+            <S.HamburgerMenuWrap onClick={props.onClickMenuBt}>
+                <S.HamburgerMenu/>
+            </S.HamburgerMenuWrap>          
             <S.LogoWrap>
                 <S.LOGO src='/logo.png'/>
             </S.LogoWrap>
@@ -19,17 +20,16 @@ export default function NavBarUI(props:NavProps){
             <S.MenuWrapper>
             <div>
                 <ul>
-                    <S.Li><S.A href="/">HOME</S.A></S.Li>
-                    <S.Li><S.A href="/about">ABOUT</S.A></S.Li>
-                    <S.Li><S.A href="/review">PROGRAM REVIEW</S.A></S.Li>
-                    <S.Li>프로그램신청</S.Li>
+                    <S.A href="/"><S.Li>HOME</S.Li></S.A>
+                    <S.A href="/about"><S.Li>ABOUT</S.Li></S.A>
+                    <S.A href="/review"><S.Li>PROGRAM REVIEW</S.Li></S.A>
                     <S.Li>유형별 프로그램 추천</S.Li>
                 </ul>
             </div>
             <S.MiniMenuWrap>
                 <ul>
                     {/* logout 함수 적용 못함 */}
-                    <S.MiniLi><S.A href={props.isLogin ? "":"/joinus"}>{props.isLogin ? "LOGOUT":"LOGIN / JOIN US" }</S.A></S.MiniLi>
+                    <S.MiniLi onClick={props.isLogin ? props.signOut : props.routing('/joinus')}>{props.isLogin ? "LOGOUT":"LOGIN / JOIN US" }</S.MiniLi>
                     <S.MiniLi>MY PAGE</S.MiniLi>
                 </ul>
             </S.MiniMenuWrap>
