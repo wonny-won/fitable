@@ -53,6 +53,7 @@ export const useIsLogInUser = ()=>{
     useEffect(()=>{
         const func = async()=>{
             const result = await loggedInUser()
+            console.log(result)
             if(result){
                 setIsLoggedInUser(true)
             }else{

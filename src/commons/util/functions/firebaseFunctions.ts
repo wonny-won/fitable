@@ -5,10 +5,11 @@ import { collection,
          doc,
          getDoc,
          updateDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword
-         ,signInWithEmailAndPassword,
+import { createUserWithEmailAndPassword,
+         signInWithEmailAndPassword,
          signOut,
-         onAuthStateChanged} from 'firebase/auth'
+         onAuthStateChanged,
+         updateProfile, } from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
 import { checkEmail,checkPassword, passwordValidation,passwordEnglishValidation } from "./validation";
@@ -113,7 +114,7 @@ export const  loggedInUser =async ()=>{
     const result = await new Promise((resolve, reject) => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-              if(user.uid) resolve(user.uid)
+              if(user.uid) resolve(user.reloadUserInfo)
             } else {
                 reject("로그인 하지 않은 유저입니다.")
             }
@@ -122,3 +123,15 @@ export const  loggedInUser =async ()=>{
     return result
 }
 
+// 사용자 프로필 업데이트
+export const updateUserProfile = ()=>{
+updateProfile(auth.currentUser, {
+  isJoinProgram: false
+}).then(() => {
+  // Profile updated!
+  // ...
+}).catch((error) => {
+  // An error occurred
+  // ...
+});
+}
