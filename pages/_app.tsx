@@ -11,7 +11,7 @@ import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
 import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
-import { onClickPayment } from '../src/commons/util/functions/payments';
+import { useState } from 'react';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -31,7 +31,10 @@ export const auth = getAuth(FirebaseApp)
 
 
 export default function App({Component, pageProps}:AppProps) {
-  const isLogin = useIsLogInUser()
+  let isLogin = useIsLogInUser()
+  // console.log("app",isLogin)
+  // const [ isLogin,setIsLogin ] = useState(false)
+
   return (
     <RecoilRoot>
       <Global styles={globalStyles} />

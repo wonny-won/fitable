@@ -28,7 +28,6 @@ export default function NavBarUI(props:NavProps){
             </div>
             <S.MiniMenuWrap>
                 <ul>
-                    {/* logout 함수 적용 못함 */}
                     <S.MiniLi onClick={props.isLogin ? props.signOut : props.routing('/joinus')}>{props.isLogin ? "LOGOUT":"LOGIN / JOIN US" }</S.MiniLi>
                     <S.MiniLi>MY PAGE</S.MiniLi>
                 </ul>

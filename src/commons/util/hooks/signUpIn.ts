@@ -61,5 +61,6 @@ export const useIsLogInUser = ()=>{
         }
         func()
     },[isLoggedInUser])
+    console.log(isLoggedInUser)
     return isLoggedInUser
 }
