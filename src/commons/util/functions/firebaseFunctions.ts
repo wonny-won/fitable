@@ -123,15 +123,3 @@ export const  loggedInUser =async ()=>{
     return result
 }
 
-// 사용자 프로필 업데이트
-export const updateUserProfile = ()=>{
-updateProfile(auth.currentUser, {
-  isJoinProgram: false
-}).then(() => {
-  // Profile updated!
-  // ...
-}).catch((error) => {
-  // An error occurred
-  // ...
-});
-}

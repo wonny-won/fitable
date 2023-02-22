@@ -1,4 +1,6 @@
 import { loggedInUser } from "./firebaseFunctions";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../../../pages/_app";
 
 declare const window: typeof globalThis & {
     IMP: any;
@@ -22,9 +24,14 @@ export const onClickPayment = async()=>{
     buyer_postcode: "01181"
   }, (rsp:any) => { // callback
     if (rsp.success) {
-    
-      // 결제 성공 시 로직,
-     
+        console.log("결제에 성공하셨습니다.")
+        updateProfile(auth.currentUser, {
+          isJoinProgram: true
+        }).then(() => {
+         console.log(auth.currentUser) 
+        }).catch((error) => {
+         console.log(error)
+        });     
     } else {
      
       // 결제 실패 시 로직,

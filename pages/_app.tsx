@@ -32,8 +32,6 @@ export const auth = getAuth(FirebaseApp)
 
 export default function App({Component, pageProps}:AppProps) {
   let isLogin = useIsLogInUser()
-  // console.log("app",isLogin)
-  // const [ isLogin,setIsLogin ] = useState(false)
 
   return (
     <RecoilRoot>

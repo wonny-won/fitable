@@ -19,7 +19,6 @@ export default function NavBar(props:NavContainerProps){
             setIsLogin(props.isLogin)
         }
     },[isLogin])
-// console.log(props.isLogin)    
     return <NavBarUI isActive={isActive}
                      onClickMenuBt={onClickMenuBt}
                      isLogin={props.isLogin}
