@@ -8,8 +8,7 @@ import { collection,
 import { createUserWithEmailAndPassword,
          signInWithEmailAndPassword,
          signOut,
-         onAuthStateChanged,
-         updateProfile, } from 'firebase/auth'
+         onAuthStateChanged } from 'firebase/auth'
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
 import { checkEmail,checkPassword, passwordValidation,passwordEnglishValidation } from "./validation";

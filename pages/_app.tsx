@@ -11,7 +11,8 @@ import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
 import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
-import { useState } from 'react';
+import { QueryClient,QueryCache,QueryClientProvider, useQueryClient } from '@tanstack/react-query';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -32,13 +33,17 @@ export const auth = getAuth(FirebaseApp)
 
 export default function App({Component, pageProps}:AppProps) {
   let isLogin = useIsLogInUser()
+  const queryClient = new QueryClient({
+    queryCache: new QueryCache()
+  })
+
 
   return (
-    <RecoilRoot>
+    <QueryClientProvider client={queryClient}>
       <Global styles={globalStyles} />
       <Layout isLogin={isLogin}>
         <Component {...pageProps} />
       </Layout>
-    </RecoilRoot>
+    </QueryClientProvider>
     )
 }
