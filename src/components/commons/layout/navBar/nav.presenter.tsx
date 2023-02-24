@@ -29,7 +29,7 @@ export default function NavBarUI(props:NavProps){
             <S.MiniMenuWrap>
                 <ul>
                     <S.MiniLi onClick={props.isLogin ? props.signOut : props.routing('/joinus')}>{props.isLogin ? "LOGOUT":"LOGIN / JOIN US" }</S.MiniLi>
-                    <S.MiniLi>MY PAGE</S.MiniLi>
+                    <S.A href="/mypage"><S.MiniLi>MY PAGE</S.MiniLi></S.A>
                 </ul>
             </S.MiniMenuWrap>
             </S.MenuWrapper>

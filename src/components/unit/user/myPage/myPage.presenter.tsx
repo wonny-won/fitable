@@ -18,7 +18,7 @@ export default function MyUI(props:UserInfoData){
             <div>프로필 사진</div> 
             <div>이 름</div>
             <h3>전 화</h3>
-            <h3>이메일 <span>{props.getUserInfo.data.email}</span></h3>
+            {/* <h3>이메일 <span>{props.getUserInfo.data.email}</span></h3> */}
         </section>
         </S.Container>
     )
