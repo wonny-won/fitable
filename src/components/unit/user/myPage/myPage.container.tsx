@@ -8,6 +8,6 @@ export default function My(){
         queryKey: ['userInfo'],
         queryFn: loggedInUser
     })
-    console.log(getUserInfo.data)
-    return <MyUI getUserInfo={getUserInfo}/>
+    console.log(getUserInfo.data?.email)
+    return <MyUI getUserInfo={getUserInfo.data}/>
 }

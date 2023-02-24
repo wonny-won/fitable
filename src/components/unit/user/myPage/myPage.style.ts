@@ -5,3 +5,66 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+export const UserInfoSection = styled.section`
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 50px 60px;
+    border: 2px solid #e9e9e9;
+`
+export const UserInfoWrap = styled.div`
+    display: flex;
+`
+export const ProfilePhoto = styled.div`
+    width : 200px;
+    height: 230px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const Img = styled.img`
+    width : 195px;
+    height: 225px;
+    size: cover;
+`
+export const UserData = styled.div`
+    padding: 0 40px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`
+export const MiniNameWrap = styled.div`
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: 15px;
+`
+export const EditBT = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border: 1px solid black;
+    margin-left: 10px;
+    &:hover {
+        background-color: black;
+        cursor: pointer;
+        color : #fff;
+        transition: all 0.5s ease;
+    }
+`
+export const UserPaymentInfoWrap = styled.div`
+    border-left: 6px dotted #ddd;
+    padding: 0 40px ;
+`
+export const H3 = styled.h3`
+    margin-bottom: 0;
+    font-weight: 400;
+    color : #1c1c1c;
+`
+export const Span = styled.span `
+    font-weight: 300;
+    margin-left: 20px;
+    color: #8d8d8d;
+    font-size: 18px;
+
+`
