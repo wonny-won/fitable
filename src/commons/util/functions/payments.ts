@@ -24,9 +24,9 @@ export const onClickPayment = async()=>{
     buyer_postcode: "01181"
   }, (rsp:any) => { // callback
     if (rsp.success) {
-        console.log("결제에 성공하셨습니다.")
+        console.log("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
         updateProfile(auth.currentUser, {
-          isJoinProgram: true
+          displayName: "결제자"
         }).then(() => {
          console.log(auth.currentUser) 
         }).catch((error) => {

@@ -1,3 +1,3 @@
 export interface UserInfoData {
-    getUserInfo: unknown; 
+    getUserInfo: unknown | any; 
 }

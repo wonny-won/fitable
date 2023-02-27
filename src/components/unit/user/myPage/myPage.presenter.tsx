@@ -18,18 +18,18 @@ export default function MyUI(props:UserInfoData){
                 <h3 style={{display:"none"}}>프로필 사진</h3>
                 <S.ProfilePhoto>
                   {
-                    props.getUserInfo?.profileImg ? <S.Img src={props.getUserInfo.data?.profileImg}/>:<S.Img src='/noneimg.jpeg' />
+                    props.getUserInfo?.photoURL ? <S.Img src={props.getUserInfo.data?.photoURL}/>:<S.Img src='/noneimg.jpeg' />
                   }      
                 </S.ProfilePhoto> 
                 <S.UserData>
                     <S.MiniNameWrap>
-                        <S.H3>이 름</S.H3>
-                        <S.EditBT>EDIT</S.EditBT>
+                        <S.UserName>[ {props.getUserInfo?.displayName} ] 님</S.UserName>
+                        <S.A href=""><S.EditBT>EDIT</S.EditBT></S.A>
                     </S.MiniNameWrap>
-                    <div>
-                    <S.H3>전 화</S.H3>
+                    <S.PHandEmailWrap>
+                    <S.H3>전 화 <S.Span>{props.getUserInfo?.phoneNumber}</S.Span></S.H3>
                     <S.H3>이메일 <S.Span>{props.getUserInfo?.email}</S.Span></S.H3>
-                    </div>
+                    </S.PHandEmailWrap>
                 </S.UserData>
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  

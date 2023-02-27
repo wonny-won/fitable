@@ -43,7 +43,7 @@ export const useGetInputValue = ()=>{
         numberBool,
         englishBool,
         passwordError,
-        emailError
+        emailError,
     }
 }
 

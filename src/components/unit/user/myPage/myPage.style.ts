@@ -36,8 +36,15 @@ export const UserData = styled.div`
 `
 export const MiniNameWrap = styled.div`
     display: flex;
-    /* align-items: center; */
     margin-bottom: 15px;
+    padding-top: 20px;
+`
+export const PHandEmailWrap = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px 0;
 `
 export const EditBT = styled.div`
     display: flex;
@@ -56,9 +63,16 @@ export const UserPaymentInfoWrap = styled.div`
     border-left: 6px dotted #ddd;
     padding: 0 40px ;
 `
+export const UserName = styled.h3`
+    margin-bottom: 0;
+    font-weight: 300;
+    color : #1c1c1c;
+    font-size: 22px;
+`
 export const H3 = styled.h3`
     margin-bottom: 0;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 300;
     color : #1c1c1c;
 `
 export const Span = styled.span `
@@ -66,5 +80,8 @@ export const Span = styled.span `
     margin-left: 20px;
     color: #8d8d8d;
     font-size: 18px;
-
+`
+export const A  = styled.a`
+    text-decoration: none;
+    color: #1c1c1c;
 `
