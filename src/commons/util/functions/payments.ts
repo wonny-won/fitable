@@ -6,6 +6,7 @@ declare const window: typeof globalThis & {
 
 export const onClickPayment = async()=>{
     const user = await loggedInUser()
+    console.log(user)
     const IMP = window.IMP; // 생략 가능
     IMP.init("imp49910675")
   // IMP.request_pay(param, callback) 결제창 호출
@@ -16,9 +17,9 @@ export const onClickPayment = async()=>{
     name: "프로그램 체험",
     amount: 100,
     buyer_email: user?.email,
-    buyer_name: "홍길동",
-    buyer_tel: "010-4242-4242",
-    buyer_addr: "서울특별시 강남구 신사동",
+    buyer_name: user.displayName ? user.displayName : `${user?.email} 님`,
+    buyer_tel: user.phoneNumber ? user.phoneNumber:"번호없음",
+    buyer_addr: "",
     buyer_postcode: "01181"
   }, (rsp:any) => { // callback
     if (rsp.success) {

@@ -14,7 +14,7 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                 <section>
                     <div>
                         <h2>이미지</h2>
-                        <input id="photoURL" type="text" onChange={props.onChangeInput}/>
+                        <input id="photoURL" type="file" onChange={props.uploadImage}/>
                     </div>
 
                     <div>

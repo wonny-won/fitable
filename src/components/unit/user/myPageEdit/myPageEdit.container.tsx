@@ -4,9 +4,11 @@ import { auth } from "../../../../../pages/_app"
 import { loggedInUser } from "../../../../commons/util/functions/firebaseFunctions"
 import MyPageEditUI from "./myPageEdit.presenter"
 import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
+import { useUploadImage } from "../../../../commons/util/hooks/imageUpload";
 
 export default function MyPageEdit(){
     const {onChangeInputs, inputs} = useOnchangeInputs()
+    const {uploadImage,image} = useUploadImage()
     useQueryClient()
     const getUserInfo = useQuery({
         queryKey: ['userInfo'],
@@ -15,15 +17,16 @@ export default function MyPageEdit(){
     const onClickUpdateProfile = async()=>{
         const updateUser:any = {}
         if(inputs.displayName) updateUser.displayName = inputs.displayName
-        if(inputs.phoneNumber) updateUser.displayName = inputs.displayName
-        if(inputs.photoURL) updateUser.displayName = inputs.displayName
+        if(inputs.phoneNumber) updateUser.phoneNumber = inputs.phoneNumber
+        if(image) updateUser.photoURL = image
         try{
-            await updateProfile(auth.currentUser, updateUser)
+            await updateProfile(auth.currentUser, {...updateUser})
         }catch(error){
             console.log(error)
         }
     }
     return <MyPageEditUI onChangeInput={onChangeInputs}
                          onClickUpdateProfile={onClickUpdateProfile}
-                         getUserInfo={getUserInfo.data}/>
+                         getUserInfo={getUserInfo.data}
+                         uploadImage={uploadImage}/>
 }
