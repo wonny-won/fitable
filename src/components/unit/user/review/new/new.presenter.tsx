@@ -54,7 +54,7 @@ export default function NewReviewUI(props:NewReview){
                         <S.ImageText>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</S.ImageText>
                         <S.ImageUploadWrap>
                             <S.FileTag htmlFor="fileTag" >+</S.FileTag>
-                            <input type="file" id="fileTag" hidden={true}  onChange={props.uploadImage}/>
+                            <input type="file" id="fileTag" hidden={true}  onChange={props.uploadImage('newReview')}/>
                             {props.image && <S.Image src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/${props.image}?alt=media`} />}
                         </S.ImageUploadWrap>
                     <h3 style={{display:"none"}}>텍스트 후기 작성</h3>

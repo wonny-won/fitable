@@ -6,11 +6,11 @@ export interface NewReview{
     handleSubmit: UseFormHandleSubmit<FieldValues>;
     onClickBtSubmit: (data: any) => void;
     onClickGetProgramValue: (e: ChangeEvent<HTMLInputElement>) => void;
-    uploadImage: (e: ChangeEvent<HTMLInputElement>) => void | undefined;
-    image: string;
+    uploadImage: (storageName: string) => (e: ChangeEvent<HTMLInputElement>) => void
     onClickUpdateBt: (data: any) => void;
     isEdit: boolean;
     data: any;
+    image : string | undefined;
 }
 
 export interface NewReviewContainer {
