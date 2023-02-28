@@ -8,8 +8,8 @@ export const Container = styled.div`
 export const UserInfoSection = styled.section`
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    padding: 50px 60px;
+    width: 85%;
+    padding: 20px 60px;
     border: 2px solid #e9e9e9;
 `
 export const UserInfoWrap = styled.div`
@@ -29,7 +29,7 @@ export const Img = styled.img`
     size: cover;
 `
 export const UserData = styled.div`
-    padding: 0 40px ;
+    padding: 10px 40px 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -61,13 +61,16 @@ export const EditBT = styled.div`
 `
 export const UserPaymentInfoWrap = styled.div`
     border-left: 6px dotted #ddd;
-    padding: 0 40px ;
+    padding: 30px 40px ;
 `
 export const UserName = styled.h3`
     margin-bottom: 0;
     font-weight: 300;
     color : #1c1c1c;
     font-size: 22px;
+`
+export const UserNameSpan = styled.span`
+    font-weight: 400;
 `
 export const H3 = styled.h3`
     margin-bottom: 0;

@@ -4,18 +4,18 @@ import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing";
 
 export default function SignUp(){
-    const { onChangeInput,signUpInput,numberBool,englishBool,passwordError,emailError } = useGetInputValue()
+    const { onChangeInput,inputs,numberBool,englishBool,passwordError,emailError } = useGetInputValue()
     const routing = useRoutingPageHooks()
 
     const onSubmit = async()=>{
-        const result = await joinUsEmail(signUpInput)
+        const result = await joinUsEmail(inputs)
         if(result) routing('/')()
     }
     return <SignUpUI onChangeInput={onChangeInput}
                      onSubmit={onSubmit}
                      emailError={emailError}
                      passwordError={passwordError}
-                     signUpInput={signUpInput}
+                     signUpInput={inputs}
                      numberBool={numberBool}
                      englishBool={englishBool} />
 }

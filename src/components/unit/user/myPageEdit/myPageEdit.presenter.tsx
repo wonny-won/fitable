@@ -19,15 +19,15 @@ export default function MyPageEditUI(props:MypageEditPresenter){
 
                     <div>
                         <h2>이름</h2>
-                        <input id="displayName" type="text" placeholder="이름을 입력해주세요." onChange={props.onChangeInput}/>
+                        <input id="displayName" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.displayName}/>
                     </div>
                     <div>
                         <h2>이메일</h2>
-                        <input id="email" type="text" placeholder="이메일을 입력해주세요." onChange={props.onChangeInput}/>
+                        <input id="email" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.email}/>
                     </div>
                     <div>
                         <h2>전화번호</h2>
-                        <input id="phoneNumber" type="text" placeholder="전화번호를 입력해주세요." onChange={props.onChangeInput}/>
+                        <input id="phoneNumber" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.phoneNumber}/>
                     </div>
                     <button onClick={props.onClickUpdateProfile}>회원정보 수정</button>
                 </section>

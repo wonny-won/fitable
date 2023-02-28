@@ -5,11 +5,11 @@ export interface SignUpPresenter {
     onSubmit: () => void;
     emailError: string | undefined;
     passwordError: string | undefined;
-    signUpInput: {
+    inputs: {
         email : string;
         password : string;
         passwordCheck : string;
-    } | undefined;
+    } | {};
     numberBool:boolean;
     englishBool:boolean;
 }

@@ -23,7 +23,7 @@ export default function MyUI(props:UserInfoData){
                 </S.ProfilePhoto> 
                 <S.UserData>
                     <S.MiniNameWrap>
-                        <S.UserName>[ {props.getUserInfo?.displayName} ] 님</S.UserName>
+                        <S.UserName>[ <S.UserNameSpan>{props.getUserInfo?.displayName}</S.UserNameSpan> ] 님</S.UserName>
                         <S.A href=""><S.EditBT>EDIT</S.EditBT></S.A>
                     </S.MiniNameWrap>
                     <S.PHandEmailWrap>

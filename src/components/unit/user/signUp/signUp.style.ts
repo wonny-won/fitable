@@ -5,7 +5,7 @@ interface SignUpInputProps{
         email : string;
         password : string;
         passwordCheck : string;
-    } |undefined;
+    } |{};
     numberBool?:boolean;
     englishBool?:boolean;
 }
@@ -72,8 +72,8 @@ export const PwCondition = styled.div`
 `
 export const Length = styled.span`
     padding-right: 5px;
-    color:${(props:SignUpInputProps)=>(props.signUpInput.password.length >= 6 ? "#8D60F5":"#ddd")};
-    font-weight:${(props:SignUpInputProps)=>(props.signUpInput.password.length >= 6 ? "600":"400")};
+    color:${(props:SignUpInputProps)=>(props.signUpInput?.password.length >= 6 ? "#8D60F5":"#ddd")};
+    font-weight:${(props:SignUpInputProps)=>(props.signUpInput?.password.length >= 6 ? "600":"400")};
 `
 export const IncludesNumber = styled.span`
     padding-right: 5px;

@@ -1,28 +1,29 @@
+import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { updateProfile } from "firebase/auth"
-import { ChangeEvent, useState } from "react"
 import { auth } from "../../../../../pages/_app"
+import { loggedInUser } from "../../../../commons/util/functions/firebaseFunctions"
 import MyPageEditUI from "./myPageEdit.presenter"
+import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
 
 export default function MyPageEdit(){
-    const [ inputs, setInputs ] = useState({
-        displayName:"",
-        phoneNumber:"",
-        email:"",
-        photoURL:""
+    const {onChangeInputs, inputs} = useOnchangeInputs()
+    useQueryClient()
+    const getUserInfo = useQuery({
+        queryKey: ['userInfo'],
+        queryFn: loggedInUser
     })
-    const onChangeInput = (event:ChangeEvent<HTMLInputElement>)=>{
-        const inputsKey = event.target.id
-        setInputs({...inputs, [inputsKey] :event.target.value})
-        console.log(inputs)
+    const onClickUpdateProfile = async()=>{
+        const updateUser:any = {}
+        if(inputs.displayName) updateUser.displayName = inputs.displayName
+        if(inputs.phoneNumber) updateUser.displayName = inputs.displayName
+        if(inputs.photoURL) updateUser.displayName = inputs.displayName
+        try{
+            await updateProfile(auth.currentUser, updateUser)
+        }catch(error){
+            console.log(error)
+        }
     }
-    const onClickUpdateProfile = ()=>{
-        updateProfile(auth.currentUser, inputs).then(() => {
-           console.log(auth.currentUser) 
-          }).catch((error) => {
-           console.log(error)
-          });     
-    }
-    console.log(typeof(inputs.phoneNumber))
-    return <MyPageEditUI onChangeInput={onChangeInput}
-                         onClickUpdateProfile={onClickUpdateProfile}/>
+    return <MyPageEditUI onChangeInput={onChangeInputs}
+                         onClickUpdateProfile={onClickUpdateProfile}
+                         getUserInfo={getUserInfo.data}/>
 }

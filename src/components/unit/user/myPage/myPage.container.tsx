@@ -3,11 +3,10 @@ import { loggedInUser } from "../../../../commons/util/functions/firebaseFunctio
 import { useQuery,useQueryClient } from "@tanstack/react-query";
 
 export default function My(){
-    const queryClient = useQueryClient()
+    useQueryClient()
     const getUserInfo = useQuery({
         queryKey: ['userInfo'],
         queryFn: loggedInUser
     })
-    console.log(getUserInfo.data)
     return <MyUI getUserInfo={getUserInfo.data}/>
 }
