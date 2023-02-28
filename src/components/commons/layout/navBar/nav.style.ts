@@ -17,7 +17,7 @@ export const Container = styled.div`
     width: 100px;
     height: 100vh;
     padding: 70px 0 70px 0;
-    background-color: ${(props:IsActiveProps)=>(props.isActive ? "#FCF9EF":"#fff")};
+    background-color: ${(props:IsActiveProps)=>(props.isActive ? "#FCF9EF":"transparent")};
     &:hover{
         background-color: #FCF9EF;
         cursor: pointer;

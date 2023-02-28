@@ -14,12 +14,14 @@ export default function MyPageEdit(){
         queryKey: ['userInfo'],
         queryFn: loggedInUser
     })
+    // 유저 프로필 업데이트 함수
     const onClickUpdateProfile = async()=>{
         const updateUser:any = {}
         if(inputs.displayName) updateUser.displayName = inputs.displayName
         if(inputs.phoneNumber) updateUser.phoneNumber = inputs.phoneNumber
         if(image) updateUser.photoURL = image
         try{
+            console.log(updateUser)
             await updateProfile(auth.currentUser, {...updateUser})
         }catch(error){
             console.log(error)
