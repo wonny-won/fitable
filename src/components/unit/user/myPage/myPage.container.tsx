@@ -5,9 +5,10 @@ import UseAuth from "../../../../commons/util/hooks/useAuth";
 import { useEffect } from "react";
 
 export default function My(){
-    useEffect(()=>{
-        UseAuth()
-    },[])
+    // useEffect(()=>{
+    //     UseAuth()
+    // },[])
+    UseAuth()
     useQueryClient()
     const getUserInfo = useQuery({
         queryKey: ['userInfo'],
