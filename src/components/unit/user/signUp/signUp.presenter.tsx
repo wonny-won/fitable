@@ -15,17 +15,13 @@ export default function SignUpUI(props:SignUpPresenter){
             <S.Title>회원정보 입력</S.Title>
             <S.Line/>
             <S.InputWrap>
-                <S.InputTitle>이름 </S.InputTitle>
-                <S.Input type="password" id="passwordCheck" placeholder="비밀번호 확인" onChange={props.onChangeInput}/>
-                <S.InputTitle> 전화번호 </S.InputTitle>
-                <S.Input type="password" id="passwordCheck" placeholder="비밀번호 확인" onChange={props.onChangeInput}/>
                 <S.InputTitle>이메일</S.InputTitle>
                 <S.Input type="text" id="email"  placeholder="이메일을 입력해주세요." onChange={props.onChangeInput} />
                 <S.ErrorMS>{props.emailError}</S.ErrorMS>
                 <S.InputTitle style={{display:"flex"}}>
                     <div>비밀번호</div> 
                     <S.PwCondition >
-                        <S.Length signUpInput={props.signUpInput}>6자이상</S.Length>
+                        {/* <S.Length signUpInput={props.signUpInput}>6자이상</S.Length> */}
                         <S.IncludesNumber numberBool={props.numberBool}>숫자포함</S.IncludesNumber>
                         <S.IncludesEnglish englishBool={props.englishBool}>영문포함</S.IncludesEnglish>
                     </S.PwCondition>

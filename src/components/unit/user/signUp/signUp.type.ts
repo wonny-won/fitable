@@ -5,7 +5,7 @@ export interface SignUpPresenter {
     onSubmit: () => void;
     emailError: string | undefined;
     passwordError: string | undefined;
-    inputs: {
+    signUpInput: {
         email : string;
         password : string;
         passwordCheck : string;
