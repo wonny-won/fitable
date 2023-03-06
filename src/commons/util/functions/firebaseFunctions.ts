@@ -12,6 +12,8 @@ import { createUserWithEmailAndPassword,
 import 'firebase/compat/auth'
 import { auth } from "../../../../pages/_app";
 import { checkEmail,checkPassword, passwordValidation,passwordEnglishValidation } from "./validation";
+import { useRecoilState } from "recoil";
+import { isLogin } from "../recoilAtom/atom";
 // ----------------------------------- 타입존 ----------------------------- //
 
 interface FirebaseParams {

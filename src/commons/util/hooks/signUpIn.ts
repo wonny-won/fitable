@@ -1,6 +1,10 @@
+import { signInWithEmailAndPassword } from "firebase/auth"
 import { ChangeEvent,useEffect,useState } from "react"
+import { useRecoilState } from "recoil"
+import { auth } from "../../../../pages/_app"
 import { loggedInUser } from "../functions/firebaseFunctions"
 import { passwordValidation,passwordEnglishValidation,checkPassword,checkEmail } from "../functions/validation"
+import { isLoggedin } from "../recoilAtom/atom"
 import useOnchangeInputs from "./onchangeInputs"
 
 // 로그인/회원가입 input 값 끌어오는 함수
@@ -43,6 +47,7 @@ export const useGetInputValue = ()=>{
         emailError,
     }
 }
+
 
 // 로그인했는지 확인하는 함수
 export const useIsLogInUser = ()=>{
