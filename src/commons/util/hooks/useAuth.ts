@@ -5,12 +5,14 @@ import { isLoggedin } from "../recoilAtom/atom"
 import { useRecoilState } from "recoil"
 
 export default function useAuth(){
-    const router = useRouter()
-    const [isLoginUser] = useRecoilState(isLoggedin)
+    // const router = useRouter()
+    const isLoginUser = useIsLogInUser()
+    console.log(isLoginUser)
     useEffect(()=>{
+        console.log("useEffect안",isLoginUser)
         if(!isLoginUser){
             alert("로그인이 필요한 서비스 입니다.")
-            router.push('/joinus')
+            // router.push('/joinus')
         }   
     },[isLoginUser])
 }

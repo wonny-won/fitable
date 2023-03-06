@@ -5,7 +5,7 @@ import useAuth from "../../../../commons/util/hooks/useAuth";
 
 export default function My(){
     // 권한분기 - 안됨
-    // useAuth()
+    useAuth()
     
     useQueryClient()
     const getUserInfo = useQuery({
