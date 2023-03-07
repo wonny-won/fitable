@@ -9,7 +9,7 @@ import NavBar from "./navBar/nav.container";
 
 export default function Layout(props:LayoutProps){
     const router = useRouter()
-    const HIDDEN_BANNER = ['/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup','/about','/mypage']
+    const HIDDEN_BANNER = ['/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup','/about','/mypage','/mypage/edit']
     const Z_INDEX = ['/joinus','/mypage/edit']
     const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath)
     const zindex = Z_INDEX.includes(router.asPath)

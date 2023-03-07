@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { MypageEditPresenter } from "./myPageEdit.types";
+import * as S from './myPageEdit.style'
 
 export default function MyPageEditUI(props:MypageEditPresenter){
     return(
@@ -9,29 +10,30 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                 <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
                 <title> 내정보 수정 | fitable</title>
             </Head>
-            <div>
-                <h1> 회원정보 수정 </h1>
+            <S.Container>
+                <S.Title> 회원정보 수정 </S.Title>
                 <section>
-                    <div>
-                        <h2>이미지</h2>
+                    <S.MiniWrapTop>
+                        <S.H1> 프로필</S.H1>
                         <input id="photoURL" type="file" onChange={props.uploadImage('userProfile')}/>
-                    </div>
+                    </S.MiniWrapTop>
 
-                    <div>
-                        <h2>이름</h2>
-                        <input id="displayName" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.displayName}/>
-                    </div>
-                    <div>
-                        <h2>이메일</h2>
-                        <input id="email" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.email}/>
-                    </div>
-                    <div>
-                        <h2>전화번호</h2>
-                        <input id="phoneNumber" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.phoneNumber}/>
-                    </div>
-                    <button onClick={props.onClickUpdateProfile}>회원정보 수정</button>
+                    <S.MiniWrap>
+                        <S.H1><S.Span>*</S.Span> 이름</S.H1>
+                        <S.Input id="displayName" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.displayName}/>
+                    </S.MiniWrap>
+                    <S.MiniWrap>
+                        <S.H1><S.Span>*</S.Span> 이메일</S.H1>
+                        <S.Input id="email" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.email}/>
+                    </S.MiniWrap>
+                    <S.MiniWrap>
+                        <S.H1><S.Span>*</S.Span> 전화번호</S.H1>
+                        <S.Input id="phoneNumber" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.phoneNumber}/>
+                    </S.MiniWrap>
+                    <button onClick={props.onClickUpdateProfile}>수정하기</button>
+                    <button >취소하기</button>
                 </section>
-            </div>
+            </S.Container>
         </>
     )
 }
