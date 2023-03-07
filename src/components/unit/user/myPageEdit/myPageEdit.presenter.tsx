@@ -30,8 +30,10 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                         <S.H1><S.Span>*</S.Span> 전화번호</S.H1>
                         <S.Input id="phoneNumber" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.phoneNumber}/>
                     </S.MiniWrap>
-                    <button onClick={props.onClickUpdateProfile}>수정하기</button>
-                    <button >취소하기</button>
+                    <S.BtWrap>
+                        <S.SubmitBt onClick={props.onClickUpdateProfile}>수정하기</S.SubmitBt>
+                        <S.CancelBt >취소하기</S.CancelBt>
+                    </S.BtWrap>
                 </section>
             </S.Container>
         </>

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { BTForm } from "../joinUs/joinUs.style";
 
 export const Container = styled.div`
     display: flex;
@@ -39,4 +40,23 @@ export const Input = styled.input`
     height: 31px;
     border: 1px solid #ddd;
     margin: 0 20px;
+    outline: none;
 `
+export const BtWrap = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+`
+export const SubmitBt = styled(BTForm)`
+    width: 35%;
+    background-color: #231f20;
+    color:#fff;
+    &:hover{
+        background-color:#fff;
+        border:1px solid #231f20;
+        color : #231f20;
+    }
+`
+export const CancelBt = styled(BTForm)`
+    width: 35%;
+` 
