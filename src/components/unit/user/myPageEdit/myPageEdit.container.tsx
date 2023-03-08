@@ -30,5 +30,6 @@ export default function MyPageEdit(){
     return <MyPageEditUI onChangeInput={onChangeInputs}
                          onClickUpdateProfile={onClickUpdateProfile}
                          getUserInfo={getUserInfo.data}
-                         uploadImage={uploadImage}/>
+                         uploadImage={uploadImage}
+                         image={image}/>
 }

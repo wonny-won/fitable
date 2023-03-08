@@ -4,5 +4,6 @@ export interface MypageEditPresenter {
     onChangeInput: (event: ChangeEvent<HTMLInputElement>) => void;
     onClickUpdateProfile: () => void;
     getUserInfo: unknown | any;
-    uploadImage: any
+    uploadImage: any;
+    image: string;
 }

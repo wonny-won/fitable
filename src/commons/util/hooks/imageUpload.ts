@@ -20,8 +20,6 @@ export const useUploadImage = () => {
         })
 
         } 
-    console.log(image)
-
     return {
         uploadImage,
         image
