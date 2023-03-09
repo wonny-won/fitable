@@ -22,7 +22,8 @@ export default function MyPageEdit(){
         if(image) updateUser.photoURL = image
         try{
             console.log(updateUser)
-            await updateProfile(auth.currentUser, {...updateUser})
+            const result = await updateProfile(auth.currentUser, {...updateUser})
+            console.log(auth.currentUser)
         }catch(error){
             console.log(error)
         }

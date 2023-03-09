@@ -10,7 +10,7 @@ export const Container = styled.section`
 `
 export const Title = styled.h1`
     width: 85%;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     padding: 15px 0;
     border-bottom: 1px solid #000;
