@@ -37,6 +37,9 @@ export default function MyUI(props:UserInfoData){
                 <S.H3> 적립금: {props.getUserInfo?.point ? props.getUserInfo?.point : '0'} 원 </S.H3>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
+        <h1>진행 프로그램</h1>
+        
+        <hr/>
         </S.Container>
     )
 }
