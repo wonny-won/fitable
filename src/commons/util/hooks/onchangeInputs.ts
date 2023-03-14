@@ -5,7 +5,6 @@ export default function useOnchangeInputs (){
     const onChangeInputs = (event:ChangeEvent<HTMLInputElement>)=>{
         const inputsKey = event.target.id
         setInputs({...inputs, [inputsKey] :event.target.value})
-        console.log(inputs)
     }
     
     return {
