@@ -5,23 +5,36 @@ import { auth, DB } from "../../../../../pages/_app";
 // 현재 로그인한 사용자 가지고 오기
 export const  loggedInUser = async ()=>{
     const result = await new Promise((resolve, reject) => {
-        // 기본 유저 정보
+        // 파이어베이스 제공 기본 유저 정보
         onAuthStateChanged(auth, (user) => {
             if (user) {
-              if(user.uid){
-                // 추가적으로 넣어준 user데이터 가지고 오기
-                const docref = doc(DB,'uesr',user.uid)
-                const userOtherData = getDoc(docref)
-                    .then((res)=>{
-                        console.log(res)
-                    })
-                const userInfo = { ...user.reloadUserInfo,...userOtherData}
-                resolve(userInfo)
-              }
+            if(user.uid) {
+                console.log(user.reloadUserInfo)
+                resolve(user.reloadUserInfo)}
+            //   if(user.uid){
+            //     // 추가적으로 넣어준 user데이터 가지고 오기
+            //     const docref = doc(DB,'uesr',user.uid)
+            //     const userOtherData:any = getDoc(docref)
+            //     // if (userOtherData.exists()) {
+            //         console.log(userOtherData.data())
+            //     //   } else {
+            //     //     console.log("문서가 없다");
+            //     //   }
+            //   }
             } else {
                 reject("로그인 하지 않은 유저입니다.")
             }
           });
     })
+    // 추가적으로 넣어줬던 유저 데이터(컬럼 생성)
+    const docref = doc(DB,'uesr',result?.localId)
+    console.log(result?.localId)
+    const userOtherData = await getDoc(docref)
+    if (userOtherData) {
+        console.log(userOtherData.data())
+      } else {
+        console.log("문서가 없다");
+      }
+
     return result
 }

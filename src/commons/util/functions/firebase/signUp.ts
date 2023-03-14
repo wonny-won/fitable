@@ -2,8 +2,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth, DB } from "../../../../../pages/_app"
 import { checkEmail, checkPassword, passwordEnglishValidation, passwordValidation } from "../validation"
 import { 
-    collection,
-    addDoc,
+    setDoc,
+    doc,
  } from "firebase/firestore";
 
 interface JoinusParams {
@@ -18,7 +18,6 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
     const includesNumber = await passwordValidation(password)
     const IncludesEnglish = await passwordEnglishValidation(password)
     let userUID = ""
-    let otherDataId = ""
     if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish){
         try{
             const createUser = await createUserWithEmailAndPassword(auth ,email, password)
@@ -32,18 +31,12 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
                     phoneNumber: ''
                 }
             }
-            const userOtherData = await addDoc(collection(DB,'user'),OtherData)
-            otherDataId = userOtherData.id
+            await setDoc(doc(DB,'user',userUID),OtherData)
             alert("회원가입을 축하드립니다.")
-            return {
-                userUID,
-                otherDataId}
+            return userUID
         } catch(error){
             console.log(error)
         }
     }
-    return {
-        userUID,
-        otherDataId
-    }
+    return userUID
 }
