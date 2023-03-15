@@ -11,16 +11,6 @@ export const  loggedInUser = async ()=>{
             if(user.uid) {
                 console.log(user.reloadUserInfo)
                 resolve(user.reloadUserInfo)}
-            //   if(user.uid){
-            //     // 추가적으로 넣어준 user데이터 가지고 오기
-            //     const docref = doc(DB,'uesr',user.uid)
-            //     const userOtherData:any = getDoc(docref)
-            //     // if (userOtherData.exists()) {
-            //         console.log(userOtherData.data())
-            //     //   } else {
-            //     //     console.log("문서가 없다");
-            //     //   }
-            //   }
             } else {
                 reject("로그인 하지 않은 유저입니다.")
             }
@@ -30,11 +20,15 @@ export const  loggedInUser = async ()=>{
     console.log(result?.localId)
     const docref = doc(DB,'user',result?.localId)
     const userOtherData = await getDoc(docref)
+    let userData = userOtherData.data()
     if (userOtherData.exists()) {
-        console.log(userOtherData.data())
+      userData = userOtherData.data()
       } else {
         console.log("문서가 없다");
       }
 
-    return result
+    return {
+      result,
+      userData
+    } 
 }
