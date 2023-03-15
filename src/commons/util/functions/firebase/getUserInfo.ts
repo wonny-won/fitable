@@ -27,10 +27,10 @@ export const  loggedInUser = async ()=>{
           });
     })
     // 추가적으로 넣어줬던 유저 데이터(컬럼 생성)
-    const docref = doc(DB,'uesr',result?.localId)
     console.log(result?.localId)
+    const docref = doc(DB,'user',result?.localId)
     const userOtherData = await getDoc(docref)
-    if (userOtherData) {
+    if (userOtherData.exists()) {
         console.log(userOtherData.data())
       } else {
         console.log("문서가 없다");
