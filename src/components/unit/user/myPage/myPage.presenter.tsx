@@ -34,7 +34,7 @@ export default function MyUI(props:UserInfoData){
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  
                 <S.H3> 총 주문금액: {props.userOtherData ? props.userOtherData?.JNr3cUWHh0VO0WlkVnxMEK6gUg63.payment : '10'} 원 </S.H3>
-                <S.H3> 적립금: {props.getUserInfo?.point ? props.getUserInfo?.point : '0'} 원 </S.H3>
+                <S.H3> 적립금: {props.userOtherData ? props.userOtherData?.JNr3cUWHh0VO0WlkVnxMEK6gUg63.point : '10'} 원 </S.H3>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
         <h1>진행 프로그램</h1>
