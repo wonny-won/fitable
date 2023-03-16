@@ -5,31 +5,38 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+export const MyPage = styled.h1`
+    font-size: 24px;
+    font-weight: bold;
+`
 export const UserInfoSection = styled.section`
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     width: 85%;
-    padding: 20px 60px;
+    padding: 0px 60px;
     border: 2px solid #e9e9e9;
 `
 export const UserInfoWrap = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
 `
 export const ProfilePhoto = styled.div`
-    width : 200px;
-    height: 230px;
+    width : 145px;
+    height: 165px;
     margin-right: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 export const Img = styled.img`
-    width : 195px;
-    height: 225px;
+    width : 140px;
+    height: 160px;
     size: cover;
 `
 export const UserData = styled.div`
-    padding: 10px 40px 0 40px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -60,7 +67,7 @@ export const EditBT = styled.div`
     }
 `
 export const UserPaymentInfoWrap = styled.div`
-    border-left: 6px dotted #ddd;
+    border-left: 3px dotted #ddd;
     padding: 30px 40px ;
 `
 export const UserName = styled.h3`

@@ -11,7 +11,7 @@ export default function MyUI(props:UserInfoData){
             <meta name="description" content="자기관리도 프리미엄의 시대! 내게 핏한 관리를 받아보세요." />
             <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
         </Head>
-        <h1> MY PAGE </h1>
+        <S.MyPage> MY PAGE </S.MyPage>
         <h2 style={{display:"none"}}> 내 정보 </h2>
         <S.UserInfoSection>
             <S.UserInfoWrap>
