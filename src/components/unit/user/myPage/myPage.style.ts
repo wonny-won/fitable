@@ -51,7 +51,7 @@ export const PHandEmailWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 45px 0;
+    /* padding: 45px 0; */
 `
 export const EditBT = styled.div`
     display: flex;
@@ -81,9 +81,9 @@ export const UserNameSpan = styled.span`
 `
 export const H3 = styled.h3`
     margin-bottom: 0;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 300;
-    color : #1c1c1c;
+    color : rgb(28, 28, 28);
 `
 export const Span = styled.span `
     font-weight: 300;
