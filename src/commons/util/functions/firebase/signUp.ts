@@ -26,8 +26,12 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
             const OtherData = {
                 [userUID] : {
                     payment : 0,
-                    program : '신청하신 프로그램이 없습니다.',
                     point : 0,
+                    program : '신청하신 프로그램이 없습니다.',
+                    programManager:{
+                        name : '',
+                        managerProfile:''
+                    },
                     phoneNumber: ''
                 }
             }

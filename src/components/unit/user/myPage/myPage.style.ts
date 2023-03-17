@@ -74,14 +74,14 @@ export const UserName = styled.h3`
     margin-bottom: 0;
     font-weight: 300;
     color : #1c1c1c;
-    font-size: 22px;
+    font-size: 18px;
 `
 export const UserNameSpan = styled.span`
     font-weight: 400;
 `
 export const H3 = styled.h3`
     margin-bottom: 0;
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 300;
     color : #1c1c1c;
 `
