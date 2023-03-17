@@ -13,7 +13,7 @@ export const UserInfoSection = styled.section`
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    width: 85%;
+    width: 80%;
     padding: 0px 60px;
     border: 2px solid #e9e9e9;
 `
