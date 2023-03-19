@@ -3,6 +3,8 @@ import { UserInfoData } from "./myPage.types";
 import * as S from './myPage.style'
 
 export default function MyUI(props:UserInfoData){
+    console.log(props)
+    const userId = props.getUserInfo?.localId
     return(
         <S.Container>
         <Head>
@@ -29,12 +31,13 @@ export default function MyUI(props:UserInfoData){
                     <S.PHandEmailWrap>
                     <S.H3>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;화<S.Span>{props.getUserInfo?.phoneNumber}</S.Span></S.H3>
                     <S.H3>이 메 일 <S.Span>{props.getUserInfo?.email}</S.Span></S.H3>
+                    <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programManager.name}</S.Span></S.H3>
                     </S.PHandEmailWrap>
                 </S.UserData>
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  
-                <S.H3> 총 주문금액: {props.userOtherData ? props.userOtherData?.JNr3cUWHh0VO0WlkVnxMEK6gUg63.payment : '10'} 원 </S.H3>
-                <S.H3> 적립금: {props.userOtherData ? props.userOtherData?.JNr3cUWHh0VO0WlkVnxMEK6gUg63.point : '10'} 원 </S.H3>
+                <S.TotalPay> 총 주문금액 : {props.userOtherData ? props.userOtherData?.userData.payment : '10'} 원 </S.TotalPay>
+                <S.H3> 적립금 : {props.userOtherData ? props.userOtherData?.userData.point : '10'} 원 </S.H3>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
         <h1>진행 프로그램</h1>

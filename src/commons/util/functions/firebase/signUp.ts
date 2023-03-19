@@ -24,12 +24,12 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
             // 회원가입 후 추가적인 유저데이터 넣어주기 - 안정성을 위해 기본 User info와 분리
             userUID = createUser.user.uid;
             const OtherData = {
-                [userUID] : {
+                userData : {
                     payment : 0,
                     point : 0,
                     program : '신청하신 프로그램이 없습니다.',
                     programManager:{
-                        name : '',
+                        name : '담당자가 없습니다.',
                         managerProfile:''
                     },
                     phoneNumber: ''

@@ -12,7 +12,6 @@ export default function My(){
         queryKey: ['userInfo'],
         queryFn: loggedInUser
     })
-    console.log(getUserInfo.data?.userData)
     return <MyUI getUserInfo={getUserInfo.data?.result}
                 userOtherData={getUserInfo.data?.userData}/>
 }

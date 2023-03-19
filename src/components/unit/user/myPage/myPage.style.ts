@@ -12,7 +12,6 @@ export const MyPage = styled.h1`
 export const UserInfoSection = styled.section`
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     width: 80%;
     padding: 0px 60px;
     border: 2px solid #e9e9e9;
@@ -37,9 +36,10 @@ export const Img = styled.img`
 `
 export const UserData = styled.div`
     padding: 0 40px;
+    height: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 `
 export const MiniNameWrap = styled.div`
     display: flex;
@@ -50,12 +50,11 @@ export const PHandEmailWrap = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* padding: 45px 0; */
 `
 export const EditBT = styled.div`
     display: flex;
     align-items: center;
+    font-size: 12px;
     padding: 0 5px;
     border: 1px solid black;
     margin-left: 10px;
@@ -74,22 +73,26 @@ export const UserName = styled.h3`
     margin-bottom: 0;
     font-weight: 300;
     color : #1c1c1c;
-    font-size: 18px;
+    font-size: 16px;
 `
 export const UserNameSpan = styled.span`
     font-weight: 400;
 `
 export const H3 = styled.h3`
-    margin-bottom: 0;
-    font-size: 14px;
+    margin-bottom: 5px;
+    font-size: 15px;
     font-weight: 300;
     color : rgb(28, 28, 28);
+`
+export const TotalPay = styled(H3)`
+    font-size: 15px;
+    font-weight: 500;
 `
 export const Span = styled.span `
     font-weight: 300;
     margin-left: 20px;
     color: #8d8d8d;
-    font-size: 18px;
+    font-size: 14px;
 `
 export const A  = styled.a`
     text-decoration: none;
