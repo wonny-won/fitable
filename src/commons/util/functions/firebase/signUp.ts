@@ -27,6 +27,7 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
                 userData : {
                     payment : 0,
                     point : 0,
+                    coupon: 0,
                     program : '신청하신 프로그램이 없습니다.',
                     programManager:{
                         name : '담당자가 없습니다.',

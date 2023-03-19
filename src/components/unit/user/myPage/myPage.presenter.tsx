@@ -37,12 +37,12 @@ export default function MyUI(props:UserInfoData){
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  
                 <S.TotalPay> 총 주문금액 : {props.userOtherData ? props.userOtherData?.userData.payment : '10'} 원 </S.TotalPay>
-                <S.H3> 적립금 : {props.userOtherData ? props.userOtherData?.userData.point : '10'} 원 </S.H3>
+                <S.H3> 적립금 : <S.SmallSpan>{props.userOtherData ? props.userOtherData?.userData.point : '10'}  </S.SmallSpan>원</S.H3>
+                <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData ? props.userOtherData?.userData.coupon : '10'} </S.SmallSpan>개</S.Coupon>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
-        <h1>진행 프로그램</h1>
-        
-        <hr/>
+        <S.Title>진행 프로그램</S.Title>
+        <S.Line/>
         </S.Container>
     )
 }

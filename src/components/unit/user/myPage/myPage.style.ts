@@ -6,8 +6,21 @@ export const Container = styled.div`
     align-items: center;
 `
 export const MyPage = styled.h1`
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0;
+`
+export const Title = styled.h1`
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 10%;
+`
+export const Line = styled.hr`
+    width: 80%;
+    background-color: #1c1c1c;
+    height: 1px;
+    border: none;
 `
 export const UserInfoSection = styled.section`
     display: flex;
@@ -15,6 +28,7 @@ export const UserInfoSection = styled.section`
     width: 80%;
     padding: 0px 60px;
     border: 2px solid #e9e9e9;
+    margin: 40px 0;
 `
 export const UserInfoWrap = styled.div`
     display: flex;
@@ -66,7 +80,7 @@ export const EditBT = styled.div`
     }
 `
 export const UserPaymentInfoWrap = styled.div`
-    border-left: 3px dotted #ddd;
+    border-left: 2px dotted #ddd;
     padding: 30px 40px ;
 `
 export const UserName = styled.h3`
@@ -82,17 +96,25 @@ export const H3 = styled.h3`
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: 300;
-    color : rgb(28, 28, 28);
+    color : #1c1c1c;
 `
 export const TotalPay = styled(H3)`
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 800;
+    padding-bottom: 12px;
 `
+export const Coupon = styled(H3)`
+    padding-bottom: 10px;
+` 
 export const Span = styled.span `
     font-weight: 300;
     margin-left: 20px;
     color: #8d8d8d;
     font-size: 14px;
+`
+export const SmallSpan = styled.span`
+font-weight: 800;
+    color: #8d8d8d;
 `
 export const A  = styled.a`
     text-decoration: none;
