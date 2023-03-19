@@ -90,6 +90,8 @@ export const UserName = styled.h3`
     font-size: 16px;
 `
 export const UserNameSpan = styled.span`
+    width: 42px;
+    height: 20px;
     font-weight: 400;
 `
 export const H3 = styled.h3`
@@ -113,7 +115,7 @@ export const Span = styled.span `
     font-size: 14px;
 `
 export const SmallSpan = styled.span`
-font-weight: 800;
+    font-weight: 800;
     color: #8d8d8d;
 `
 export const A  = styled.a`
