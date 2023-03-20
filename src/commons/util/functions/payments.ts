@@ -4,7 +4,7 @@ declare const window: typeof globalThis & {
     IMP: any;
   };
 
-export const onClickPayment = async()=>{
+export const onClickPayment = (program: string) => async()=>{
     const user = await loggedInUser()
     console.log(user)
     const IMP = window.IMP; // 생략 가능
@@ -14,7 +14,7 @@ export const onClickPayment = async()=>{
     pg: "nice",
     pay_method: "card",
     // merchant_uid: "ORD20180131-0000011",
-    name: "프로그램 체험",
+    name: program,
     amount: 100,
     buyer_email: user?.email,
     buyer_name: user.displayName ? user.displayName : `${user?.email} 님`,

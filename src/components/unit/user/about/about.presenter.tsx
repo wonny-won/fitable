@@ -45,7 +45,7 @@ export default function AboutUI(){
                             3. 무리한 식단 지양<br/>
                             4. 목표달성 
                         </div>
-                        <S.JoinProgram onClick={onClickPayment}>
+                        <S.JoinProgram onClick={onClickPayment("DietProgram")}>
                             <span> 프로그램 신청하기</span>
                             <S.Arrow src="/arrowLeft.png"/>
                         </S.JoinProgram>
@@ -74,7 +74,7 @@ export default function AboutUI(){
                             3. 운동 수행 능력 및 기능향상<br/>
                             4. 통증 치료운동
                         </div>
-                        <S.JoinProgramRight onClick={onClickPayment}>
+                        <S.JoinProgramRight onClick={onClickPayment("HealingProgram")}>
                             <span> 프로그램 신청하기</span>
                             <S.Arrow src="/arrowRight.png"/>
                         </S.JoinProgramRight>
