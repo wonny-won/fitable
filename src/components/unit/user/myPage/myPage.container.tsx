@@ -4,7 +4,7 @@ import { useQuery,useQueryClient } from "@tanstack/react-query";
 import useAuth from "../../../../commons/util/hooks/useAuth";
 
 export default function My(){
-    // 권한분기 - 안됨
+    // 권한분기 - 다시 해야함
     // useAuth()
     
     useQueryClient()
