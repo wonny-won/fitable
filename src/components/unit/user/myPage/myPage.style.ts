@@ -10,7 +10,7 @@ export const MyPage = styled.h1`
     font-weight: 900;
     margin: 0;
 `
-export const Title = styled.h1`
+export const Title = styled.h2`
     width: 100%;
     font-size: 20px;
     font-weight: 600;
@@ -121,4 +121,19 @@ export const SmallSpan = styled.span`
 export const A  = styled.a`
     text-decoration: none;
     color: #1c1c1c;
+`
+export const ProgramSection = styled.section`
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+`
+export const Header = styled.div`
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    border-bottom: 1px solid #e9e9e9;
+`
+export const Content = styled(Header)`
+    font-weight: 300;
 `

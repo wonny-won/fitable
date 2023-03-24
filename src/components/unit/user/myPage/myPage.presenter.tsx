@@ -4,7 +4,6 @@ import * as S from './myPage.style'
 
 export default function MyUI(props:UserInfoData){
     console.log(props)
-    const userId = props.getUserInfo?.localId
     return(
         <S.Container>
         <Head>
@@ -31,7 +30,7 @@ export default function MyUI(props:UserInfoData){
                     <S.PHandEmailWrap>
                     <S.H3>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;화<S.Span>{props.getUserInfo?.phoneNumber}</S.Span></S.H3>
                     <S.H3>이 메 일 <S.Span>{props.getUserInfo?.email}</S.Span></S.H3>
-                    <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programManager.name}</S.Span></S.H3>
+                    <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programInfo.programManager}</S.Span></S.H3>
                     </S.PHandEmailWrap>
                 </S.UserData>
             </S.UserInfoWrap>
@@ -43,6 +42,18 @@ export default function MyUI(props:UserInfoData){
         </S.UserInfoSection>
         <S.Title>진행 프로그램</S.Title>
         <S.Line/>
+        <S.ProgramSection>
+            <S.Header> 
+                <div>TERM</div>
+                <div>PROGRAM</div>
+                <div>MANAGER</div>
+            </S.Header>
+            <S.Content>
+                <div>{props.userOtherData?.userData.programInfo.programterm}</div>
+                <div>{props.userOtherData?.userData.programInfo.program}</div>
+                <div>{props.userOtherData?.userData.programInfo.programManager}</div>
+            </S.Content>
+        </S.ProgramSection>
         </S.Container>
     )
 }
