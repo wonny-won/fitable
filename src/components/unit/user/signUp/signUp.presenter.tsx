@@ -7,7 +7,7 @@ export default function SignUpUI(props:SignUpPresenter){
     return(
         <S.Container>
         <Head>
-            <meta name="description" content="자기관리도 프리미엄의 시대! 내게 핏한 관리를 받아보세요." />
+            <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>회원가입 | fitable</title>
         </Head>
