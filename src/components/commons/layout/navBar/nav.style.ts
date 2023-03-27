@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     display: flex;
     position: fixed;
     z-index: ${(props:IsActiveProps)=>(props.isActive ? "1005":"0")};
+    font-family: 'LOTTERIACHAB';
 `
 export const Container = styled.div`
     display: flex;
