@@ -13,21 +13,29 @@ export default function UserMainUI(){
                 <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
                 <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
             </Head>
-            <S.Img src="/mascot.png"/>
-            <h1 style={{display: "none"}}> 프로그램 선택 </h1>
-            <S.CardsWrapper>
-                {
-                    ImgArr.map((item,index)=>(
-                        <MainCard image={ImgArr[index]} key={index}/>
-                    ))
-                }
-            </S.CardsWrapper>
-            <h1 style={{display: "none"}}> 프로그램 자가진단 </h1>
-            <S.SelfTestWrapper>
-                <div>뭐가 필요한지 모르겠다면?</div>
-                <S.SelfTestBT>프로그램 자가진단</S.SelfTestBT>
-            </S.SelfTestWrapper>
-            <S.Hr />
+            <S.Container>
+                <h1 style={{display:'none'}}>메인 홈화면</h1>
+                <h2 style={{display: "none"}}> 프로그램 광고 </h2>
+                <S.ADSection>
+                    <S.Img src="/mascot.png"/>
+                    <div> 서류에서 번번히 떨어진 경험 있지 않아? </div>
+
+                </S.ADSection>
+                <h2 style={{display: "none"}}> 프로그램 선택 </h2>
+                <S.CardsWrapper>
+                    {
+                        ImgArr.map((item,index)=>(
+                            <MainCard image={ImgArr[index]} key={index}/>
+                        ))
+                    }
+                </S.CardsWrapper>
+                <h1 style={{display: "none"}}> 프로그램 자가진단 </h1>
+                <S.SelfTestWrapper>
+                    <div>뭐가 필요한지 모르겠다면?</div>
+                    <S.SelfTestBT>프로그램 자가진단</S.SelfTestBT>
+                </S.SelfTestWrapper>
+                <S.Hr />
+            </S.Container>
         </>
     )
 }

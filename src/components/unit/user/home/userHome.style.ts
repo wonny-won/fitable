@@ -1,5 +1,18 @@
 import styled from "@emotion/styled";
 
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+export const ADSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'LOTTERIACHAB';
+    font-size: 30px;
+    font-weight: 300;
+`
 export const CardsWrapper = styled.section`
     display: flex;
     justify-content: space-between;
