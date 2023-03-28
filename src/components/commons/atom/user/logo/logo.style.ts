@@ -9,6 +9,7 @@ export const TitleText = styled.div`
     color : #8D60F5;
     font-weight: 700;
     margin: 10px 0;
+    font-family: 'LOTTERIACHAB';
 `
 export const Span = styled.span`
     margin : 30px 20px;

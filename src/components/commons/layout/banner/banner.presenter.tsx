@@ -6,9 +6,9 @@ export default function Banner (){
         <>
             <h1 style={{display:"none"}}>fitable 소개</h1>
             <S.TextWrap>
-                <S.MainText>커피한잔의 여유 <S.TextSpan>최선의 선택</S.TextSpan></S.MainText>
-                <FitableLogo fontSize={"35px"}/>
-                <div>나의 수월한 이직을 위한 <S.TextSpan>포트폴리오 피드백</S.TextSpan>을 받아보세요</div>
+                <S.MainText><S.TextSpan>나만 이직이 잘 안될땐?</S.TextSpan></S.MainText>
+                <FitableLogo fontSize={"45px"}/>
+                <div><S.TextSpan>수월한 이직</S.TextSpan>을 위한 가장 빠르고 확실한 방법 <S.TextSpan>fitable</S.TextSpan></div>
             </S.TextWrap>
 
         </>

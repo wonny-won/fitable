@@ -13,6 +13,7 @@ export default function UserMainUI(){
                 <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
                 <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
             </Head>
+            <S.Img src="/mascot.png"/>
             <h1 style={{display: "none"}}> 프로그램 선택 </h1>
             <S.CardsWrapper>
                 {

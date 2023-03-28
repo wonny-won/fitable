@@ -15,6 +15,12 @@ export const SelfTestWrapper = styled.section`
     font-size: 20px;
     font-weight: 300;
 `
+export const Img = styled.img`
+    width: 300px;
+    height: 300px;
+    size: cover;
+    text-align: center;
+`
 export const SelfTestBT = styled.button`
     background-color: transparent;
     color : black;
