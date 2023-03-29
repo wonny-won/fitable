@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
 `
-export const ADSection = styled.section`
+export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,9 +20,13 @@ export const TextArea = styled.div`
 `
 export const CardsWrapper = styled.section`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 150px 170px;
     margin: 0 auto;
-    width:900px;
+    width:100%;
+    background-color: #FFE100;
+    background-image: url('/frame.png');
+    background-size: cover;
 `
 export const SelfTestWrapper = styled.section`
     display: flex;

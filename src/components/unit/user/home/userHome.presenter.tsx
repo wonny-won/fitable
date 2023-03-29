@@ -4,7 +4,7 @@ import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
 import Banner from "../../../commons/layout/banner/banner.presenter"
 
 export default function UserMainUI(){
-    const ImgArr = ['/dietprogram.svg','/healingprogram.svg']
+    const ImgArr = ['포트폴리오 피드백','이력서 피드백']
     return(
         <>
              <Head>
@@ -16,13 +16,13 @@ export default function UserMainUI(){
             <S.Container>
                 <h1 style={{display:'none'}}>메인 홈화면</h1>
                 <h2 style={{display: "none"}}> 프로그램 광고 </h2>
-                <S.ADSection>
+                <S.Section>
                     <S.Img src="/mascot.png"/>
                     <S.TextArea>
                         <div>내게 fit한 포트폴리오 피드백을 받고나면?</div>
                         <div>나도 이직 성공!</div>
                     </S.TextArea>
-                </S.ADSection>
+                </S.Section>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>
                 <S.CardsWrapper>
                     {
@@ -31,7 +31,7 @@ export default function UserMainUI(){
                         ))
                     }
                 </S.CardsWrapper>
-                <h1 style={{display: "none"}}> 프로그램 자가진단 </h1>
+                <h2 style={{display: "none"}}> 프로그램 자가진단 </h2>
                 <S.SelfTestWrapper>
                     <div>뭐가 필요한지 모르겠다면?</div>
                     <S.SelfTestBT>프로그램 자가진단</S.SelfTestBT>

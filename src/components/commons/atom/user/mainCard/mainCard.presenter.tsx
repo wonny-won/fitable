@@ -23,7 +23,7 @@ export default function MainCardUI(props:MainCardProps){
                     <S.FrontProgramCard image={props.image}>
                     <S.CardTitle>
                         {
-                            props.image === '/dietprogram.svg' ? "Diet program" : "Healing program"
+                            props.image === '포트폴리오 피드백' ? "포트폴리오 피드백" : "이력서 피드백"
                         }
                     </S.CardTitle>
                     <S.ExpreienceBT>프로그햄 확인하기</S.ExpreienceBT>

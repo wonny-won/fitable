@@ -16,7 +16,7 @@ export default function Layout(props:LayoutProps){
     return(
         <div style={{display:"flex"}}>
             <NavBar isLogin={props.isLogin}/>
-            <div style={{width: "100%",marginLeft:"10%",zIndex:`${zindex && "1"}`}} >
+            <div style={{width: "100%",zIndex:`${zindex && "1"}`}} >
                 {!isHiddenBanner && <Banner />}
                 <div style={{marginTop:"130px"}} >{props.children}</div>
                 <Footer />

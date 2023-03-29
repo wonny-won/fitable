@@ -20,7 +20,7 @@ export const globalStyles = css`
     font-style: normal;
 }
   html {
-    background-color: #fff;
+    background-color:'#fff'};
     /* background-color: #FCF9EF; */
   }
   `

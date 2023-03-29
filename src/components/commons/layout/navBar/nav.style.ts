@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
     display: flex;
     position: fixed;
     z-index: ${(props:IsActiveProps)=>(props.isActive ? "1005":"0")};
-    font-family: 'LOTTERIACHAB';
 `
 export const Container = styled.div`
     display: flex;
@@ -78,8 +77,9 @@ export const Li = styled.li`
     &:hover{
         transition : 0.5s;
         font-size: 22px;
-        font-weight: 400;
         cursor: pointer;
+        font-family: 'LOTTERIACHAB';
+        color : #8D60F5;
     }
 `
 export const A  = styled.a`
