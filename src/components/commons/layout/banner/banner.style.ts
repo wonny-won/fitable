@@ -5,7 +5,7 @@ export const TextWrap = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin : 150px 0 130px 0; 
+    margin : 100px 0 130px 0; 
     font-size: 19px;
     font-weight: 300;
 `

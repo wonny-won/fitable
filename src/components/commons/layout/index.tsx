@@ -9,7 +9,7 @@ import NavBar from "./navBar/nav.container";
 
 export default function Layout(props:LayoutProps){
     const router = useRouter()
-    const HIDDEN_BANNER = ['/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup','/about','/mypage','/mypage/edit']
+    const HIDDEN_BANNER = ['/','/review/new',`/review/${router.query.reviewId}/edit`,'/joinus','/signup','/about','/mypage','/mypage/edit']
     const Z_INDEX = ['/joinus','/mypage/edit']
     const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath)
     const zindex = Z_INDEX.includes(router.asPath)
@@ -18,7 +18,7 @@ export default function Layout(props:LayoutProps){
             <NavBar isLogin={props.isLogin}/>
             <div style={{width: "100%",zIndex:`${zindex && "1"}`}} >
                 {!isHiddenBanner && <Banner />}
-                <div style={{marginTop:"130px"}} >{props.children}</div>
+                <div style={{marginTop:"100px"}} >{props.children}</div>
                 <Footer />
             </div>
         </div>

@@ -9,7 +9,6 @@ declare const window: typeof globalThis & {
   };
 
 export default function MainCardUI(props:MainCardProps){
-
     return(
         <>
             <Head>
@@ -20,10 +19,16 @@ export default function MainCardUI(props:MainCardProps){
             </Head>
             <h1 style={{display: "none"}}>프로그램 카드</h1>
                 <S.CardWrap>
-                    <S.FrontProgramCard image={props.image}>
+                    <S.FrontProgramCard >
+                    <S.ExplainTitle>
+                        {
+                            props.title === '포트폴리오 피드백' ? "'끝내주는'" : "'한번에 착-붙는'"
+  
+                        }
+                    </S.ExplainTitle>
                     <S.CardTitle>
                         {
-                            props.image === '포트폴리오 피드백' ? "포트폴리오 피드백" : "이력서 피드백"
+                            props.title === '포트폴리오 피드백' ? "포트폴리오 피드백" : "이력서 피드백"
                         }
                     </S.CardTitle>
                     <S.ExpreienceBT>프로그햄 확인하기</S.ExpreienceBT>

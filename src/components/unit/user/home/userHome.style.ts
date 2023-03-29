@@ -18,15 +18,35 @@ export const TextArea = styled.div`
     padding: 80px 0;
     align-items: center;
 `
+export const ADText = styled.div`
+    padding-bottom:20px;
+`
+export const AdText = styled.div`
+    padding-bottom: 40px;
+    font-size: 30px;
+    letter-spacing: 3px;
+`
+export const ADSpan = styled.span`
+    font-family: 'LOTTERIACHAB';
+    color: #8D60F5;
+    font-size: 30px;
+
+`
 export const CardsWrapper = styled.section`
     display: flex;
-    justify-content: space-around;
-    padding: 150px 170px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 170px 130px 190px;
     width:100%;
     background-color: #FFE100;
     background-image: url('/frame.png');
     background-size: cover;
+`
+export const CardsWrapDiv = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0 auto;
 `
 export const SelfTestWrapper = styled.section`
     display: flex;

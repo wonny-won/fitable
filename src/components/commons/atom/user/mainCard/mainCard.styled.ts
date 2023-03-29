@@ -7,6 +7,9 @@ export const CardWrap = styled.section`
     perspective: 1500px;
     transform-style: preserve-3d;
 `
+export const ExplainTitle = styled.div`
+    font-size: 20px;
+`
 export const FrontProgramCard = styled.div`
     perspective: 1500px;
     display: flex;
@@ -81,6 +84,7 @@ export const ExpreienceBT = styled.button`
     border: 1px solid black;
     border-radius: 4px;
     margin : 20px auto;
+    font-size: 15px;
     font-weight: 300;
     &:hover{
         cursor: pointer;

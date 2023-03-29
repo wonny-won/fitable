@@ -6,6 +6,7 @@ export const globalStyles = css`
     box-sizing: border-box;
     font-family: 'LOTTERIADDAG';
     font-weight: 300;
+    letter-spacing: 2px;
   }
   @font-face {
     font-family: 'LOTTERIACHAB';

@@ -10,6 +10,7 @@ export const TitleText = styled.div`
     font-weight: 700;
     margin: 10px 0;
     font-family: 'LOTTERIACHAB';
+    padding-bottom: 20px;
 `
 export const Span = styled.span`
     margin : 30px 20px;
