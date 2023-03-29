@@ -10,8 +10,14 @@ export const ADSection = styled.section`
     flex-direction: column;
     align-items: center;
     font-family: 'LOTTERIACHAB';
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
+`
+export const TextArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+    align-items: center;
 `
 export const CardsWrapper = styled.section`
     display: flex;

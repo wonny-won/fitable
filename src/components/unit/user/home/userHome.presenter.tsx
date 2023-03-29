@@ -18,8 +18,10 @@ export default function UserMainUI(){
                 <h2 style={{display: "none"}}> 프로그램 광고 </h2>
                 <S.ADSection>
                     <S.Img src="/mascot.png"/>
-                    <div> 서류에서 번번히 떨어진 경험 있지 않아? </div>
-
+                    <S.TextArea>
+                        <div>내게 fit한 포트폴리오 피드백을 받고나면?</div>
+                        <div>나도 이직 성공!</div>
+                    </S.TextArea>
                 </S.ADSection>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>
                 <S.CardsWrapper>
