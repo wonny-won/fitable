@@ -20,8 +20,8 @@ export default function UserMainUI(){
                     <S.AdText>서류에서 번번히 떨어지는 포트폴리오와 이력서?</S.AdText>
                     <S.Img src="/mascot.png"/>
                     <S.TextArea>
-                        <S.ADText><S.ADSpan>fitable</S.ADSpan> 의 내게 fit 한 <S.ADSpan>포트폴리오 피드백</S.ADSpan> 을 받고나면?</S.ADText>
-                        <S.ADText>나도 <S.ADSpan>이직 성공!</S.ADSpan></S.ADText>
+                        <S.ADText><S.ADSpan>fitable</S.ADSpan> 의 내게 fit 한 <S.AdSpan>포트폴리오 피드백</S.AdSpan> 을 받고나면?</S.ADText>
+                        <S.ADText>나도 <S.AdSpan>이직 성공!</S.AdSpan></S.ADText>
                     </S.TextArea>
                 </S.Section>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>

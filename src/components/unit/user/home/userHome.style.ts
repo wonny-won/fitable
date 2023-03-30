@@ -8,7 +8,6 @@ export const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'LOTTERIACHAB';
     font-size: 25px;
     font-weight: 300;
 `
@@ -30,7 +29,11 @@ export const ADSpan = styled.span`
     font-family: 'LOTTERIACHAB';
     color: #8D60F5;
     font-size: 30px;
-
+`
+export const AdSpan = styled.span`
+    color: #8D60F5;
+    font-size: 30px;
+    font-weight: 800;
 `
 export const CardsWrapper = styled.section`
     display: flex;
