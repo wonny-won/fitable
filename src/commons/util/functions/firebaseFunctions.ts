@@ -66,25 +66,6 @@ export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:
     await updateDoc(updateDataRef,data)
 }
 
-// 신규회원 가입 함수
-export const joinUsEmail = async({email,password,passwordCheck}:JoinusParams)=>{
-    const emailChek = checkEmail(email)
-    const passwordcheck = checkPassword(password,passwordCheck)
-    const includesNumber = await passwordValidation(password)
-    const IncludesEnglish = await passwordEnglishValidation(password)
-    let userUID = ""
-    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish){
-        try{
-            const createUser =  await createUserWithEmailAndPassword(auth ,email, password)
-            userUID = createUser.user.uid;
-            alert("회원가입을 축하드립니다.")
-            return userUID
-        } catch(error){
-            console.log(error)
-        }
-    }
-    return userUID
-}
 
 // 기존 회원 로그인
 export const logIn = async ({email,password}:JoinusParams)=>{
@@ -109,17 +90,4 @@ export const logOut = async ()=>{
     }
 }
 
-// 현재 로그인한 사용자 가지고 오기
-export const  loggedInUser =async ()=>{
-    const result = await new Promise((resolve, reject) => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              if(user.uid) resolve(user.reloadUserInfo)
-            } else {
-                reject("로그인 하지 않은 유저입니다.")
-            }
-          });
-    })
-    return result
-}
 
