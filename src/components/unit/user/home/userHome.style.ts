@@ -21,9 +21,11 @@ export const ADText = styled.div`
     padding-bottom:20px;
 `
 export const AdText = styled.div`
-    padding-bottom: 40px;
-    font-size: 30px;
+    padding-bottom: 80px;
+    font-size: 35px;
     letter-spacing: 3px;
+    
+}
 `
 export const ADSpan = styled.span`
     font-family: 'LOTTERIACHAB';
@@ -61,7 +63,7 @@ export const SelfTestWrapper = styled.section`
     font-weight: 300;
 `
 export const Img = styled.img`
-    width: 300px;
+    width: 450px;
     height: 300px;
     size: cover;
     text-align: center;
