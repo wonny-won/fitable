@@ -10,6 +10,8 @@ declare const window: typeof globalThis & {
   };
 
 export default function MainCardUI(props:MainCardProps){
+    const portfolioMenu = ['🛠 기능별 피드백','📄 페이지 단위 피드백','✅ 전체 간이 피드백']
+    const resumeMenu = ['🚦이력서 작성가이드','🖍이력서 피드백']
     return(
         <>
             <Head>
@@ -38,8 +40,14 @@ export default function MainCardUI(props:MainCardProps){
 
                     {/* 카드 뒷면 */}
                     <S.BackProgramCardWrap isClick={props.isClick}>
-                        <div>뒷 면 이 나 오 는 지 확 인 할 거 야</div>
-                        <S.ExpreienceBT onClick={props.onClickRotateCard}>프로그햄 확인하기</S.ExpreienceBT>
+                        <div>
+                            {
+                                props.title === '포트폴리오 피드백'? portfolioMenu.map((item)=>(<div>{item}</div>)):resumeMenu.map((item)=>(<div>{item}</div>))
+                            }
+                        </div>
+                        <S.BackIconWrap  onClick={props.onClickRotateCard}>
+                            <S.BackIcon src='/backIcon.png'/>
+                        </S.BackIconWrap>
 
                     </S.BackProgramCardWrap>
                 </S.CardWrap>

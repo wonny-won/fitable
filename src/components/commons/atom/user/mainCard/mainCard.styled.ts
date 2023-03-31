@@ -43,29 +43,6 @@ export const BackProgramCardWrap = styled.div`
     backface-visibility: hidden;
     box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
-export const BackCardInner = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-
-`
-export const TextArea = styled.div`
-    display: flex;
-    flex-direction: column;
-    color: black;
-    font-size: 15px;
-    font-weight: 300;
-`
-export const Text = styled.div`
-    padding-bottom: 15px;
-`
-export const TextSpan = styled.span`
-    font-size: 20px;
-    font-weight: 400;
-    color: #8D60F5;
-`
 export const CardTitle = styled.div`
     font-size: 36px;
     font-weight: 400;
@@ -84,4 +61,20 @@ export const ExpreienceBT = styled.button`
     &:hover{
         cursor: pointer;
     }
+`
+export const MenuWrap = styled.div`
+    border: 1px solid #FFE100;
+    background-color: #FFE100;
+    border-radius: 24px;
+`
+export const BackIconWrap = styled.div`
+    width: 40px;
+    height: 15px;
+    &:hover{
+        cursor: pointer;
+    }
+`
+export const BackIcon = styled.img`
+    width: 30px;
+    height: 5px;
 `
