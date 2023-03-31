@@ -22,8 +22,9 @@ export const ADText = styled.div`
 `
 export const AdText = styled.div`
     padding-bottom: 80px;
+    font-size: 35px;
     letter-spacing: 3px;
-    font-weight: 500;
+    font-weight: semi-bold;
 `
 export const ADSpan = styled.span`
     font-family: 'LOTTERIACHAB';
@@ -32,8 +33,8 @@ export const ADSpan = styled.span`
 `
 export const AdSpan = styled.span`
     color: #8D60F5;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 25px;
+    font-weight: bold;
 `
 export const CardsWrapper = styled.section`
     display: flex;
