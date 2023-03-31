@@ -55,7 +55,7 @@ export const MenuDetailWrap = styled.div`
     visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"};
     width : 300px;
     background-color: #FCF9EF;
-    transition: ${(props:IsActiveProps)=> props.isActive ? "0.7s" : "0.7s"};
+    transition: ${(props:IsActiveProps)=> props.isActive ? "0.7s 0.7s" : "0.7s 0.7s"};
     opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
     font-size: 20px;
     color : #1c1c1c;

@@ -22,10 +22,8 @@ export const ADText = styled.div`
 `
 export const AdText = styled.div`
     padding-bottom: 80px;
-    font-size: 35px;
     letter-spacing: 3px;
-    
-}
+    font-weight: 500;
 `
 export const ADSpan = styled.span`
     font-family: 'LOTTERIACHAB';
