@@ -6,15 +6,21 @@ import { MainCardProps } from "./mainCard.types"
 export default function MainCard(props:MainCardProps){
     console.log(props)
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isClick,setIsClick]=useState(false)
 
+    const onClickRotateCard = ()=>{
+        setIsClick(!isClick)
+    }
     const showModal = () => {
         setIsModalOpen(true);
     };
-   
+   console.log(isClick)
     return <MainCardUI
                     title={props.title}
                     // onClickPayment={onClickPayment}
                     showModal={showModal} 
                     isModalOpen={isModalOpen}
-                    setIsModalOpen={setIsModalOpen}/>
+                    setIsModalOpen={setIsModalOpen}
+                    onClickRotateCard={onClickRotateCard}
+                    isClick={isClick}/>
 }

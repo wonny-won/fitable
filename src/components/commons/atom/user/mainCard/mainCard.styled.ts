@@ -1,8 +1,9 @@
 import styled from "@emotion/styled"
 
-interface ImageProps{
-    image? : string ;
+interface TransformProps{
+    isClick: boolean;
 }
+
 export const CardWrap = styled.section`
     perspective: 1500px;
     transform-style: preserve-3d;
@@ -18,35 +19,29 @@ export const FrontProgramCard = styled.div`
     align-items: center;
     width: 400px;
     height: 440px;
-    background-image: url(${(props:ImageProps) => props.image});
     background-color: #FCF9EF;
-    background-size: 475px 440px;
     border-radius: 30px;
     transition: .8s;
     position: absolute;
-    transform: rotateY(0deg);
+    transform: ${(props:TransformProps)=>(props.isClick ? 'rotateY(180deg)':'rotateY(0deg)')};
     backface-visibility: hidden;
     z-index: 10;
-    &:focus-within{
-        cursor: pointer;
-        transform: rotateY(180deg);
-    }
     box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
 export const BackProgramCardWrap = styled.div`
+    perspective: 1500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 450px;
+    height: 440px;
+    background-color: #fff;
+    border-radius: 30px;
     transition: .8s;
+    transform: ${(props:TransformProps)=>(props.isClick ? 'rotateY(0deg)':'rotateY(-180deg)')};
     backface-visibility: hidden;
-    transform: translate(-50% -50%);
-    /* &:focus-within{
-        cursor: pointer;
-        transform: rotateY(180deg);
-    } */
+    box-shadow: 2px 6px 7px rgba(0,0,0,0.25);
 `
 export const BackCardInner = styled.div`
     display: flex;

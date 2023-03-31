@@ -6,4 +6,6 @@ export interface MainCardProps {
     isModalOpen? : boolean;
     setIsModalOpen? : Dispatch<SetStateAction<boolean>> | undefined;
     program?: string;
+    onClickRotateCard: () => void;
+    isClick: boolean;
 }

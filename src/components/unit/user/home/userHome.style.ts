@@ -42,6 +42,7 @@ export const CardsWrapper = styled.section`
     align-items: center;
     padding: 90px 170px 130px 190px;
     width:100%;
+    height: 750px;
     background-color: #FFE100;
     background-image: url('/frame.png');
     background-size: cover;
@@ -50,7 +51,6 @@ export const CardsWrapDiv = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-around;
-    margin: 0 auto;
 `
 export const SelfTestWrapper = styled.section`
     display: flex;
