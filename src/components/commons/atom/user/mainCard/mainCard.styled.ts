@@ -75,6 +75,9 @@ export const MenuWrap = styled.div`
     background-color:rgba(255,225,0,0.5);
     border-radius: 10px;
     margin-bottom: 15px;
+    &:hover{
+        cursor: pointer;
+    }
 `
 export const BackIconWrap = styled.div`
     position: absolute;

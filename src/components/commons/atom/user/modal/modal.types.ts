@@ -6,11 +6,11 @@ export interface ModalPresenter {
     program?: string;
     data? : any[];
     reviewId:string | undefined;
-    onClickPayment: () => void
+    onClickPayment: (program: string) => () => Promise<void>;
 }
 export interface Modalcontainer {
     isModalOpen: boolean | undefined;
-    setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+    setIsModalOpen: Dispatch<SetStateAction<boolean>> | undefined;
     program?: string;
     reviewId?: string;
 }
