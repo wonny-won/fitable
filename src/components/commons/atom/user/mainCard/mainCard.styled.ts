@@ -60,14 +60,26 @@ export const ExpreienceBT = styled.button`
     font-weight: 300;
     &:hover{
         cursor: pointer;
+        color:#8d60f5;
+        border: 1px solid #8d60f5;
+
     }
 `
+// export const ContentWrap = styled.div`
+//     padding-top: 80px ;
+// `
 export const MenuWrap = styled.div`
-    border: 1px solid #FFE100;
-    background-color: #FFE100;
-    border-radius: 24px;
+    text-align:center;
+    padding: 10px;
+    border: 1px solid rgba(255,225,0,0.5);
+    background-color:rgba(255,225,0,0.5);
+    border-radius: 10px;
+    margin-bottom: 15px;
 `
 export const BackIconWrap = styled.div`
+    position: absolute;
+    top: 360px;
+    left: 60px;
     width: 40px;
     height: 15px;
     &:hover{

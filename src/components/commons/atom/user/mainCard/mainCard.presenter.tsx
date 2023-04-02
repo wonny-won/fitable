@@ -4,7 +4,6 @@ import Head from 'next/head'
 import UseModal from "../modal/modal.container"
 import { useState } from 'react';
 
-
 declare const window: typeof globalThis & {
     IMP: any;
   };
@@ -42,11 +41,11 @@ export default function MainCardUI(props:MainCardProps){
                     <S.BackProgramCardWrap isClick={props.isClick}>
                         <div>
                             {
-                                props.title === '포트폴리오 피드백'? portfolioMenu.map((item)=>(<div>{item}</div>)):resumeMenu.map((item)=>(<div>{item}</div>))
+                                props.title === '포트폴리오 피드백'? portfolioMenu.map((item)=>(<S.MenuWrap>{item}</S.MenuWrap>)):resumeMenu.map((item)=>(<S.MenuWrap>{item}</S.MenuWrap>))
                             }
                         </div>
                         <S.BackIconWrap  onClick={props.onClickRotateCard}>
-                            <S.BackIcon src='/backIcon.png'/>
+                            <S.BackIcon src='/backIcon.png'/> 뒤로
                         </S.BackIconWrap>
 
                     </S.BackProgramCardWrap>
