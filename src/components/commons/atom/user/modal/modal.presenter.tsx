@@ -14,7 +14,8 @@ export default function UseModalUI(props:ModalPresenter){
              onCancel={props.handleCancel}
              width={ router.asPath==='/' ? 1000 : '100%'}>
         {
-          router.asPath==='/' ? (<ProgramDetailModal program={props.program}/>) : (<ReviewModalDetail reviewId={props.reviewId}/>)
+          router.asPath==='/' ? (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) : 
+          (<ReviewModalDetail reviewId={props.reviewId} menuTitle={props.menuTitle}/>)
         }
       </S.ModalBody>
     </>

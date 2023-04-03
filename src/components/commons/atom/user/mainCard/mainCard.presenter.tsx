@@ -49,7 +49,7 @@ export default function MainCardUI(props:MainCardProps){
                             <S.BackIcon src='/backIcon.png'/> 뒤로
                         </S.BackIconWrap>
                     </S.BackProgramCardWrap>
-                    <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
+                    <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} menuTitle={props.menuTitle}/>
                 </S.CardWrap>
         </>
     )

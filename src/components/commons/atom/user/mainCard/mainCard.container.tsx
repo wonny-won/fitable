@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import MainCardUI from "./mainCard.presenter"
 import { MainCardProps } from "./mainCard.types"
 // import { onClickPayment } from "../../../../../commons/util/function"
 
 export default function MainCard(props:MainCardProps){
-    console.log(props)
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isClick,setIsClick]=useState(false)
+    const [menuTitle ,setMenuTtitle] = useState('')
 
     const onClickRotateCard = ()=>{
         setIsClick(!isClick)
     }
-    const showModal = () => {
+    const showModal = (e:any) => {
+        console.log(e.target.innerText)
         setIsModalOpen(true);
+        setMenuTtitle(e.target.innerText)
     };
    console.log(isClick)
     return <MainCardUI
@@ -22,5 +24,6 @@ export default function MainCard(props:MainCardProps){
                     isModalOpen={isModalOpen}
                     setIsModalOpen={setIsModalOpen}
                     onClickRotateCard={onClickRotateCard}
-                    isClick={isClick}/>
+                    isClick={isClick}
+                    menuTitle={menuTitle}/>
 }
