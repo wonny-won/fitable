@@ -25,9 +25,7 @@ export default function ProgramDetailModalUI(props:ModalDetailPresenter){
         {
             props.menuTitle==='🖍이력서 피드백' && <ResumeFeedback/> 
         }
-
-        모달에 들어갈거지롱
-        <img src='/public/modalMascot.png'/>
+        {/* <img src='/public/modalMascot.png'/> */}
         <ApplyButton />
         </>
     )
