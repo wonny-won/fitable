@@ -9,7 +9,7 @@ declare const window: typeof globalThis & {
   };
 
 export default function MainCardUI(props:MainCardProps){
-    const portfolioMenu = ['🛠 기능별 피드백','📄 페이지 단위 피드백','✅ 전체 간이 피드백']
+    const portfolioMenu = ['✅ 전체 간이 피드백','📄 페이지 단위 피드백','🛠 기능별 피드백']
     const resumeMenu = ['🚦이력서 작성가이드','🖍이력서 피드백']
     return(
         <>

@@ -2,6 +2,7 @@ import Head from "next/head"
 import * as S from './userHome.style'
 import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
+import Carousel from "../../../commons/atom/user/carousel/carousel.container"
 
 export default function UserMainUI(){
     const title = ['포트폴리오 피드백','이력서 피드백']
@@ -26,7 +27,7 @@ export default function UserMainUI(){
                 </S.Section>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>
                 <S.CardsWrapper>
-                <FitableLogo fontSize={'45px'}/>
+                <S.ProgramText><FitableLogo fontSize={'45px'}/> &nbsp;&nbsp;<S.ProgramTextSpan>의 엄청난 프로그램!</S.ProgramTextSpan></S.ProgramText>
                     <S.CardsWrapDiv>
                     {
                         title.map((item,index:any)=>(
@@ -35,12 +36,12 @@ export default function UserMainUI(){
                     }
                     </S.CardsWrapDiv>
                 </S.CardsWrapper>
-                <h2 style={{display: "none"}}> 프로그램 자가진단 </h2>
-                <S.SelfTestWrapper>
-                    <div>뭐가 필요한지 모르겠다면?</div>
-                    <S.SelfTestBT>프로그램 자가진단</S.SelfTestBT>
-                </S.SelfTestWrapper>
-                <S.Hr />
+                <h2 style={{display: "none"}}> 피드백 튜터 소개 </h2>
+                <S.TutorContainer>
+                    <S.TutorText><S.TutorTextSpan>fitable</S.TutorTextSpan>과 함께하는 <S.TutorTextSpan>튜터</S.TutorTextSpan></S.TutorText>
+                    <Carousel/>
+                    <S.TutorMascotImg src='/tutorMascot.png'/>
+                </S.TutorContainer>
             </S.Container>
         </>
     )

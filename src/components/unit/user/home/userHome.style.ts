@@ -10,6 +10,7 @@ export const Section = styled.section`
     align-items: center;
     font-size: 25px;
     font-weight: 300;
+    width: 100%;
 `
 export const TextArea = styled.div`
     display: flex;
@@ -47,19 +48,20 @@ export const CardsWrapper = styled.section`
     background-image: url('/frame.png');
     background-size: cover;
 `
+export const ProgramText = styled.div`
+    display: flex;
+    font-size : 40px;
+    align-items: center;
+    line-height: -20px;
+    padding-bottom: 50px;
+`
+export const ProgramTextSpan = styled.span`
+    padding-bottom: 12px;
+`
 export const CardsWrapDiv = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-around;
-`
-export const SelfTestWrapper = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0;
-    color : black;
-    font-size: 20px;
-    font-weight: 300;
 `
 export const Img = styled.img`
     width: 450px;
@@ -67,25 +69,22 @@ export const Img = styled.img`
     size: cover;
     text-align: center;
 `
-export const SelfTestBT = styled.button`
-    background-color: transparent;
-    color : black;
-    padding: 10px 22px;
-    margin-left: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 5px;
-    border: 1.5px solid black;
-    &:hover{
-        cursor: pointer;
-        color : #8D60F5;
-        border-color: #8D60F5;
-    }
+export const TutorContainer = styled(Section)`
+    padding: 100px 0;
+    background-color:#FCF9EF ;
+    position: relative;
 `
-export const Hr = styled.hr ` 
-    width: 50px;
-    background: rgba(255,255,255,0.3);
-    height: 1px;
-    border: 0;
-    margin: 20px auto;
+export const TutorText = styled.div`
+    font-size : 40px;
+    padding-bottom: 20px;
+`
+export const TutorTextSpan = styled(ADSpan)`
+    font-size: 40px;
+`
+export const TutorMascotImg = styled.img`
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    right: 70px;
+    bottom: 50px;
 `
