@@ -59,7 +59,7 @@ export const ProgramText = styled.div`
     align-items: center;
     line-height: -20px;
     padding-bottom: 50px;
-    transition: all 1s ease-in-out 0s;
+    transition: transform 1s ease-in-out 0s;
     &{
         visibility : ${(props:ProgramTextProps)=>(props.scroll>226? "visible" : "hidden")};
         transform:${(props:ProgramTextProps)=>(props.scroll>226 && props.scroll<982 ? 'translateY(0px)' : 'translateY(-22px)')};

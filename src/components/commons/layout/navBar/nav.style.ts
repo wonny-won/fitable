@@ -57,9 +57,12 @@ export const MenuDetailWrap = styled.div`
     width : ${(props:IsActiveProps)=> props.isActive ? '300px':'1px'};
     background-color: #FCF9EF;
     opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
-    transition: ${(props:IsActiveProps)=> props.isActive ? "visibility,width,opacity 1s" : "visibility,width,opacity 0.3s"};
+    transition: ${(props:IsActiveProps)=> props.isActive ? "transform 1s" : "transform,visibility 1s"};
     font-size: 20px;
     color : #1c1c1c;
+    &{
+        transform: ${(props:IsActiveProps)=> props.isActive ? 'translateX(0px)':'translateX(-300px)'};
+    }
 ` 
 export const MenuWrapper = styled.div`
     height: 100%;
