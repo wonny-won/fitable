@@ -41,8 +41,8 @@ export default function MainCardUI(props:MainCardProps){
                     <S.BackProgramCardWrap isClick={props.isClick}>
                         <div>
                             {
-                                props.title === '포트폴리오 피드백'? portfolioMenu.map((item)=>(<S.MenuWrap onClick={props.showModal}>{item}</S.MenuWrap>)) :
-                                resumeMenu.map((item)=>(<S.MenuWrap onClick={props.showModal}>{item}</S.MenuWrap>))
+                                props.title === '포트폴리오 피드백'? portfolioMenu.map((item,index)=>(<S.MenuWrap onClick={props.showModal} key={index}>{item}</S.MenuWrap>)) :
+                                resumeMenu.map((item,index)=>(<S.MenuWrap onClick={props.showModal} key={index}>{item}</S.MenuWrap>))
                             }
                         </div>
                         <S.BackIconWrap  onClick={props.onClickRotateCard}>

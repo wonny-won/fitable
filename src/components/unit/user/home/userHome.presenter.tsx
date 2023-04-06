@@ -3,14 +3,14 @@ import * as S from './userHome.style'
 import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 import Carousel from "../../../commons/atom/user/carousel/carousel.container"
-import { useEffect } from "react"
+import { HomeProps } from "./home.types"
 
-export default function UserMainUI(){
+export default function UserMainUI(props:HomeProps){
     const title = ['포트폴리오 피드백','이력서 피드백']
     return(
         <>
              <Head>
-                <title> 맞춤형 온라인 헬스 | fitable</title>
+                <title> 이직이 쉬워진다! | fitable</title>
                 <meta charSet="UTF-8" />
                 <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
                 <meta name="veiwport " content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@ export default function UserMainUI(){
                 </S.Section>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>
                 <S.CardsWrapper>
-                <S.ProgramText><FitableLogo fontSize={'45px'}/> &nbsp;&nbsp;<S.ProgramTextSpan>의 엄청난 프로그램!</S.ProgramTextSpan></S.ProgramText>
+                <S.ProgramText scroll={props.scrollIsActive}><FitableLogo fontSize={'45px'}/> &nbsp;&nbsp;<S.ProgramTextSpan>의 엄청난 프로그램!</S.ProgramTextSpan></S.ProgramText>
                     <S.CardsWrapDiv>
                     {
                         title.map((item,index:any)=>(

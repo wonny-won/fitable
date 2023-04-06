@@ -14,7 +14,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* z-index:100000; */
+    z-index:100000;
     width: 100px;
     height: 100vh;
     padding: 70px 0 70px 0;
@@ -54,10 +54,10 @@ export const SearchIcon = styled(SearchOutlined)`
 `
 export const MenuDetailWrap = styled.div`
     visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"};
-    width : 300px;
+    width : ${(props:IsActiveProps)=> props.isActive ? '300px':'1px'};
     background-color: #FCF9EF;
-    transition: ${(props:IsActiveProps)=> props.isActive ? "0.7s 0.7s" : "0.7s 0.7s"};
     opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
+    transition: ${(props:IsActiveProps)=> props.isActive ? "visibility,width,opacity 1s" : "visibility,width,opacity 0.3s"};
     font-size: 20px;
     color : #1c1c1c;
 ` 

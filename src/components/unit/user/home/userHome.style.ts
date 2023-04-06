@@ -1,4 +1,9 @@
 import styled from "@emotion/styled";
+
+interface ProgramTextProps {
+    scroll: number;
+}
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -55,7 +60,10 @@ export const ProgramText = styled.div`
     line-height: -20px;
     padding-bottom: 50px;
     transition: all 1s ease-in-out 0s;
-
+    &{
+        visibility : ${(props:ProgramTextProps)=>(props.scroll>226? "visible" : "hidden")};
+        transform:${(props:ProgramTextProps)=>(props.scroll>226 && props.scroll<982 ? 'translateY(0px)' : 'translateY(-22px)')};
+    }
 `
 export const ProgramTextSpan = styled.span`
     padding-bottom: 12px;

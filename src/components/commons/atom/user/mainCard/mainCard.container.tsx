@@ -16,7 +16,6 @@ export default function MainCard(props:MainCardProps){
         setIsModalOpen(true);
         setMenuTtitle(e.target.innerText)
     };
-   console.log(isClick)
     return <MainCardUI
                     title={props.title}
                     // onClickPayment={onClickPayment}
