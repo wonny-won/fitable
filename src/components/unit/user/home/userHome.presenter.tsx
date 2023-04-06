@@ -3,6 +3,7 @@ import * as S from './userHome.style'
 import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 import Carousel from "../../../commons/atom/user/carousel/carousel.container"
+import { useEffect } from "react"
 
 export default function UserMainUI(){
     const title = ['포트폴리오 피드백','이력서 피드백']
@@ -40,7 +41,6 @@ export default function UserMainUI(){
                 <S.TutorContainer>
                     <S.TutorText><S.TutorTextSpan>fitable</S.TutorTextSpan>과 함께하는 <S.TutorTextSpan>튜터</S.TutorTextSpan></S.TutorText>
                     <Carousel/>
-                    <S.TutorMascotImg src='/tutorMascot.png'/>
                 </S.TutorContainer>
             </S.Container>
         </>

@@ -9,8 +9,9 @@ export default function Carousel(){
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // nextArrow: true,
-        // prevArrow: true
+        autoplay: true,
+        autoplaySpeed: 1500,
+        pauseOnHover: true
       };
     return <CarouselUI settings={settings}/>
 }

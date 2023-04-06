@@ -54,6 +54,8 @@ export const ProgramText = styled.div`
     align-items: center;
     line-height: -20px;
     padding-bottom: 50px;
+    transition: all 1s ease-in-out 0s;
+
 `
 export const ProgramTextSpan = styled.span`
     padding-bottom: 12px;
@@ -72,19 +74,25 @@ export const Img = styled.img`
 export const TutorContainer = styled(Section)`
     padding: 100px 0;
     background-color:#FCF9EF ;
-    position: relative;
 `
 export const TutorText = styled.div`
     font-size : 40px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 `
 export const TutorTextSpan = styled(ADSpan)`
     font-size: 40px;
 `
 export const TutorMascotImg = styled.img`
-    width: 200px;
+    width: 190px;
     height: 250px;
     position: absolute;
     right: 70px;
-    bottom: 50px;
+    bottom: -1200px;
+`
+export const BooksImg = styled.img`
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 200px;
+    bottom: -1200px;
 `
