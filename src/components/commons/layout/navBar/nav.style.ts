@@ -54,10 +54,10 @@ export const SearchIcon = styled(SearchOutlined)`
 `
 export const MenuDetailWrap = styled.div`
     visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"};
-    width : ${(props:IsActiveProps)=> props.isActive ? '300px':'1px'};
+    width :300px;
     background-color: #FCF9EF;
     opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
-    transition: ${(props:IsActiveProps)=> props.isActive ? "transform 1s" : "transform,visibility 1s"};
+    transition: ${(props:IsActiveProps)=> props.isActive ? "transform 1s" : "transform 1s"};
     font-size: 20px;
     color : #1c1c1c;
     &{

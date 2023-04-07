@@ -55,18 +55,20 @@ export const CardsWrapper = styled.section`
 `
 export const ProgramText = styled.div`
     display: flex;
-    font-size : 40px;
+    font-size : 20px;
     align-items: center;
     line-height: -20px;
     padding-bottom: 50px;
-    transition: transform 1s ease-in-out 0s;
+    transition: transform,font-size 1s ease-in-out 0s;
     &{
         visibility : ${(props:ProgramTextProps)=>(props.scroll>226? "visible" : "hidden")};
         transform:${(props:ProgramTextProps)=>(props.scroll>226 && props.scroll<982 ? 'translateY(0px)' : 'translateY(-22px)')};
+        font-size :${(props:ProgramTextProps)=>(props.scroll>226 && props.scroll<982 ? '40px':'20px')};
     }
 `
-export const ProgramTextSpan = styled.span`
-    padding-bottom: 12px;
+export const ProgramTextLogoSpan = styled.span`
+    font-family: 'LOTTERIACHAB';
+    color: #8D60F5;
 `
 export const CardsWrapDiv = styled.div`
     display: flex;

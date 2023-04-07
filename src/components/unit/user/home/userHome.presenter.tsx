@@ -28,7 +28,7 @@ export default function UserMainUI(props:HomeProps){
                 </S.Section>
                 <h2 style={{display: "none"}}> 프로그램 선택 </h2>
                 <S.CardsWrapper>
-                <S.ProgramText scroll={props.scrollIsActive}><FitableLogo fontSize={'45px'}/> &nbsp;&nbsp;<S.ProgramTextSpan>의 엄청난 프로그램!</S.ProgramTextSpan></S.ProgramText>
+                <S.ProgramText scroll={props.scrollIsActive}><S.ProgramTextLogoSpan>fitable</S.ProgramTextLogoSpan> &nbsp;&nbsp;의 엄청난 프로그램</S.ProgramText>
                     <S.CardsWrapDiv>
                     {
                         title.map((item,index:any)=>(
