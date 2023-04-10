@@ -7,18 +7,17 @@ interface IsActiveProps{
 export const Wrapper = styled.div`
     display: flex;
     position: fixed;
-    z-index: ${(props:IsActiveProps)=>(props.isActive ? "1005":"0")};
 `
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+    left: 0px;
     align-items: center;
     justify-content: space-between;
-    z-index:100000;
     width: 100px;
     height: 100vh;
     padding: 70px 0 70px 0;
-    background-color: ${(props:IsActiveProps)=>(props.isActive ? "#FCF9EF":"transparent")};
+    background-color: ${(props:IsActiveProps)=>(props.isActive ? "transparent":"#FCF9EF")};
     &:hover{
         background-color: #FCF9EF;
         cursor: pointer;
@@ -53,15 +52,20 @@ export const SearchIcon = styled(SearchOutlined)`
     font-size: 30px;
 `
 export const MenuDetailWrap = styled.div`
-    visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"};
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"}; */
     width :300px;
     background-color: #FCF9EF;
-    opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
-    transition: transform ease-in-out 1s;
+    opacity: ${(props:IsActiveProps)=> props.isActive ? 0 : 1};
+    transition: position,transform ease-in-out 1s;
     font-size: 20px;
     color : #1c1c1c;
     &{
-        transform: ${(props:IsActiveProps)=> props.isActive ? 'translateX(0px)':'translateX(-300px)'};
+        position: absolute;
+        left: ${(props:IsActiveProps)=> props.isActive ?'-300px':'100px'};
+        transform: ${(props:IsActiveProps)=> props.isActive ? 'translateX(-300px)':'translateX(0px)'};
     }
 ` 
 export const MenuWrapper = styled.div`
