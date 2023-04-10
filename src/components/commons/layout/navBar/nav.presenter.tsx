@@ -3,7 +3,7 @@ import { NavProps } from './nav.type'
 
 export default function NavBarUI(props:NavProps){
     return(
-        <S.Wrapper isActive={props.isActive}>
+        <S.Wrapper>
         <S.Container isActive={props.isActive}>  
             <S.HamburgerMenuWrap onClick={props.onClickMenuBt}>
                 <S.HamburgerMenu/>

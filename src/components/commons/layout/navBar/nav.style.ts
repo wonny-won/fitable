@@ -17,7 +17,7 @@ export const Container = styled.div`
     width: 100px;
     height: 100vh;
     padding: 70px 0 70px 0;
-    background-color: ${(props:IsActiveProps)=>(props.isActive ? "transparent":"#FCF9EF")};
+    background-color: ${(props:IsActiveProps)=>(props.isActive ? "#FCF9EF":"transparent")};
     &:hover{
         background-color: #FCF9EF;
         cursor: pointer;
@@ -55,17 +55,16 @@ export const MenuDetailWrap = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* visibility : ${(props:IsActiveProps)=> props.isActive ? "visible" : "hidden"}; */
     width :300px;
     background-color: #FCF9EF;
-    opacity: ${(props:IsActiveProps)=> props.isActive ? 0 : 1};
+    opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0 };
     transition: position,transform ease-in-out 1s;
     font-size: 20px;
     color : #1c1c1c;
     &{
         position: absolute;
-        left: ${(props:IsActiveProps)=> props.isActive ?'-300px':'100px'};
-        transform: ${(props:IsActiveProps)=> props.isActive ? 'translateX(-300px)':'translateX(0px)'};
+        left: ${(props:IsActiveProps)=> props.isActive ?'100px':'-300px'};
+        transform: ${(props:IsActiveProps)=> props.isActive ? 'translateX(0px)':'translateX(-300px)'};
     }
 ` 
 export const MenuWrapper = styled.div`
