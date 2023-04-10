@@ -11,13 +11,13 @@ export const FooterWrapper = styled.section`
     padding: 50px;
 `
 export const RelateSite = styled.div`
-    width : 240px;
+    width : 280px;
     display: flex;
     justify-content: space-between;
 `
 export const H3 = styled.a`
     font-weight: 200;
-    font-size: 15px;
+    font-size: 13px;
     padding : 10px 0 10px 2px;
     text-decoration: none;
     color: black;

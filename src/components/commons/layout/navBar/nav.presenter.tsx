@@ -21,7 +21,7 @@ export default function NavBarUI(props:NavProps){
             <div>
                 <ul>
                     <S.A href="/"><S.Li>HOME</S.Li></S.A>
-                    <S.A href="/about"><S.Li>APPLY</S.Li></S.A>
+                    <S.A href="/apply"><S.Li>APPLY</S.Li></S.A>
                     <S.A href="/review"><S.Li>REVIEW</S.Li></S.A>
                     <S.Li>유형별 프로그램 추천</S.Li>
                 </ul>

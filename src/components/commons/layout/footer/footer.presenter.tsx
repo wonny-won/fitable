@@ -7,8 +7,8 @@ export default function FooterUI(){
           <S.FooterWrapper>
             <h2 style={{display : "none"}}> 연계 사이트 </h2>
             <S.RelateSite>
-                <S.H3 href="https://github.com/wonny-won"> github | </S.H3>
-                <S.H3> jaake0704@gmail.com | </S.H3>
+                <S.H3 href="https://github.com/wonny-won"> github </S.H3>
+                <S.H3> jaake0704@gmail.com </S.H3>
                 <S.H3 href='https://dev-raccoon-man.tistory.com/'> tistory </S.H3>
             </S.RelateSite>
             <h2 style={{display : "none"}}>회사 대표</h2>
