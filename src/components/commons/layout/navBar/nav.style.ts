@@ -57,7 +57,7 @@ export const MenuDetailWrap = styled.div`
     width :300px;
     background-color: #FCF9EF;
     opacity: ${(props:IsActiveProps)=> props.isActive ? 1 : 0};
-    transition: ${(props:IsActiveProps)=> props.isActive ? "transform 1s" : "transform 1s"};
+    transition: transform ease-in-out 1s;
     font-size: 20px;
     color : #1c1c1c;
     &{
