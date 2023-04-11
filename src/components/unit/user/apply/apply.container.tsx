@@ -1,11 +1,16 @@
 import ApplyUI from "./apply.presenter"
 import { onClickPayment } from "../../../../commons/util/functions/payments"
 import Head from "next/head"
+import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
+import { addDocs } from "../../../../commons/util/functions/firebase/addDocs"
 
 export default function Apply(){
+    const {onChangeInputs,inputs} = useOnchangeInputs()
+    
     const onClickSubmit = (e:any)=>{
-        console.log('실행!')
         onClickPayment(e.target.id)()
+        // 파일 업로드 적용하기
+        addDocs({colletionName:'applyData',data:inputs})
     }
     return(
         <>
@@ -19,7 +24,8 @@ export default function Apply(){
             {/* 결제 - iamport.payment.js */}
             <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
         </Head>
-        <ApplyUI onClickSubmit={onClickSubmit}/>
+        <ApplyUI onClickSubmit={onClickSubmit}
+                 onChangeInputs={onChangeInputs}/>
         </>
     )
 }

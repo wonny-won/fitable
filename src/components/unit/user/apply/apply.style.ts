@@ -32,7 +32,7 @@ export const ProgramCard = styled.div`
 `
 export const ProgramTitle = styled.h2`
     margin-bottom: 3px;
-    font-size: 20px;
+    font-size: 23px;
 `
 export const ProgramTitleSpan = styled.span`
     background-color: #FFE100;
@@ -40,7 +40,7 @@ export const ProgramTitleSpan = styled.span`
 `
 export const GuideTitle = styled.h3`
     margin-top: 50px;
-    font-size: 18px;
+    font-size: 20px;
 `
 export const Text =  styled.div`
     display: flex;
@@ -50,6 +50,7 @@ export const Text =  styled.div`
 export const ProgramText = styled.div`
     font-family: 'SUIT-Regular';
     padding-bottom: 8px;
+    font-size: 14px;
 `
 export const TextArea = styled.textarea`
     font-family: 'SUIT-Regular';
@@ -70,16 +71,18 @@ export const ProgramSection = styled.section`
     border-top: 1px solid black;
 `
 export const SubmitBt = styled.button`
+    font-size: 17px;
     width : 50%;
     padding: 10px 20px;
     margin: 50px 25% 0px 25%;
     color: #fff;
     background-color:#231f20;
     border:none;
-    border: 1px solid #231f20;
+    border: 3px solid #231f20;
+    border-radius: 10px;
     &:hover{
         background: #fff;
-        border: 1px solid #8D60F5;
+        border: 3px solid #8D60F5;
         cursor: pointer;
         color: #8D60F5;
     }

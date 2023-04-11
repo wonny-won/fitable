@@ -30,8 +30,7 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
                     coupon: 0,
                     programInfo : {
                         program:'신청하신 프로그램이 없습니다.',
-                        programterm:'-',
-                        programManager:'담당자가 없습니다.'
+                        applyAt:'-',
                     },
                     phoneNumber: ''
                 }

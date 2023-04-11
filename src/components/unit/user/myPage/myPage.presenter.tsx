@@ -44,14 +44,14 @@ export default function MyUI(props:UserInfoData){
         <S.Line/>
         <S.ProgramSection>
             <S.Header> 
-                <div>TERM</div>
-                <div>PROGRAM</div>
-                <div>MANAGER</div>
+                <div>신청날짜</div>
+                <div>프로그램</div>
+                <div>신청내역</div>
             </S.Header>
             <S.Content>
-                <div>{props.userOtherData?.userData.programInfo.programterm}</div>
+                <div>{props.userOtherData?.userData.programInfo.applyAt}</div>
                 <div>{props.userOtherData?.userData.programInfo.program}</div>
-                <div>{props.userOtherData?.userData.programInfo.programManager}</div>
+                <div>보기</div>
             </S.Content>
         </S.ProgramSection>
         </S.Container>
