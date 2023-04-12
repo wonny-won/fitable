@@ -6,7 +6,7 @@ export const TitleWrap = styled.div`
 `
 export const Title = styled.h1`
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     color: #8D60F5;
     font-family: 'LOTTERIACHAB';
 `

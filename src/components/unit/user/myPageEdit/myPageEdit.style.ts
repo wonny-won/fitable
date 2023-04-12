@@ -52,8 +52,7 @@ export const ProfileImg = styled(H1)`
     padding-left: 30px;
 ` 
 export const  ImgInput = styled.label`
-    width : 50px;
-    height: 20px;
+    padding: 3px 5px ;
     text-align: center;
     font-size: 15px;
     background-color:#fff;

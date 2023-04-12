@@ -2,15 +2,23 @@ import ApplyUI from "./apply.presenter"
 import { onClickPayment } from "../../../../commons/util/functions/payments"
 import Head from "next/head"
 import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
-import { addDocs } from "../../../../commons/util/functions/firebase/addDocs"
+import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
+import { ChangeEvent, useState } from "react"
 
 export default function Apply(){
     const {onChangeInputs,inputs} = useOnchangeInputs()
+    const [program,setProgram] = useState('')
+    const onChangeProgram = (e:ChangeEvent<HTMLInputElement>)=>{
+        setProgram(e.target.id)
+    }
+    const routerhooks = useRoutingPageHooks()
     
-    const onClickSubmit = (e:any)=>{
-        onClickPayment(e.target.id)()
-        // 파일 업로드 적용하기
-        addDocs({colletionName:'applyData',data:inputs})
+    const onClickSubmit = ()=>{
+        alert('결제 후 프로그램을 신청하시하시겠습니까?')
+        const data = {...inputs,program}
+        const paymentResult = onClickPayment(data)()
+        console.log(paymentResult)
+        if(paymentResult==="결제완료")routerhooks()('/mypage')
     }
     return(
         <>
@@ -25,7 +33,8 @@ export default function Apply(){
             <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
         </Head>
         <ApplyUI onClickSubmit={onClickSubmit}
-                 onChangeInputs={onChangeInputs}/>
+                 onChangeInputs={onChangeInputs}
+                 onChangeProgram={onChangeProgram}/>
         </>
     )
 }

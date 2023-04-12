@@ -12,7 +12,7 @@ export default function NavBarUI(props:NavProps){
                 <S.LOGO src='/logo.png'/>
             </S.LogoWrap>
             <S.IconWrap>
-                <S.MyPageIcon />
+                <S.MyPageIcon onClick={props.routing('/mypage')}/>
                 <S.SearchIcon />
             </S.IconWrap>
         </S.Container>

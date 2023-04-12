@@ -6,4 +6,5 @@ export interface MypageEditPresenter {
     getUserInfo: unknown | any;
     uploadImage: any;
     image: string;
+    routerhook: (path: string) => () => void;
 }

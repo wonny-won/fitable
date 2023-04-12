@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { UserInfoData } from "./myPage.types";
 import * as S from './myPage.style'
+import UseModal from "../../../commons/atom/user/modal/modal.container";
 
 export default function MyUI(props:UserInfoData){
     console.log(props)
@@ -30,7 +31,7 @@ export default function MyUI(props:UserInfoData){
                     <S.PHandEmailWrap>
                     <S.H3>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;화<S.Span>{props.getUserInfo?.phoneNumber}</S.Span></S.H3>
                     <S.H3>이 메 일 <S.Span>{props.getUserInfo?.email}</S.Span></S.H3>
-                    <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programInfo.programManager}</S.Span></S.H3>
+                    {/* <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programInfo.programManager}</S.Span></S.H3> */}
                     </S.PHandEmailWrap>
                 </S.UserData>
             </S.UserInfoWrap>
@@ -49,9 +50,10 @@ export default function MyUI(props:UserInfoData){
                 <div>신청내역</div>
             </S.Header>
             <S.Content>
-                <div>{props.userOtherData?.userData.programInfo.applyAt}</div>
-                <div>{props.userOtherData?.userData.programInfo.program}</div>
-                <div>보기</div>
+                <div>{props.userOtherData?.userData?.programInfo?.applyAt}</div>
+                <div>{props.userOtherData?.userData?.programInfo?.program}</div>
+                <div onClick={props.onClickOpenModal}>보기</div>
+                <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
             </S.Content>
         </S.ProgramSection>
         </S.Container>

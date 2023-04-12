@@ -5,10 +5,13 @@ import { loggedInUser } from "../../../../commons/util/functions/firebaseFunctio
 import MyPageEditUI from "./myPageEdit.presenter"
 import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
 import { useUploadImage } from "../../../../commons/util/hooks/imageUpload";
+import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
+import { useRouter } from "next/router"
 
 export default function MyPageEdit(){
     const {onChangeInputs, inputs} = useOnchangeInputs()
     const {uploadImage,image} = useUploadImage()
+    const routerhook = useRoutingPageHooks()
     useQueryClient()
     const getUserInfo = useQuery({
         queryKey: ['userInfo'],
@@ -21,9 +24,8 @@ export default function MyPageEdit(){
         if(inputs.phoneNumber) updateUser.phoneNumber = inputs.phoneNumber
         if(image) updateUser.photoURL = image
         try{
-            console.log(updateUser)
             await updateProfile(auth.currentUser, {...updateUser})
-            console.log(auth.currentUser)
+            routerhook('/mypage')()
         }catch(error){
             console.log(error)
         }
@@ -32,5 +34,6 @@ export default function MyPageEdit(){
                          onClickUpdateProfile={onClickUpdateProfile}
                          getUserInfo={getUserInfo.data}
                          uploadImage={uploadImage}
-                         image={image}/>
+                         image={image}
+                         routerhook={routerhook}/>
 }

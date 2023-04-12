@@ -38,7 +38,7 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                     </S.MiniWrap>
                     <S.BtWrap>
                         <S.SubmitBt onClick={props.onClickUpdateProfile}>수정하기</S.SubmitBt>
-                        <S.CancelBt >취소하기</S.CancelBt>
+                        <S.CancelBt onClick={props.routerhook('/mypage')}>취소하기</S.CancelBt>
                     </S.BtWrap>
                 </S.Container>
         </>

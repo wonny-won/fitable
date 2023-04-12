@@ -1,10 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth, DB } from "../../../../../pages/_app"
 import { checkEmail, checkPassword, passwordEnglishValidation, passwordValidation } from "../validation"
-import { 
-    setDoc,
-    doc,
- } from "firebase/firestore";
+import { addCustomIdDoc } from "./addDocs";
 
 interface JoinusParams {
     email : string;
@@ -29,13 +26,13 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
                     point : 0,
                     coupon: 0,
                     programInfo : {
-                        program:'신청하신 프로그램이 없습니다.',
+                        program:'신청 내역이 없습니다.',
                         applyAt:'-',
                     },
                     phoneNumber: ''
                 }
             }
-            await setDoc(doc(DB,'user',userUID),OtherData)
+            await addCustomIdDoc('user',userUID,OtherData)
             alert("회원가입을 축하드립니다.")
             return userUID
         } catch(error){

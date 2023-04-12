@@ -34,16 +34,16 @@ export default function ApplyUI(props:ApplyPresenterProps){
                 <S.ProgramSection>
                 <S.GuideTitle> 프로그램을 선택해주세요.</S.GuideTitle>
                     <S.Text>
-                        <S.ProgramText><input type="radio" id={item.item1} onChange={props.onChangeInputs}/> {item.item1}</S.ProgramText> 
+                        <S.ProgramText><input type="radio" name='program' id={item.item1} onChange={props.onChangeProgram}/> {item.item1}</S.ProgramText> 
                         <S.ProgramText id={item.item1Price}>{item.item1Price}</S.ProgramText>
                     </S.Text>
                     <S.Text>
-                        <S.ProgramText ><input type="radio" id={item.item2} onChange={props.onChangeInputs}/> {item.item2}</S.ProgramText> 
+                        <S.ProgramText ><input type="radio" name='program' id={item.item2} onChange={props.onChangeProgram}/> {item.item2}</S.ProgramText> 
                         <S.ProgramText id={item.item2Price}>{item.item2Price}</S.ProgramText>
                     </S.Text>
                     {item.item3 &&
                         <S.Text>
-                            <S.ProgramText><input type="radio" id={item.item3} onChange={props.onChangeInputs}/>{item.item3}</S.ProgramText> 
+                            <S.ProgramText><input type="radio" name='program' id={item.item3} onChange={props.onChangeProgram}/>{item.item3}</S.ProgramText> 
                             <S.ProgramText id={item.item3Price}>{item.item3Price}</S.ProgramText>
                         </S.Text>
                     }
