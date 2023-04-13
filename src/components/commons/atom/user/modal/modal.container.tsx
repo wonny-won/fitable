@@ -10,7 +10,6 @@ export default function UseModal(props: Modalcontainer){
                      handleCancel={handleCancel}
                      program={props.program}
                      reviewId={props.reviewId}
-                     onClickPayment={onClickPayment}
                      menuTitle={props.menuTitle}
                      />
 };

@@ -137,3 +137,18 @@ export const Header = styled.div`
 export const Content = styled(Header)`
     font-weight: 300;
 `
+export const ViewBt = styled.div`
+    &:hover{
+        cursor: pointer;
+        border: 1px solid #1c1c1c;
+        background-color: #1c1c1c;
+        color: #fff;
+        font-weight: 400;
+    }
+    font-family: 'SUIT-Regular';
+    padding: 2px 3px;
+    border: 1px solid #1c1c1c;
+    font-size: 12px;
+    font-weight: 400;
+
+`

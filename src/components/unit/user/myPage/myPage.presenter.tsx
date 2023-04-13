@@ -4,7 +4,6 @@ import * as S from './myPage.style'
 import UseModal from "../../../commons/atom/user/modal/modal.container";
 
 export default function MyUI(props:UserInfoData){
-    console.log(props)
     return(
         <S.Container>
         <Head>
@@ -52,7 +51,7 @@ export default function MyUI(props:UserInfoData){
             <S.Content>
                 <div>{props.userOtherData?.userData?.programInfo?.applyAt}</div>
                 <div>{props.userOtherData?.userData?.programInfo?.program}</div>
-                <div onClick={props.onClickOpenModal}>보기</div>
+                <S.ViewBt onClick={props.onClickOpenModal}>보기</S.ViewBt>
                 <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
             </S.Content>
         </S.ProgramSection>

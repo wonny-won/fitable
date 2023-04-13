@@ -9,7 +9,6 @@ export const  loggedInUser = async ()=>{
         onAuthStateChanged(auth, (user) => {
             if (user) {
             if(user.uid) {
-                console.log(user.reloadUserInfo)
                 resolve(user.reloadUserInfo)}
             } else {
                 reject("로그인 하지 않은 유저입니다.")
