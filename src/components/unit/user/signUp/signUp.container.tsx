@@ -1,5 +1,5 @@
 import SignUpUI from "./signUp.presenter"
-import { joinUsEmail } from "../../../../commons/util/functions/firebase/signUp";
+import { joinUsEmail } from "../../../../commons/util/functions/firebase/create/signUp";
 import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing";
 

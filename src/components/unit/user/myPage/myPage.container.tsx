@@ -1,5 +1,5 @@
 import MyUI from "./myPage.presenter";
-import { loggedInUser } from "../../../../commons/util/functions/firebase/getUserInfo";
+import { loggedInUser } from "../../../../commons/util/functions/firebase/read/getUserInfo";
 import { useQuery,useQueryClient } from "@tanstack/react-query";
 import useAuth from "../../../../commons/util/hooks/useAuth";
 import { useState } from "react";

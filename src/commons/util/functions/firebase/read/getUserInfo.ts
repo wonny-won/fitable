@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, DB } from "../../../../../pages/_app";
+import { auth, DB } from "../../../../../../pages/_app";
 
 // 현재 로그인한 사용자 가지고 오기
 export const  loggedInUser = async ()=>{

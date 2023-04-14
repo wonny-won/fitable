@@ -1,6 +1,6 @@
-import { loggedInUser } from "./firebase/getUserInfo";
-import { addCustomIdDoc } from "./firebase/addDocs";
-import { updateDatas } from "./firebase/updateDocs";
+import { loggedInUser } from "./firebase/read/getUserInfo";
+import { updateDatas } from "./firebase/update/updateDocs";
+import { addCustomIdDoc } from "./firebase/create/addCustomIdDocs";
 
 declare const window: typeof globalThis & {
     IMP: any;
@@ -8,36 +8,37 @@ declare const window: typeof globalThis & {
 
 export const onClickPayment = (data: {}) => async()=>{
     const { result }:any = await loggedInUser()
-    let success = "결제실패"
-    const IMP = window.IMP; // 생략 가능
+    const IMP = window.IMP; 
     IMP.init("imp49910675")
-  // IMP.request_pay(param, callback) 결제창 호출
-  IMP.request_pay({ // param
-    pg: "nice",
-    pay_method: "card",
-    // merchant_uid: "ORD20180131-0000011",
-    name: data.program,
-    amount: 100,
-    buyer_email: result?.email,
-    buyer_name: result.displayName ? result.displayName : `${result?.email} 님`,
-    buyer_tel: result.phoneNumber ? result.phoneNumber:"번호없음",
-    buyer_addr: "",
-    buyer_postcode: "01181"
-  }, (rsp:any) => { // callback
-    if (rsp.success) {
-        addCustomIdDoc('applyData',result.localId, data)
-        const date = new Date()
-        const createAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} `
-        const mypageApplyData = {
-          "userData.programInfo.program": data.program,
-          "userData.programInfo.applyAt":createAt}
-        updateDatas({docCollection:'user',docId:result.localId},mypageApplyData)
-        success = "결제완료"
-        alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
-    } else {
-      alert("결제에 실패했습니다.다시 시도해주세요!")
-      success = "결제실패"
-    }
-  });
-  return success
+    const paymentresult = await new Promise((resolve, reject)=>{
+      IMP.request_pay({
+      pg: "nice",
+      pay_method: "card",
+      name: data.program,
+      amount: 100,
+      buyer_email: result?.email,
+      buyer_name: result.displayName ? result.displayName : `${result?.email} 님`,
+      buyer_tel: result.phoneNumber ? result.phoneNumber:"번호없음",
+      buyer_addr: "",
+      buyer_postcode: "01181"
+    }, (rsp:any) => {
+      if (rsp.success) {
+        // 파이어 스토어 시간으로 바꾸기 - DB시간으로 바꿔야함
+          const date = new Date()
+          const createAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} `
+          const applyData = {...data,applyAt:createAt}
+          addCustomIdDoc('applyData',result.localId,'applyProgram',applyData)
+          const mypageApplyData = {
+            "userData.programInfo.program": data.program,
+            "userData.programInfo.applyAt":createAt}
+          updateDatas({docCollection:'user',docId:result.localId},mypageApplyData)
+          alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
+          resolve( "결제완료")
+      } else {
+        alert("결제에 실패했습니다.다시 시도해주세요!")
+        reject( "결제실패")
+      }
+    });
+  })
+  return paymentresult
 }

@@ -4,22 +4,18 @@ import Head from "next/head"
 import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
 import { ChangeEvent, useState } from "react"
+import { useUploadFile } from "../../../../commons/util/hooks/fileUpload"
+import { onClickApplySubmit } from "./apply.submit.function"
 
 export default function Apply(){
     const {onChangeInputs,inputs} = useOnchangeInputs()
     const [program,setProgram] = useState('')
+    const routerhooks = useRoutingPageHooks()
+    const { uploadFile,file } = useUploadFile()
     const onChangeProgram = (e:ChangeEvent<HTMLInputElement>)=>{
         setProgram(e.target.id)
     }
-    const routerhooks = useRoutingPageHooks()
-    
-    const onClickSubmit = ()=>{
-        alert('결제 후 프로그램을 신청하시하시겠습니까?')
-        const data = {...inputs,program}
-        const paymentResult = onClickPayment(data)()
-        console.log(paymentResult)
-        if(paymentResult==="결제완료")routerhooks()('/mypage')
-    }
+
     return(
         <>
         <Head>
@@ -32,9 +28,10 @@ export default function Apply(){
             {/* 결제 - iamport.payment.js */}
             <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script> 
         </Head>
-        <ApplyUI onClickSubmit={onClickSubmit}
+        <ApplyUI onClickSubmit={onClickApplySubmit(inputs,program,file)}
                  onChangeInputs={onChangeInputs}
-                 onChangeProgram={onChangeProgram}/>
+                 onChangeProgram={onChangeProgram}
+                 uploadFile={uploadFile}/>
         </>
     )
 }

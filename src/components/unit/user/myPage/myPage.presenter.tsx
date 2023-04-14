@@ -40,7 +40,7 @@ export default function MyUI(props:UserInfoData){
                 <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData ? props.userOtherData?.userData.coupon : '10'} </S.SmallSpan>개</S.Coupon>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
-        <S.Title>진행 프로그램</S.Title>
+        <S.Title>신청 프로그램</S.Title>
         <S.Line/>
         <S.ProgramSection>
             <S.Header> 

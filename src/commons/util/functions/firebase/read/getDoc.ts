@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { DB } from "../../../../../pages/_app";
+import { DB } from "../../../../../../pages/_app";
 
 interface Params {
     docCollection:string;

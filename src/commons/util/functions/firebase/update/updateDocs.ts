@@ -1,5 +1,5 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { DB } from "../../../../../pages/_app";
+import { DB } from "../../../../../../pages/_app";
 
 interface ReviewDetailParams {
     docCollection:string;
