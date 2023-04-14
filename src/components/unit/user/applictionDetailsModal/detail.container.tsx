@@ -9,11 +9,11 @@ export default function ApplicationDetail(){
         queryKey: ['userInfo'],
         queryFn: loggedInUser
     })
-    const {data} = useQuery(
-        // 'applyData',
-       getData({docCollection:'applyData',docId: getUserInfo.data?.result.localId})
-    )
-    // const result = getData({docCollection:'applyData',docId:getUserInfo.data?.result.localId})
-    console.log(data)
-    return <ApplicationDetailUI data={getUserInfo.data?.userData}/>
+   const applyData = useQuery({
+        queryKey: ['applyData',getUserInfo.data?.result.localId],
+        queryFn: ()=>getData({docCollection:'applyData',docId:getUserInfo.data?.result.localId}),
+        retry: 3
+    })
+    console.log(applyData)
+   return <ApplicationDetailUI data={getUserInfo.data?.userData}/>
 }

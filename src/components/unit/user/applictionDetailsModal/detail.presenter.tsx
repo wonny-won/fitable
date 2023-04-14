@@ -1,10 +1,11 @@
 import { ApplicationDetailProps } from "./detai.types"
+import * as S from './detail.style'
 
 export default function ApplicationDetailUI(props:ApplicationDetailProps){
-    console.log(props.data)
     return(
         <>
-        안녕하세요
+        <S.Title>신청내역</S.Title>
+        <S.Line/>
         </>
     )
 }
