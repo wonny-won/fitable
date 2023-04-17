@@ -11,6 +11,7 @@ export default function UseModal(props: Modalcontainer){
                      program={props.program}
                      reviewId={props.reviewId}
                      menuTitle={props.menuTitle}
+                     applyId={props.applyId}
                      />
 };
 

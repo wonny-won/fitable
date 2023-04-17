@@ -1,9 +1,12 @@
+import { UseQueryResult } from "@tanstack/react-query";
 import { Dispatch, SetStateAction } from "react";
 
 export interface UserInfoData {
     getUserInfo: unknown | any; 
-    userOtherData: unknown | any;
-    onClickOpenModal: () => void;
+    userOtherData: boolean | any[];
+    onClickOpenModal: (e: any) => void;
     isModalOpen: boolean;
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+    getAllApplyData: boolean | any[] | undefined;
+    applyId: string;
 }

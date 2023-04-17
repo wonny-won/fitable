@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { loggedInUser } from '../../firebase/read/getUserInfo'
+import { loggedInUser } from '../../firebase/read/getLogginUser'
 
 export const getUserInfoQuery = () =>{
     useQueryClient()

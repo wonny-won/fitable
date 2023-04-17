@@ -8,3 +8,7 @@ export interface ApplicationDetailProps{
     onClickUpdateAppltData: (data: any) => void;
     uploadFile: (storageName: string) => (e: ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface ApplicationDetailConainerProps{
+    applyId: string;
+}

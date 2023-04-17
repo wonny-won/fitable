@@ -1,14 +1,14 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { getData } from "../../firebase/read/getDoc"
+import { getOneApplyData,Params } from "../../firebase/read/getOneApplyData"
 
-export const getApplyDataQuery = (docId:string) =>{
+
+export const getApplyDataQuery = ({docCollection,userUID,middleCollection,docId}:Params) =>{
     useQueryClient()
 
     const applyData = useQuery({
-        queryKey: ['applyData',docId],
-        queryFn: ()=>getData({docCollection:'applyData',docId}),
-        retry: 3
-    })
-    
+        queryKey: ['applyData',userUID,docId],
+        queryFn: ()=>getOneApplyData({docCollection,userUID,middleCollection,docId}),
+        retry: 5
+    })    
     return applyData
 }

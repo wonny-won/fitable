@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, DB } from "../../../../../../pages/_app";
+import { auth } from "../../../../../../pages/_app";
+import { getAllUserData } from "./getAllUserData";
 
 // 현재 로그인한 사용자 가지고 오기
 export const  loggedInUser = async ()=>{
@@ -15,19 +15,14 @@ export const  loggedInUser = async ()=>{
             }
           });
     })
-    // 추가적으로 넣어줬던 유저 데이터(컬럼 생성)
-    console.log(result?.localId)
-    const docref = doc(DB,'user',result?.localId)
-    const userOtherData = await getDoc(docref)
-    let userData = userOtherData.data()
-    if (userOtherData.exists()) {
-      userData = userOtherData.data()
-      } else {
-        console.log("문서가 없다");
-      }
+    // 유저 추가정보(신청내역, 쿠폰/결제 정보)가지고 오기  
+    const getAllApplyDatas = await getAllUserData({maincollection:'user',userUID:result?.localId,middleCollection:'applyProgram'})
+    const getUserDatas = await getAllUserData({maincollection:'user',userUID:result?.localId,middleCollection:'userData'})
 
     return {
       result,
-      userData
+      getAllApplyDatas,
+      getUserDatas
+      // userData
     } 
 }

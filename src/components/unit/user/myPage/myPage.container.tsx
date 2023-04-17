@@ -1,25 +1,23 @@
 import MyUI from "./myPage.presenter";
-import { loggedInUser } from "../../../../commons/util/functions/firebase/read/getUserInfo";
-import { useQuery,useQueryClient } from "@tanstack/react-query";
 import useAuth from "../../../../commons/util/hooks/useAuth";
 import { useState } from "react";
+import { getUserInfoQuery } from "../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 
 export default function My(){
     // 권한분기 - 다시 해야함
     // useAuth()
     const [isModalOpen,setIsModalOpen] = useState(false)
-    const onClickOpenModal = ()=>{
+    const [applyId,setApplyId] = useState('')
+    const getUserInfo = getUserInfoQuery()
+    const onClickOpenModal = (e:any)=>{
         setIsModalOpen(!isModalOpen)
+        setApplyId(e.target.id)
     }
-
-    useQueryClient()
-    const getUserInfo = useQuery({
-        queryKey: ['userInfo'],
-        queryFn: loggedInUser
-    })
     return <MyUI getUserInfo={getUserInfo.data?.result}
-                userOtherData={getUserInfo.data?.userData}
+                userOtherData={getUserInfo.data?.getUserDatas[0]}
                 onClickOpenModal={onClickOpenModal}
                 isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}/>
+                setIsModalOpen={setIsModalOpen}
+                getAllApplyData={getUserInfo.data?.getAllApplyDatas}
+                applyId={applyId}/>
 }

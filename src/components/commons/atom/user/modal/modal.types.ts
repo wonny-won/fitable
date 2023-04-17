@@ -7,6 +7,7 @@ export interface ModalPresenter {
     data? : any[];
     reviewId:string | undefined;
     menuTitle?: string | undefined;
+    applyId?:string;
 }
 export interface Modalcontainer {
     isModalOpen: boolean | undefined;
@@ -14,4 +15,5 @@ export interface Modalcontainer {
     program?: string;
     reviewId?: string;
     menuTitle?: string | undefined;
+    applyId?: string;
 }

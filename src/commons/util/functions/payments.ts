@@ -1,5 +1,5 @@
-import { loggedInUser } from "./firebase/read/getUserInfo";
-import { updateDatas } from "./firebase/update/updateDocs";
+import { loggedInUser } from "./firebase/read/getLogginUser";
+import { updateDatas } from "./firebase/update/updateUserApplyData";
 import { addCustomIdDoc } from "./firebase/create/addCustomIdDocs";
 
 declare const window: typeof globalThis & {
@@ -27,11 +27,10 @@ export const onClickPayment = (data: {}) => async()=>{
           const date = new Date()
           const createAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} `
           const applyData = {...data,applyAt:createAt}
+          // 추후 어드민(신청서만 뽑아오는 테이블), 데이터 분석에 이용할 DB테이블
           addCustomIdDoc('applyData',result.localId,'applyProgram',applyData)
-          const mypageApplyData = {
-            "userData.programInfo.program": data.program,
-            "userData.programInfo.applyAt":createAt}
-          updateDatas({docCollection:'user',docId:result.localId},mypageApplyData)
+          // 유저가 프로그램 신청 리스트 테이블
+          addCustomIdDoc('user',result.localId,'applyProgram',applyData)
           alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
           resolve( "결제완료")
       } else {

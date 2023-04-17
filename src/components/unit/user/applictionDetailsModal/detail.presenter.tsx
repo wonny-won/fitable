@@ -3,7 +3,7 @@ import { ApplicationDetailProps } from "./detai.types"
 import * as S from './detail.style'
 
 export default function ApplicationDetailUI(props:ApplicationDetailProps){
-    console.log(props)
+    console.log(props.data?.userWantFeedbackGuide)
     return(
         <>
         <Head>
@@ -26,7 +26,7 @@ export default function ApplicationDetailUI(props:ApplicationDetailProps){
         </S.MiniSection>
         <S.MiniSection>
             <S.MiniTitle>원하는 피드백 방향성</S.MiniTitle>
-            <S.Textarea id='userWantFeedbackGuide' readOnly={!props.isEdit} defaultValue={props.isEdit ? '':props.data?.userWantFeedbackGuide} onChange={props.onChangeInputs}/>
+            <S.Textarea id='userWantFeedbackGuide' readOnly={!props.isEdit} defaultValue={!props.isEdit ? props.data?.userWantFeedbackGuide:''} onChange={props.onChangeInputs}/>
         </S.MiniSection>
         <S.MiniSection>
             <S.MiniTitle>첨부파일</S.MiniTitle>

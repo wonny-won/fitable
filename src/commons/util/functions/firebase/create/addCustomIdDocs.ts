@@ -6,5 +6,6 @@ import { v4 as uuidv4} from 'uuid'
 export const addCustomIdDoc = (collection:string,userUID:string,middleCollection:string,Data:any)=>{
     const subcollection = uuidv4()
     setDoc(doc(DB,collection,userUID,middleCollection,subcollection),Data)
+    return subcollection
 }
 

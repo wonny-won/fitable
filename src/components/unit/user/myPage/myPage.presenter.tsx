@@ -30,14 +30,13 @@ export default function MyUI(props:UserInfoData){
                     <S.PHandEmailWrap>
                     <S.H3>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;화<S.Span>{props.getUserInfo?.phoneNumber}</S.Span></S.H3>
                     <S.H3>이 메 일 <S.Span>{props.getUserInfo?.email}</S.Span></S.H3>
-                    {/* <S.H3>담 당 자 <S.Span>{props.userOtherData?.userData.programInfo.programManager}</S.Span></S.H3> */}
                     </S.PHandEmailWrap>
                 </S.UserData>
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  
-                <S.TotalPay> 총 주문금액 : {props.userOtherData ? props.userOtherData?.userData.payment : '10'} 원 </S.TotalPay>
-                <S.H3> 적립금 : <S.SmallSpan>{props.userOtherData ? props.userOtherData?.userData.point : '10'}  </S.SmallSpan>원</S.H3>
-                <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData ? props.userOtherData?.userData.coupon : '10'} </S.SmallSpan>개</S.Coupon>
+                <S.TotalPay> 총 주문금액 : 100 원 </S.TotalPay>
+                <S.H3> 적립금 : <S.SmallSpan>{props.userOtherData?.point}  </S.SmallSpan>원</S.H3>
+                <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData?.coupon}</S.SmallSpan>개</S.Coupon>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
         <S.Title>신청 프로그램</S.Title>
@@ -48,12 +47,24 @@ export default function MyUI(props:UserInfoData){
                 <div>프로그램</div>
                 <div>신청내역</div>
             </S.Header>
-            <S.Content>
-                <div>{props.userOtherData?.userData?.programInfo?.applyAt}</div>
-                <div>{props.userOtherData?.userData?.programInfo?.program}</div>
-                <S.ViewBt onClick={props.onClickOpenModal}>보기</S.ViewBt>
-                <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen}/>
-            </S.Content>
+            {
+                props.getAllApplyData?.length > 0 ? props.getAllApplyData.map((item)=>(
+                    <div key={item.id}>
+                    <S.Content>
+                    <div>{item.applyAt}</div>
+                    <div>{item.program}</div>
+                    <S.ViewBt id={item.id} onClick={props.onClickOpenModal}>보기</S.ViewBt>
+                    </S.Content>
+                    </div>
+                )) : (
+                    <S.Content>
+                    <div> - </div>
+                    <div> 신청 내역이 없습니다. </div>
+                    <S.ViewBt>보기</S.ViewBt>
+                    </S.Content>
+                )
+            }
+            <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} applyId={props.applyId}/>
         </S.ProgramSection>
         </S.Container>
     )

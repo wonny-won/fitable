@@ -21,7 +21,7 @@ export default function UseModalUI(props:ModalPresenter){
           router.asPath==='/review' && (<ReviewModalDetail reviewId={props.reviewId} menuTitle={props.menuTitle}/>)
         }
         {
-          router.asPath==='/mypage' && (<ApplicationDetail/>)
+          router.asPath==='/mypage' && (<ApplicationDetail applyId={props.applyId}/>)
         }
 
       </S.ModalBody>
