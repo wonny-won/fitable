@@ -18,8 +18,10 @@ export default function ApplicationDetail(props:ApplicationDetailConainerProps){
     const onClickEdit = ()=>{
         setIsEdit(!isEdit)
     }
+    console.log(file)
     const onClickUpdateAppltData = async()=>{
-        const data = {...inputs, fileURL:file}
+        const data = {...inputs}
+        if(file!=='') data.fileURL = file
         const result = await updateUserApplyDatas({docCollection:'user',userUID:getUserInfo.data?.result.localId,middleCollection:'applyProgram',docId:props.applyId},data)
         console.log(result)
         setIsEdit(!isEdit)
@@ -29,7 +31,5 @@ export default function ApplicationDetail(props:ApplicationDetailConainerProps){
                                onClickEdit={onClickEdit}
                                onChangeInputs={onChangeInputs}
                                onClickUpdateAppltData={onClickUpdateAppltData}
-                               uploadFile={uploadFile}
-                               applyId={props.applyId}
-                               />
+                               uploadFile={uploadFile}/>
 }

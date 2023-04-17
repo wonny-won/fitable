@@ -1,8 +1,10 @@
 import UseModalUI from './modal.presenter';
 import { Modalcontainer } from './modal.types';
-import { onClickPayment } from '../../../../../commons/util/functions/payments';
+import { useRouter } from 'next/router';
 
 export default function UseModal(props: Modalcontainer){
+  const router = useRouter()
+
   const handleCancel = () => {
     if(props.setIsModalOpen){ props?.setIsModalOpen(false); }
   };
@@ -11,7 +13,6 @@ export default function UseModal(props: Modalcontainer){
                      program={props.program}
                      reviewId={props.reviewId}
                      menuTitle={props.menuTitle}
-                     applyId={props.applyId}
-                     />
+                     applyId={props.applyId}/>
 };
 

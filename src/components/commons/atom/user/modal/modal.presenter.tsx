@@ -10,21 +10,23 @@ export default function UseModalUI(props:ModalPresenter){
   
   return (
     <>
-      <S.ModalBody title="Basic Modal" 
-             open={props.isModalOpen}  
-             onCancel={props.handleCancel}
-             width={ router.asPath==='/' ? 1000 : 500}>
-        {
-          router.asPath==='/' && (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) 
-        }
-        {
-          router.asPath==='/review' && (<ReviewModalDetail reviewId={props.reviewId} menuTitle={props.menuTitle}/>)
-        }
-        {
-          router.asPath==='/mypage' && (<ApplicationDetail applyId={props.applyId}/>)
-        }
-
-      </S.ModalBody>
+        {   
+          props.isModalOpen &&  
+            <S.ModalBody title="Basic Modal" 
+              open={true}  
+              onCancel={props.handleCancel}
+              width={ router.asPath==='/' ? 1000 : 500}>
+              {
+                router.asPath==='/' && (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) 
+              }
+              {
+                router.asPath==='/review' && (<ReviewModalDetail reviewId={props.reviewId} menuTitle={props.menuTitle}/>)
+              }
+              {
+                router.asPath==='/mypage' && (<ApplicationDetail applyId={props.applyId}/>)
+              }
+          </S.ModalBody>
+      }    
     </>
   );
 }
