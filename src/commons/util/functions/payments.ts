@@ -30,7 +30,7 @@ export const onClickPayment = (data: {}) => async()=>{
           // 추후 어드민(신청서만 뽑아오는 테이블), 데이터 분석에 이용할 DB테이블
           addCustomIdDoc('applyData',result.localId,'applyProgram',applyData)
           // 유저가 프로그램 신청 리스트 테이블
-          addCustomIdDoc('user',result.localId,'applyProgram',applyData)
+          // addCustomIdDoc('user',result.localId,'applyProgram',applyData)
           alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
           resolve( "결제완료")
       } else {

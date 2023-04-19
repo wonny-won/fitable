@@ -11,6 +11,7 @@ export interface NewReview{
     isEdit: boolean;
     data: any;
     image : string | undefined;
+    program: string | string[] | undefined;
 }
 
 export interface NewReviewContainer {

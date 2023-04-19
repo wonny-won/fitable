@@ -16,7 +16,7 @@ export const  loggedInUser = async ()=>{
           });
     })
     // 유저 추가정보(신청내역, 쿠폰/결제 정보)가지고 오기  
-    const getAllApplyDatas = await getAllUserData({maincollection:'user',userUID:result?.localId,middleCollection:'applyProgram'})
+    const getAllApplyDatas = await getAllUserData({maincollection:'applyData',userUID:result?.localId,middleCollection:'applyProgram'})
     const getUserDatas = await getAllUserData({maincollection:'user',userUID:result?.localId,middleCollection:'userData'})
 
     return {

@@ -1,109 +1,90 @@
 import styled from "@emotion/styled";
+import StarRate from "../../../../commons/atom/user/starRate/starRate";
 
-export const TitleWrap = styled.div`
+export const Container = styled.section`
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    padding: 0 100px;
+`
+export const LeftWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+`
+export const RigthWrap =  styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
-    font-size: 25px;
-    font-weight: 300;
-    padding-bottom: 80px;
-`
-export const TitleDiv = styled.div`
-    padding-top: 30px;
-`
-export const TextSpan = styled.span`
-    font-weight: 400;
-    font-size: 28px;
-`
-export const Span = styled.span`
-    font-size: 18px;
-    padding: 10px;
-`
-export const ContentsWrap = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
-export const Line = styled.hr`
-    width: 23%;
-    height: 0.5px;
-    color: black;
-    border: none;
-    background-color: black;
-    margin: 0 auto 0 auto;
-`
-export const ExplainWrap = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 100px;
-`
-export const H1 = styled.h1`
-    font-size: 22px;
-    font-weight: 400;
-    color: #8D60F5;
-    margin-right: 13px;
+    width: 45%;
 `
 export const H2 = styled.h2`
-    font-size: 18px;
-    font-weight: 300;
-    color: black;
+    font-size: 15px;
 `
-export const WrapSection = styled.section`
+export const ExtendsH2 = styled(H2)`
+    margin-top: 80px;
+`
+export const ThumbnailSection = styled.section`
+    display: flex;
+    width: 400px;
+    border: 3px solid #FFE100;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #FCF9EF;
+`
+export const Section = styled.section`
+    margin-top: 30px;
+`
+export const ThumbnailImg = styled.img`
+    width: 120px;
+    height: 200px;
+`
+export const ProgramReviewWrap = styled.div`
     display: flex;
     flex-direction: column;
-    color: black;
-    font-size: 18px;
-    font-weight: 300;
-    justify-content: space-between;
-` 
-export const Div = styled.div`
-    padding-bottom: 10px;
-`
-export const MiniSpan = styled.span`
-    font-weight: 400;
-`
-export const FileTag = styled.label`
-    display: flex;
-    justify-content: center;
+    padding-left: 20px;
     align-items: center;
-    width : 100px;
-    height: 100px;
-    border: 3px dotted #E9D7C1;
-    border-radius: 6px;
+    text-align: center;
 `
-export const OneSentanceExplainInput = styled.input`
-    background-color: rgba(0,0,0,0.04);
-    border: 1.5px solid #E9D7C1;
+export const ReviewStar = styled(StarRate)`
+span{
+    text-align: center;
+}
+`
+export const UploadBt = styled.label`
+    padding: 30px 35px;
+    border: 4px dotted #ddd;
     border-radius: 8px;
-    color : black;
-    outline: none;
-    padding: 7px 10px;
-    margin-bottom: 25px;
-    font-weight: 400;
-` 
-export const ImageText = styled.div`
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 25px;
+    color:#ddd;
+    &:hover{
+        cursor: pointer;
+    }
 `
-export const ImageUploadWrap = styled.div`
+export const OverallInput = styled.input`
+    width: 90%;
+    border: none;
+    border: 2.5px solid #ddd;
+    border-radius: 10px;
+    padding: 5px;
+    outline: none;
+    margin-top: 10px;
+`
+export const BtWrap = styled.div`
     display: flex;
-    padding: 25px 0;
+    width: 80%;
+    justify-content: space-between;
 `
-export const Image = styled.img`
-    width: 100px;
-    height: 100px;
-    size: cover;
-    border-radius: 5px;
-    margin: 0 15px 0 30px;
-`
-export const TextArea =  styled.textarea`
-    background-color: rgba(0,0,0,0.04);
-    border: 1.5px solid #E9D7C1;
-    border-radius: 8px;
-    color : black;
-    outline: none;
-    padding: 10px;
-    margin-bottom: 25px;
-    font-weight: 400;
+export const Botton = styled.div`
+    width: 100;
+    padding: 10px 45px;
+    background-color: #1c1c1c;
+    color: #fff;
+    border: 1px solid #1c1c1c;
+    &:hover{
+        background-color: #fff;
+        color:#1c1c1c;
+        cursor: pointer;
+    }
 `

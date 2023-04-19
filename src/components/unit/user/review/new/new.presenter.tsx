@@ -13,61 +13,39 @@ export default function NewReviewUI(props:NewReview){
             <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <S.TitleWrap>
-            <FitableLogo fontSize={"40px"} />
-            <S.TitleDiv>온라인 관리의 <S.TextSpan>생생한 후기</S.TextSpan> 를 들려주세요!</S.TitleDiv>
-            <S.Span>리뷰 추첨을 통해 3분께 <S.MiniSpan>2만원 적립금</S.MiniSpan> 을 드립니다.</S.Span>
-        </S.TitleWrap>
-        <S.Line/>
-        <S.ContentsWrap>
-            <form onSubmit={props.isEdit ? props.handleSubmit(props.onClickUpdateBt):props.handleSubmit(props.onClickBtSubmit)} id="resetInput">
-                    <S.ExplainWrap>
-                        <S.H1>프로그램 선택</S.H1>
-                        <S.H2>진행 하신 프로그램을 선택해주세요.</S.H2>
-                    </S.ExplainWrap>
-                    <S.WrapSection>
-                        <S.Div> <input type="radio" id="Diet program" onChange={props.onClickGetProgramValue} name="program"/> Diet program </S.Div>
-                        <S.Div> <input type="radio" id="Healing program" onChange={props.onClickGetProgramValue} name="program"/> Healing program </S.Div>
-                        <div> <input type="radio" id="Diet program & Healing program" onChange={props.onClickGetProgramValue} name="program"/> Diet program & Healing program </div>
-                    </S.WrapSection>
-                <S.ExplainWrap>
-                    <S.H1>프로그램 만족도</S.H1>
-                    <S.H2>진행 하신 프로그램 , 얼마나 만족하셨나요?</S.H2> 
-                </S.ExplainWrap>
-                <S.WrapSection>
-                    <StarRate />
-                </S.WrapSection>
-                <S.ExplainWrap>
-                    <S.H1>프로그램 한줄평</S.H1>
-                    <S.H2>프로그램을 한 문장으로 설명한다면?</S.H2> 
-                </S.ExplainWrap>
-                <S.WrapSection>
-                    <S.OneSentanceExplainInput type="text" {...props.register("OneSentenceExplain")} 
-                        defaultValue={props.data?.OneSentenceExplain}/>
-                </S.WrapSection>
-                <S.ExplainWrap>
-                    <S.H1>프로그램 생생후기</S.H1>
-                    <S.H2>들려주세요. 당신의 생생한 후기를.</S.H2> 
-                </S.ExplainWrap>
-                <S.WrapSection>
-                    <h3 style={{display:"none"}}>사진 업로드</h3>
-                        <S.ImageText>포토리뷰를 작성해주시는 분깨는 3만원의 적립금을 드립니다.</S.ImageText>
-                        <S.ImageUploadWrap>
-                            <S.FileTag htmlFor="fileTag" >+</S.FileTag>
-                            <input type="file" id="fileTag" hidden={true}  onChange={props.uploadImage('newReview')}/>
-                            {props.image && <S.Image src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/${props.image}?alt=media`} />}
-                        </S.ImageUploadWrap>
-                    <h3 style={{display:"none"}}>텍스트 후기 작성</h3>
-                        <S.TextArea rows={20} cols={70} {...props.register("realReview")}
-                            defaultValue={props.data?.realReview}/>
-                </S.WrapSection>
-                <h1 style={{display:"none"}}>후기 등록하기</h1>
-                <S.WrapSection>
-                    <Button contents={props.isEdit ? "수정하기":"등록하기"}
-                            color={"#8D60F5"} />
-                </S.WrapSection>
-            </form>
-        </S.ContentsWrap>
+        <h1 style={{display:'none'}}> 리뷰 등록페이지 </h1>
+        <S.Container>
+        <S.LeftWrap>
+        <S.H2>썸네일 미리보기</S.H2>
+        <S.ThumbnailSection>
+            <S.ThumbnailImg src='/tutorMascot.png'/>
+            <S.ProgramReviewWrap>
+            <div>{props.program}</div>
+            <S.ReviewStar value={3}/>
+            </S.ProgramReviewWrap>
+        </S.ThumbnailSection>
+        <S.ExtendsH2>이미지 등록</S.ExtendsH2>
+        <S.Section>
+        <S.UploadBt htmlFor="fileTag">+</S.UploadBt>
+        <input type='file' id='fileTag' hidden/>
+        </S.Section>
+        <S.ExtendsH2>프로그램 총평</S.ExtendsH2>
+        <section>
+        <S.ReviewStar value={3}/>
+        <S.OverallInput type='text'/>
+        </section>
+        </S.LeftWrap>
+        <S.RigthWrap>
+        <S.H2>자세한 리뷰는 여기에 적어주세요.</S.H2>
+        <section>
+            <textarea rows={30} cols={40}/>
+        </section>
+        <S.BtWrap>
+            <S.Botton>등록하기</S.Botton>
+            <S.Botton>취소하기</S.Botton>
+        </S.BtWrap>
+        </S.RigthWrap>
+        </S.Container>
         </>
     )
 }

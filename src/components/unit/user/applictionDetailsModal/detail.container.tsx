@@ -1,5 +1,5 @@
 import ApplicationDetailUI from "./detail.presenter"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { updateUserApplyDatas } from "../../../../commons/util/functions/firebase/update/updateUserApplyData"
 import useOnchangeInputs from '../../../../commons/util/hooks/onchangeInputs'
 import { getUserInfoQuery } from "../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery"
@@ -13,12 +13,11 @@ export default function ApplicationDetail(props:ApplicationDetailConainerProps){
     const {uploadFile,file} = useUploadFile()
     // 리액트 쿼리로 가지고오는 데이터들 - 파일분리(commons/util)
     const getUserInfo = getUserInfoQuery()
-    const applyData = getApplyDataQuery({docCollection:'user',userUID:getUserInfo.data?.result.localId,middleCollection:'applyProgram',docId:props.applyId})
+    const applyData = getApplyDataQuery({docCollection:'applyData',userUID:getUserInfo.data?.result.localId,middleCollection:'applyProgram',docId:props.applyId})
 
     const onClickEdit = ()=>{
         setIsEdit(!isEdit)
     }
-    console.log(file)
     const onClickUpdateAppltData = async()=>{
         const data = {...inputs}
         if(file!=='') data.fileURL = file

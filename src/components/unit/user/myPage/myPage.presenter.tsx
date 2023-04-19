@@ -45,15 +45,18 @@ export default function MyUI(props:UserInfoData){
             <S.Header> 
                 <div>신청날짜</div>
                 <div>프로그램</div>
-                <div>신청내역</div>
+                <div>신청내역 / 리뷰작성</div>
             </S.Header>
             {
                 props.getAllApplyData?.length > 0 ? props.getAllApplyData.map((item)=>(
                     <div key={item.id}>
                     <S.Content>
                     <div>{item.applyAt}</div>
-                    <div>{item.program}</div>
-                    <S.ViewBt id={item.id} onClick={props.onClickOpenModal}>보기</S.ViewBt>
+                    <S.ItemWrap>{item.program}</S.ItemWrap>
+                    <S.BtWrap>
+                        <S.ViewBt id={item.id} onClick={props.onClickOpenModal}>보기</S.ViewBt>
+                        <S.ReiewBt src='/reviewPencil.svg' id={item.program} onClick={props.propsWithRouter}/>
+                    </S.BtWrap>
                     </S.Content>
                     </div>
                 )) : (
@@ -61,6 +64,7 @@ export default function MyUI(props:UserInfoData){
                     <div> - </div>
                     <div> 신청 내역이 없습니다. </div>
                     <S.ViewBt>보기</S.ViewBt>
+                    <S.ViewBt>-</S.ViewBt>
                     </S.Content>
                 )
             }

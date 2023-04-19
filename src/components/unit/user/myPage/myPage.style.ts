@@ -5,6 +5,9 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 `
+export const ItemWrap = styled.div`
+    width: 170px;
+`
 export const MyPage = styled.h1`
     font-size: 26px;
     font-weight: 900;
@@ -137,6 +140,11 @@ export const Header = styled.div`
 export const Content = styled(Header)`
     font-weight: 300;
 `
+export const BtWrap =  styled.div`
+    display: flex;
+    width: 120px;
+    justify-content: space-around;
+`
 export const ViewBt = styled.div`
     &:hover{
         cursor: pointer;
@@ -150,5 +158,11 @@ export const ViewBt = styled.div`
     border: 1px solid #1c1c1c;
     font-size: 12px;
     font-weight: 400;
-
+`
+export const ReiewBt = styled.img`
+    &:hover{
+        cursor: pointer;
+    }
+    width: 35px;
+    height: 21px;
 `

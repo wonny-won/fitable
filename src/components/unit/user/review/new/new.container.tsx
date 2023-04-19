@@ -4,9 +4,11 @@ import { addDocs, updateDatas } from "../../../../../commons/util/functions/fire
 import { ChangeEvent, useState } from "react";
 import { useUploadImage } from "../../../../../commons/util/hooks/imageUpload";
 import { NewReviewContainer } from "./new.types";
+import { useRouter } from "next/router";
 
 export default function NewReview(props : NewReviewContainer){
-    console.log(props)
+    const router = useRouter()
+    console.log(router.query.program)
     const { register,handleSubmit } = useForm()
     const [program,setProgram] = useState("")
     // 이 부분다시
@@ -50,5 +52,6 @@ export default function NewReview(props : NewReviewContainer){
                         image={image}
                         onClickUpdateBt={onClickUpdateBt}
                         isEdit={props.isEdit}
-                        data={props.data}/>
+                        data={props.data}
+                        program={router.query.program}/>
 }

@@ -9,4 +9,5 @@ export interface UserInfoData {
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;
     getAllApplyData: boolean | any[] | undefined;
     applyId: string;
+    propsWithRouter: (e: any) => void;
 }
