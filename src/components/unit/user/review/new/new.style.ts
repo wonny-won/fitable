@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
+//  import ReactQuill from 'react-quill';
+import dynamic from "next/dynamic";
+import 'react-quill/dist/quill.snow.css';
+const ReactQuill = dynamic(()=>import('react-quill'),{ssr:false})
 
 export const Container = styled.section`
     display: flex;
@@ -16,8 +20,8 @@ export const LeftWrap = styled.div`
 export const RigthWrap =  styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 45%;
+    align-items: center;
 `
 export const H2 = styled.h2`
     font-size: 15px;
@@ -71,13 +75,18 @@ export const OverallInput = styled.input`
     outline: none;
     margin-top: 10px;
 `
+export const ContentsWrap = styled.div`
+    width: 100%;
+`
 export const BtWrap = styled.div`
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
+    margin-top: 60px;
 `
-export const Botton = styled.div`
-    width: 100;
+export const Botton = styled.button`
+    text-align: center;
+    width: 48%;
     padding: 10px 45px;
     background-color: #1c1c1c;
     color: #fff;
@@ -88,3 +97,8 @@ export const Botton = styled.div`
         cursor: pointer;
     }
 `
+export const CustomReactQuill = styled(ReactQuill)`
+    width: 100%;
+    height: 500px;
+    font-family: 'SUIT-Regular';
+` 
