@@ -37,9 +37,6 @@ export const ThumbnailSection = styled.section`
     padding: 30px;
     background-color: #FCF9EF;
 `
-export const Section = styled.section`
-    margin-top: 30px;
-`
 export const ThumbnailImg = styled.img`
     width: 120px;
     height: 200px;
@@ -56,6 +53,9 @@ span{
     text-align: center;
 }
 `
+export const ImgWrap = styled.div`
+    display: flex;
+`
 export const UploadBt = styled.label`
     padding: 30px 35px;
     border: 4px dotted #ddd;
@@ -65,6 +65,12 @@ export const UploadBt = styled.label`
     &:hover{
         cursor: pointer;
     }
+`
+export const UploadingImg = styled.img`
+    width: 90px;
+    height: 100px;
+    border-radius: 8px;
+    margin-left: 20px;
 `
 export const OverallInput = styled.input`
     width: 90%;

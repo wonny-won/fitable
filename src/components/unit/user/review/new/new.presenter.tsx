@@ -11,23 +11,28 @@ export default function NewReviewUI(props:NewReview){
             <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <form onSubmit={props.handleSubmit(onClcickSubmitReview({program:props.program,userId:props.userId}))}>
+        <form onSubmit={props.handleSubmit(onClcickSubmitReview({program:props.program,userId:props.userId,file:props.file}))}>
         <h1 style={{display:'none'}}> 리뷰 등록페이지 </h1>
         <S.Container>
             <S.LeftWrap>
                 <S.H2>썸네일 미리보기</S.H2>
                 <S.ThumbnailSection>
-                    <S.ThumbnailImg src='/tutorMascot.png'/>
+                    <S.ThumbnailImg src={props.imgURL!==''? props.imgURL:'/tutorMascot.png'}/>
                     <S.ProgramReviewWrap>
                     <div>{props.program}</div>
                     <S.ReviewStar value={3}/>
                     </S.ProgramReviewWrap>
                 </S.ThumbnailSection>
                 <S.ExtendsH2>이미지 등록</S.ExtendsH2>
-                <S.Section>
+                <section>
+                    <S.ImgWrap>
                     <S.UploadBt htmlFor="fileTag">+</S.UploadBt>
-                    <input type='file' id='fileTag' hidden/>
-                </S.Section>
+                    <input type='file' id='fileTag' hidden onChange={props.onChangeFile}/>
+                    {
+                        props.imgURL!==''&& <S.UploadingImg src={props.imgURL}/>
+                    }
+                    </S.ImgWrap>
+                </section>
                 <S.ExtendsH2>프로그램 총평</S.ExtendsH2>
                 <section>
                     <S.ReviewStar value={3}/>

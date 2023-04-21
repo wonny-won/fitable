@@ -7,6 +7,9 @@ export interface NewReview{
     handleChange: (value: string) => void;
     program: string | string[] | undefined;
     userId: string;
+    onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
+    imgURL: string;
+    file: string;
 }
 
 export interface NewReviewContainer {
