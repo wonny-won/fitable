@@ -11,7 +11,7 @@ export default function NewReviewUI(props:NewReview){
             <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <form onSubmit={props.handleSubmit(onClcickSubmitReview)}>
+        <form onSubmit={props.handleSubmit(onClcickSubmitReview({program:props.program,userId:props.userId}))}>
         <h1 style={{display:'none'}}> 리뷰 등록페이지 </h1>
         <S.Container>
             <S.LeftWrap>

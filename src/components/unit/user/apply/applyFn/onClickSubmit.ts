@@ -1,5 +1,5 @@
-import { onClickPayment } from "../../../../commons/util/functions/payments"
-import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
+import { onClickPayment } from "../../../../../commons/util/functions/payments"
+import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing"
 
 export const onClickApplySubmit = (inputs:any,program:any,file:any)=> {
     const routerhooks = useRoutingPageHooks()

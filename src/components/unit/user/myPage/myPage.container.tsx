@@ -16,7 +16,7 @@ export default function My(props:any){
         setApplyId(e.target.id)
     }
     const propsWithRouter = (e:any)=>{
-        const query = { program : e.target.id}
+        const query = { program : e.target.id }
         router.push({pathname:'/review/new',query})
     }
     return <MyUI getUserInfo={getUserInfo.data?.result}

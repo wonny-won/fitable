@@ -6,6 +6,7 @@ export interface NewReview{
     handleSubmit: UseFormHandleSubmit<FieldValues>;
     handleChange: (value: string) => void;
     program: string | string[] | undefined;
+    userId: string;
 }
 
 export interface NewReviewContainer {

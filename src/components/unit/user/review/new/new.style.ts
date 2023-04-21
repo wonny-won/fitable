@@ -74,6 +74,7 @@ export const OverallInput = styled.input`
     padding: 5px;
     outline: none;
     margin-top: 10px;
+    font-family: 'SUIT-Regular';
 `
 export const ContentsWrap = styled.div`
     width: 100%;
@@ -100,5 +101,13 @@ export const Botton = styled.button`
 export const CustomReactQuill = styled(ReactQuill)`
     width: 100%;
     height: 500px;
+    .ql-toolbar.ql-snow{
+        border: 3.5px solid #ddd;
+        border-radius: 10px 10px 0 0;
+    }
+    .ql-container.ql-snow{
+        border: 3.5px solid #ddd;
+        border-radius: 0 0 10px 10px;
+    }
     font-family: 'SUIT-Regular';
 ` 
