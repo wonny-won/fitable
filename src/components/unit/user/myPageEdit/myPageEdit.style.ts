@@ -7,6 +7,7 @@ export const Container = styled.section`
     width: 85%;
     align-self: start;
     justify-content: center;
+    margin: auto;
 `
 export const Title = styled.h1`
     width: 85%;
@@ -15,6 +16,7 @@ export const Title = styled.h1`
     padding: 15px 0;
     border-bottom: 1px solid #000;
     margin-bottom: 20px;
+    margin-left: 7.5%;
 `
 export const H1 = styled.h1`
     font-size: 17px;

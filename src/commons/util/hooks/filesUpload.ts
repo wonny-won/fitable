@@ -1,7 +1,7 @@
 import { ChangeEvent, useState} from "react";
 
-export const useUploadImage = () => {
-    const [imgURL,setImgURL]= useState('')  
+export const useUploadFiles = () => {
+    const [fakeURL,setFakeURL]= useState('')  
     const [file,setFile] = useState('')
 
     const onChangeFile = (event: ChangeEvent<HTMLInputElement>)=> {
@@ -18,7 +18,7 @@ export const useUploadImage = () => {
 			// 파일리더의 결과값이 string이 아닐수도 있으니 string일때만 실행되도록 
 			if(typeof data.target?.result === "string"){
 				console.log(data.target?.result);
-				setImgURL(data.target?.result)
+				setFakeURL(data.target?.result)
                 setFile(file)
 			}	
 		}
@@ -26,7 +26,7 @@ export const useUploadImage = () => {
 
 
     return {
-        imgURL,
+        fakeURL,
         file,
         onChangeFile
     }

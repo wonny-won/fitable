@@ -2,13 +2,13 @@ import ApplyUI from "./apply.presenter"
 import Head from "next/head"
 import useOnchangeInputs from "../../../../commons/util/hooks/onchangeInputs"
 import { ChangeEvent, useState } from "react"
-import { useUploadFile } from "../../../../commons/util/hooks/fileUpload"
 import { onClickApplySubmit } from "./applyFn/onClickSubmit"
+import { useUploadFiles } from "../../../../commons/util/hooks/filesUpload"
 
 export default function Apply(){
     const {onChangeInputs,inputs} = useOnchangeInputs()
     const [program,setProgram] = useState('')
-    const { uploadFile,file } = useUploadFile()
+    const { onChangeFile,file } = useUploadFiles()
     const onChangeProgram = (e:ChangeEvent<HTMLInputElement>)=>{
         setProgram(e.target.id)
     }
@@ -27,7 +27,7 @@ export default function Apply(){
         <ApplyUI onClickSubmit={onClickApplySubmit(inputs,program,file)}
                  onChangeInputs={onChangeInputs}
                  onChangeProgram={onChangeProgram}
-                 uploadFile={uploadFile}/>
+                 onChangeFile={onChangeFile}/>
         </>
     )
 }

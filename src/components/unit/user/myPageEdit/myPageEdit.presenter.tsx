@@ -4,6 +4,7 @@ import * as S from './myPageEdit.style'
 import {Img} from '../myPage/myPage.style'
 
 export default function MyPageEditUI(props:MypageEditPresenter){
+    console.log(props.getUserInfo?.photoUrl)
     return(
         <>
             <Head>
@@ -16,12 +17,11 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                     <S.MiniWrapTop>
                         <S.ProfileImg> 프로필</S.ProfileImg>
                         <S.ResultImg>
-                            { !props.image ? <Img src="/noneimg.jpeg"/> : <Img src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/${props.image}?alt=media`}/>}
+                            { props.getUserInfo?.photoUrl ? <Img src={ props.image!=='' ? props.image : props.getUserInfo?.photoUrl } /> : <Img src={'/noneimg.jpeg'}/> }
                         </S.ResultImg>
                         <S.ImgWrap>
                             <S.ImgInput htmlFor="photoURL"> upload </S.ImgInput>
-                            <input id="photoURL" type="file" onChange={props.uploadImage('userProfile')} hidden={true}/>
-                            <S.UserProfileImg>{props.image}</S.UserProfileImg>
+                            <input id="photoURL" type="file" onChange={props.uploadImage} hidden/>
                         </S.ImgWrap>
                     </S.MiniWrapTop>
                     <S.MiniWrap>

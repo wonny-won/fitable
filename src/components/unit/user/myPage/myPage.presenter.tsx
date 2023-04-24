@@ -4,6 +4,7 @@ import * as S from './myPage.style'
 import UseModal from "../../../commons/atom/user/modal/modal.container";
 
 export default function MyUI(props:UserInfoData){
+    console.log(props.getUserInfo?.photoUrl)
     return(
         <S.Container>
         <Head>
@@ -18,9 +19,7 @@ export default function MyUI(props:UserInfoData){
             <S.UserInfoWrap>
                 <h3 style={{display:"none"}}>프로필 사진</h3>
                 <S.ProfilePhoto>
-                  {
-                    props.getUserInfo?.photoURL ? <S.Img src={props.getUserInfo.data?.photoURL}/>:<S.Img src='/noneimg.jpeg' />
-                  }      
+                  {  props.getUserInfo?.photoUrl ? <S.Img src={props.getUserInfo?.photoUrl}/>:<S.Img src='/noneimg.jpeg' />  }      
                 </S.ProfilePhoto> 
                 <S.UserData>
                     <S.MiniNameWrap>

@@ -50,6 +50,7 @@ export const Img = styled.img`
     width : 140px;
     height: 160px;
     size: cover;
+    margin: 10px 0;
 `
 export const UserData = styled.div`
     padding: 0 40px;

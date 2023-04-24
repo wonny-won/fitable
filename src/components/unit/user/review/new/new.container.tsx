@@ -3,13 +3,13 @@ import { NewReviewContainer } from "./new.types";
 import { useRouter } from "next/router";
 import { onChangeInput } from "./reviewNewFn/onChange";
 import { getUserInfoQuery } from "../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
-import { useUploadImage } from "../../../../../commons/util/hooks/imageUpload";
+import { useUploadFiles } from "../../../../../commons/util/hooks/filesUpload";
 
 export default function NewReview(props : NewReviewContainer){
     const router = useRouter()
     const {register,handleSubmit,handleChange} = onChangeInput()
     const getloginUser = getUserInfoQuery()
-    const { imgURL,file,onChangeFile } = useUploadImage()
+    const { fakeURL,file,onChangeFile } = useUploadFiles()
 
     return <NewReviewUI program={router.query.program}
                         register={register}
@@ -17,6 +17,6 @@ export default function NewReview(props : NewReviewContainer){
                         handleChange={handleChange}
                         userId={getloginUser.data?.result?.localId}
                         onChangeFile={onChangeFile}
-                        imgURL={imgURL}
+                        imgURL={fakeURL}
                         file={file}/>
 }

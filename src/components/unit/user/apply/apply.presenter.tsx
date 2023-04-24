@@ -48,7 +48,7 @@ export default function ApplyUI(props:ApplyPresenterProps){
                         </S.Text>
                     }
                 <S.GuideTitle>피드백 받으실 파일을 업로드해주세요.</S.GuideTitle>
-                    <S.FileInput type='file' onChange={props.uploadFile('applyFile')}/>
+                    <S.FileInput type='file' onChange={props.onChangeFile}/>
                     {item.programTitle==='이력서 피드백' && <S.Notification>* 이력서 작성 가이드를 선택하셨다면 업로드 하시지 않으셔도 됩니다.</S.Notification>}
                 <S.GuideTitle>원하시는 피드백 방향성이 있으신가요?</S.GuideTitle>
                 <S.TextArea rows={5} cols={10} id='userWantFeedbackGuide' onChange={props.onChangeInputs}/>
