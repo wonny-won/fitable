@@ -15,14 +15,6 @@ import { checkEmail,checkPassword, passwordValidation,passwordEnglishValidation 
 import { useRecoilState } from "recoil";
 // ----------------------------------- 타입존 ----------------------------- //
 
-interface FirebaseParams {
-    colletionName: string;
-    data : any;
-}
-interface ReviewDetailParams {
-    docCollection:string;
-    docId: string;
-}
 interface JoinusParams {
     email : string;
     password : string;
@@ -40,18 +32,6 @@ export const getDatas = async(docCollection:string)=>{
         dataArr.push({id: data.id,data: data.data()})
     })
     return dataArr
-}
-
-// DB내의 특정 문서 가지고 오기 - review 디테일 페이지
-export const getData = async({docCollection,docId}:ReviewDetailParams)=>{
-    const docref = doc(DB,docCollection,docId)
-    const getData = await getDoc(docref)
-
-    if (getData.exists()) {
-        return  getData.data()
-      } else {
-        console.log("문서가 없다");
-      }
 }
 
 

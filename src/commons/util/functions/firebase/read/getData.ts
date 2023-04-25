@@ -7,6 +7,7 @@ interface Params {
 }
 
 export const getOneDoc = async ({collection,docId}:Params)=>{
+    if(!docId) return false
     const docRef = doc(DB, collection, docId);
     const docSnap = await getDoc(docRef);
     return docSnap.exists() ? docSnap.data() : alert('게시글이 존재하지 않습니다.')    
