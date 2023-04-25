@@ -1,5 +1,4 @@
 import { loggedInUser } from "./firebase/read/getLogginUser";
-import { updateDatas } from "./firebase/update/updateUserApplyData";
 import { addCustomIdDoc } from "./firebase/create/addCustomIdDocs";
 
 declare const window: typeof globalThis & {

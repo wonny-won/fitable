@@ -30,12 +30,6 @@ interface JoinusParams {
 }
 
 // ----------------------------------- 함수존 ----------------------------- //
-// DB에 문서 추가하는 함수 - 리뷰 / 댓글
-export const addDocs = async ({colletionName, data} :FirebaseParams) => {
-    const result = await addDoc(collection(DB,colletionName),data)
-    alert("등록이 완료되었습니다.")
-    return result.id
-}
 
 // DB내의 모든 문서 가지고 오는 함수(리턴값 프로미스 형태) - review list 뽑아오기 / 댓글 list 뽑아오기
 export const getDatas = async(docCollection:string)=>{
@@ -60,31 +54,6 @@ export const getData = async({docCollection,docId}:ReviewDetailParams)=>{
       }
 }
 
-// DB내의 문서 업데이트하기.
-export const updateDatas = async({docCollection,docId}:ReviewDetailParams, data:any)=>{
-    const updateDataRef = doc(DB,docCollection,docId)
-    await updateDoc(updateDataRef,data)
-}
-
-// 신규회원 가입 함수
-export const joinUsEmail = async({email,password,passwordCheck}:JoinusParams)=>{
-    const emailChek = checkEmail(email)
-    const passwordcheck = checkPassword(password,passwordCheck)
-    const includesNumber = await passwordValidation(password)
-    const IncludesEnglish = await passwordEnglishValidation(password)
-    let userUID = ""
-    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish){
-        try{
-            const createUser =  await createUserWithEmailAndPassword(auth ,email, password)
-            userUID = createUser.user.uid;
-            alert("회원가입을 축하드립니다.")
-            return userUID
-        } catch(error){
-            console.log(error)
-        }
-    }
-    return userUID
-}
 
 // 기존 회원 로그인
 export const logIn = async ({email,password}:JoinusParams)=>{

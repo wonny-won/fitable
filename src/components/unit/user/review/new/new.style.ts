@@ -1,6 +1,4 @@
 import styled from "@emotion/styled";
-import StarRate from "../../../../commons/atom/user/starRate/starRate";
-//  import ReactQuill from 'react-quill';
 import dynamic from "next/dynamic";
 import 'react-quill/dist/quill.snow.css';
 const ReactQuill = dynamic(()=>import('react-quill'),{ssr:false})
@@ -41,17 +39,30 @@ export const ThumbnailImg = styled.img`
     width: 120px;
     height: 200px;
 `
+export const UserWrap = styled.div`
+    display: flex;
+    font-family: 'SUIT-Regular';
+`
+export const UserProfileImg = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50%;
+`
+export const UserInfo = styled.div`
+    font-size: 13px;
+    margin-left: 13px;
+    padding-top: 5px;
+`
 export const ProgramReviewWrap = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 20px;
     align-items: center;
     text-align: center;
+    justify-content: space-around;
 `
-export const ReviewStar = styled(StarRate)`
-span{
-    text-align: center;
-}
+export const ProgramTilte = styled.div`
+    padding-bottom: 10px;
 `
 export const ImgWrap = styled.div`
     display: flex;
@@ -106,7 +117,7 @@ export const Botton = styled.button`
 `
 export const CustomReactQuill = styled(ReactQuill)`
     width: 100%;
-    height: 500px;
+    height: 540px;
     .ql-toolbar.ql-snow{
         border: 3.5px solid #ddd;
         border-radius: 10px 10px 0 0;
@@ -115,5 +126,8 @@ export const CustomReactQuill = styled(ReactQuill)`
         border: 3.5px solid #ddd;
         border-radius: 0 0 10px 10px;
     }
-    font-family: 'SUIT-Regular';
+    *{
+        font-family: 'SUIT-Regular';
+        font-size: 15px;
+    }
 ` 

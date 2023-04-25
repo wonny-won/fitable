@@ -1,19 +1,18 @@
-import { useRouter } from 'next/router';
-import { useState } from 'react';
 import * as S from './starRate.styled'
+import { Dispatch, SetStateAction } from 'react';
 
 interface ReviewProps {
   value? : number;
+  disable?: boolean;
+  setValue?: Dispatch<SetStateAction<number>>;
 }
 
 const desc = ['아주별로예요', '별로예요', '평범해요', '좋아요', '아주좋아요'];
 export default function StarRate(props:ReviewProps){
-    const router = useRouter()
-    const [realvalue, setValue] = useState(5);
-    return (
-        <span>
-          <S.Star tooltips={desc} onChange={setValue} value={realvalue} disabled={router.asPath==='/review/new'||`/review/${router.query.reviewId}/edit` ? false:true }/>
-          {props.value || realvalue ? <S.Text className="ant-rate-text">{desc[realvalue - 1]}</S.Text> : ''}
-        </span>
-      )
+  return(
+    <span>
+      <S.Star tooltips={desc} onChange={props.setValue} value={props.value} disabled={props.disable}/>
+      {props.value ? <S.Text className="ant-rate-text">{desc[props.value - 1]}</S.Text> : ''}
+    </span>
+  )
 }
