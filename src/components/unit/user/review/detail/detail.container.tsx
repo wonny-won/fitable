@@ -6,6 +6,6 @@ export default function ReviewDetail(){
     const router = useRouter()
     const docId = router.query.reviewId
     const fetchData = fetchDetailDataQuery(docId)
-    console.log(fetchData)
-    return <ReviewDetaillUI />
+    console.log(fetchData?.data)
+    return <ReviewDetaillUI data={fetchData?.data}/>
 }
