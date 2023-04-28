@@ -1,8 +1,9 @@
 import CarouselUI from "./carousel.presenter"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CarouselContainer } from "./carousel.type";
 
-export default function Carousel(){
+export default function Carousel(props:CarouselContainer){
     const settings = {
         dots: true,
         infinite: true,
@@ -13,5 +14,7 @@ export default function Carousel(){
         autoplaySpeed: 1500,
         pauseOnHover: true
       };
-    return <CarouselUI settings={settings}/>
+    const file = props.file?.split('/')
+    return <CarouselUI settings={settings}
+                       file={file}/>
 }
