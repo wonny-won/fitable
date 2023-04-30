@@ -27,6 +27,11 @@ export default function ReviewDetaillUI(props:ReviewDetailPresenter){
            {
             props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : props.data?.reviewContents }} /> : ''
            }  
+           <S.HelpfulWrap>
+                <S.Helpful> <LikeOutlined/> 도움돼요</S.Helpful>
+                <S.Helpful> <DislikeOutlined/> 도움안돼요</S.Helpful>
+           </S.HelpfulWrap>
+          <S.Line />
         </S.Section>
         </S.Container>
     )

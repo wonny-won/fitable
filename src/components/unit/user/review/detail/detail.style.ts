@@ -6,7 +6,6 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-around;
     padding: 0 2%;
-    font-family: 'SUIT-Regular';
 `
 export const H1 = styled.h1`
     display: none;
@@ -26,6 +25,7 @@ export const Section = styled.section`
     align-items: center;
     width: 350px;
     font-size: 14px;
+    overflow: auto;
 `
 export const ProgramTilte = styled.h3`
     font-size: 30px;
@@ -74,6 +74,30 @@ export const Content = styled.div`
         line-height: 1.43;
         color: #14161a;
     }
-    /* padding: 20px 0;  */
-    color : red;
+    padding: 20px 10px; 
+    height: 250px;
+    overflow: auto;
+    margin-bottom: 30px;
+`
+export const HelpfulWrap = styled.div`
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+`
+export const Helpful = styled.div`
+    color: #707680;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 0px 5px;
+    font-family: 'SUIT-Regular';
+    font-weight: 300;
+    &:hover{
+        cursor: pointer;
+    }
+`
+export const Line = styled.hr`
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color:  #ebeff5;
 `
