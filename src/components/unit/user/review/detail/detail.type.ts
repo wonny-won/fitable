@@ -10,8 +10,10 @@ export interface ReviewDetailPresenter{
         starValue?:number;
         writer?: string;
         writerProfile?: string;
-
+        likeCount?:number;
+        dislikeCount?:number;
     } | DocumentData; 
+    docId: string | string[] | undefined;
     // data: undefined | void | DocumentData | false ;
     // {
     //     overAll?:string;

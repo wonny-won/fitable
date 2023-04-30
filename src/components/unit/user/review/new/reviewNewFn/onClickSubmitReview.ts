@@ -16,9 +16,10 @@ export const useSubmitReview = ({userId,program,file,starValue,writer,writerProf
     const onClcickSubmitReview = async(data:any)=>{
         const uploadImg = await UploadFiles('/newReview',file)
         const fileURL = uploadImg?.fullPath
-        const reviewData={...data,userId,program,fileURL,starValue,writer,writerProfile}
+        const reviewData={...data,userId,program,fileURL,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
         try{
-            addDoc(collection(DB, "programReview"),reviewData).then((res)=>(routerHooks(`${res.id}`)()))
+            const result = await addDoc(collection(DB, "programReview"),reviewData)
+            routerHooks(`${result?.id}`)()
             alert('리뷰 등록이 완료되었습니다.')
         }catch(error){
             alert(error)

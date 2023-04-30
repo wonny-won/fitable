@@ -14,11 +14,12 @@ export const updateUserApplyDatas = async({docCollection,userUID,middleCollectio
     if(!userUID) return false
     let updateData = {}
     const updateDataRef = doc(DB,docCollection,userUID,middleCollection,docId)
-    await updateDoc(updateDataRef,data)
-    .then(()=>{
+    try{
+        await updateDoc(updateDataRef,data)
         updateData = {id:userUID,...data}
         alert('수정이 완료되었습니다.')
-    })
-    .catch((error)=>(console.log(error,'수정에 실패했습니다.')))
+    }catch(error){
+        alert(error)
+    }
     return updateData
 }

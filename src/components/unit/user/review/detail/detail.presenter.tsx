@@ -3,6 +3,7 @@ import * as S from './detail.style'
 import Icon,{LikeOutlined,DislikeOutlined} from '@ant-design/icons';
 import { ReviewDetailPresenter } from "./detail.type";
 import Carousel from "../../../../commons/atom/user/carousel/carousel.container";
+import { onClickhelpfulBt } from "./detailFn/onClickhelpfulBt"; 
 
 export default function ReviewDetaillUI(props:ReviewDetailPresenter){
     return(
@@ -28,8 +29,8 @@ export default function ReviewDetaillUI(props:ReviewDetailPresenter){
             props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : props.data?.reviewContents }} /> : ''
            }  
            <S.HelpfulWrap>
-                <S.Helpful> <LikeOutlined/> 도움돼요</S.Helpful>
-                <S.Helpful> <DislikeOutlined/> 도움안돼요</S.Helpful>
+                <S.Helpful onClick={onClickhelpfulBt(props.docId,'likeCount')}> <LikeOutlined/> 도움돼요 {props.data?.likeCount}</S.Helpful>
+                <S.Helpful onClick={onClickhelpfulBt(props.docId,'dislikeCount')}> <DislikeOutlined/> 도움안돼요 {props.data?.dislikeCount}</S.Helpful>
            </S.HelpfulWrap>
           <S.Line />
         </S.Section>
