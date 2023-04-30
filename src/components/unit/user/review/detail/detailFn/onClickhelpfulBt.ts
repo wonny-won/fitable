@@ -1,11 +1,7 @@
 import { updateData } from "../../../../../../commons/util/functions/firebase/update/updateData";
 import { getOneDoc } from '../../../../../../commons/util/functions/firebase/read/getData'
 
-interface Params{
-    docId: string;
-}
-
-// 도움돼요 버튼 클릭시
+// 도움돼요/안돼요 버튼 클릭시
 export const onClickhelpfulBt = (docId:string,field:string)=> async(e:any)=>{
    const getData = await getOneDoc({collection:'programReview',docId})
    const likeprev = getData?.likeCount
