@@ -7,14 +7,16 @@ interface Params {
     program:string|undefined|string[],
     file: File;
     starValue: number;
+    writer: string|undefined|string[];
+    writerProfile: string|undefined|string[];
 }
 // 리뷰 등록 함수
-export const useSubmitReview = ({userId,program,file,starValue}:Params)=> {
+export const useSubmitReview = ({userId,program,file,starValue,writer,writerProfile}:Params)=> {
     const routerHooks = useRoutingPageHooks()
     const onClcickSubmitReview = async(data:any)=>{
         const uploadImg = await UploadFiles('/newReview',file)
         const fileURL = uploadImg?.fullPath
-        const reviewData={...data,userId,program,fileURL,starValue}
+        const reviewData={...data,userId,program,fileURL,starValue,writer,writerProfile}
         try{
             addDoc(collection(DB, "programReview"),reviewData).then((res)=>(routerHooks(`${res.id}`)()))
             alert('리뷰 등록이 완료되었습니다.')

@@ -3,7 +3,7 @@ import { DB } from "../../../../../../pages/_app";
 
 interface Params {
     collection: string;
-    docId: string;
+    docId?: string;
 }
 
 export const getOneDoc = async ({collection,docId}:Params)=>{

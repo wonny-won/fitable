@@ -9,15 +9,24 @@ export default function ReviewDetaillUI(props:ReviewDetailPresenter){
         <S.Container>
         <S.H1>리뷰 디테일</S.H1>
         <S.H2>리뷰 사진 캐러셀</S.H2>
-        <section>
+        <S.CarouselSection>
             <Carousel file={props.data?.fileURL}/>
-        </section>
+        </S.CarouselSection>
         <S.H2>리뷰 상세</S.H2>
         <S.Section>
-            <StarRate value={props.data?.starValue} />
-            <div>{props.data?.program}</div>
-            <div>{props.data?.overAll}</div>
-            <div>{props.data?.reviewContents}</div>
+            <S.ProgramTilte>{props.data?.program}</S.ProgramTilte>
+            <S.H3>작성자및 평점</S.H3>
+            <S.UserWrap>
+                <S.UserProfile>
+                    <S.UserProfileImg src={props.data?.writerProfile}/>
+                    <div>{props.data?.writer} <S.UserNameSpan>님의 리뷰입니다.</S.UserNameSpan></div>
+                </S.UserProfile>
+                <S.OverAll> <S.OverAllSpan>한줄평</S.OverAllSpan> | {props.data?.overAll}</S.OverAll>
+                <StarRate value={props.data?.starValue} disable={true}/>
+            </S.UserWrap>
+           {
+            props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : props.data?.reviewContents }} /> : ''
+           }  
         </S.Section>
         </S.Container>
     )

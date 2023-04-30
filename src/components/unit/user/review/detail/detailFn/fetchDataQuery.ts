@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getOneDoc } from "../../../../../../commons/util/functions/firebase/read/getData"
 
-export const fetchDetailDataQuery = (docId:string)=>{
+export const fetchDetailDataQuery = (docId:string|undefined)=>{
     useQueryClient()
 
     const fetchData = useQuery({
