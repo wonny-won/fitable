@@ -2,7 +2,7 @@ import { updateData } from "../../../../../../commons/util/functions/firebase/up
 import { getOneDoc } from '../../../../../../commons/util/functions/firebase/read/getData'
 
 // 도움돼요/안돼요 버튼 클릭시
-export const onClickhelpfulBt = (docId:string,field:string)=> async(e:any)=>{
+export const onClickhelpfulBt = (docId:string,field:string)=> async()=>{
    const getData = await getOneDoc({collection:'programReview',docId})
    const likeprev = getData?.likeCount
    const dislikeprev = getData?.dislikeCount
