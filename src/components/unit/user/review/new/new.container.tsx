@@ -5,7 +5,7 @@ import { onChangeInput } from "./reviewNewFn/onChange";
 import { getUserInfoQuery } from "../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 import { useUploadFiles } from "../../../../../commons/util/hooks/filesUpload";
 import { onClickChangeValue } from "../../../../commons/atom/user/starRate/starFn/onClickChangeValue";
-import { useSubmitReview } from "./reviewNewFn/onClickSubmitReview";
+import { useSubmitReview } from "./reviewNewFn/submit";
 import { useBranchAuthority } from "./reviewNewFn/authority";
 
 export default function NewReview(props : NewReviewContainer){

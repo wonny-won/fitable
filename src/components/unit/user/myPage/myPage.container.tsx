@@ -19,7 +19,6 @@ export default function My(props:any){
         const query = { program : e.target.id }
         router.push({pathname:'/review/new',query})
     }
-    console.log(getUserInfo.data?.result)
     return <MyUI getUserInfo={getUserInfo.data?.result}
                 userOtherData={getUserInfo.data?.getUserDatas[0]}
                 onClickOpenModal={onClickOpenModal}

@@ -1,7 +1,6 @@
-import { addDoc,collection } from "firebase/firestore"
-import { DB } from "../../../../../../../pages/_app"
 import { UploadFiles } from "../../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
-import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routing"
+import { createNewREviewMutation } from "./createNewReviewQuery"
+
 interface Params {
     userId: string|undefined|string[],
     program:string|undefined|string[],
@@ -10,16 +9,21 @@ interface Params {
     writer: string|undefined|string[];
     writerProfile: string|undefined|string[];
 }
+
 // 리뷰 등록 함수
 export const useSubmitReview = ({userId,program,file,starValue,writer,writerProfile}:Params)=> {
-    const routerHooks = useRoutingPageHooks()
+    const submitresult = createNewREviewMutation()
     const onClcickSubmitReview = async(data:any)=>{
-        const uploadImg = await UploadFiles('/newReview',file)
-        const fileURL = uploadImg?.fullPath
-        const reviewData={...data,userId,program,fileURL,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
+        const reviewData={...data,userId,program,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
+        if(file) {
+            const uploadImg = await UploadFiles('/newReview',file)
+            const fileURL = uploadImg?.fullPath
+            reviewData.fileURL = fileURL
+        } else{
+            reviewData.fileURL = '등록된 파일이 없습니다.'
+        }
         try{
-            const result = await addDoc(collection(DB, "programReview"),reviewData)
-            routerHooks(`${result?.id}`)()
+            await submitresult.mutate(reviewData)
             alert('리뷰 등록이 완료되었습니다.')
         }catch(error){
             alert(error)
