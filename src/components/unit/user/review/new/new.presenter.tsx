@@ -3,9 +3,11 @@ import * as S from './new.style'
 import { NewReview } from "./new.types";
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
 import { onChangeInput } from "./reviewNewFn/onChange";
+import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing";
 
 export default function NewReviewUI(props:NewReview){
     const { register,handleSubmit,handleChange } = onChangeInput()
+    const routerHooks = useRoutingPageHooks()
     return(
         <>
         <Head>
@@ -61,7 +63,7 @@ export default function NewReviewUI(props:NewReview){
                 </S.ContentsWrap>
                 <S.BtWrap>
                     <S.Botton>{props.isEdit? '수정하기':'등록하기'}</S.Botton>
-                    <S.Botton>취소하기</S.Botton>
+                    <S.Botton type="button" onClick={routerHooks('/mypage')}>취소하기</S.Botton>
                 </S.BtWrap>
             </S.RigthWrap>
         </S.Container>
