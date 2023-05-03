@@ -1,16 +1,13 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { FieldValues, UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 
 export interface NewReview{
-    register: UseFormRegister<FieldValues>;
-    handleSubmit: UseFormHandleSubmit<FieldValues>;
-    handleChange: (value: string) => void;
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
     imgURL: string;
     setValue: Dispatch<SetStateAction<number>>;
     onClcickSubmitReview: (data: any) => Promise<void>;
     program: string | string[] | undefined;
     realvalue?: number;
+    fileName: string | undefined;
     userInfo?:{
         displayName?: string;
         photoUrl?: string;
@@ -18,7 +15,6 @@ export interface NewReview{
     } |unknown;
     isEdit: boolean;
     data: any[] | undefined;
-    fileName: string;
     onClcickUpdateReview: (data: any) => Promise<void>
 }
 

@@ -2,8 +2,10 @@ import Head from "next/head";
 import * as S from './new.style'
 import { NewReview } from "./new.types";
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
+import { onChangeInput } from "./reviewNewFn/onChange";
 
 export default function NewReviewUI(props:NewReview){
+    const { register,handleSubmit,handleChange } = onChangeInput()
     return(
         <>
         <Head>
@@ -11,7 +13,7 @@ export default function NewReviewUI(props:NewReview){
             <meta name="description" content="내 포트폴리오가 번번히 떨어지는 이유가 궁금하다면? 핏!해봐." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
-        <form onSubmit={props.isEdit? props.handleSubmit(props.onClcickUpdateReview):props.handleSubmit(props.onClcickSubmitReview)}>
+        <form onSubmit={props.isEdit? handleSubmit(props.onClcickUpdateReview) : handleSubmit(props.onClcickSubmitReview)}>
         <h1 style={{display:'none'}}> 리뷰 등록페이지 </h1>
         <S.Container>
             <S.LeftWrap>
@@ -47,14 +49,14 @@ export default function NewReviewUI(props:NewReview){
                 <S.ExtendsH2>프로그램 총평</S.ExtendsH2>
                 <section>
                     { !props.isEdit && <StarRate setValue={props.setValue} value={props.realvalue}/> }
-                    <S.OverallInput type='text' {...props.register('overAll')} defaultValue={props.isEdit ? props.data?.overAll : ''}/>
+                    <S.OverallInput type='text' {...register('overAll')} defaultValue={props.isEdit ? props.data?.overAll : ''}/>
                 </section>
             </S.LeftWrap>
             <S.RigthWrap>
                 <S.ContentsWrap>
                 <S.H2>자세한 리뷰는 여기에 적어주세요.</S.H2>
                 <section>
-                    <S.CustomReactQuill onChange={props.handleChange} value={props.isEdit? props.data?.reviewContents : ''}/>
+                    <S.CustomReactQuill onChange={handleChange} value={props.isEdit? props.data?.reviewContents : ''}/>
                 </section>
                 </S.ContentsWrap>
                 <S.BtWrap>

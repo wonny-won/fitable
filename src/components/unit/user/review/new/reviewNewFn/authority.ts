@@ -3,12 +3,13 @@ import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routin
 
 interface Param {
     program:string|string[]|undefined;
+    isEdit: boolean;
 }
 
-export const useBranchAuthority = (program:Param)=>{
+export const useBranchAuthority = ({program,isEdit}:Param)=>{
     const routerHooks = useRoutingPageHooks()
     useEffect(()=>{
-        if(!program){
+        if(!program && !isEdit){
             alert('잘못된 접근입니다.')
             routerHooks('/mypage')()
         }    
