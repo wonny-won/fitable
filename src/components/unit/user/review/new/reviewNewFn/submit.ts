@@ -1,5 +1,5 @@
 import { UploadFiles } from "../../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
-import { createNewREviewMutation } from "./createNewReviewQuery"
+import { createNewReviewMutation } from "./createNewReviewQuery"
 
 interface Params {
     userId: string|undefined|string[],
@@ -12,7 +12,7 @@ interface Params {
 
 // 리뷰 등록 함수
 export const useSubmitReview = ({userId,program,file,starValue,writer,writerProfile}:Params)=> {
-    const submitresult = createNewREviewMutation()
+    const submitresult = createNewReviewMutation()
     const onClcickSubmitReview = async(data:any)=>{
         const reviewData={...data,userId,program,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
         if(file) {

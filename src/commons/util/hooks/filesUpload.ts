@@ -6,7 +6,6 @@ export const useUploadFiles = () => {
 
     const onChangeFile = (event: ChangeEvent<HTMLInputElement>)=> {
 		const file = event.target.files?.[0]
-		console.log(file);
 			if (!file) {
 				alert("파일이 없습니다.");
 				return
@@ -17,7 +16,6 @@ export const useUploadFiles = () => {
 		fileReader.onload = (data) => {
 			// 파일리더의 결과값이 string이 아닐수도 있으니 string일때만 실행되도록 
 			if(typeof data.target?.result === "string"){
-				console.log(data.target?.result);
 				setFakeURL(data.target?.result)
                 setFile(file)
 			}	

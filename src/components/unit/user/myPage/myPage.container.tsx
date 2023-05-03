@@ -1,29 +1,20 @@
 import MyUI from "./myPage.presenter";
 import useAuth from "../../../../commons/util/hooks/useAuth";
-import { useState } from "react";
 import { getUserInfoQuery } from "../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
-import { useRouter } from "next/router";
-import { getMyReviewQuery } from "./mypageFn/getMyReview";
+import { getMyReviewQuery } from "./mypageFn/getMyReviewQuery";
+import { useQueryStringProps } from "./mypageFn/queryStringProps";
+import { useOpenModal } from "./mypageFn/openModal";
+import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing";
 
 export default function My(props:any){
     // 권한분기 - 다시 해야함
     // useAuth()
-    const router = useRouter()
-    const [isModalOpen,setIsModalOpen] = useState(false)
-    const [applyId,setApplyId] = useState('')
     const getUserInfo = getUserInfoQuery()
-    const userId = getUserInfo?.data?.result?.localId
-    const MyReview = getMyReviewQuery(`${userId}`)
-    console.log(MyReview)
+    const myReview = getMyReviewQuery(getUserInfo.data?.result?.localId)
+    const propsWithRouter = useQueryStringProps()
+    const routerHooks = useRoutingPageHooks()
+    const {applyId,isModalOpen,setIsModalOpen,onClickOpenModal} = useOpenModal()
 
-    const onClickOpenModal = (e:any)=>{
-        setIsModalOpen(!isModalOpen)
-        setApplyId(e.target.id)
-    }
-    const propsWithRouter = (e:any)=>{
-        const query = { program : e.target.id }
-        router.push({pathname:'/review/new',query})
-    }
     return <MyUI getUserInfo={getUserInfo.data?.result}
                 userOtherData={getUserInfo.data?.getUserDatas[0]}
                 onClickOpenModal={onClickOpenModal}
@@ -31,5 +22,7 @@ export default function My(props:any){
                 setIsModalOpen={setIsModalOpen}
                 getAllApplyData={getUserInfo.data?.getAllApplyDatas}
                 applyId={applyId}
-                propsWithRouter={propsWithRouter}/>
+                propsWithRouter={propsWithRouter}
+                myReview={myReview?.data}
+                routerHooks={routerHooks}/>
 }

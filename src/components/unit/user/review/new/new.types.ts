@@ -15,7 +15,11 @@ export interface NewReview{
         displayName?: string;
         photoUrl?: string;
         email: string
-    } |unknown
+    } |unknown;
+    isEdit: boolean;
+    data: any[] | undefined;
+    fileName: string;
+    onClcickUpdateReview: (data: any) => Promise<void>
 }
 
 export interface NewReviewContainer {

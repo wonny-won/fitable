@@ -18,6 +18,7 @@ export const Title = styled.h2`
     font-size: 20px;
     font-weight: 600;
     padding-left: 10%;
+    margin-top: 40px;
 `
 export const Line = styled.hr`
     width: 80%;

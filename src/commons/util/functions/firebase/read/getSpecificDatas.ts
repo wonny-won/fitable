@@ -10,7 +10,7 @@ interface Params{
 // 특정 필드값으로 조건 만족하는 데이터 가지고 오기
 export const getSpecificDatas = async({collectionName,field,fieldValue}:Params)=>{
     const DataArr:any[] = []
-    const dataQuery = query(collection(DB, collectionName), where(field,"==",`${fieldValue}`));
+    const dataQuery = query(collection(DB, collectionName), where(field,"==",fieldValue));
 
     const specificDatas = await getDocs(dataQuery);
     specificDatas.forEach((doc) => {

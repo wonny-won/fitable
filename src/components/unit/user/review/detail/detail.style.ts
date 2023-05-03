@@ -80,7 +80,7 @@ export const OverAllSpan = styled.span`
     font-weight: 800;
 `
 export const Content = styled.div`
-    span{
+    p,span{
         font-family: 'SUIT-Regular';;
         font-weight: 500;
         line-height: 1.43;

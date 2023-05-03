@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import ReviewDetaillUI from "./detail.presenter"
-import { fetchDetailDataQuery } from "./detailFn/fetchDataQuery"
-import { Error,Loading } from "./detail.style"
+import { fetchDetailDataQuery } from "../../../../../commons/util/functions/reactQuery/useQuery/fetchDataQuery" 
+import { Loading } from "./detail.style"
 
 export default function ReviewDetail(){
     const router = useRouter()

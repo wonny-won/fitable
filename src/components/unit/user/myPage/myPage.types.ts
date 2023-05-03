@@ -10,4 +10,6 @@ export interface UserInfoData {
     getAllApplyData: boolean | any[] | undefined;
     applyId: string;
     propsWithRouter: (e: any) => void;
+    myReview: any[] | undefined;
+    routerHooks: (path: string) => () => void;
 }

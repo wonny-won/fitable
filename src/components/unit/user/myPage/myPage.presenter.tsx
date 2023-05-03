@@ -37,6 +37,7 @@ export default function MyUI(props:UserInfoData){
                 <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData?.coupon}</S.SmallSpan>개</S.Coupon>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
+
         <S.Title>신청 프로그램</S.Title>
         <S.Line/>
         <S.ProgramSection>
@@ -46,7 +47,7 @@ export default function MyUI(props:UserInfoData){
                 <div>신청내역 / 리뷰작성</div>
             </S.Header>
             {
-                props.getAllApplyData?.length > 0 ? props.getAllApplyData.map((item)=>(
+                props.getAllApplyData?.length > 0 ? props.getAllApplyData?.map((item)=>(
                     <div key={item.id}>
                     <S.Content>
                     <div>{item.applyAt}</div>
@@ -67,9 +68,31 @@ export default function MyUI(props:UserInfoData){
                 )
             }
             <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} applyId={props.applyId}/>
-        <S.Title>작성 리뷰</S.Title>
-        <S.Line/>
+        </S.ProgramSection>
 
+        <S.Title>내가 작성한 리뷰</S.Title>
+        <S.Line/>
+        <S.ProgramSection>
+        <S.Header> 
+            <div>작성일</div>
+            <div>프로그램</div>
+            <div>리뷰수정</div>
+        </S.Header>
+            {
+                props.myReview ? (props.myReview?.map((item)=>(
+                    //  console.log('맵',item)
+                    <div key={item.id}>
+                    <S.Content>
+                        <div>작성일</div>
+                        <div>{item.program}</div>
+                        <S.ReiewBt src='/reviewPencil.svg' id={item.id} onClick={props.routerHooks(`/review/${item.id}/edit`)}/>
+                    </S.Content>
+                    </div>
+                )
+                )) : (
+                    <div> 작성 리뷰가 없습니다. </div>
+                )
+            }
         </S.ProgramSection>
         </S.Container>
     )
