@@ -67,6 +67,9 @@ export default function MyUI(props:UserInfoData){
                 )
             }
             <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} applyId={props.applyId}/>
+        <S.Title>작성 리뷰</S.Title>
+        <S.Line/>
+
         </S.ProgramSection>
         </S.Container>
     )

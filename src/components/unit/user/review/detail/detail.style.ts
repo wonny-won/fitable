@@ -1,5 +1,17 @@
 import styled from "@emotion/styled";
 
+export const Error = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+`
+export const Loading = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+`
 export const Container = styled.div`
     width: 90%;
     margin: 0 auto;

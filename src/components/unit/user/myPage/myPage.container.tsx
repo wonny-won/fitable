@@ -3,14 +3,19 @@ import useAuth from "../../../../commons/util/hooks/useAuth";
 import { useState } from "react";
 import { getUserInfoQuery } from "../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 import { useRouter } from "next/router";
+import { getMyReviewQuery } from "./mypageFn/getMyReview";
 
 export default function My(props:any){
     // 권한분기 - 다시 해야함
     // useAuth()
+    const router = useRouter()
     const [isModalOpen,setIsModalOpen] = useState(false)
     const [applyId,setApplyId] = useState('')
     const getUserInfo = getUserInfoQuery()
-    const router = useRouter()
+    const userId = getUserInfo?.data?.result?.localId
+    const MyReview = getMyReviewQuery(`${userId}`)
+    console.log(MyReview)
+
     const onClickOpenModal = (e:any)=>{
         setIsModalOpen(!isModalOpen)
         setApplyId(e.target.id)
