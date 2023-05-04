@@ -1,7 +1,6 @@
 import Head from "next/head"
 import * as S from './list.style'
 import { ReviewListPresenterProps } from "./list.type"
-import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing"
 import ListCard from "../../../../commons/atom/user/reviewListCard/listCard"
 
 export default function ReviewListUI(props:ReviewListPresenterProps){
