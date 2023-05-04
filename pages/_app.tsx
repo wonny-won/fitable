@@ -9,10 +9,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
-import { RecoilRoot, useRecoilState } from 'recoil';
+import { RecoilRoot } from 'recoil';
 import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
 import { QueryClient,QueryCache,QueryClientProvider, useQueryClient } from '@tanstack/react-query';
-import { isLogin } from '../src/commons/util/recoilAtom/atom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",

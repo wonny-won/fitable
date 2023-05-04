@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routing";
 import { getUserInfoQuery } from "../../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 
@@ -11,6 +11,7 @@ interface Param {
 
 export const useBranchAuthority = ({program,isEdit,user,reviewWriter}:Param)=>{
     const routerHooks = useRoutingPageHooks()
+    const [] = useState('')
 
     useEffect(()=>{
         console.log(user,reviewWriter)
@@ -18,9 +19,11 @@ export const useBranchAuthority = ({program,isEdit,user,reviewWriter}:Param)=>{
         if(!program && !isEdit){
             alert('잘못된 접근입니다.')
             routerHooks('/mypage')()
-        }  
-        if(isEdit){
+        } 
+        // 다시 
+        if(isEdit && user!==reviewWriter){
             alert('잘못된 접근입니다.')
         } 
+    
     },[])
 }

@@ -7,6 +7,7 @@ interface IsActiveProps{
 export const Wrapper = styled.div`
     display: flex;
     position: fixed;
+    z-index: 100000;
 `
 export const Container = styled.div`
     display: flex;

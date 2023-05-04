@@ -6,7 +6,7 @@ export const fetchDetailDataQuery = (docId:string|undefined)=>{
     useQueryClient()
     const routingHooks = useRoutingPageHooks()
 
-    const {status, data, error} = useQuery({
+    const {status, data, error,refetch} = useQuery({
         queryKey: ['fetchProgramReview',docId],
         queryFn: ()=> getOneDoc({collection:'programReview',docId}),
         onError:()=>{
@@ -17,6 +17,7 @@ export const fetchDetailDataQuery = (docId:string|undefined)=>{
     return {
         status,
         data,
-        error
+        error,
+        refetch
     }
 }

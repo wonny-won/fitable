@@ -7,7 +7,6 @@ export default function ReviewDetail(){
     const router = useRouter()
     const docId = router.query.reviewId
     const { data,status } = fetchDetailDataQuery(docId)
-    console.log(status)
     if(status==='loading'){
         return <Loading>...loading</Loading>
     }

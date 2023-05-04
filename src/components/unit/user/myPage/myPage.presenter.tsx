@@ -76,7 +76,7 @@ export default function MyUI(props:UserInfoData){
         <S.Header> 
             <div>작성일</div>
             <div>프로그램</div>
-            <div>리뷰수정</div>
+            <div>리뷰삭제/수정</div>
         </S.Header>
             {
                 props.myReview ? (props.myReview?.map((item)=>(
@@ -85,7 +85,10 @@ export default function MyUI(props:UserInfoData){
                     <S.Content>
                         <div>작성일</div>
                         <div>{item.program}</div>
-                        <S.ReiewBt src='/reviewPencil.svg' id={item.id} onClick={props.routerHooks(`/review/${item.id}/edit`)}/>
+                        <S.BtWrap>
+                            <S.ViewBt id={item.id}>삭제</S.ViewBt>
+                            <S.ReiewBt src='/reviewPencil.svg' id={item.id} onClick={props.routerHooks(`/review/${item.id}/edit`)}/>
+                        </S.BtWrap>
                     </S.Content>
                     </div>
                 )
