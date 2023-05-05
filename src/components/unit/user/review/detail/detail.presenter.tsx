@@ -1,18 +1,27 @@
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
 import * as S from './detail.style'
-import Icon,{LikeOutlined,DislikeOutlined} from '@ant-design/icons';
+import {LikeOutlined,DislikeOutlined} from '@ant-design/icons';
 import { ReviewDetailPresenter } from "./detail.type";
 import Carousel from "../../../../commons/atom/user/carousel/carousel.container";
 import { onClickhelpfulBt } from "./detailFn/onClickhelpfulBt"; 
+import { useRouter } from "next/router";
 
 export default function ReviewDetaillUI(props:ReviewDetailPresenter){
+    const router = useRouter()
     return(
         <S.Container>
         <S.H1>리뷰 디테일</S.H1>
+        <div>
+        <S.H2>뒤로 가기</S.H2>
+        <S.GoBackWrap onClick={router.back}>
+            <S.Goback src="/backIcon.png" />
+            <S.GobackText>뒤로가기</S.GobackText>
+        </S.GoBackWrap>
         <S.H2>리뷰 사진 캐러셀</S.H2>
         <S.CarouselSection>
-            <Carousel file={props.data?.fileURL}/>
+            <Carousel file={props.data?.fileName}/>
         </S.CarouselSection>
+        </div>
         <S.H2>리뷰 상세</S.H2>
         <S.Section>
             <S.ProgramTilte>{props.data?.program}</S.ProgramTilte>

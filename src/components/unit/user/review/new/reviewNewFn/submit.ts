@@ -18,7 +18,9 @@ export const useSubmitReview = ({userId,program,file,starValue,writer,writerProf
         if(file) {
             const uploadImg = await UploadFiles('/newReview',file)
             const fileURL = uploadImg?.fullPath
+            const fileName = uploadImg?.name
             reviewData.fileURL = fileURL
+            reviewData.fileName = fileName
         } else{
             reviewData.fileURL = '등록된 파일이 없습니다.'
         }

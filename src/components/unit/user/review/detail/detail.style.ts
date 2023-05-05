@@ -19,6 +19,16 @@ export const Container = styled.div`
     justify-content: space-around;
     padding: 0 2%;
 `
+export const GoBackWrap = styled.div`
+    padding: 5px;
+`
+export const Goback = styled.img`
+    width: 60px;
+    height: 10px;
+`
+export const GobackText = styled.div`
+    padding-top: 10px;
+`
 export const H1 = styled.h1`
     display: none;
 `

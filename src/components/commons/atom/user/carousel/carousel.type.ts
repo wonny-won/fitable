@@ -6,9 +6,10 @@ export interface CarouselPresenter{
         slidesToShow: number;
         slidesToScroll: number;
     };
-    file: string[] | undefined;
+    file?: any;
 }
 
 export interface CarouselContainer{
-    file?: string;
+    file?: any;
+    // file?:string[] | undefined[] ;
 }

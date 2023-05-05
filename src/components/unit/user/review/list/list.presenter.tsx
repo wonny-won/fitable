@@ -16,12 +16,12 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
         <h2 style={{display:"none"}}>상위리뷰</h2>
         <S.TopReview>
             <S.TopReviewTitle>Top3 명예의 전당</S.TopReviewTitle>
-            <S.TopReviewWrap> <ListCard data={props.topREview} /> </S.TopReviewWrap>
+            <S.TopReviewWrap> <ListCard topReview={props.topREview} isEdit={false}/> </S.TopReviewWrap>
             <S.RankingImg src='/apply.png'/>
         </S.TopReview>
         <h2 style={{display:"none"}}>모든 리뷰</h2>
         <S.RviewWrap>
-            <ListCard data={props.data} />
+            <ListCard data={props.data} isEdit={false}/>
         </S.RviewWrap>
         </S.Container>
         </>

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { Rate } from 'antd';
+import StarRate from "../starRate/starRate";
 
 export const CardWrap = styled.div`
     width : 215px;
@@ -13,8 +14,9 @@ export const CardWrap = styled.div`
     }
     /* background-color: #fff; */
 `
-export const Image = styled.div`
+export const Image = styled.img`
     width: 100%;
+    size: cover;
     height: 200px;
     border-bottom:1px solid rgba(0,0,0,0.13) ;
 `
@@ -48,7 +50,7 @@ export const ProgramImage = styled.img`
     size: cover;
 `
 export const ReviewListStar = styled(Rate)`
-    :where(.css-dev-only-do-not-override-26rdvq).ant-rate{
+   :where(.css-dev-only-do-not-override-1vtf12y).ant-rate{
        font-size: 12px;
        color: #E9D7C1;
     }
@@ -61,5 +63,50 @@ export const NoImg = styled.img`
     size: cover;
     height: 200px;
     border-bottom:1px solid rgba(0,0,0,0.13) ;
+    padding: 15px 30px;
+`
 
+// -------------------------------------------------
+export const ThumbnailSection = styled.div`
+    display: flex;
+    width: 400px;
+    border: 3px solid #FFE100;
+    border-radius: 15px;
+    padding: 30px;
+    background-color: #FCF9EF;
+    margin: 30px 10px 0 0;
+    &:hover{
+        cursor: pointer;
+    }
+`
+export const ThumbnailImg = styled.img`
+    width: 150px;
+    size: cover;
+    height: 200px;
+    border-bottom:1px solid rgba(0,0,0,0.13) ;
+`
+export const ProgramReviewWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+`
+export const ProgramTilte = styled.div`
+    padding-bottom: 10px;
+`
+export const UserWrap = styled.div`
+    display: flex;
+    font-family: 'SUIT-Regular';
+`
+export const UserProfileImg = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 50%;
+`
+export const UserInfo = styled.div`
+    font-size: 13px;
+    margin-left: 13px;
+    padding-top: 5px;
 `

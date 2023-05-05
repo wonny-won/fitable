@@ -3,7 +3,7 @@ import { DB } from "../../../../../../../pages/_app";
 
 export const topRanking = async()=>{
     const DataArr:any[] = []
-    const dataQuery = query(collection(DB,'programReview'), orderBy("likeCount"), limit(3));
+    const dataQuery = query(collection(DB,'programReview'), orderBy("likeCount","desc"), limit(3));
 
     const specificDatas = await getDocs(dataQuery);
     specificDatas.forEach((doc) => {

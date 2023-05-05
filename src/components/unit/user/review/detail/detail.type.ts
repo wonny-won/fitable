@@ -5,7 +5,7 @@ export interface ReviewDetailPresenter{
         overAll?:string;
         userId:string;
         program:string;
-        fileURL?:string;
+        fileName?:string;
         reviewContents?:string;
         starValue?:number;
         writer?: string;
