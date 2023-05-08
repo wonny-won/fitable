@@ -21,6 +21,9 @@ export const Container = styled.div`
 `
 export const GoBackWrap = styled.div`
     padding: 5px;
+    &:hover{
+        cursor: pointer;
+    }
 `
 export const Goback = styled.img`
     width: 60px;

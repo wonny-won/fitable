@@ -4,18 +4,18 @@ import {LikeOutlined,DislikeOutlined} from '@ant-design/icons';
 import { ReviewDetailPresenter } from "./detail.type";
 import Carousel from "../../../../commons/atom/user/carousel/carousel.container";
 import { onClickhelpfulBt } from "./detailFn/onClickhelpfulBt"; 
-import { useRouter } from "next/router";
+import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing";
 
 export default function ReviewDetaillUI(props:ReviewDetailPresenter){
-    const router = useRouter()
+    const routerHooks = useRoutingPageHooks()
     return(
         <S.Container>
         <S.H1>리뷰 디테일</S.H1>
         <div>
-        <S.H2>뒤로 가기</S.H2>
-        <S.GoBackWrap onClick={router.back}>
+        <S.H2>리스트 페이지 가기</S.H2>
+        <S.GoBackWrap onClick={routerHooks('/review')}>
             <S.Goback src="/backIcon.png" />
-            <S.GobackText>뒤로가기</S.GobackText>
+            <S.GobackText>리뷰 리스트</S.GobackText>
         </S.GoBackWrap>
         <S.H2>리뷰 사진 캐러셀</S.H2>
         <S.CarouselSection>

@@ -30,12 +30,18 @@ export const RankingImg = styled.img`
     height: 200px;
     size: cover;
 `
+export const AllReviewWrap = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FCF9EF;
+`
 export const RviewWrap = styled.div`
     width: 100%;
+    height: 1208px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    overflow: scroll;
-    background-color: #FCF9EF;
     padding: 40px 5%;
 `

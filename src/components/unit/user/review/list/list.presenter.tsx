@@ -2,6 +2,7 @@ import Head from "next/head"
 import * as S from './list.style'
 import { ReviewListPresenterProps } from "./list.type"
 import ListCard from "../../../../commons/atom/user/reviewListCard/listCard"
+import Pagination from "../../../../commons/atom/user/pagination/pagination"
 
 export default function ReviewListUI(props:ReviewListPresenterProps){
     return(
@@ -20,9 +21,12 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
             <S.RankingImg src='/apply.png'/>
         </S.TopReview>
         <h2 style={{display:"none"}}>모든 리뷰</h2>
-        <S.RviewWrap>
-            <ListCard data={props.data} isEdit={false}/>
-        </S.RviewWrap>
+        <S.AllReviewWrap>
+            <S.RviewWrap>
+                <ListCard data={props.data} isEdit={false}/>
+            </S.RviewWrap>
+            <div><Pagination currentPage={props.currentPage} startPage={props.startPage} onClickNextPage={props.onClickNextPage} onClickPage={props.onClickPage} onClickPrevPage={props.onClickPrevPage} data={props.data}/></div>
+        </S.AllReviewWrap>
         </S.Container>
         </>
     )

@@ -36,16 +36,6 @@ export const logIn = async ({email,password}:JoinusParams)=>{
     }
     return isLogin
 }
-// 기존 회원 로그아웃
-export const logOut = async ()=>{
-    try{
-        const result = await signOut(auth)
-        alert("로그아웃에 성공했습니다.")
-        console.log(result)
-    }catch(error){
-        console.log(error)
-    }
-}
 
 // 현재 로그인한 사용자 가지고 오기
 export const  loggedInUser =async ()=>{
@@ -60,4 +50,14 @@ export const  loggedInUser =async ()=>{
     })
     return result
 }
+export const logOut = async ()=>{
+    try{
+        const result = await signOut(auth)
+        alert("로그아웃에 성공했습니다.")
+        console.log(result)
+    }catch(error){
+        console.log(error)
+    }
+}
+
 

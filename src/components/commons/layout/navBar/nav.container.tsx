@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import NavBarUI from "./nav.presenter"
 import { NavContainerProps } from "./nav.type"
-import { logOut } from "../../../../commons/util/functions/firebaseFunctions"
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
+import { userlogOut } from "../../../../commons/util/functions/firebase/logInOut.ts/logOut"
 
 export default function NavBar(props:NavContainerProps){
     const [isActive,setisActive] = useState(false)
@@ -11,17 +11,16 @@ export default function NavBar(props:NavContainerProps){
     const onClickMenuBt = ()=>{
         setisActive(!isActive)
     }
-    const signOut = ()=>{
-        logOut()
-    }
     useEffect(()=>{
         if(props.isLogin !== false){
             setIsLogin(props.isLogin)
         }
     },[isLogin])
+    const signOut = ()=>{userlogOut()}
+
     return <NavBarUI isActive={isActive}
                      onClickMenuBt={onClickMenuBt}
                      isLogin={props.isLogin}
-                     signOut={signOut}
-                     routing={routing}/>
+                     routing={routing}
+                     signOut={signOut}/>
 }

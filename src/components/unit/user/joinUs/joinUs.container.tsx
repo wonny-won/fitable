@@ -1,7 +1,6 @@
 import JoinUsUI from "./joinUs.presenter";
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
 import { useGetInputValue } from "../../../../commons/util/hooks/signUpIn";
-// import {  logIn } from "../../../../commons/util/functions/firebaseFunctions";
 import { logIn } from "../../../../commons/util/functions/firebaseFunctions";
 
 export default function JoinUs(){ 

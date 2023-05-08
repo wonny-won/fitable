@@ -22,14 +22,7 @@ export const onClickPayment = (data: {}) => async()=>{
       buyer_postcode: "01181"
     }, (rsp:any) => {
       if (rsp.success) {
-        // 파이어 스토어 시간으로 바꾸기 - DB시간으로 바꿔야함
-          const date = new Date()
-          const createAt = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} `
-          const applyData = {...data,applyAt:createAt}
-          // 추후 어드민(신청서만 뽑아오는 테이블), 데이터 분석에 이용할 DB테이블
-          addCustomIdDoc('applyData',result.localId,'applyProgram',applyData)
-          // 유저가 프로그램 신청 리스트 테이블
-          // addCustomIdDoc('user',result.localId,'applyProgram',applyData)
+          addCustomIdDoc('applyData',result.localId,'applyProgram',data)
           alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
           resolve( "결제완료")
       } else {

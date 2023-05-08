@@ -2,12 +2,13 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getDatas } from "../../../../../../commons/util/functions/firebase/read/getAllDatas"
 import { topRanking } from "./topRanking"
 
-export const getListQuery = ()=>{
+export const getListQuery = (page:number)=>{
     useQueryClient()
 
-    const getRivewList = useQuery({
-        queryKey: ['getListQuery'],
-        queryFn: ()=> getDatas('/programReview')
+    const {data,refetch} = useQuery({
+        queryKey: ['getListQuery',page],
+        queryFn: ()=> getDatas('/programReview',page),
+        keepPreviousData: true,
     })
 
     const topReview = useQuery({
@@ -16,7 +17,8 @@ export const getListQuery = ()=>{
     })
 
     return {
-        getRivewList,
+        data,
+        refetch,
         topReview
     }
 }
