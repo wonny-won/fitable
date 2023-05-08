@@ -18,7 +18,6 @@ export default function Pagination(props:Param){
           new Array(10).fill(1)?.map((_,index)=>{
               return(
               <div
-                  id={Number(index + props.currentPage)}
                   key={index + props.currentPage} 
                   onClick={props.onClickPage}> 
                   {` ${ props.startPage+index } `}
