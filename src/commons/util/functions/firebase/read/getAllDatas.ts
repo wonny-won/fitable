@@ -10,10 +10,16 @@ export const getDatas = async(docCollection:string,page:number)=>{
         dataArr.push({id: data.id,data: data.data()})
     })
 
-    // 페이네이션을 위한 처리 - 8개씩 나눠담기
+    // 총 문서의 개수 - 페이지 네이션 시 필요
+    const fetchDataCount = dataArr.length
+
+    // 페이네이션을 위한 처리 - 12개씩 나눠담기
     const paginatedArr = []
     for (let i = 0; i < dataArr.length; i += 12) {
         paginatedArr.push(dataArr.slice(i, i + 12));
       }
-    return paginatedArr[page-1]
+    return {
+       pageArr : paginatedArr[page-1],
+       fetchDataCount
+    }
 }

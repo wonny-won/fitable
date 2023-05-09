@@ -25,7 +25,7 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
             <S.RviewWrap>
                 <ListCard data={props.data} isEdit={false}/>
             </S.RviewWrap>
-            <div><Pagination currentPage={props.currentPage} startPage={props.startPage} onClickNextPage={props.onClickNextPage} onClickPage={props.onClickPage} onClickPrevPage={props.onClickPrevPage} data={props.data}/></div>
+            <div><Pagination currentPage={props.currentPage} startPage={props.startPage} onClickNextPage={props.onClickNextPage} onClickPage={props.onClickPage} onClickPrevPage={props.onClickPrevPage} data={props.data} lastPage={props.lastPage}/></div>
         </S.AllReviewWrap>
         </S.Container>
         </>

@@ -36,6 +36,7 @@ export const AllReviewWrap = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: #FCF9EF;
+    padding-bottom: 60px;
 `
 export const RviewWrap = styled.div`
     width: 100%;

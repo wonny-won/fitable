@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import * as S from './pagination.style'
-
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 interface Param {
   currentPage: number;
   startPage: number;
@@ -7,25 +8,26 @@ interface Param {
   data: any;
   onClickNextPage: () => void;
   onClickPrevPage: () => void;
+  lastPage: () => Promise<number>;
 }
 
-
 export default function Pagination(props:Param){
+  const [lastPage,useLastPage] = useState(1)
+  props.lastPage().then((res)=>(useLastPage(res)))
     return(
       <S.NumberWrap>
-      <div onClick={props.onClickPrevPage}> 이전 </div>
+      <S.Bt onClick={props.onClickPrevPage}> <LeftOutlined /> </S.Bt>
       {
-          new Array(10).fill(1)?.map((_,index)=>{
+          new Array(lastPage>=5 ? 5 : lastPage).fill(1)?.map((_,index)=>{
               return(
-              <div
+              <S.PageBt
                   key={index + props.currentPage} 
                   onClick={props.onClickPage}> 
-                  {` ${ props.startPage+index } `}
-              </div>
+                  {`${ props.startPage+index }`}
+              </S.PageBt>
           )})
       }
-      <div onClick={props.onClickNextPage}> 다음 </div>
+      <S.Bt onClick={props.onClickNextPage}> <RightOutlined /> </S.Bt>
       </S.NumberWrap>
-
     )
 }

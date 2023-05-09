@@ -7,5 +7,6 @@ export interface ReviewListPresenterProps {
     startPage: number;
     onClickNextPage: () => void;
     onClickPage: (event: any) => Promise<void>;
-    onClickPrevPage: () => void
+    onClickPrevPage: () => void;
+    lastPage: () => Promise<number>;
 }

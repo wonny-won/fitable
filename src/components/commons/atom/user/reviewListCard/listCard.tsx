@@ -1,21 +1,19 @@
-import { getImgName } from '../../../../../commons/util/functions/imageName'
 import { useRoutingPageHooks } from '../../../../../commons/util/hooks/routing'
 import StarRate from '../starRate/starRate'
 import * as S from './listCard.style'
-import {v4 as uuidv4} from 'uuid'
 
 interface PropsParams {
     data?: any[];
     topReview?: any[];
     isEdit: boolean;
-}   
+}  
 
 export default function ListCard(props:PropsParams){
     const routerHooks = useRoutingPageHooks()
     return(
         <>
         {
-            props.data?.map((item)=>(
+            props.data?.pageArr?.map((item)=>(
                 <S.CardWrap key={item.id} id={item.id} onClick={routerHooks(`/review/${item.id}`)}>
                     {
                         item.data?.fileURL!=='등록된 파일이 없습니다.' ? (<S.Image src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${item.data?.fileName}?alt=media`}/>):(<S.NoImg src="/tutorMascot.png" />)
