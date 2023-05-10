@@ -7,7 +7,7 @@ export const onChangeInput = ()=>{
     const handleChange = (value: string) => {    
         setValue("reviewContents", value === "<p><br></p>" ? "" : value);
         trigger("reviewContents");
-      };
+    };
       
     return{
         register,

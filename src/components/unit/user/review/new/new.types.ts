@@ -4,10 +4,9 @@ export interface NewReview{
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
     imgURL: string;
     setValue: Dispatch<SetStateAction<number>>;
-    onClcickSubmitReview: (data: any) => Promise<void>;
+    onClickSubmitReview: (data: any) => Promise<void>;
     program: string | string[] | undefined;
     realvalue?: number;
-    fileName: string | undefined;
     userInfo?:{
         displayName?: string;
         photoUrl?: string;
@@ -15,7 +14,7 @@ export interface NewReview{
     } |unknown;
     isEdit: boolean;
     data: any[] | undefined;
-    onClcickUpdateReview: (data: any) => Promise<void>
+    onClickUpdateReview: (data: any) => Promise<void>
 }
 
 export interface NewReviewContainer {

@@ -1,7 +1,7 @@
 import { Dispatch, ChangeEvent, SetStateAction, MouseEventHandler } from "react";
 
 export interface ReviewListPresenterProps {
-    data: any[] | undefined;
+    data: { pageArr: any[]; fetchDataCount: number; } | undefined;
     topREview: any[] | undefined;
     currentPage: number;
     startPage: number;

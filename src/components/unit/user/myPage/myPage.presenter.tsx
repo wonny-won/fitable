@@ -2,6 +2,7 @@ import Head from "next/head";
 import { UserInfoData } from "./myPage.types";
 import * as S from './myPage.style'
 import UseModal from "../../../commons/atom/user/modal/modal.container";
+import { deleteReview } from "./mypageFn/deleteReview";
 
 export default function MyUI(props:UserInfoData){
     console.log(props.getAllApplyData?.[3]?.createAt.toDate())
@@ -87,7 +88,7 @@ export default function MyUI(props:UserInfoData){
                         <div>작성일</div>
                         <div>{item.program}</div>
                         <S.BtWrap>
-                            <S.ViewBt id={item.id}>삭제</S.ViewBt>
+                            <S.ViewBt id={item.id} onClick={deleteReview(item.id)}>삭제</S.ViewBt>
                             <S.ReiewBt src='/reviewPencil.svg' id={item.id} onClick={props.routerHooks(`/review/${item.id}/edit`)}/>
                         </S.BtWrap>
                     </S.Content>

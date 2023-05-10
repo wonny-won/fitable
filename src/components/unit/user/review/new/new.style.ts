@@ -34,6 +34,7 @@ export const ThumbnailSection = styled.section`
     border-radius: 15px;
     padding: 30px;
     background-color: #FCF9EF;
+    justify-content: space-around;
 `
 export const ThumbnailImg = styled.img`
     width: 120px;
@@ -42,16 +43,17 @@ export const ThumbnailImg = styled.img`
 export const UserWrap = styled.div`
     display: flex;
     font-family: 'SUIT-Regular';
+    align-items: center;
 `
 export const UserProfileImg = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 50% 50%;
+    margin-right: 10px;
 `
-export const UserInfo = styled.div`
+export const OverAllThumbnail = styled.div`
     font-size: 13px;
     margin-left: 13px;
-    padding-top: 5px;
 `
 export const ProgramReviewWrap = styled.div`
     display: flex;
@@ -76,6 +78,11 @@ export const UploadBt = styled.label`
     &:hover{
         cursor: pointer;
     }
+`
+export const UploadImgWrap = styled.div`
+    display: flex;
+    width: 350px;
+    overflow: scroll;
 `
 export const UploadingImg = styled.img`
     width: 90px;

@@ -49,7 +49,6 @@ export default function ListCard(props:PropsParams){
                         </S.UserWrap>
                         </S.ProgramReviewWrap>
                     </S.ThumbnailSection>
-
             ))
         }
         </>

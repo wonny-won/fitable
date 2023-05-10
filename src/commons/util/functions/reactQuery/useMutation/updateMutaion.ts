@@ -12,7 +12,7 @@ export const updateMutation = (docId:string)=>{
     const updateDocMutaion = useMutation({
         mutationFn: async(data) => await updateData({collection:'/programReview',docId,data}),
         onSuccess:()=>{
-            queryClient.invalidateQueries('fetchProgramReview')
+            queryClient.invalidateQueries(['fetchProgramReview'])
         }
     })
 
