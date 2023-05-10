@@ -17,19 +17,10 @@ export const useSubmitReview = ({userId,program,files,starValue,writer,writerPro
         const reviewData={...data,userId,program,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
         if(files) {
             const uploadImg = await UploadFiles('/newReview',files)
-            console.log(uploadImg)
-            const uploadFile:string[] = []
-            const uploadFileName:string[] = []
-            uploadImg.map((item)=>{
-                const fileURL = [...uploadFile,item?.fullPath]
-                const fileName = [...uploadFileName,item?.name]
-                reviewData.fileURL = fileURL
-                reviewData.fileName = fileName
-            })
-            // const fileURL = uploadImg?.fullPath
-            // const fileName = uploadImg?.name
-            // reviewData.fileURL = fileURL
-            // reviewData.fileName = fileName
+            const fileURL = uploadImg?.map((item)=>item.fullPath)
+            const fileName = uploadImg?.map((item)=>item.name)
+            reviewData.fileURL = fileURL
+            reviewData.fileName = fileName
         } else{
             reviewData.fileURL = '등록된 파일이 없습니다.'
         }

@@ -3,19 +3,27 @@ import { updateReviewMutation } from "./updateReviewQuery";
 interface Params {
     docId: string;
     program:string|undefined|string[];
-    file: File;
+    files: File[];
+}
+interface UpdateData {
+    overAll?: string;
+    reviewContents?:string;
+    fileURL?:string[];
+    fileName?:string[];
 }
 //리뷰 수정 함수
-export const useUpdateReview = ({file,docId}:Params)=>{
+export const useUpdateReview = ({files,docId}:Params)=>{
     const submitresult = updateReviewMutation(docId)
     const onClcickSubmitReview = async(data:any)=>{
-        const updateData = {}
+        const updateData:UpdateData = {}
         if(data.overAll!=='') updateData.overAll = data.overAll
         if(data.reviewContents) updateData.reviewContents = data.reviewContents
-        if(file) {
-            const uploadImg = await UploadFiles('/newReview',file)
-            const fileURL = uploadImg?.fullPath
+        if(files) {
+            const uploadImg = await UploadFiles('/newReview',files)
+            const fileURL = uploadImg?.map((item)=>item.fullPath)
+            const fileName = uploadImg?.map((item)=>item.name)
             updateData.fileURL = fileURL
+            updateData.fileName = fileName
         } 
         try{
             submitresult.mutate(updateData)

@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 export default function NewReviewUI(props:NewReview){
     const { register,handleSubmit,handleChange } = onChangeInput()
     const routerHooks = useRoutingPageHooks()
+    console.log(props.imgURL)
     return(
         <>
         <Head>
@@ -22,8 +23,10 @@ export default function NewReviewUI(props:NewReview){
             <S.LeftWrap>
                 <S.H2>썸네일 미리보기</S.H2>
                 <S.ThumbnailSection>
-                    { props.isEdit ? <S.ThumbnailImg src={props.data?.fileURL!=='등록된 파일이 없습니다.' ? `https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${props.data?.fileName}?alt=media`:'/tutorMascot.png'}/>
-                        : <S.ThumbnailImg src={props.imgURL.length>0 ? props.imgURL?.[0]:'/tutorMascot.png'}/> }
+                    { 
+                        props.isEdit && props.data?.fileURL!=='등록된 파일이 없습니다.' ? <S.ThumbnailImg src={props.imgURL.length>0 ? props.imgURL?.[0] : `https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${props.data?.fileName?.[0]}?alt=media`}/>
+                        : <S.ThumbnailImg src={props.imgURL.length>0 ? props.imgURL?.[0]:'/tutorMascot.png'}/> 
+                    }
                     <S.ProgramReviewWrap>
                         <S.ProgramTilte>{props.isEdit? props.data?.program : props.program}</S.ProgramTilte>
                         <S.OverAllThumbnail>{props.isEdit ? props.data?.overAll:'작성하신 프로그램 총평이 보여집니다.'}</S.OverAllThumbnail>
@@ -39,8 +42,11 @@ export default function NewReviewUI(props:NewReview){
                     <S.ImgWrap>
                     <S.UploadBt htmlFor="fileTag">+</S.UploadBt>
                     <input type='file' id='fileTag' hidden onChange={props.onChangeFile}/>
-                    <S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>
-                    { props.isEdit && <S.UploadingImg src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${props.data?.fileName}?alt=media`}/> }
+                    { 
+                        props.isEdit ?  (<S.UploadImgWrap>{ props.imgURL.length>0 ?  (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>)
+                        : props.data?.fileName?.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${item}?alt=media`}/></div>)) }</S.UploadImgWrap>) :
+                        (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>) 
+                    }
                     </S.ImgWrap>
                 </section>
                 <S.ExtendsH2>프로그램 총평</S.ExtendsH2>
