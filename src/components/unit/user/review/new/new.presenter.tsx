@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid'
 export default function NewReviewUI(props:NewReview){
     const { register,handleSubmit,handleChange } = onChangeInput()
     const routerHooks = useRoutingPageHooks()
-    console.log(props.imgURL)
     return(
         <>
         <Head>

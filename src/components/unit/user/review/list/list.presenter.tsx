@@ -17,6 +17,7 @@ export default function ReviewListUI(props:ReviewListPresenterProps){
         <h2 style={{display:"none"}}>상위리뷰</h2>
         <S.TopReview>
             <S.TopReviewTitle>Top3 명예의 전당</S.TopReviewTitle>
+            <S.Text>가장 도움이 됐던 Top3 리뷰들! 지금 바로 확인하세요.</S.Text>
             <S.TopReviewWrap> <ListCard topReview={props.topREview} isEdit={false}/> </S.TopReviewWrap>
             <S.RankingImg src='/apply.png'/>
         </S.TopReview>

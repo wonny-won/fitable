@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface Params {
+    currentPage: number;
+    page: number
+}
 export const NumberWrap = styled.div`
     display: flex;
     width: 300px;
@@ -13,6 +17,8 @@ export const Bt = styled.div`
     }
 `
 export const PageBt = styled(Bt)`
+    color : ${(props:Params)=> {
+        return props.currentPage===props.page && 'red'}};
     &:hover{
         font-size: 23px;
         color: #8d60f5;

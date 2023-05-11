@@ -21,6 +21,8 @@ export default function Pagination(props:Param){
           new Array(lastPage>=5 ? 5 : lastPage).fill(1)?.map((_,index)=>{
               return(
               <S.PageBt
+                  currentPage = {props.currentPage}
+                  page ={props.startPage+index }
                   key={index + props.currentPage} 
                   onClick={props.onClickPage}> 
                   {`${ props.startPage+index }`}

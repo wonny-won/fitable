@@ -14,8 +14,6 @@ export default function Carousel(props:CarouselContainer){
         autoplaySpeed: 1500,
         pauseOnHover: true
       };
-      console.log(props)
-    const file: string[]|undefined = new Array(props.file)   
     return <CarouselUI settings={settings}
-                       file={file}/>
+                       file={props.file}/>
 }

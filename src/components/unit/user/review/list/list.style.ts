@@ -20,6 +20,9 @@ export const TopReviewTitle = styled.div`
     font-size: 45px;
     padding: 30px 0;
 `
+export const Text = styled.div`
+    font-size: 20px;
+`
 export const TopReviewWrap = styled.div`
     display: flex;
     padding: 0 0 40px 0;

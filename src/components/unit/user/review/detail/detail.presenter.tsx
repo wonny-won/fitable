@@ -5,6 +5,7 @@ import { ReviewDetailPresenter } from "./detail.type";
 import Carousel from "../../../../commons/atom/user/carousel/carousel.container";
 import { onClickhelpfulBt } from "./detailFn/onClickhelpfulBt"; 
 import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing";
+import DOMPurify from "dompurify";
 
 export default function ReviewDetaillUI(props:ReviewDetailPresenter){
     const routerHooks = useRoutingPageHooks()
@@ -34,9 +35,7 @@ export default function ReviewDetaillUI(props:ReviewDetailPresenter){
                 <S.OverAll> <S.OverAllSpan>한줄평</S.OverAllSpan> | {props.data?.overAll}</S.OverAll>
                 <StarRate value={props.data?.starValue} disable={true}/>
             </S.UserWrap>
-           {
-            props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : props.data?.reviewContents }} /> : ''
-           }  
+           { props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(props.data?.reviewContents) }} /> : '' }  
            <S.HelpfulWrap>
                 <S.Helpful onClick={onClickhelpfulBt(props.docId,'likeCount')}> <LikeOutlined/> 도움돼요 {props.data?.likeCount}</S.Helpful>
                 <S.Helpful onClick={onClickhelpfulBt(props.docId,'dislikeCount')}> <DislikeOutlined/> 도움안돼요 {props.data?.dislikeCount}</S.Helpful>
