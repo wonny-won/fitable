@@ -8,9 +8,11 @@ export const onClickApplySubmit = (inputs:any,program:any,file:File[])=> {
             alert('결제 후 프로그램을 신청하시하시겠습니까?')
             const data = {...inputs,program}
             if(file){
-                const uploadfile = await UploadFiles('/applyFile',file)
-                const fileURL = uploadfile?.map((item)=>item.fullPath)
-                data.fileURL = fileURL
+                const fileURL:any[] = []
+                fileURL.push(file[file.length-1])
+                const uploadfile = await UploadFiles('/applyFile',fileURL)
+                const allFileURL = uploadfile?.map((item)=>item.fullPath)
+                data.fileURL = allFileURL
             }
             try{
                 const paymentResult = await onClickPayment(data)()

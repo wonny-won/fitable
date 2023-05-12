@@ -9,7 +9,6 @@ export default function JoinUs(){
     const onClickLogIn = async()=>{
         const isLogin = await logIn(inputs)
         if(isLogin) routing('/')()
-
     }
     return <JoinUsUI router={routing} 
                      onClickLogIn={onClickLogIn}
