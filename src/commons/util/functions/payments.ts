@@ -5,7 +5,7 @@ declare const window: typeof globalThis & {
     IMP: any;
   };
 
-export const onClickPayment = (data: {}) => async()=>{
+export const onClickPayment = (data: {program?: string}) => async()=>{
     const { result }:any = await loggedInUser()
     const IMP = window.IMP; 
     IMP.init("imp49910675")

@@ -4,10 +4,10 @@ import { getOneDoc } from "../../firebase/read/getData"
 
 export const updateMutation = (docId:string)=>{
     const queryClient = useQueryClient()
-    const {data} = useQuery({
-        queryKey: ['fetchProgramReview',docId],
-        queryFn: ()=> getOneDoc({collection:'programReview',docId}),
-    })
+    // const {data} = useQuery({
+    //     queryKey: ['fetchProgramReview',docId],
+    //     queryFn: ()=> getOneDoc({collection:'programReview',docId}),
+    // })
 
     const updateDocMutaion = useMutation({
         mutationFn: async(data) => await updateData({collection:'/programReview',docId,data}),

@@ -5,7 +5,6 @@ import UseModal from "../../../commons/atom/user/modal/modal.container";
 import { deleteReview } from "./mypageFn/deleteReview";
 
 export default function MyUI(props:UserInfoData){
-    console.log(props.getAllApplyData?.[3]?.createAt.toDate())
     return(
         <S.Container>
         <Head>
