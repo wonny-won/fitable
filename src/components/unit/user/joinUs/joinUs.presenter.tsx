@@ -2,6 +2,7 @@ import Head from "next/head"
 import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 import * as S from './joinUs.style'
 import { JoinUsPresenter } from "./joinUs.type"
+import { onClickLogin } from "./joinUsFn/onClickLogin"
 
 export default function JoinUsUI(props:JoinUsPresenter){
     return(
@@ -21,7 +22,7 @@ export default function JoinUsUI(props:JoinUsPresenter){
             <S.SginUPINExplain>가입하신 아이디와 비밀번호를 입력해주세요.<br/>비밀번호는 대소문자를 구분합니다.</S.SginUPINExplain>
             <S.Input type="text" id= "email" placeholder="MEMBER ID" color="#fff" border="#adadad" onChange={props.onChangeInput}/>
             <S.Input type="password" id="password" placeholder="PASSWORD" color="#fff" border="#adadad" onChange={props.onChangeInput}/>
-            <S.LoninBT onClick={props.onClickLogIn}>LOG-IN</S.LoninBT>
+            <S.LoninBT onClick={onClickLogin(props.inputs)}>LOG-IN</S.LoninBT>
             </section>
         </S.LoginBox>
         <S.JoinUsBox>
