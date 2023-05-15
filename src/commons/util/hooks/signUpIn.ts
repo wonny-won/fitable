@@ -1,11 +1,7 @@
-import { signInWithEmailAndPassword } from "firebase/auth"
 import { ChangeEvent,useEffect,useState } from "react"
-import { useRecoilState } from "recoil"
-import { auth } from "../../../../pages/_app"
-import { loggedInUser } from "../functions/firebaseFunctions"
 import { passwordValidation,passwordEnglishValidation,checkPassword,checkEmail } from "../functions/validation"
-import { isLoggedin } from "../recoilAtom/atom"
 import useOnchangeInputs from "./onchangeInputs"
+import { loggedInUser } from "../functions/firebase/read/getLogginUser"
 
 // 로그인/회원가입 input 값 끌어오는 함수
 export const useGetInputValue = ()=>{
@@ -55,7 +51,7 @@ export const useIsLogInUser = ()=>{
     useEffect(()=>{
         let isMounted = true
         const func = async()=>{
-            const result = await loggedInUser()
+            const {result} = await loggedInUser()
             if(result&&isMounted){
                 setIsLoggedInUser(true)
             }else{
