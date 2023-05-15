@@ -15,7 +15,7 @@ export const logIn = async ({email,password}:JoinusParams)=>{
         const result = await signInWithEmailAndPassword(auth ,email, password)
         result.operationType==="signIn" ? isLogin=true : isLogin=false
     }catch(error){
-        alert('비밀번호 또는 아이디를 확인해주세요.')
+        console.log(error)
     }
     return isLogin
 }

@@ -31,7 +31,6 @@ export const auth = getAuth(FirebaseApp)
 
 
 export default function App({Component, pageProps}:AppProps) {
-  let isLogin = useIsLogInUser()
   const queryClient = new QueryClient({
     queryCache: new QueryCache()
   })
@@ -41,7 +40,7 @@ export default function App({Component, pageProps}:AppProps) {
     <RecoilRoot>
     <QueryClientProvider client={queryClient}>
       <Global styles={globalStyles} />
-      <Layout isLogin={isLogin}>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </QueryClientProvider>

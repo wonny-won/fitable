@@ -53,15 +53,17 @@ export const useGetInputValue = ()=>{
 export const useIsLogInUser = ()=>{
     const [isLoggedInUser,setIsLoggedInUser] = useState(false)
     useEffect(()=>{
+        let isMounted = true
         const func = async()=>{
             const result = await loggedInUser()
-            if(result){
+            if(result&&isMounted){
                 setIsLoggedInUser(true)
             }else{
                 setIsLoggedInUser(false) 
             }
         }
         func()
+        return ()=>{ isMounted = false }
     },[isLoggedInUser])
     return isLoggedInUser
 }

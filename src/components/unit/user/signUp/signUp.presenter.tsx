@@ -21,7 +21,7 @@ export default function SignUpUI(props:SignUpPresenter){
                 <S.InputTitle style={{display:"flex"}}>
                     <div>비밀번호</div> 
                     <S.PwCondition >
-                        {/* <S.Length signUpInput={props.signUpInput}>6자이상</S.Length> */}
+                        <S.Length signUpInput={props.signUpInput}>6자이상</S.Length>
                         <S.IncludesNumber numberBool={props.numberBool}>숫자포함</S.IncludesNumber>
                         <S.IncludesEnglish englishBool={props.englishBool}>영문포함</S.IncludesEnglish>
                     </S.PwCondition>

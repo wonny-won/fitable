@@ -15,7 +15,7 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
     const includesNumber = await passwordValidation(password)
     const IncludesEnglish = await passwordEnglishValidation(password)
     let userUID = ""
-    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish){
+    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish&&password.length>=6){
         try{
             const createUser = await createUserWithEmailAndPassword(auth ,email, password)
             // 회원가입 후 추가적인 유저데이터 넣어주기 - 안정성을 위해 기본 User info와 분리
@@ -37,6 +37,9 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
         } catch(error){
             console.log(error)
         }
+    }else{
+        alert('회원가입 조건을 충족해주세요!')
+
     }
     return userUID
 }
