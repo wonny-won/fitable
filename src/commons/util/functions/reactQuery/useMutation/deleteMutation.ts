@@ -1,13 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { deleteOneDoc } from "../../firebase/delete/deleteOneDoc"
 
-export const daleteMutation = (docId:string)=>{
+export const daleteMutation = ()=>{
     const queryClient = useQueryClient()
 
-    return useMutation({
-        mutationFn: ()=> deleteOneDoc(docId),
-        onSuccess:()=>{
-            return queryClient.invalidateQueries({queryKey: ['getMyReview'],refetchType: 'all'},{ throwOnError:true })
-        }
+    const result =  useMutation({
+        mutationFn: (docId:string)=> deleteOneDoc(docId),
+        onSuccess:()=> queryClient.invalidateQueries({queryKey: ['getMyReview'],refetchType: 'all'},{ throwOnError:true })
     })
+    return result
 }

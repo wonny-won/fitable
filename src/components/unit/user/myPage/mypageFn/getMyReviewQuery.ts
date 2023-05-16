@@ -6,7 +6,7 @@ export const getMyReviewQuery = (fieldValue:string)=>{
     const getMyReview = useQuery({
         queryKey: ['getMyReview'],
         queryFn: () =>  getSpecificDatas({collectionName:'/programReview',field:'userId',fieldValue}),
-        // 필드값이 있을떄만 실행되도록하는 조건
+        // 필드값(userUID)이 있을떄만 실행되도록하는 조건
         enabled: !!fieldValue
     })  
     

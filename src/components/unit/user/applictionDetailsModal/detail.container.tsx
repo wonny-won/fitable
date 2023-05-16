@@ -9,17 +9,16 @@ import { useIsEdit } from "./detailFn/isEdit"
 export default function ApplicationDetail(props:ApplicationDetailConainerProps){
     const {isEdit,onClickEdit} = useIsEdit()
     const {inputs,onChangeInputs} = useOnchangeInputs()
-    const {onChangeFile,file} = useUploadFiles()
+    const {onChangeFile,files} = useUploadFiles()
     const getUserInfo = getUserInfoQuery()
     const applyData = getApplyDataQuery({docCollection:'applyData',userUID:getUserInfo.data?.result?.localId,middleCollection:'applyProgram',docId:props.applyId})
-   
     return <ApplicationDetailUI data={applyData.data}
-                               isEdit={isEdit}
-                               onClickEdit={onClickEdit}
-                               onChangeInputs={onChangeInputs}
-                               onChangeFile={onChangeFile}
-                               file={file}
-                               inputs={inputs}
-                               userUID={getUserInfo.data?.result?.localId}
-                               applyId={props.applyId}/>
+                                isEdit={isEdit}
+                                onClickEdit={onClickEdit}
+                                onChangeInputs={onChangeInputs}
+                                onChangeFile={onChangeFile}
+                                file={files}
+                                inputs={inputs}
+                                userUID={getUserInfo.data?.result?.localId}
+                                applyId={props.applyId}/>
 }

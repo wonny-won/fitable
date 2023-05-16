@@ -41,13 +41,13 @@ export default function MyUI(props:UserInfoData){
         <S.Title>신청 프로그램</S.Title>
         <S.Line/>
         <S.ProgramSection>
-            <Graph data={props.getAllApplyData} onClickOpenModal={props.onClickOpenModal} propsWithRouter={props.propsWithRouter} isReview={false}/>
+            <Graph data={props.getAllApplyData} onClickOpenModal={props.onClickOpenModal} propsWithRouter={props.propsWithRouter} isReview={false} />
             <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} applyId={props.applyId}/>
         </S.ProgramSection>
         <S.Title>내가 작성한 리뷰</S.Title>
         <S.Line/>
         <S.ProgramSection>
-            <Graph data={props.myReview} isReview={true}/>
+            <Graph data={props.myReview} isReview={true} />
         </S.ProgramSection>
         </S.Container>
     )

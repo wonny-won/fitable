@@ -1,13 +1,14 @@
 import { updateUserApplyDatas } from "../../../../../commons/util/functions/firebase/update/updateUserApplyData"
 import { UploadFiles } from "../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
 import { useIsEdit } from "./isEdit"
+import { updateApplyDataMutation } from "./updateMutation";
 
 interface Params {
     inputs: {}|{
         userWantFeedbackGuide: string,
-        fileURL?:string
+        fileURL?:string[]
     };
-    file: File;
+    file: File[];
     userUID: string;
     docId: string;
     edit: boolean;
@@ -16,15 +17,18 @@ interface Params {
 // 신청내역 수정 함수 - 컬렉션 수정시 확인 해주기
 export const onClickUpdateApplyData = ({inputs,file,userUID,docId,edit}:Params)=> {    
     const {setIsEdit} = useIsEdit()
+    const updateApplyData = updateApplyDataMutation(userUID,docId)
     return async()=>{
         console.log(edit)
-        const data = {...inputs}
+        const updateData = {...inputs}
         if(file){
-            const uploadfile = await UploadFiles('applyFile',file)
-            const fileUrl = uploadfile?.fullPath  
-            if(fileUrl!=='') data.fileURL = fileUrl 
+            const fileURL:any[] = []
+            fileURL.push(file[file.length-1])
+            const uploadfile = await UploadFiles('/applyFile',fileURL)
+            const allFileURL = uploadfile?.map((item)=>item.fullPath)
+            updateData.fileURL = allFileURL
         }
-         await updateUserApplyDatas({docCollection:'applyData',userUID,middleCollection:'applyProgram',docId},data)
+        await updateApplyData.mutate(updateData)
          setIsEdit(!edit)
     }
 }

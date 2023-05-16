@@ -6,9 +6,7 @@ export const updateDocMutaionQuery = (docId:string)=>{
 
     return useMutation({
         mutationFn: async(data) => await updateData({collection:'/programReview',docId,data}),
-        onSuccess:()=>{
-            return queryClient.invalidateQueries({queryKey: ['fetchProgramReview'],refetchType: 'all'},{ throwOnError:true })
-        }
+        onSuccess:() => queryClient.invalidateQueries({queryKey: ['fetchProgramReview'],refetchType: 'all'},{ throwOnError:true })
     })
 
 }

@@ -6,7 +6,7 @@ export interface ApplicationDetailProps{
     onClickEdit: () => void;
     onChangeInputs: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
-    file: string;
+    file: never[];
     inputs: {};
     userUID: any;
     applyId: string;
