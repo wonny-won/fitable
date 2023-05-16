@@ -12,5 +12,4 @@ export default function Apply(){
                     onChangeInputs={onChangeInputs}
                     onChangeProgram={onChangeProgram}
                     onChangeFile={onChangeFile} />
-
 }

@@ -1,12 +1,13 @@
 import { loggedInUser } from "./firebase/read/getLogginUser";
 import { addCustomIdDoc } from "./firebase/create/addCustomIdDocs";
+import { updateUserApplyDatas } from "./firebase/update/updateUserApplyData";
 
 declare const window: typeof globalThis & {
     IMP: any;
   };
 
 export const onClickPayment = (data: {program?: string}) => async()=>{
-    const { result }:any = await loggedInUser()
+    const { result,getUserDatas }:any = await loggedInUser()
     const IMP = window.IMP; 
     IMP.init("imp49910675")
     const paymentresult = await new Promise((resolve, reject)=>{
@@ -22,7 +23,11 @@ export const onClickPayment = (data: {program?: string}) => async()=>{
       buyer_postcode: "01181"
     }, (rsp:any) => {
       if (rsp.success) {
-          addCustomIdDoc('applyData',result.localId,'applyProgram',data)
+          const applyData = {...data, amount:rsp.paid_amount}
+          addCustomIdDoc('applyData',result.localId,'applyProgram',applyData)
+          const payment = getUserDatas[0]?.payment+rsp.paid_amount
+          const point = getUserDatas[0]?.point + rsp.paid_amount*0.05
+          updateUserApplyDatas({docCollection:'user',userUID:result.localId,middleCollection:'userData',docId:getUserDatas[0]?.id},{payment,point})
           alert("결제가 완료되었습니다. 마이페이지를 확인해주세요.")
           resolve( "결제완료")
       } else {

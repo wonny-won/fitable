@@ -2,7 +2,7 @@ import Head from "next/head";
 import { UserInfoData } from "./myPage.types";
 import * as S from './myPage.style'
 import UseModal from "../../../commons/atom/user/modal/modal.container";
-import { deleteReview } from "./mypageFn/deleteReview";
+import Graph from "./common/graph";
 
 export default function MyUI(props:UserInfoData){
     return(
@@ -33,70 +33,21 @@ export default function MyUI(props:UserInfoData){
                 </S.UserData>
             </S.UserInfoWrap>
             <S.UserPaymentInfoWrap>  
-                <S.TotalPay> 총 주문금액 : 100 원 </S.TotalPay>
+                <S.TotalPay> 총 주문금액 : {props.userOtherData?.payment} 원 </S.TotalPay>
                 <S.H3> 적립금 : <S.SmallSpan>{props.userOtherData?.point}  </S.SmallSpan>원</S.H3>
                 <S.Coupon> 쿠&nbsp;&nbsp;&nbsp;폰 : <S.SmallSpan>{props.userOtherData?.coupon}</S.SmallSpan>개</S.Coupon>
             </S.UserPaymentInfoWrap>
         </S.UserInfoSection>
-
         <S.Title>신청 프로그램</S.Title>
         <S.Line/>
         <S.ProgramSection>
-            <S.Header> 
-                <div>신청날짜</div>
-                <div>프로그램</div>
-                <div>신청내역 / 리뷰작성</div>
-            </S.Header>
-            {
-                props.getAllApplyData?.length > 0 ? props.getAllApplyData?.map((item)=>(
-                    <div key={item.id}>
-                    <S.Content>
-                    <div>{item.applyAt}</div>
-                    <S.ItemWrap>{item.program}</S.ItemWrap>
-                    <S.BtWrap>
-                        <S.ViewBt id={item.id} onClick={props.onClickOpenModal}>보기</S.ViewBt>
-                        <S.ReiewBt src='/reviewPencil.svg' id={item.program} onClick={props.propsWithRouter}/>
-                    </S.BtWrap>
-                    </S.Content>
-                    </div>
-                )) : (
-                    <S.Content>
-                    <div> - </div>
-                    <div> 신청 내역이 없습니다. </div>
-                    <S.ViewBt>보기</S.ViewBt>
-                    <S.ViewBt>-</S.ViewBt>
-                    </S.Content>
-                )
-            }
+            <Graph data={props.getAllApplyData} onClickOpenModal={props.onClickOpenModal} propsWithRouter={props.propsWithRouter} isReview={false}/>
             <UseModal isModalOpen={props.isModalOpen} setIsModalOpen={props.setIsModalOpen} applyId={props.applyId}/>
         </S.ProgramSection>
-
         <S.Title>내가 작성한 리뷰</S.Title>
         <S.Line/>
         <S.ProgramSection>
-        <S.Header> 
-            <div>작성일</div>
-            <div>프로그램</div>
-            <div>리뷰삭제/수정</div>
-        </S.Header>
-            {
-                props.myReview ? (props.myReview?.map((item)=>(
-                    //  console.log('맵',item)
-                    <div key={item.id}>
-                    <S.Content>
-                        <div>작성일</div>
-                        <div>{item.program}</div>
-                        <S.BtWrap>
-                            <S.ViewBt id={item.id} onClick={deleteReview(item.id)}>삭제</S.ViewBt>
-                            <S.ReiewBt src='/reviewPencil.svg' id={item.id} onClick={props.routerHooks(`/review/${item.id}/edit`)}/>
-                        </S.BtWrap>
-                    </S.Content>
-                    </div>
-                )
-                )) : (
-                    <div> 작성 리뷰가 없습니다. </div>
-                )
-            }
+            <Graph data={props.myReview} isReview={true}/>
         </S.ProgramSection>
         </S.Container>
     )

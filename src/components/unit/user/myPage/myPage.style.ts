@@ -1,12 +1,16 @@
 import styled from "@emotion/styled";
 
+interface Params{
+    isReview: boolean;
+}
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 export const ItemWrap = styled.div`
-    width: 170px;
+    width: ${(props:Params)=>(props.isReview ? '270px':'170px')};
 `
 export const MyPage = styled.h1`
     font-size: 26px;
@@ -160,6 +164,7 @@ export const ViewBt = styled.div`
     border: 1px solid #1c1c1c;
     font-size: 12px;
     font-weight: 400;
+    height: 21px;
 `
 export const ReiewBt = styled.img`
     &:hover{

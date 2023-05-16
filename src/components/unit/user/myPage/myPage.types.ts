@@ -11,5 +11,4 @@ export interface UserInfoData {
     applyId: string;
     propsWithRouter: (e: any) => void;
     myReview: any[] | undefined;
-    routerHooks: (path: string) => () => void;
 }

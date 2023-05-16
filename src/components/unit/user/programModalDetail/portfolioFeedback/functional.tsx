@@ -1,5 +1,17 @@
 import styled from "@emotion/styled"
 
+export default function FunctionalFeedback(){
+    return(
+        <>
+        <Container>
+            <Title><TitleSpan>기능 단위 피드백</TitleSpan> 이란?</Title>
+            <Image src='/functionFeedback.png'/>
+            <Image2 src='/pagefeedback3.png'/>
+        </Container>
+        </>
+    )
+}
+
 const Container = styled.div`
     display:flex;
     flex-direction: column;
@@ -19,15 +31,3 @@ const Image2 = styled.img`
     width: 840px;
     height: 300px;
 `
-
-export default function FunctionalFeedback(){
-    return(
-        <>
-        <Container>
-            <Title><TitleSpan>기능 단위 피드백</TitleSpan> 이란?</Title>
-            <Image src='/functionFeedback.png'/>
-            <Image2 src='/pagefeedback3.png'/>
-        </Container>
-        </>
-    )
-}
