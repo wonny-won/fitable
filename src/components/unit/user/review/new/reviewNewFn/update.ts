@@ -18,7 +18,7 @@ export const useUpdateReview = ({files,docId}:Params)=>{
         const updateData:UpdateData = {}
         if(data.overAll!=='') updateData.overAll = data.overAll
         if(data.reviewContents) updateData.reviewContents = data.reviewContents
-        if(files) {
+        if(files.length>0) {
             const uploadImg = await UploadFiles('/newReview',files)
             const fileURL = uploadImg?.map((item)=>item.fullPath)
             const fileName = uploadImg?.map((item)=>item.name)

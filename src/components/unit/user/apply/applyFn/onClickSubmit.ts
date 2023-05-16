@@ -7,7 +7,7 @@ export const onClickApplySubmit = (inputs:any,program:any,file:File[])=> {
     return async () => {
             alert('결제 후 프로그램을 신청하시하시겠습니까?')
             const data = {...inputs,program}
-            if(file){
+            if(file.length>0){
                 const fileURL:any[] = []
                 fileURL.push(file[file.length-1])
                 const uploadfile = await UploadFiles('/applyFile',fileURL)

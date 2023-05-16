@@ -1,15 +1,15 @@
 import { ChangeEvent } from "react";
+import { Params } from "./detailFn/onClickUpdateAppltData";
 
 export interface ApplicationDetailProps{
     data: any;
     isEdit: boolean;
-    onClickEdit: () => void;
     onChangeInputs: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
     file: never[];
     inputs: {};
-    userUID: any;
-    applyId: string;
+    onClickEditReview: ({ inputs, file }: Params) => () => Promise<void>;
+    onClickEdit: () => void;
 }
 
 export interface ApplicationDetailConainerProps{

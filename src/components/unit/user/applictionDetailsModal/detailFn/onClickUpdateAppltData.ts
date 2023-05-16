@@ -1,9 +1,9 @@
-import { updateUserApplyDatas } from "../../../../../commons/util/functions/firebase/update/updateUserApplyData"
 import { UploadFiles } from "../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
+import useOnchangeInputs from "../../../../../commons/util/hooks/onchangeInputs";
 import { useIsEdit } from "./isEdit"
 import { updateApplyDataMutation } from "./updateMutation";
 
-interface Params {
+export interface Params {
     inputs: {}|{
         userWantFeedbackGuide: string,
         fileURL?:string[]
@@ -11,17 +11,16 @@ interface Params {
     file: File[];
     userUID: string;
     docId: string;
-    edit: boolean;
+    // edit: boolean;
 }
 
 // 신청내역 수정 함수 - 컬렉션 수정시 확인 해주기
-export const onClickUpdateApplyData = ({inputs,file,userUID,docId,edit}:Params)=> {    
-    const {setIsEdit} = useIsEdit()
+export const onClickUpdateApplyData = ({userUID,docId}:Params)=> {
+    const {isEdit,onClickEdit} = useIsEdit()    
     const updateApplyData = updateApplyDataMutation(userUID,docId)
-    return async()=>{
-        console.log(edit)
+    const onClickEditReview = ({inputs,file}:Params)=>async()=>{
         const updateData = {...inputs}
-        if(file){
+        if(file.length>0){
             const fileURL:any[] = []
             fileURL.push(file[file.length-1])
             const uploadfile = await UploadFiles('/applyFile',fileURL)
@@ -29,6 +28,11 @@ export const onClickUpdateApplyData = ({inputs,file,userUID,docId,edit}:Params)=
             updateData.fileURL = allFileURL
         }
         await updateApplyData.mutate(updateData)
-         setIsEdit(!edit)
+        onClickEdit()
+    }
+    return {
+        onClickEditReview,
+        isEdit,
+        onClickEdit
     }
 }

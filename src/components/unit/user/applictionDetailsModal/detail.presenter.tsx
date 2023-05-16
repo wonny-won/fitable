@@ -1,7 +1,6 @@
 import Head from "next/head"
 import { ApplicationDetailProps } from "./detai.types"
 import * as S from './detail.style'
-import { onClickUpdateApplyData } from "./detailFn/onClickUpdateAppltData"
 
 export default function ApplicationDetailUI(props:ApplicationDetailProps){
     return(
@@ -34,7 +33,7 @@ export default function ApplicationDetailUI(props:ApplicationDetailProps){
             <S.FileInput type="file" onChange={props.onChangeFile} isEdit={props.isEdit}/>
         </S.MiniSection>
         </S.Section>
-        <S.SubmitBt isEdit={props.isEdit} onClick={onClickUpdateApplyData({inputs:props.inputs,file:props.file,userUID:props.userUID,docId:props.applyId,edit:props.isEdit})}>수정하기</S.SubmitBt>
+        <S.SubmitBt isEdit={props.isEdit} onClick={props.onClickEditReview({inputs:props.inputs,file:props.file})}>수정하기</S.SubmitBt>
         </>
     )
 }
