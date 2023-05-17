@@ -4,7 +4,7 @@ import * as S from './myPageEdit.style'
 import {Img} from '../myPage/myPage.style'
 
 export default function MyPageEditUI(props:MypageEditPresenter){
-    console.log(props.getUserInfo?.photoUrl)
+    const tilteArr = ['displayName','email','phoneNumber']
     return(
         <>
             <Head>
@@ -17,25 +17,19 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                     <S.MiniWrapTop>
                         <S.ProfileImg> 프로필</S.ProfileImg>
                         <S.ResultImg>
-                            { props.getUserInfo?.photoUrl ? <Img src={ props.image!=='' ? props.image : props.getUserInfo?.photoUrl } /> : <Img src={'/noneimg.jpeg'}/> }
+                            { props.getUserInfo?.photoUrl ? <Img src={ props.image.length > 0 ? props.image[props.image.length-1] : props.getUserInfo?.photoUrl } /> : <Img src={'/noneimg.jpeg'}/> }
                         </S.ResultImg>
                         <S.ImgWrap>
                             <S.ImgInput htmlFor="photoURL"> upload </S.ImgInput>
                             <input id="photoURL" type="file" onChange={props.uploadImage} hidden/>
                         </S.ImgWrap>
                     </S.MiniWrapTop>
-                    <S.MiniWrap>
-                        <S.H1><S.Span>*</S.Span> 이름</S.H1>
-                        <S.Input id="displayName" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.displayName}/>
-                    </S.MiniWrap>
-                    <S.MiniWrap>
-                        <S.H1><S.Span>*</S.Span> 이메일</S.H1>
-                        <S.Input id="email" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.email}/>
-                    </S.MiniWrap>
-                    <S.MiniWrap>
-                        <S.H1><S.Span>*</S.Span> 전화번호</S.H1>
-                        <S.Input id="phoneNumber" type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.phoneNumber}/>
-                    </S.MiniWrap>
+                    { tilteArr.map((item)=>(
+                            <S.MiniWrap>
+                            <S.H1><S.Span>*</S.Span> {item==='email' && '이메일'}{item==='displayName' && '이름'}{item==='phoneNumber' && '전화번호'}</S.H1>
+                            <S.Input id={item} type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.[item]}/>
+                            </S.MiniWrap>
+                        )) }
                     <S.BtWrap>
                         <S.SubmitBt onClick={props.onClickUpdateProfile}>수정하기</S.SubmitBt>
                         <S.CancelBt onClick={props.routerhook('/mypage')}>취소하기</S.CancelBt>

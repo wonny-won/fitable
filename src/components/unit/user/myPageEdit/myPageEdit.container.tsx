@@ -7,19 +7,14 @@ import { onClickUpdateProfile } from "./myPageEditFn/onClickUpdateProfile"
 
 export default function MyPageEdit(){
     const {onChangeInputs, inputs} = useOnchangeInputs()
-    const {onChangeFile,fakeURL,file} = useUploadFiles()
+    const {onChangeFile,fakeURL,files} = useUploadFiles()
     const routerhook = useRoutingPageHooks()
     const getUserInfo = getUserInfoQuery()
-    const updateProfile = async ()=>{
-        const updateResult = await onClickUpdateProfile({inputs,file})
-        updateResult==='수정완료' && routerhook('/mypage')()
-    }    
+    const updateProfile = onClickUpdateProfile({inputs,file:files[files.length-1]})
     return <MyPageEditUI onChangeInput={onChangeInputs}
                          getUserInfo={getUserInfo.data?.result}
                          onClickUpdateProfile={updateProfile}
                          uploadImage={onChangeFile}
                          image={fakeURL}
-                         routerhook={routerhook}
-                         inputs={inputs}
-                         file={file}/>
+                         routerhook={routerhook} />
 }
