@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 
 export const onChangeInput = ()=>{
     const { register,handleSubmit,setValue,trigger } = useForm({
-        mode: "onchange"
+        mode: "onChange"
     })
     const handleChange = (value: string) => {    
         setValue("reviewContents", value === "<p><br></p>" ? "" : value);
