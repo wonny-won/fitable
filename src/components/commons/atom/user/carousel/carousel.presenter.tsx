@@ -14,7 +14,7 @@ export default function CarouselUI(props:CarouselPresenter){
             ))
           }
           {
-            router.asPath === `/review/${router.query.reviewId}` && props.file &&
+            router.asPath === `/review/${router.query.reviewId}/` && props.file &&
              props.file.length>0 ? props.file?.map((item:any)=>(
               <S.tutorImg src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${item}?alt=media`} key={uuidv4()} />
             )) : (<S.tutorImg src='/apply.png'/>)

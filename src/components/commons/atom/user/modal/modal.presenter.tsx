@@ -19,7 +19,7 @@ export default function UseModalUI(props:ModalPresenter){
                 router.asPath==='/' && (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) 
               }
               {
-                router.asPath==='/mypage' && (<ApplicationDetail applyId={props.applyId}/>)
+                router.asPath==='/mypage/' && (<ApplicationDetail applyId={props.applyId}/>)
               }
           </S.ModalBody>
       }    

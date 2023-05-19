@@ -10,8 +10,8 @@ interface LayoutProps{
 
 export default function Layout(props:LayoutProps){
     const router = useRouter()
-    const EXPOSE_BANNER = ['/review']
-    const HIDDEN_ADVERTISE = ['/review','/mypage','/mypage/edit']
+    const EXPOSE_BANNER = ['/review/']
+    const HIDDEN_ADVERTISE = ['/review/','/mypage/','/mypage/edit/']
     const includesBanner = EXPOSE_BANNER.includes(router.asPath)
     const includesAdvertise = HIDDEN_ADVERTISE.includes(router.asPath)
     return(

@@ -30,7 +30,7 @@ export default function Graph(props:Params){
                         <S.ItemWrap isReview={props.isReview}>{props.isReview? item?.overAll : item.program}</S.ItemWrap>
                         <S.BtWrap>
                             <S.ViewBt id={item.id} onClick={props.isReview ? deleteOneReview(item.id) : props.onClickOpenModal}>{props.isReview ? '삭제':'보기'}</S.ViewBt> 
-                            <S.ReiewBt src='/reviewPencil.svg' id={item.program} onClick={props.isReview? routerHooks(`/review/${item.id}/edit`) : props.propsWithRouter}/>
+                            <S.ReiewBt src='/reviewPencil.svg' id={item.program} onClick={props.isReview? routerHooks(`/review/${item.id}/edit/`) : props.propsWithRouter}/>
                         </S.BtWrap>
                         </S.Content>
                         </div>

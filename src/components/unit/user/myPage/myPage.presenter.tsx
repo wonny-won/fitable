@@ -24,7 +24,7 @@ export default function MyUI(props:UserInfoData){
                 <S.UserData>
                     <S.MiniNameWrap>
                         <S.UserName>[ <S.UserNameSpan>{props.getUserInfo?.displayName}</S.UserNameSpan> ] 님</S.UserName>
-                        <S.A href="/mypage/edit"><S.EditBT>EDIT</S.EditBT></S.A>
+                        <S.A href="/mypage/edit/"><S.EditBT>EDIT</S.EditBT></S.A>
                     </S.MiniNameWrap>
                     <S.PHandEmailWrap>
                     <S.H3>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;화<S.Span>&nbsp;{props.userOtherData?.phoneNumber}</S.Span></S.H3>
