@@ -26,7 +26,7 @@ export const onClickUpdateProfile = ({inputs,file,userUID,docId}:Params)=>{
             fileURL.push(file)
             const uploadfile = await UploadFiles('/userProfile',fileURL)
             const allFileURL = uploadfile?.map((item)=>item.name)
-            updateUser.photoURL = `https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/userProfile%2F${allFileURL[0]}?alt=media`
+            updateUser.photoURL = `https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/userProfile%2F${allFileURL?.[0]}?alt=media`
         }
         if(inputs?.displayName) updateUser.displayName = inputs.displayName
         if(inputs?.phoneNumber) updateuserData.phoneNumber = inputs.phoneNumber
