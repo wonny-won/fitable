@@ -6,7 +6,6 @@ import ApplicationDetail from '../../../../unit/user/applictionDetailsModal/deta
 
 export default function UseModalUI(props:ModalPresenter){
   const router = useRouter()
-  
   return (
     <>
         {   

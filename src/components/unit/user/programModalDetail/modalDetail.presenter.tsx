@@ -1,5 +1,4 @@
 import { ModalDetailPresenter } from "./modalDetail.types"
-import ApplyButton from "../../../commons/atom/user/applyBt/applyBt.container"
 import AllFeedback from "./portfolioFeedback/all"
 import FunctionalFeedback from "./portfolioFeedback/functional"
 import PageFeedback from "./portfolioFeedback/page"

@@ -1,5 +1,3 @@
-import { updateProfile } from "firebase/auth"
-import { auth } from "../../../../../../pages/_app"
 import { UploadFiles } from "../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
 import { updateMutation } from "./updateMutation";
 import { updateUserDataMutation } from "./updateUserData";

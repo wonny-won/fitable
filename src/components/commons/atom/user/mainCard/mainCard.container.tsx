@@ -1,19 +1,11 @@
-import { ChangeEvent, useState } from "react";
 import MainCardUI from "./mainCard.presenter"
 import { MainCardProps } from "./mainCard.types"
+import { useShowModal } from "./mainCardFn/showModal";
+import { useIsClick } from "./mainCardFn/isClick";
 
 export default function MainCard(props:MainCardProps){
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isClick,setIsClick]=useState(false)
-    const [menuTitle ,setMenuTtitle] = useState('')
-
-    const onClickRotateCard = ()=>{
-        setIsClick(!isClick)
-    }
-    const showModal = (e:any) => {
-        setIsModalOpen(true);
-        setMenuTtitle(e.target.innerText)
-    };
+    const {showModal,isModalOpen,setIsModalOpen,menuTitle} = useShowModal()
+    const {isClick,onClickRotateCard} = useIsClick()
     return <MainCardUI
                     title={props.title}
                     showModal={showModal} 

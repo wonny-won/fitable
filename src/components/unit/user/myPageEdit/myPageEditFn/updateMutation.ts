@@ -7,10 +7,7 @@ export const updateMutation = ()=>{
     const queryClient = useQueryClient()
     const router = useRoutingPageHooks()
     return useMutation({
-        mutationFn: (data:{photoURL?:string,displayName?:string})=> {
-            const result = updateProfile(auth.currentUser,data)
-            console.log(result)
-            return result},
+        mutationFn: (data:{photoURL?:string,displayName?:string})=> updateProfile(auth.currentUser,data),
         onSuccess: ()=> { 
             queryClient.invalidateQueries({queryKey: ['userInfo'],refetchType: 'all'},{ throwOnError:true })
             router('/mypage')() 

@@ -1,7 +1,6 @@
 import Head from "next/head"
 import * as S from './userHome.style'
 import MainCard from "../../../commons/atom/user/mainCard/mainCard.container"
-import FitableLogo from "../../../commons/atom/user/logo/logo.presenter"
 import Carousel from "../../../commons/atom/user/carousel/carousel.container"
 import { HomeProps } from "./home.types"
 

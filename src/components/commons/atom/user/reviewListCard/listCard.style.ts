@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import { Rate } from 'antd';
-import StarRate from "../starRate/starRate";
 
 export const CardWrap = styled.div`
     width : 215px;
@@ -12,7 +11,6 @@ export const CardWrap = styled.div`
     &:hover{
         cursor: pointer;
     }
-    /* background-color: #fff; */
 `
 export const Image = styled.img`
     width: 100%;
