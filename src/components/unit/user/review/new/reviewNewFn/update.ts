@@ -1,7 +1,7 @@
 import { UploadFiles } from "../../../../../../commons/util/functions/firebase/uploadFiles/uploadFiles"
 import { updateReviewMutation } from "./updateReviewQuery";
 interface Params {
-    docId: string;
+    docId: any;
     program:string|undefined|string[];
     files: File[];
 }
@@ -12,10 +12,10 @@ interface UpdateData {
     fileName?:string[];
 }
 //리뷰 수정 함수
-export const useUpdateReview = ({files,docId}:Params)=>{
+export const useUpdateReview = ({files,docId}:any)=>{
     const submitresult = updateReviewMutation(docId)
     const onClcickSubmitReview = async(data:any)=>{
-        const updateData:UpdateData = {}
+        const updateData:any = {}
         if(data.overAll!=='') updateData.overAll = data.overAll
         if(data.reviewContents) updateData.reviewContents = data.reviewContents
         if(files.length>0) {

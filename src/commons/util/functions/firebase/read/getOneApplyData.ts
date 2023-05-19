@@ -3,9 +3,9 @@ import { DB } from "../../../../../../pages/_app";
 
 export interface Params {
     docCollection:string;
-    userUID: string;
+    userUID?: any;
     middleCollection:string
-    docId:string;
+    docId?:any;
 }
 
 // DB내의 특정 문서 가지고 오기 

@@ -6,7 +6,7 @@ import { auth } from "../../_app";
 export default function NewReviewPage(){
     const router = useRouter()
     useEffect(() => {
-        auth.onAuthStateChanged((user) => {
+        auth.onAuthStateChanged((user:any) => {
             if(!user) {
                 alert("로그인이 필요한 페이지입니다.")
                 router.push("/joinus")

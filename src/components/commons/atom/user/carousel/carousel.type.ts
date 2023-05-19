@@ -11,5 +11,4 @@ export interface CarouselPresenter{
 
 export interface CarouselContainer{
     file?: any;
-    // file?:string[] | undefined[] ;
 }

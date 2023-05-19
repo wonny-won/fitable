@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react"
-import { useIsLogInUser } from "./signUpIn"
-import { useRouter } from "next/router"
-import { isLoggedin } from "../recoilAtom/atom"
-import { useRecoilState } from "recoil"
+import { useEffect } from "react"
+import { loggedInUser } from "../functions/firebase/read/getLogginUser"
+import { useRoutingPageHooks } from "./routing"
 
-// export default function useAuth(user:{}|unknown){
-//     // const router = useRouter()
-//     console.log(user)
-//     // const isLoginUser = useIsLogInUser()
-//     // console.log(isLoginUser)
-//     // useEffect(()=>{
-//     //     console.log("useEffect안",isLoginUser)
-//     //     if(!isLoginUser){
-//     //         alert("로그인이 필요한 서비스 입니다.")
-//     //         // router.push('/joinus')
-//     //     }   
-//     // },[isLoginUser])
-// }
-export const useAuth = (user:{}|unknown)=>{
+export const useAuth = ()=>{
+    const router = useRoutingPageHooks()
     useEffect(()=>{
-        if(!user?.localId){
-            alert('로그인이 필요한 서비스 입니다.')
-        }
+        loggedInUser().then((res)=>{
+            if(res.result==='로그인 하지 않은 유저입니다.'){
+                alert('로그인이 필요한 서비스 입니다.')
+                router('/joinus')()
+            }
+       })
     },[])
-
 }

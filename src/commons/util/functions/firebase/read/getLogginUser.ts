@@ -4,14 +4,14 @@ import { getAllUserData } from "./getAllUserData";
 
 // 현재 로그인한 사용자 가지고 오기
 export const  loggedInUser = async ()=>{
-    const result = await new Promise((resolve, reject) => {
+    const result:any = await new Promise((resolve, reject) => {
         // 파이어베이스 제공 기본 유저 정보
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, (user:any) => {
             if (user) {
             if(user.uid) {
                 resolve(user.reloadUserInfo)}
             } else {
-                reject("로그인 하지 않은 유저입니다.")
+                resolve("로그인 하지 않은 유저입니다.")
             }
           });
     })
@@ -23,6 +23,5 @@ export const  loggedInUser = async ()=>{
       result,
       getAllApplyDatas,
       getUserDatas
-      // userData
     } 
 }

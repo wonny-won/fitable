@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getOneDoc } from "../../firebase/read/getData" 
 import { useRoutingPageHooks } from "../../../hooks/routing" 
 
-export const fetchDetailDataQuery = (docId:string|undefined)=>{
+export const fetchDetailDataQuery = (docId:any)=>{
     useQueryClient()
     const routingHooks = useRoutingPageHooks()
 

@@ -24,10 +24,10 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                             <input id="photoURL" type="file" onChange={props.uploadImage} hidden/>
                         </S.ImgWrap>
                     </S.MiniWrapTop>
-                    { tilteArr.map((item)=>(
-                            <S.MiniWrap>
+                    { tilteArr.map((item,index)=>(
+                            <S.MiniWrap key={index}>
                             <S.H1><S.Span>*</S.Span> {item==='email' && '이메일'}{item==='displayName' && '이름'}{item==='phoneNumber' && '전화번호'}</S.H1>
-                            <S.Input id={item} type="text" onChange={props.onChangeInput} defaultValue={props.getUserInfo?.[item]}/>
+                            <S.Input id={item} type="text" onChange={props.onChangeInput} defaultValue={item==='phoneNumber' ? props.getUserData?.[0]?.[item] : props.getUserInfo?.[item]}/>
                             </S.MiniWrap>
                         )) }
                     <S.BtWrap>

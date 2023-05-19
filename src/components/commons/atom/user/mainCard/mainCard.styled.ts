@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 interface TransformProps{
-    isClick: boolean;
+    isClick?: boolean;
 }
 
 export const CardWrap = styled.section`
@@ -65,9 +65,6 @@ export const ExpreienceBT = styled.button`
 
     }
 `
-// export const ContentWrap = styled.div`
-//     padding-top: 80px ;
-// `
 export const MenuWrap = styled.div`
     text-align:center;
     padding: 10px;

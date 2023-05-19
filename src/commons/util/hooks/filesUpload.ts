@@ -16,10 +16,10 @@ export const useUploadFiles = () => {
 		fileReader.onload = (data) => {
 			// 파일리더의 결과값이 string이 아닐수도 있으니 string일때만 실행되도록 
 			if(typeof data.target?.result === "string"){
-				const urlArr = [...fakeURL,data.target?.result]
+				const urlArr:any = [...fakeURL,data.target?.result]
 				setFakeURL(urlArr)
 				// DB에 넣을 URL 배열
-				const fileUrlArr = [...files,file] 
+				const fileUrlArr:any = [...files,file] 
 				setFile(fileUrlArr)
 			}	
 		}

@@ -7,4 +7,5 @@ export interface MypageEditPresenter {
     routerhook: (path: string) => () => void;
     uploadImage: (event: ChangeEvent<HTMLInputElement>) => void;
     onClickUpdateProfile: () => Promise<void>;
+    getUserData: any;
 }

@@ -6,7 +6,7 @@ export const getUserInfoQuery = () =>{
 
     const getUserInfo = useQuery({
         queryKey: ['userInfo'],
-        queryFn: loggedInUser
+        queryFn: ()=> loggedInUser(),
     })  
     
     return getUserInfo

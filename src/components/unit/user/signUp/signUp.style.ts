@@ -1,11 +1,7 @@
 import styled from "@emotion/styled"
 
 interface SignUpInputProps{
-    signUpInput?: {
-        email : string;
-        password : string;
-        passwordCheck : string;
-    } |{};
+    signUpInput?: any;
     numberBool?:boolean;
     englishBool?:boolean;
 }

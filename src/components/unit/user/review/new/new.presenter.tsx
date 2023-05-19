@@ -42,9 +42,9 @@ export default function NewReviewUI(props:NewReview){
                     <S.UploadBt htmlFor="fileTag">+</S.UploadBt>
                     <input type='file' id='fileTag' hidden onChange={props.onChangeFile}/>
                     { 
-                        props.isEdit ?  (<S.UploadImgWrap>{ props.imgURL.length>0 ?  (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>)
-                        : props.data?.fileName?.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${item}?alt=media`}/></div>)) }</S.UploadImgWrap>) :
-                        (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>) 
+                        props.isEdit ?  (<S.UploadImgWrap>{ props.imgURL.length>0 ?  (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item:any)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>)
+                        : props.data?.fileName?.map((item:any)=>(<div key={uuidv4()}><S.UploadingImg src={`https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/newReview%2F${item}?alt=media`}/></div>)) }</S.UploadImgWrap>) :
+                        (<S.UploadImgWrap>{ props.imgURL!==''&& props.imgURL.map((item:any)=>(<div key={uuidv4()}><S.UploadingImg src={item}/></div>)) }</S.UploadImgWrap>) 
                     }
                     </S.ImgWrap>
                 </section>

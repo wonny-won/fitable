@@ -3,14 +3,14 @@ import { DB } from "../../../../../../pages/_app";
 
 interface ReviewDetailParams {
     docCollection:string;
-    userUID: string;
+    userUID: any;
     middleCollection:string;
     subcollection: string;
-    docId:string;
+    docId:any;
 }
 
 // applyData, userData, applyProgram 업데이트하기
-export const updateUserApplyDatas = async({docCollection,userUID,middleCollection,docId}:ReviewDetailParams, data:any)=>{
+export const updateUserApplyDatas = async({docCollection,userUID,middleCollection,docId}:any, data:any)=>{
     if(!userUID) return false
     let updateData = {}
     const updateDataRef = doc(DB,docCollection,userUID,middleCollection,docId)

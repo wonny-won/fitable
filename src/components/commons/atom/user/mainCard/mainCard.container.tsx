@@ -1,7 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import MainCardUI from "./mainCard.presenter"
 import { MainCardProps } from "./mainCard.types"
-// import { onClickPayment } from "../../../../../commons/util/function"
 
 export default function MainCard(props:MainCardProps){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +17,6 @@ export default function MainCard(props:MainCardProps){
     };
     return <MainCardUI
                     title={props.title}
-                    // onClickPayment={onClickPayment}
                     showModal={showModal} 
                     isModalOpen={isModalOpen}
                     setIsModalOpen={setIsModalOpen}

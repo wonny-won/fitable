@@ -3,7 +3,7 @@ import { DB } from "../../../../../../pages/_app";
 
 interface GetAllApplyDataType {
     maincollection:string;
-    userUID:string;
+    userUID:any;
     middleCollection:string;
 }
 // ApplyProgram, UserData 가지고 오기

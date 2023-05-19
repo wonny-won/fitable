@@ -1,5 +1,5 @@
 import { ChangeEvent } from "react";
-import { Params } from "./detailFn/onClickUpdateAppltData";
+import { HOFParams } from "./detailFn/onClickUpdateAppltData";
 
 export interface ApplicationDetailProps{
     data: any;
@@ -8,10 +8,10 @@ export interface ApplicationDetailProps{
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
     file: never[];
     inputs: {};
-    onClickEditReview: ({ inputs, file }: Params) => () => Promise<void>;
     onClickEdit: () => void;
+    onClickEditReview: ({ inputs, file }: HOFParams) => () => Promise<void>
 }
 
 export interface ApplicationDetailConainerProps{
-    applyId: string;
+    applyId?: string;
 }

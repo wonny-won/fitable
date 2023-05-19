@@ -26,13 +26,13 @@ const firebaseConfig = {
 export const FirebaseApp = initializeApp(firebaseConfig);
 export const DB = getFirestore(FirebaseApp)
 export const storage = getStorage(FirebaseApp)
-export const auth = getAuth(FirebaseApp)
+export const auth:any = getAuth(FirebaseApp)
 // export const analytics = getAnalytics(app);
 
 
 export default function App({Component, pageProps}:AppProps) {
   const queryClient = new QueryClient({
-    queryCache: new QueryCache()
+    queryCache: new QueryCache(),
   })
 
 

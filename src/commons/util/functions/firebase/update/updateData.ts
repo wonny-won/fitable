@@ -4,14 +4,7 @@ import { DB } from "../../../../../../pages/_app";
 interface Params {
   collection: string;
   docId: string;
-  data:{
-    overAll?:string;
-    fileURL?:string;
-    reviewContents?:string;
-    starValue?:number;
-    likeCount?:number;
-    dislikeCount?:number;
-  } | {}
+  data:any;
 }
 
 export const updateData = async({collection,docId,data}:Params)=>{

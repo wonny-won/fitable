@@ -1,23 +1,20 @@
+import { DocumentData } from "firebase/firestore";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 export interface NewReview{
     onChangeFile: (event: ChangeEvent<HTMLInputElement>) => void;
-    imgURL: never[];
+    imgURL: any;
     setValue: Dispatch<SetStateAction<number>>;
     onClickSubmitReview: (data: any) => Promise<void>;
     program: string | string[] | undefined;
     realvalue?: number;
-    userInfo?:{
-        displayName?: string;
-        photoUrl?: string;
-        email: string
-    } |unknown;
+    userInfo?:any;
     isEdit: boolean;
-    data: any[] | undefined;
+    data: any;
     onClickUpdateReview: (data: any) => Promise<void>
 }
 
 export interface NewReviewContainer {
     isEdit : boolean;
-    data?: any[];
+    data?:  boolean | void | DocumentData | undefined;
 }

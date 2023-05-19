@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface UserInfoData {
     getUserInfo: unknown | any; 
-    userOtherData: boolean | any[];
+    userOtherData: any;
     onClickOpenModal: (e: any) => void;
     isModalOpen: boolean;
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;

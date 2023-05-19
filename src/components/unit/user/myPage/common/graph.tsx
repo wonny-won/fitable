@@ -21,7 +21,7 @@ export default function Graph(props:Params){
                 <div>{props.isReview ? '리뷰삭제 / 리뷰수정':'신청내역 / 리뷰작성'}</div>
             </S.Header>
             {
-                props.data ? props.data?.map((item)=>{
+                props.data ? props.data?.map((item:any)=>{
                     const createTime = time(item?.createAt?.seconds)
                     return(
                         <div key={item.id}>

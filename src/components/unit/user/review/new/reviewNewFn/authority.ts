@@ -4,8 +4,6 @@ import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routin
 interface Param {
     program:string|string[]|undefined;
     isEdit: boolean;
-    user: string|string[]|undefined;
-    reviewWriter: string|string[]|undefined;
 }
 
 export const useBranchAuthority = ({program,isEdit}:Param)=>{
