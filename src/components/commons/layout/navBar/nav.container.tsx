@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import NavBarUI from "./nav.presenter"
 import { useRoutingPageHooks } from "../../../../commons/util/hooks/routing"
 import { userlogOut } from "../../../../commons/util/functions/firebase/logInOut.ts/logOut"
-import { useIsLogInUser } from "../../../../commons/util/hooks/signUpIn"
+import { useIsActive } from "./navBarFn/isActive"
 
-export default function NavBar(){
-    let isLoggedInUser = useIsLogInUser()
-    const [isActive,setisActive] = useState(false)
+export default function NavBar(props:any){
+    const {isActive,onClickMenuBt} = useIsActive()
     const routing = useRoutingPageHooks()
-    const onClickMenuBt = ()=>{
-        setisActive(!isActive)
-    }
-    console.log(isLoggedInUser)
-    const signOut = ()=>{userlogOut()}
-
+    const signOut = ()=>{userlogOut().then(()=>{routing('/')()})}
     return <NavBarUI isActive={isActive}
                      onClickMenuBt={onClickMenuBt}
-                     isLogin={isLoggedInUser}
+                     isLogin={props.isLogin}
                      routing={routing}
                      signOut={signOut}/>
 }

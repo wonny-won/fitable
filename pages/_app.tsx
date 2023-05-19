@@ -10,8 +10,8 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage'
 import { getAuth } from 'firebase/auth';
 import { RecoilRoot } from 'recoil';
-import { useIsLogInUser } from '../src/commons/util/hooks/signUpIn';
 import { QueryClient,QueryCache,QueryClientProvider, useQueryClient } from '@tanstack/react-query';
+import { useIsLogIn } from '../src/commons/util/hooks/isLogin';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCuwMolJgsRl10ms6JJGRXPOcE2ecrgqSU",
@@ -34,13 +34,13 @@ export default function App({Component, pageProps}:AppProps) {
   const queryClient = new QueryClient({
     queryCache: new QueryCache(),
   })
-
+  const isLogin = useIsLogIn()
 
   return (
     <RecoilRoot>
     <QueryClientProvider client={queryClient}>
       <Global styles={globalStyles} />
-      <Layout>
+      <Layout isLogin={isLogin}>
         <Component {...pageProps} />
       </Layout>
     </QueryClientProvider>

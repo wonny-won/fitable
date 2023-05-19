@@ -5,6 +5,7 @@ import NavBar from "./navBar/nav.container";
 import Advertisement from "./advertisement/advertisement";
 interface LayoutProps{
     children: JSX.Element;
+    isLogin:any;
 }
 
 export default function Layout(props:LayoutProps){
@@ -15,7 +16,7 @@ export default function Layout(props:LayoutProps){
     const includesAdvertise = HIDDEN_ADVERTISE.includes(router.asPath)
     return(
             <div style={{display:"flex"}}>
-                <NavBar />
+                <NavBar isLogin={props.isLogin}/>
                 <div style={{width: "100%"}} >
                     { !includesAdvertise && <Advertisement/> }
                     {includesBanner && <Banner />}
