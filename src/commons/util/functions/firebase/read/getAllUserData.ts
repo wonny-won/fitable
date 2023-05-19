@@ -12,7 +12,6 @@ export const getAllUserData = async ({maincollection,userUID,middleCollection}:G
     const applyDataArr:any[] = []
     const querySnapshot = await getDocs(collection(DB, maincollection,userUID,middleCollection));
     querySnapshot.forEach((doc) => {
-      // console.log(doc.data().createAt)
       const data = {id:doc.id, ...doc.data()}
       applyDataArr.push(data)
     });

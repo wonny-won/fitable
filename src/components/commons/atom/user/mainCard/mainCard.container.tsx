@@ -11,7 +11,6 @@ export default function MainCard(props:MainCardProps){
         setIsClick(!isClick)
     }
     const showModal = (e:any) => {
-        console.log(e.target.innerText)
         setIsModalOpen(true);
         setMenuTtitle(e.target.innerText)
     };
