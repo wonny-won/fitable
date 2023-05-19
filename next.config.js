@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   lintOnSave: false,
-  trailingSlash: true
+  trailingSlash: true,
+  generateBuildId: ()=> 'fitable-deploy'
 }
 
 module.exports = nextConfig
