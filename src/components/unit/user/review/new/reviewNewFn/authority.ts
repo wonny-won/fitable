@@ -10,14 +10,14 @@ export const useBranchAuthority = ({program,isEdit}:Param)=>{
     // const [applyProgram,setapplyProgram] = useState()
     const routerHooks = useRoutingPageHooks()
     console.log(program)
-    setTimeout((program:any)=>{
-        console.log('setTimeout',program)
-        if(!program && !isEdit){
-            console.log('if',program)
-            alert('잘못된 접근입니다.')
-            routerHooks('/mypage')()
-        }     
-    },5000,program,isEdit)
+    // setTimeout((program:any)=>{
+    //     console.log('setTimeout',program)
+    //     if(!program && !isEdit){
+    //         console.log('if',program)
+    //         alert('잘못된 접근입니다.')
+    //         routerHooks('/mypage')()
+    //     }     
+    // },5000,program,isEdit)
     // useEffect(()=>{
     //     setapplyProgram(program)    
     //     if(!applyProgram && !isEdit){
