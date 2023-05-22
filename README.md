@@ -77,8 +77,8 @@
 <img width="396" alt="스크린샷 2023-05-22 오후 4 41 35" src="https://github.com/wonny-won/fitable/assets/97152701/49227941-2138-4dfb-a749-587eca8d2f28">
 
 - **리뷰 등록 & 수정 페이지**
+<img width="400" alt="스크린샷 2023-05-22 오후 4 41 51" src="https://github.com/wonny-won/fitable/assets/97152701/757ab183-8ae5-4fc7-b81e-83dc5b23d30d">
 
-![스크린샷 2023-05-22 오전 1.04.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f35bc263-c40c-4ddd-93f9-05a30bb0abcb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.04.26.png)
 
 - **마이 페이지**
 
