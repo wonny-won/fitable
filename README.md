@@ -45,8 +45,7 @@
 - **프로젝트 성능**
     - 스토리지의 찌거기를 최소화 하기위해 fileReader를 사용 및 스토리지에 업로드 하는 함수를 분리해 게시글 작성 혹은 수정시에 스토리지에 업로드 되도록 개발.
    <img width="611" alt="스크린샷 2023-05-22 오전 12 31 26" src="https://github.com/wonny-won/fitable/assets/97152701/c57ca056-afeb-4fa8-a276-429661248460">
-
-<img width="626" alt="스크린샷 2023-05-22 오전 12 31 54" src="https://github.com/wonny-won/fitable/assets/97152701/cd5219f0-4fc9-4680-acb5-6dbe70444def">
+   <img width="626" alt="스크린샷 2023-05-22 오전 12 31 54" src="https://github.com/wonny-won/fitable/assets/97152701/cd5219f0-4fc9-4680-acb5-6dbe70444def">
 
     
     - react-query를 이용해 백엔드 데이터와 프론트 데이터를 분리하고 캐시를 통해 캐시에서 프레쉬한 캐시를 먼저 받아올 수 있도록 개발.
