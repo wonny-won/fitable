@@ -37,8 +37,8 @@
     - payment나 pagination같은 훗날 재사용 가능성이 높은 다양한 쿼리나 함수를 공통으로 빼둠으로써 확장성을 고려해 개발.
 - **보안성**
     - react-quill 이용시 XSS공격을 대비해 dompurify를 이용.
-    
-    ![스크린샷 2023-05-22 오전 12.29.02.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe1123d1-85cb-4333-9135-4a86e3d0f0ca/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.29.02.png)
+   <img width="1140" alt="스크린샷 2023-05-22 오전 12 29 02" src="https://github.com/wonny-won/fitable/assets/97152701/9d3ab7f8-e9ad-4d1d-bdb9-483cc3ddd93f">
+
     
     - 로그인 데이터를 브라우저 스토리지에 넣지 않아 토큰노출의 위험성을 줄임.
         - 로그인 부분은 refreshToken 로직으로 업데이트 할 예정.
