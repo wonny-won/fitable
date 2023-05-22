@@ -32,8 +32,7 @@
    <img width="710" alt="스크린샷 2023-05-22 오전 12 19 18" src="https://github.com/wonny-won/fitable/assets/97152701/f74aa07f-d37d-48a4-af51-85be77429ff4">
     
     - 공통적으로 사용되는 함수와 컴포넌트는 commons로 분리해두어 재사용성을 높이고 부분 수정이 빠르게 이뤄질 수 있도록 개발.
-    
-    ![스크린샷 2023-05-22 오전 12.21.27.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59cb7a60-c429-4f68-90a1-725c2e15166f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.21.27.png)
+   <img width="257" alt="스크린샷 2023-05-22 오전 12 21 27" src="https://github.com/wonny-won/fitable/assets/97152701/8d513d9d-f9c5-444c-aa95-73010865ffe5">
     
     - payment나 pagination같은 훗날 재사용 가능성이 높은 다양한 쿼리나 함수를 공통으로 빼둠으로써 확장성을 고려해 개발.
 - **보안성**
