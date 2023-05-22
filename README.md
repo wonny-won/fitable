@@ -63,7 +63,6 @@
     - AWS[S3,EC2]
 
 ### Features & Screens
-
 - **메인 화면**
 <img width="1271" alt="스크린샷 2023-05-22 오후 4 36 11" src="https://github.com/wonny-won/fitable/assets/97152701/f067992e-e1a9-439a-a840-042bf5618e21">
 
@@ -79,15 +78,11 @@
 - **리뷰 등록 & 수정 페이지**
 <img width="400" alt="스크린샷 2023-05-22 오후 4 41 51" src="https://github.com/wonny-won/fitable/assets/97152701/757ab183-8ae5-4fc7-b81e-83dc5b23d30d">
 
-
 - **마이 페이지**
 <img width="818" alt="스크린샷 2023-05-22 오후 4 42 21" src="https://github.com/wonny-won/fitable/assets/97152701/d2d6544f-dc20-4da0-962b-9ee1ed8d5105">
 
 - **로그인 / 회원가입 페이지**
-
-![스크린샷 2023-05-22 오전 1.05.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/502b181b-7302-4246-b795-9ee45ee2c7f2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.05.47.png)
-
-![스크린샷 2023-05-22 오전 1.05.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6fd44a4d-a7fc-4311-bd6d-454e138c1277/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.05.59.png)
+<img width="862" alt="스크린샷 2023-05-22 오후 4 42 40" src="https://github.com/wonny-won/fitable/assets/97152701/d60b4fad-a54d-470b-9ed5-dfae6d1aa884">
 
 ---
 
