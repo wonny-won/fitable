@@ -81,10 +81,7 @@
 
 
 - **마이 페이지**
-
-![스크린샷 2023-05-22 오전 1.02.07.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15fead43-37f9-4ebf-b293-8b813a557e0a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.02.07.png)
-
-![스크린샷 2023-05-22 오전 1.02.22.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ff754444-c8b7-4cec-b8c0-f27d5206ba1c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.02.22.png)
+<img width="818" alt="스크린샷 2023-05-22 오후 4 42 21" src="https://github.com/wonny-won/fitable/assets/97152701/d2d6544f-dc20-4da0-962b-9ee1ed8d5105">
 
 - **로그인 / 회원가입 페이지**
 
