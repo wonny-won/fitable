@@ -54,7 +54,7 @@
     - react-query를 이용해 백엔드 데이터와 프론트 데이터를 분리하고 캐시를 통해 캐시에서 프레쉬한 캐시를 먼저 받아올 수 있도록 개발.
     - 검색엔진 최적화를 위한 시멘틱 태그를 적용해 개발하고자 노력(완벽한 마크업은 아니기에 노력중)
 
-## Tech Stack
+### Tech Stack
 
 - Front-end
     - TypeScript, Next.js
@@ -62,7 +62,7 @@
     - react-hook-form, yup, react-quill, dompurify, react-slick, antd, import(portone)
     - AWS[S3,EC2]
 
-## Features & Screens
+### Features & Screens
 
 - **메인 화면**
 
@@ -105,9 +105,9 @@
 ![스크린샷 2023-05-22 오전 1.05.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/502b181b-7302-4246-b795-9ee45ee2c7f2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.05.47.png)
 
 ![스크린샷 2023-05-22 오전 1.05.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6fd44a4d-a7fc-4311-bd6d-454e138c1277/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.05.59.png)
-<br/>
+
 ---
-<br/>
+
 # 🏹 Trouble Shooting & Future Schedule
 
 ### 1️⃣ 중.꺾.마! 이겨낸 trouble들
