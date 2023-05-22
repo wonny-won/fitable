@@ -67,15 +67,8 @@
 - **메인 화면**
 <img width="1271" alt="스크린샷 2023-05-22 오후 4 36 11" src="https://github.com/wonny-won/fitable/assets/97152701/f067992e-e1a9-439a-a840-042bf5618e21">
 
-![스크린샷 2023-05-22 오전 12.47.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d5ebc19-acf5-453b-bb95-d7e2950b6eeb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.47.10.png)
-
-![스크린샷 2023-05-22 오전 12.47.24.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/84252210-7364-4834-a0ff-3622c9292353/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.47.24.png)
-
 - **신청서 작성 화면**
-
-![스크린샷 2023-05-22 오전 12.49.28.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8d1089e6-7501-4d4c-9a37-83516a86abd8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.49.28.png)
-
-![스크린샷 2023-05-22 오전 12.48.58.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e39f6abf-66a0-49d7-b201-fa68f8dbe31d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.48.58.png)
+<img width="865" alt="스크린샷 2023-05-22 오후 4 38 34" src="https://github.com/wonny-won/fitable/assets/97152701/0d04eaaa-b01e-4461-aa72-b96f01b3f036">
 
 - **리뷰 리스트 페이지**
 
