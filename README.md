@@ -71,12 +71,7 @@
 <img width="865" alt="스크린샷 2023-05-22 오후 4 38 34" src="https://github.com/wonny-won/fitable/assets/97152701/0d04eaaa-b01e-4461-aa72-b96f01b3f036">
 
 - **리뷰 리스트 페이지**
-
-![스크린샷 2023-05-22 오전 12.52.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dd7a8f85-9c3c-4719-8534-77559006464c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.52.10.png)
-
-![스크린샷 2023-05-22 오전 12.56.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3692791b-6d30-4ac6-8483-c8d659f99a5a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.56.40.png)
-
-![스크린샷 2023-05-22 오전 12.58.48.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/68a846a5-a351-4cb6-bb9f-e4c21c0f2413/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-22_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.58.48.png)
+<img width="868" alt="스크린샷 2023-05-22 오후 4 41 24" src="https://github.com/wonny-won/fitable/assets/97152701/a0ed2074-8b12-4ee0-8471-046350b5c438">
 
 - **리뷰 디테일 페이지**
 
