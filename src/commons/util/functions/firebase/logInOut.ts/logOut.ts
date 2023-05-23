@@ -6,7 +6,6 @@ export const userlogOut = async ()=>{
     try{
         const result = await signOut(auth)
         alert("로그아웃에 성공했습니다.")
-        console.log(result)
     }catch(error){
         console.log(error)
     }

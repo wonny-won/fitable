@@ -22,7 +22,6 @@ export default function Graph(props:Params){
             </S.Header>
             {
                 props.data?.length > 0 ? props.data?.map((item:any)=>{
-                    console.log(item)
                     const createTime = time(item?.createAt?.seconds)
                     return(
                         <div key={item.id}>

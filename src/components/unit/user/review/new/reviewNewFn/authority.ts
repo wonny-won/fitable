@@ -1,15 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getUserInfoQuery } from "../../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 import { useRouter } from "next/router";
 
-export const useBranchAuthority = ()=>{
+export const useBranchAuthority = (userInfo:any)=>{
     const getloginUser = getUserInfoQuery()
+    const [data,setData] = useState('')
     const router = useRouter()
      useEffect(()=>{
-        console.log('dd',!getloginUser.data?.getAllApplyDatas)
-        if(router.asPath==='/review/new/' || !getloginUser.data?.getAllApplyDatas){
-            alert('잘못된 접근입니다.')
-            getloginUser.data?.getAllApplyDatas ? router.push('/mypage') : router.push('/joinus')
-        }    
+        setTimeout(()=>{
+            setData(userInfo)
+            if(router.asPath==='/review/new/' || data){
+                alert('잘못된 접근입니다.')
+                getloginUser.data ? router.push('/mypage') : router.push('/joinus')
+            }        
+        },1000)
     },[])
 }
