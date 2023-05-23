@@ -5,7 +5,7 @@ import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routin
 export const createNewReviewMutation = ()=>{
     const routerHooks = useRoutingPageHooks()
     const createDocMutaion = useMutation({
-        mutationFn: async(data) => await addDocs({colletionName:'/programReview',data}),
+        mutationFn: (data) => addDocs({colletionName:'/programReview',data}),
         onSuccess: (context) => routerHooks(`${context}`)(),
     })
     return createDocMutaion

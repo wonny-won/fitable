@@ -5,6 +5,7 @@ import {Img} from '../myPage/myPage.style'
 
 export default function MyPageEditUI(props:MypageEditPresenter){
     const tilteArr = ['displayName','email','phoneNumber']
+    console.log(props.getUserInfo?.photoUrl,props.image)
     return(
         <>
             <Head>
@@ -17,7 +18,7 @@ export default function MyPageEditUI(props:MypageEditPresenter){
                     <S.MiniWrapTop>
                         <S.ProfileImg> 프로필</S.ProfileImg>
                         <S.ResultImg>
-                            { props.getUserInfo?.photoUrl ? <Img src={ props.image.length > 0 ? props.image[props.image.length-1] : props.getUserInfo?.photoUrl } /> : <Img src={'/noneimg.jpeg'}/> }
+                            { props.getUserInfo?.photoUrl ? <Img src={ props.image.length > 0 ? props.image[props.image.length-1] : props.getUserInfo?.photoUrl } /> : <Img src={ props.image.length > 0 ? props.image[props.image.length-1] : '/noneimg.jpeg'}/> }
                         </S.ResultImg>
                         <S.ImgWrap>
                             <S.ImgInput htmlFor="photoURL"> upload </S.ImgInput>

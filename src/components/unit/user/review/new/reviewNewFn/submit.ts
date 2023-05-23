@@ -15,6 +15,9 @@ export const useSubmitReview = ({userId,program,files,starValue,writer,writerPro
     const submitresult = createNewReviewMutation()
     const onClcickSubmitReview = async(data:any)=>{
         const reviewData={...data,userId,program,starValue,writer,writerProfile,likeCount:0,dislikeCount:0}
+        if(!writer) reviewData.writer = 'EDIT 버튼을 눌러 수정해보세요!'
+        if(!writerProfile) reviewData.writerProfile = 'https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/userProfile%2Fnoneimg.jpeg?alt=media'
+        console.log(reviewData)
         if(files.length>0) {
             const uploadImg = await UploadFiles('/newReview',files)
             const fileURL = uploadImg?.map((item)=>item.fullPath)
@@ -25,7 +28,7 @@ export const useSubmitReview = ({userId,program,files,starValue,writer,writerPro
             reviewData.fileURL = '등록된 파일이 없습니다.'
         }
         try{
-            await submitresult.mutate(reviewData)
+            submitresult.mutate(reviewData)
             alert('리뷰 등록이 완료되었습니다.')
         }catch(error){
             alert(error)
