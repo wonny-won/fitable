@@ -1,3 +1,5 @@
+// import { ProgramSection } from '../../../unit/user/apply/apply.style'
+// import UseModal from '../../atom/user/modal/modal.container'
 import * as S from './nav.style'
 import { NavProps } from './nav.type'
 
@@ -23,7 +25,7 @@ export default function NavBarUI(props:NavProps){
                     <S.A href="/"><S.Li>HOME</S.Li></S.A>
                     <S.A href="/apply"><S.Li>APPLY</S.Li></S.A>
                     <S.A href="/review"><S.Li>REVIEW</S.Li></S.A>
-                    <S.Li>유형별 프로그램 추천</S.Li>
+                    <S.Li onClick={props.onClickBt}>포트폴리오 배틀</S.Li>
                 </ul>
             </div>
             <S.MiniMenuWrap>

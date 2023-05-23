@@ -8,6 +8,7 @@ export interface ModalPresenter {
     reviewId:string | undefined;
     menuTitle?: string | undefined;
     applyId?:string|undefined;
+    isNav?:boolean;
 }
 export interface Modalcontainer {
     isModalOpen: boolean | undefined;
@@ -16,5 +17,6 @@ export interface Modalcontainer {
     reviewId?: string;
     menuTitle?: string | undefined;
     applyId?: string|undefined;
-    setIsEdit?: Dispatch<SetStateAction<boolean>>
+    setIsEdit?: Dispatch<SetStateAction<boolean>>;
+    isNav?:boolean;
 }

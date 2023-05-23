@@ -23,7 +23,10 @@ export default function MyUI(props:UserInfoData){
                 </S.ProfilePhoto> 
                 <S.UserData>
                     <S.MiniNameWrap>
-                        <S.UserName>[ <S.UserNameSpan>{props.getUserInfo?.displayName}</S.UserNameSpan> ] 님</S.UserName>
+                        {
+                            props.getUserInfo?.displayName ? <S.UserName>[ <S.UserNameSpan>{props.getUserInfo?.displayName}</S.UserNameSpan> ] 님</S.UserName> :
+                            <S.UserName>[ <S.UserNameSpan>EDIT 버튼을 눌러 수정해보세요!</S.UserNameSpan> ] 님</S.UserName>
+                        }
                         <S.A href="/mypage/edit/"><S.EditBT>EDIT</S.EditBT></S.A>
                     </S.MiniNameWrap>
                     <S.PHandEmailWrap>

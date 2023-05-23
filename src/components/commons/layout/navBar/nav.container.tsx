@@ -11,5 +11,6 @@ export default function NavBar(props:any){
                      onClickMenuBt={onClickMenuBt}
                      isLogin={props.isLogin}
                      routing={routing}
-                     signOut={signOut}/>
+                     signOut={signOut}
+                     onClickBt={props.onClickBt}/>
 }

@@ -148,7 +148,7 @@ export const Content = styled(Header)`
 `
 export const BtWrap =  styled.div`
     display: flex;
-    width: 120px;
+    width: 150px;
     justify-content: space-around;
 `
 export const ViewBt = styled.div`
@@ -165,6 +165,9 @@ export const ViewBt = styled.div`
     font-size: 12px;
     font-weight: 400;
     height: 21px;
+`
+export const ReviewViewBT = styled(ViewBt)`
+    margin: 0 15px;
 `
 export const ReiewBt = styled.img`
     &:hover{

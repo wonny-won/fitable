@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth, DB } from "../../../../../../pages/_app"
+import { auth } from "../../../../../../pages/_app"
 import { checkEmail, checkPassword, passwordEnglishValidation, passwordValidation } from "../../validation"
 import { addCustomIdDoc } from "./addCustomIdDocs"
 
