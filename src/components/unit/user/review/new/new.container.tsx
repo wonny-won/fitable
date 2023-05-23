@@ -10,8 +10,8 @@ import { useUpdateReview } from "./reviewNewFn/update";
 
 export default function NewReview(props : NewReviewContainer){
     const router = useRouter()
+    useBranchAuthority()
     const getloginUser = getUserInfoQuery()
-    useBranchAuthority({program:router.query.program,isEdit:props.isEdit})
     const { fakeURL,files,onChangeFile } = useUploadFiles()
     const { realvalue,setValue } = onClickChangeValue()
     const onClickSubmitReview = useSubmitReview({program:router.query.program,userId:getloginUser.data?.result?.localId,files,starValue:realvalue,writer:getloginUser.data?.result?.displayName,writerProfile:getloginUser.data?.result?.photoUrl})

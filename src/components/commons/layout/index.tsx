@@ -25,7 +25,7 @@ export default function Layout(props:LayoutProps){
                     {includesBanner && <Banner />}
                     <div style={{marginTop:"100px"}} >
                         {props.children}
-                        <UseModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isNav={isNav}/>
+                        {/* <UseModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} isNav={isNav}/> */}
                     </div>
                     <Footer />
                 </div>

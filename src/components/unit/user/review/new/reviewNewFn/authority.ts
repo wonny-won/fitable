@@ -1,29 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routing";
+import { getUserInfoQuery } from "../../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
+import { useRouter } from "next/router";
 
-interface Param {
-    program:any;
-    isEdit: boolean;
-}
-
-export const useBranchAuthority = ({program,isEdit}:Param)=>{
-    // const [applyProgram,setapplyProgram] = useState()
-    const routerHooks = useRoutingPageHooks()
-    console.log(program)
-    // setTimeout((program:any)=>{
-    //     console.log('setTimeout',program)
-    //     if(!program && !isEdit){
-    //         console.log('if',program)
-    //         alert('잘못된 접근입니다.')
-    //         routerHooks('/mypage')()
-    //     }     
-    // },5000,program,isEdit)
-    // useEffect(()=>{
-    //     setapplyProgram(program)    
-    //     if(!applyProgram && !isEdit){
-    //         console.log('if',applyProgram)
-    //         alert('잘못된 접근입니다.')
-    //         routerHooks('/mypage')()
-    //     }      
-    // },[])
+export const useBranchAuthority = ()=>{
+    const getloginUser = getUserInfoQuery()
+    const router = useRouter()
+     useEffect(()=>{
+        console.log('dd',!getloginUser.data?.getAllApplyDatas)
+        if(router.asPath==='/review/new/' || !getloginUser.data?.getAllApplyDatas){
+            alert('잘못된 접근입니다.')
+            getloginUser.data?.getAllApplyDatas ? router.push('/mypage') : router.push('/joinus')
+        }    
+    },[])
 }

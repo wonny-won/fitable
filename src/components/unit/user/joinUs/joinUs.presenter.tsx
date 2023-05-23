@@ -29,10 +29,10 @@ export default function JoinUsUI(props:JoinUsPresenter){
             <S.SginUPIN> 회원가입 </S.SginUPIN>
             <section>
                 <S.SginUPINExplain>아직 회원이 아니신가요?<br/>회원가입을 하시면 다양한 혜택을  편리하게 이용하실 수 있습니다.</S.SginUPINExplain>
-                <S.BTForm onClick={props.router('/signup')}>JOIN-US</S.BTForm>
+                <a href='/signup'><S.BTForm>JOIN-US</S.BTForm></a>
                 <S.ForgotIDPWWrap>
                 <S.SginUPINExplain>아이디 혹은 비밀번호를 잊으셨나요?<br/>간단한 정보를 입력 후 잃어버린 정보를 찾으실 수 있습니다.</S.SginUPINExplain>
-                <S.BTForm>ID/PASSWORD</S.BTForm>
+                <S.BTForm onClick={()=>{alert('해당 기능은 준비중입니다!')}}>ID/PASSWORD</S.BTForm>
                 </S.ForgotIDPWWrap>
             </section>
         </S.JoinUsBox>

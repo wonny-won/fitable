@@ -5,8 +5,6 @@ export default function UseModal(props: Modalcontainer){
   const handleCancel = () => {
     if(props.setIsModalOpen){ props?.setIsModalOpen(false); }
   };
-  console.log('ss',props.isNav)
-
   return <UseModalUI isModalOpen={props.isModalOpen}
                      handleCancel={handleCancel}
                      program={props.program}
