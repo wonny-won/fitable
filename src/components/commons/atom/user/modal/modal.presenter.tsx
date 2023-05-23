@@ -14,12 +14,8 @@ export default function UseModalUI(props:ModalPresenter){
               open={true}  
               onCancel={props.handleCancel}
               width={ router.asPath==='/' ? (props.isNav ? 500:1000) : 500}>
-              {
-                router.asPath==='/' && !props.isNav && (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) 
-              }
-              {
-                router.asPath==='/mypage/' && !props.isNav && (<ApplicationDetail applyId={props.applyId}/>)
-              }
+              { router.asPath==='/' && !props.isNav && (<ProgramDetailModal program={props.program} menuTitle={props.menuTitle}/>) }
+              { router.asPath==='/mypage/' && !props.isNav && (<ApplicationDetail applyId={props.applyId}/>) }
               {
                 props.isNav && 
                 <div> 

@@ -1,33 +1,13 @@
-import styled from "@emotion/styled"
+import * as S from '../modal.detail.styled'
 
 export default function FunctionalFeedback(){
     return(
         <>
-        <Container>
-            <Title><TitleSpan>기능 단위 피드백</TitleSpan> 이란?</Title>
-            <Image src='/functionFeedback.png'/>
-            <Image2 src='/pagefeedback3.png'/>
-        </Container>
+        <S.Container>
+            <S.Title><S.TitleSpan>기능 단위 피드백</S.TitleSpan> 이란?</S.Title>
+            <S.Image src='/functionFeedback.png'/>
+            <S.Image2 src='/pagefeedback3.png'/>
+        </S.Container>
         </>
     )
 }
-
-const Container = styled.div`
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-`
-const Title = styled.h1`
-    font-size: 40px;
-`
-const TitleSpan = styled.span`
-color:#8d60f5;
-`
-const Image = styled.img`
-    width: 840px;
-    height: 500px;
-`
-const Image2 = styled.img`
-    width: 840px;
-    height: 300px;
-`
