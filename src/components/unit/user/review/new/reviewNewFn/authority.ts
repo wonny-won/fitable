@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useRoutingPageHooks } from "../../../../../../commons/util/hooks/routing";
 import { getUserInfoQuery } from "../../../../../../commons/util/functions/reactQuery/useQuery/getUserInfoQuery";
 import { useRouter } from "next/router";
 
