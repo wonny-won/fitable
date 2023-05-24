@@ -32,16 +32,14 @@
 
 - **유지보수 / 확장성**
     - 컨테이너 부분은 함수단위로 분리해 코드량을 최대한 줄이며 해당 함수 파일로 찾아가 부분 수정이 빠르게 이뤄질 수 있도록 개발.
-   <img width="710" alt="스크린샷 2023-05-22 오전 12 19 18" src="https://github.com/wonny-won/fitable/assets/97152701/f74aa07f-d37d-48a4-af51-85be77429ff4">
+        <img width="710" alt="스크린샷 2023-05-22 오전 12 19 18" src="https://github.com/wonny-won/fitable/assets/97152701/f74aa07f-d37d-48a4-af51-85be77429ff4">
     
     - 공통적으로 사용되는 함수와 컴포넌트는 commons로 분리해두어 재사용성을 높이고 부분 수정이 빠르게 이뤄질 수 있도록 개발.
-   <img width="257" alt="스크린샷 2023-05-22 오전 12 21 27" src="https://github.com/wonny-won/fitable/assets/97152701/8d513d9d-f9c5-444c-aa95-73010865ffe5">
     
     - payment나 pagination같은 훗날 재사용 가능성이 높은 다양한 쿼리나 함수를 공통으로 빼둠으로써 확장성을 고려해 개발.
 - **보안성**
     - react-quill 이용시 XSS공격을 대비해 dompurify를 이용.
-   <img width="1140" alt="스크린샷 2023-05-22 오전 12 29 02" src="https://github.com/wonny-won/fitable/assets/97152701/9d3ab7f8-e9ad-4d1d-bdb9-483cc3ddd93f">
-
+        <img width="1140" alt="스크린샷 2023-05-22 오전 12 29 02" src="https://github.com/wonny-won/fitable/assets/97152701/9d3ab7f8-e9ad-4d1d-bdb9-483cc3ddd93f">
     
     - 로그인 데이터를 브라우저 스토리지에 넣지 않아 토큰노출의 위험성을 줄임.
         - 로그인 부분은 refreshToken 로직으로 업데이트 할 예정.
@@ -53,6 +51,12 @@
     
     - react-query를 이용해 백엔드 데이터와 프론트 데이터를 분리하고 캐시를 통해 캐시에서 프레쉬한 캐시를 먼저 받아올 수 있도록 개발.
     - 검색엔진 최적화를 위한 시멘틱 태그를 적용해 개발하고자 노력(완벽한 마크업은 아니기에 노력중)
+    - 상황에 따른 비제어 / 제어 컴포넌트 선택
+    - 리뷰 등록페이지 
+    → 글자수가 많고, 오류가 나도 크게 문제가 되지 않는 페이지이기 때문에 비제어 컴포넌트 선택
+    [ 결과 ] 빈번한 재렌더 제거
+    - 결제, 회원가입, 로그인 페이지
+    →오류가 나면 안되는
 
 ### Tech Stack
 
