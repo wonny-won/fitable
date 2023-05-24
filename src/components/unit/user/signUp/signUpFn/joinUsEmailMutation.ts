@@ -6,8 +6,11 @@ export const joinUsEmailMutation = (inputs:any)=>{
     const routing = useRoutingPageHooks()
     return useMutation({
         mutationFn: ()=> joinUsEmail(inputs),
-        onSuccess: (data)=> { 
-            if(data) routing('/')() 
+        onSuccess: async (data)=> { 
+            if(data){
+                console.log('gkgk',data)
+                // routing('/')() 
+            }
         }
     })
 }

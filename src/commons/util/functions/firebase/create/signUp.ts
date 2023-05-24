@@ -19,7 +19,8 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
         try{
             const createUser = await createUserWithEmailAndPassword(auth ,email, password)
             // 회원가입 후 추가적인 유저데이터 넣어주기 - 안정성을 위해 기본 User info와 분리
-            userUID = createUser.user.uid;
+            userUID = await createUser.user.uid;
+            console.log(userUID)
             const userData = {
                 payment : 0,
                 point : 0,
@@ -30,8 +31,8 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
                 program:'신청 내역이 없습니다.',
                 applyAt:'-',
             }
-            await addCustomIdDoc('user',userUID,'userData',userData)
-            await addCustomIdDoc('user',userUID,'userApplyProgram',userApplyProgram)
+            if(userUID!=="")addCustomIdDoc('user',userUID,'userData',userData)
+            if(userUID!=="")addCustomIdDoc('user',userUID,'userApplyProgram',userApplyProgram)
             alert("회원가입을 축하드립니다.")
             return userUID
         } catch(error){
@@ -39,7 +40,6 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
         }
     }else{
         alert('회원가입 조건을 충족해주세요!')
-
     }
     return userUID
 }
