@@ -32,7 +32,19 @@ export const auth:any = getAuth(FirebaseApp)
 
 export default function App({Component, pageProps}:AppProps) {
   const queryClient = new QueryClient({
-    queryCache: new QueryCache(),
+    defaultOptions: {
+      queries: {
+        retry: 1,
+        retryDelay: 0,
+        staleTime: 1 * 60 * 1000,
+        refetchOnWindowFocus:true,
+        refetchOnMount:true
+      },
+      mutations: {
+        retry: 1,
+        retryDelay: 0,
+      },
+    },
   })
   const isLogin = useIsLogIn()
 

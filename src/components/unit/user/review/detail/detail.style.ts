@@ -1,3 +1,4 @@
+import { DislikeOutlined, LikeOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 
 export const Error = styled.div`
@@ -125,4 +126,10 @@ export const Line = styled.hr`
     height: 1px;
     border: none;
     background-color:  #ebeff5;
+`
+export const Like:any = styled(LikeOutlined)`
+    font-size: 12px;
+`
+export const DisLike:any = styled(DislikeOutlined)`
+    font-size: 12px;
 `

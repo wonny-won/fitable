@@ -29,7 +29,7 @@ export const HamburgerMenuWrap = styled.div`
     text-align: center;
     padding: 5px;
 `
-export const HamburgerMenu =  styled(MenuOutlined)`
+export const HamburgerMenu:{}|any =  styled(MenuOutlined)`
     font-size: 30px;
 `
 export const LogoWrap = styled.div`
@@ -46,10 +46,10 @@ export const IconWrap = styled.div`
     flex-direction: column;
     justify-content: space-between;
 `
-export const MyPageIcon = styled(UserOutlined)`
+export const MyPageIcon:any = styled(UserOutlined)`
     font-size: 30px;
 `
-export const SearchIcon = styled(SearchOutlined)`
+export const SearchIcon:any = styled(SearchOutlined)`
     font-size: 30px;
 `
 export const MenuDetailWrap = styled.div`

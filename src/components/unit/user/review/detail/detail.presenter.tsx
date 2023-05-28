@@ -1,6 +1,5 @@
 import StarRate from "../../../../commons/atom/user/starRate/starRate";
 import * as S from './detail.style'
-import {LikeOutlined,DislikeOutlined} from '@ant-design/icons';
 import { ReviewDetailPresenter } from "./detail.type";
 import Carousel from "../../../../commons/atom/user/carousel/carousel.container";
 import { onClickhelpfulBt } from "./detailFn/onClickhelpfulBt"; 
@@ -37,8 +36,8 @@ export default function ReviewDetaillUI(props:ReviewDetailPresenter){
             </S.UserWrap>
            { props.data?.reviewContents ? <S.Content dangerouslySetInnerHTML={{ __html : DOMPurify.sanitize(props.data?.reviewContents) }} /> : '' }  
            <S.HelpfulWrap>
-                <S.Helpful onClick={onClickhelpfulBt(props.docId,'likeCount')}> <LikeOutlined/> 도움돼요 {props.data?.likeCount}</S.Helpful>
-                <S.Helpful onClick={onClickhelpfulBt(props.docId,'dislikeCount')}> <DislikeOutlined/> 도움안돼요 {props.data?.dislikeCount}</S.Helpful>
+                <S.Helpful onClick={onClickhelpfulBt(props.docId,'likeCount')}> <S.Like/> 도움돼요 {props.data?.likeCount}</S.Helpful>
+                <S.Helpful onClick={onClickhelpfulBt(props.docId,'dislikeCount')}> <S.DisLike/> 도움안돼요 {props.data?.dislikeCount}</S.Helpful>
            </S.HelpfulWrap>
           <S.Line />
         </S.Section>
