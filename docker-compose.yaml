@@ -10,13 +10,3 @@ services:
       dockerfile: Dockerfile
     ports: 
       - 3000:3000
-
-
-
-  # front-end: 
-  #   build:
-  #     # 도커 파일 위치
-  #     context: .
-  #     # 최적화 할 도커파일 이름(이미지 만들 도커 파일)
-  #     dockerfile: Dockerfile
-    

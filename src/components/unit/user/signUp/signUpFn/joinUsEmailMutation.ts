@@ -5,11 +5,16 @@ import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing"
 export const joinUsEmailMutation = (inputs:any)=>{
     const routing = useRoutingPageHooks()
     return useMutation({
-        mutationFn: ()=> joinUsEmail(inputs),
-        onSuccess: async (data)=> { 
-            if(data){
-                console.log('gkgk',data)
-                // routing('/')() 
+        mutationFn: async()=>{ 
+            await joinUsEmail(inputs)
+            alert('회원가입을 축하드립니다.')
+            return '회원가입 완료'
+        },
+        onSuccess: (data)=>{
+            if(data) {
+                setTimeout(()=>{
+                    routing('/')()
+                },1000)
             }
         }
     })
