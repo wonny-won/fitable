@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export default function Advertisement (){
     return(
-        <Container> 프로그램 신청시 5% 적립금을 드립니다. </Container>
+        <Container> 프로그램 신청시 5% 상당의 적립금을 드립니다. </Container>
     )
 }
 const Container = styled.div`

@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 export default function NewReviewUI(props:NewReview){
     const { register,handleSubmit,handleChange } = onChangeInput()
     const routerHooks = useRoutingPageHooks()
+    console.log(props.userInfo)
     return(
         <>
         <Head>
@@ -31,7 +32,7 @@ export default function NewReviewUI(props:NewReview){
                         <S.OverAllThumbnail>{props.isEdit ? props.data?.overAll:'작성하신 프로그램 총평이 보여집니다.'}</S.OverAllThumbnail>
                         <StarRate value={props.isEdit? props.data?.starValue :props.realvalue} disable={true}/>
                     <S.UserWrap>
-                        <S.UserProfileImg src={props.isEdit? props.data?.writerProfile : props.userInfo?.photoUrl}/>
+                        <S.UserProfileImg src={props.isEdit? props.data?.writerProfile : props.userInfo?.photoUrl ? props.userInfo?.photoUrl : 'https://firebasestorage.googleapis.com/v0/b/fitable-6e5ac.appspot.com/o/userProfile%2Fnoneimg.jpeg?alt=media'}/>
                         <div>{props.isEdit? props.data?.writer : props.userInfo?.displayName}</div>
                     </S.UserWrap>
                     </S.ProgramReviewWrap>
