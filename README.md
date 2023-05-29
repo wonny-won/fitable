@@ -79,29 +79,29 @@
 ### ✨ Features & Screens
 1. **메인 화면**
 <img width="1271" alt="스크린샷 2023-05-22 오후 4 36 11" src="https://github.com/wonny-won/fitable/assets/97152701/f067992e-e1a9-439a-a840-042bf5618e21">
-
-2. **신청서 작성 화면** <br/><br/>
+<br/><br/>
+2. **신청서 작성 화면** 
     - 결제기능 적용
       - 비로그인 유저 결제 불가
       - 결제 후 결제 데이터 마이페이지에서 확인 가능
     - 결제시 결제금액의 5% 적립금이 적립될 수 있도록 구현
 <img width="865" alt="스크린샷 2023-05-22 오후 4 38 34" src="https://github.com/wonny-won/fitable/assets/97152701/0d04eaaa-b01e-4461-aa72-b96f01b3f036">
-
-3. **리뷰 리스트 페이지** <br/><br/>
+<br/><br/>
+3. **리뷰 리스트 페이지** 
     - [도움돼요]를 가장 많이 받은 상위 3개 리뷰 순위 적용 및 명예의 전당 입성
     - 모든 리뷰 확인 가능
 <img width="868" alt="스크린샷 2023-05-22 오후 4 41 24" src="https://github.com/wonny-won/fitable/assets/97152701/a0ed2074-8b12-4ee0-8471-046350b5c438">
-
-4. **리뷰 디테일 페이지** <br/><br/>
+<br/><br/>
+4. **리뷰 디테일 페이지** 
     - 특정 게시글 데이터 확인가능
     - 도움돼요 / 도움안돼요 기능
 <img width="396" alt="스크린샷 2023-05-22 오후 4 41 35" src="https://github.com/wonny-won/fitable/assets/97152701/49227941-2138-4dfb-a749-587eca8d2f28">
-
-5. **리뷰 등록 & 수정 페이지** <br/><br/>
+<br/><br/>
+5. **리뷰 등록 & 수정 페이지**
     - 프로그램 관련 이미지 업로드, 한줄평, 상세리뷰, 별점(수정 불가), 썸네일 미리보기(명예의 전당 기준) 기능
 <img width="400" alt="스크린샷 2023-05-22 오후 4 41 51" src="https://github.com/wonny-won/fitable/assets/97152701/757ab183-8ae5-4fc7-b81e-83dc5b23d30d">
-
-6. **마이 페이지** <br/><br/>
+<br/><br/>
+6. **마이 페이지**
     - 내 기본 정보 확인 및 결제 / 리뷰 정보 확인
     - 회원정보 수정가능
     - 리뷰 작성, 수정, 삭제
@@ -111,9 +111,8 @@
     - 피드백시 원하는 방향성 / 파일 업로드 수정
 <img width="818" alt="스크린샷 2023-05-22 오후 4 42 21" src="https://github.com/wonny-won/fitable/assets/97152701/d2d6544f-dc20-4da0-962b-9ee1ed8d5105">
 <img width="478" alt="스크린샷 2023-05-30 오전 12 39 24" src="https://github.com/wonny-won/fitable/assets/97152701/2c59dd43-8385-4be0-a07d-e6bd7b387607">
-
-
-7. **로그인 / 회원가입 페이지** <br/><br/>
+<br/><br/>
+7. **로그인 / 회원가입 페이지**
     - 로그인 / 회원가입 기능
     - validation 적용 완료
 <img width="862" alt="스크린샷 2023-05-22 오후 4 42 40" src="https://github.com/wonny-won/fitable/assets/97152701/d60b4fad-a54d-470b-9ed5-dfae6d1aa884">
