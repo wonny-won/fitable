@@ -6,7 +6,7 @@ export const createNewReviewMutation = ()=>{
     const routerHooks = useRoutingPageHooks()
     const createDocMutaion = useMutation({
         mutationFn: (data) => addDocs({colletionName:'/programReview',data}),
-        onSuccess: (context) => routerHooks(`${context}`)(),
+        onSuccess: (context) => routerHooks('/mypage')(),
     })
     return createDocMutaion
 }

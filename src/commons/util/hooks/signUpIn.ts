@@ -10,14 +10,15 @@ export const useGetInputValue = ()=>{
     const [englishBool,setEnglishBool] = useState(false)
     const [passwordError,setPasswordError] = useState("비밀번호가 일치하지 않습니다.")
     const [emailError,setEmailError] = useState("이메일 형식이 아닙니다.")
-    const onChangeInput =(event:ChangeEvent<HTMLInputElement>)=>{
+    const onChangeInput = async(event:ChangeEvent<HTMLInputElement>)=>{
         // 유저 입력값 가지고 오는 함수 (공통함수)    
         onChangeInputs(event)
 
         // onChange시에 이메일 형식 검증함수 실행 후 결과값 반환
         if(event.target.id==="email"){
-            const emailCheck = checkEmail(event.target.value)
-            emailCheck!==false ? setEmailError("") : setEmailError("이메일 형식이 아닙니다.")
+            const emailCheck = await checkEmail(event.target.value)
+            console.log(emailCheck)
+            emailCheck ? setEmailError("") : setEmailError("이메일 형식이 아닙니다.")
         }
         // onChange시에 숫자,영문 포함 검증함수 실행 후 결과값 반환
         if(event.target.id==="password"){

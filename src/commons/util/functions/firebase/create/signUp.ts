@@ -10,12 +10,13 @@ interface JoinusParams {
 }
 
 export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>{
-    const emailChek = checkEmail(email)
+    const emailChek = await checkEmail(email)
+    console.log(emailChek)
     const passwordcheck = checkPassword(password,passwordCheck)
     const includesNumber = await passwordValidation(password)
     const IncludesEnglish = await passwordEnglishValidation(password)
     let userUID = ""
-    if(emailChek!==false&&passwordcheck!==false&&includesNumber&&IncludesEnglish&&password.length>=6){
+    if(emailChek&&passwordcheck!==false&&includesNumber&&IncludesEnglish&&password.length>=6){
         try{
             const createUser = await createUserWithEmailAndPassword(auth ,email, password)
             // 회원가입 후 추가적인 유저데이터 넣어주기 - 안정성을 위해 기본 User info와 분리
@@ -38,6 +39,7 @@ export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>
         }
     }else{
         alert('회원가입 조건을 충족해주세요!')
+        return
     }
     return userUID
 }

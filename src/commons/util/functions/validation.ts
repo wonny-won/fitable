@@ -1,10 +1,10 @@
 import * as yup from 'yup'
 
 //이메일,비밀번호 검증함수
-export const checkEmail = (email:string)=>{
-    if(!email.includes("@")){
-        return false
-    } 
+export const checkEmail = async(email:string)=>{
+    let schema = yup.string().email()
+    const emailValidation = await schema.isValid(email)
+    return email==='' ? false:emailValidation
 }
 
 //비밀번호 숫자 포함 검증함수
