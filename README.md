@@ -109,8 +109,8 @@
     - 리뷰 수정, 삭제 기능을 마이페이지에  배치해 작성자만 수정,삭제 할 수 있도록 구현
     - 결제 정보 수정 및 보기
     - 피드백시 원하는 방향성 / 파일 업로드 수정<br/>
- <img width="818" alt="스크린샷 2023-05-22 오후 4 42 21"  src="https://github.com/wonny-won/fitable/assets/97152701/d2d6544f-dc20-4da0-962b-9ee1ed8d5105">
- <img width="730" alt="스크린샷 2023-05-30 오전 12 44 33" src="https://github.com/wonny-won/fitable/assets/97152701/57f86223-b87f-494c-aad6-2f31c93aac05"><br/><br/>
+    <img width="818" alt="스크린샷 2023-05-22 오후 4 42 21"  src="https://github.com/wonny-won/fitable/assets/97152701/d2d6544f-dc20-4da0-962b-9ee1ed8d5105">
+    <img width="730" alt="스크린샷 2023-05-30 오전 12 44 33" src="https://github.com/wonny-won/fitable/assets/97152701/57f86223-b87f-494c-aad6-2f31c93aac05"><br/><br/>
 
 7. **로그인 / 회원가입 페이지**
     - 로그인 / 회원가입 기능
