@@ -37,13 +37,15 @@
     공통적으로 사용되는 함수와 컴포넌트는 commons로 분리해두어 재사용성을 높이고 부분 수정이 빠르게 이뤄질 수 있도록 개발.<br/> <br/>
     3. **당장은 재용되지 않지만 나중에라도 재사용 가능성이 있는 함수는 확장성을 고려해 공통으로 분리** <br/>
     payment나 pagination같은 훗날 재사용 가능성이 높은 다양한 쿼리나 함수를 공통으로 빼둠으로써 확장성을 고려해 개발.<br/><br/>
-
-- **보안성**
-    - react-quill 이용시 XSS공격을 대비해 dompurify를 이용.
-        <img width="1140" alt="스크린샷 2023-05-22 오전 12 29 02" src="https://github.com/wonny-won/fitable/assets/97152701/9d3ab7f8-e9ad-4d1d-bdb9-483cc3ddd93f">
     
-    - 로그인 데이터를 브라우저 스토리지에 넣지 않아 토큰노출의 위험성을 줄임.
-        - 로그인 부분은 refreshToken 로직으로 업데이트 할 예정.
+- **보안성**
+    1. **XSS 공격 대비를 위한 dompurify이용.**<br/>
+    react-quill 이용시 XSS공격을 대비해 dompurify를 이용.<br/>
+       <img width="1140" alt="스크린샷 2023-05-22 오전 12 29 02" src="https://github.com/wonny-won/fitable/assets/97152701/9d3ab7f8-e9ad-4d1d-bdb9-483cc3ddd93f"><br/><br/>
+    2. **유저 데이터 보호를 위해 브라우저 스토리지에 토큰저장 X**<br/>
+    로그인 데이터를 브라우저 스토리지에 넣지 않아 토큰노출의 위험성을 줄임. <br/>
+        - 로그인 부분은 refreshToken 로직으로 업데이트 할 예정. <br/><br/>
+
 - **프로젝트 성능**
     - 스토리지의 찌거기를 최소화 하기위해 fileReader를 사용 및 스토리지에 업로드 하는 함수를 분리해 게시글 작성 혹은 수정시에 스토리지에 업로드 되도록 개발.<br/>
        <img width="611" alt="스크린샷 2023-05-22 오전 12 31 26" src="https://github.com/wonny-won/fitable/assets/97152701/c57ca056-afeb-4fa8-a276-429661248460">
