@@ -36,7 +36,7 @@ export default function App({Component, pageProps}:AppProps) {
       queries: {
         retry: 1,
         retryDelay: 0,
-        staleTime: 1 * 60 * 1000,
+        staleTime: 50 * 1000,
         refetchOnWindowFocus:true,
         refetchOnMount:true
       },

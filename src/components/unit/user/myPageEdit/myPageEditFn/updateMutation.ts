@@ -9,8 +9,8 @@ export const updateMutation = ()=>{
     return useMutation({
         mutationFn: (data:{photoURL?:string,displayName?:string})=> updateProfile(auth.currentUser,data),
         onSuccess: ()=> { 
-            queryClient.invalidateQueries({queryKey: ['userInfo'],refetchType: 'all'},{ throwOnError:true })
-            router('/mypage')() 
+                queryClient.invalidateQueries({queryKey: ['userInfo'],refetchType: 'all'},{ throwOnError:true })
+                router('/mypage')() 
         },
     })
 }
