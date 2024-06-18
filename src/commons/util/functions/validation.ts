@@ -1,9 +1,9 @@
 import * as yup from 'yup'
 
 //이메일 검증함수
-export const checkEmail = async(email:string)=>{
+export const checkEmail = (email:string)=>{
     let schema = yup.string().email()
-    const emailValidation = await schema.isValid(email)
+    const emailValidation = schema.isValid(email)
     return email==='' ? false:emailValidation
 }
 

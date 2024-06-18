@@ -6,7 +6,10 @@ import { v4 as uuidv4} from 'uuid'
 export const addCustomIdDoc = async (collection:string,userUID:string,middleCollection:string,Data:any)=>{
     try{
         const subcollection = uuidv4()
-        await setDoc(doc(DB,collection,userUID,middleCollection,subcollection),{...Data,createAt:serverTimestamp()}).then((res)=>(console.log(res)))
+        await setDoc(
+            doc(DB,collection,userUID,middleCollection,subcollection),
+            {...Data,createAt:serverTimestamp()}).then((res)=>(console.log(res))
+        )
         return subcollection    
     } catch(error){
         console.log(error)
