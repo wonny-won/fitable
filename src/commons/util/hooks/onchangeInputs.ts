@@ -3,7 +3,6 @@ import { ChangeEvent, useState } from "react"
 export default function useOnchangeInputs (){
     const [inputs,setInputs]:any = useState({})
     const onChangeInputs = (event:ChangeEvent<HTMLInputElement|HTMLTextAreaElement>)=>{
-        console.log(event)
         const inputsKey = event.target.id
         setInputs({...inputs, [inputsKey] :event.target.value})
     }

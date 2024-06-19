@@ -5,8 +5,8 @@ import { useRoutingPageHooks } from "../../../../../commons/util/hooks/routing"
 export const joinUsEmailMutation = (inputs:any)=>{
     const routing = useRoutingPageHooks()
     return useMutation({
-        mutationFn: async()=>{ 
-            const user = await joinUsEmail(inputs)
+        mutationFn: ()=>{ 
+            const user = joinUsEmail(inputs)
             return user ? '회원가입 완료' : '회원가입 실패'
         },
         onSuccess: (data)=>{

@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../../../../../pages/_app"
-import { checkEmail, checkPassword, passwordEnglishValidation, passwordValidation } from "../../validation"
+import { signupValidation } from "../../validation"
 import { addCustomIdDoc } from "./addCustomIdDocs"
 
 interface JoinusParams {
@@ -9,18 +9,16 @@ interface JoinusParams {
     passwordCheck:string;
 }
 
-export const joinUsEmail = async ({email,password,passwordCheck}:JoinusParams)=>{
-    const emailChek = await checkEmail(email)
-    console.log(emailChek)
-    const passwordcheck = checkPassword(password,passwordCheck)
-    const includesNumber = await passwordValidation(password)
-    const IncludesEnglish = await passwordEnglishValidation(password)
+export const joinUsEmail =  async ({email,password,passwordCheck}:JoinusParams)=>{
     let userUID = ""
-    if(emailChek&&passwordcheck!==false&&includesNumber&&IncludesEnglish&&password.length>=6){
+    const checkSignUpInputs = await signupValidation({email,password,passwordCheck})
+    console.log(checkSignUpInputs)
+    
+    if(checkSignUpInputs && password.length>=6){
         try{
-            const createUser = await createUserWithEmailAndPassword(auth ,email, password)
+            const createUser =  createUserWithEmailAndPassword(auth ,email, password)
             // 회원가입 후 추가적인 유저데이터 넣어주기 - 안정성을 위해 기본 User info와 분리
-            userUID = createUser.user.uid;
+            userUID = createUser?.user?.uid;
             const userData = {
                 payment : 0,
                 point : 0,
